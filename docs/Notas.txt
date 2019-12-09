@@ -1,0 +1,29 @@
+Notas Tesis Sol:
+
+* Instalaciones:
+
+	- SQL Server 2014 Management Studio 
+	
+	- Visual Studio 2019
+
+	- Entity Framework 6.3.0 (NuGet package)
+	 
+	- Microsoft Visual Studio Installer Projects (Visual Studio extension)
+	
+* Proyectos:
+
+	- OBMCatering
+	
+		- OBMCatering.Datos (Entity Framework 6.3.0)
+		- OBMCatering.Negocio
+		- OBMCatering.Presentacion
+		- OBMCatering.Instalador (Microsoft Visual Studio Installer Projects)
+		
+* Pre Carga de Provincias y Localidades:
+
+Lo sacaste en formato JSON de aca: 
+
+https://datos.gob.ar/dataset/modernizacion-servicio-normalizacion-datos-geograficos/archivo/modernizacion_7.2
+https://datos.gob.ar/dataset/modernizacion-servicio-normalizacion-datos-geograficos/archivo/modernizacion_7.27
+
+Y lo insertaste en la BD

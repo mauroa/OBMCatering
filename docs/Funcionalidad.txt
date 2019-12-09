@@ -1,0 +1,9 @@
+ABM Proveedores
+ABM Clientes
+ABM Empleados
+ABM Recetas => ABM Ingredientes
+ABM Ordenes de Venta (pendiente de aprobacion por cliente) => Actualiza precio venta semanal (tabla aparte)
+ABM Facturas (relacion a Orden de Venta. Generacion automatica)
+ABM Orden de Compra (relaciona Receta con Orden de Venta. Generacion automatica)
+ABM Orden de Pago (relaciona a Orden de Compra)
+

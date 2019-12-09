@@ -1,0 +1,1539 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="OBMCateringModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Bitacora">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDUsuario" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
+          <Property Name="Mensaje" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IDTipoMensaje" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Clientes">
+          <Key>
+            <PropertyRef Name="CUIT" />
+          </Key>
+          <Property Name="CUIT" Type="nchar" MaxLength="11" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+          <Property Name="Domicilio" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IDLocalidad" Type="int" Nullable="false" />
+          <Property Name="CodigoPostal" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Telefono" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IDTipoCliente" Type="int" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Empleados">
+          <Key>
+            <PropertyRef Name="CUIT" />
+          </Key>
+          <Property Name="CUIT" Type="nchar" MaxLength="11" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FechaNacimiento" Type="datetime" Nullable="false" />
+          <Property Name="Domicilio" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IDLocalidad" Type="int" Nullable="false" />
+          <Property Name="CodigoPostal" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Telefono" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+          <Property Name="FechaBaja" Type="datetime" />
+        </EntityType>
+        <EntityType Name="EstadosRecetas">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Estado" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Facturas">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
+          <Property Name="IDOrdenVenta" Type="int" Nullable="false" />
+          <Property Name="Cobrada" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ingredientes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="IngredientesRecetas">
+          <Key>
+            <PropertyRef Name="IDReceta" />
+            <PropertyRef Name="IDIngrediente" />
+          </Key>
+          <Property Name="IDReceta" Type="int" Nullable="false" />
+          <Property Name="IDIngrediente" Type="int" Nullable="false" />
+          <Property Name="Cantidad" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="IDUnidadMedida" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ItemsOrdenesCompra">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDOrdenCompra" Type="int" Nullable="false" />
+          <Property Name="IDIngrediente" Type="int" Nullable="false" />
+          <Property Name="Cantidad" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="IDUnidadMedida" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ItemsOrdenesPago">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDOrdenPago" Type="int" Nullable="false" />
+          <Property Name="IDItemOrdenCompra" Type="int" Nullable="false" />
+          <Property Name="Precio" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Localidades">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IDProvincia" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrdenesCompra">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDOrdenVenta" Type="int" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
+          <Property Name="Ejecutada" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrdenesPago">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
+          <Property Name="IDProveedor" Type="nchar" MaxLength="11" Nullable="false" />
+          <Property Name="Pagada" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrdenesVenta">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDCliente" Type="nchar" MaxLength="11" Nullable="false" />
+          <Property Name="FechaInicio" Type="datetime" Nullable="false" />
+          <Property Name="FechaFin" Type="datetime" Nullable="false" />
+          <Property Name="Comensales" Type="int" Nullable="false" />
+          <Property Name="Precio" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Aprobada" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PerfilesUsuario">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PreciosIngredientes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDIngrediente" Type="int" Nullable="false" />
+          <Property Name="Precio" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Cantidad" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="IDUnidadMedida" Type="int" />
+        </EntityType>
+        <EntityType Name="Proveedores">
+          <Key>
+            <PropertyRef Name="CUIT" />
+          </Key>
+          <Property Name="CUIT" Type="nchar" MaxLength="11" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Domicilio" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IDLocalidad" Type="int" Nullable="false" />
+          <Property Name="CodigoPostal" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Telefono" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+          <Property Name="FechaBaja" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Provincias">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Recetas">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Detalle" Type="nvarchar(max)" />
+          <Property Name="IDEstadoReceta" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RecetasOrdenesVenta">
+          <Key>
+            <PropertyRef Name="IDOrdenVenta" />
+            <PropertyRef Name="IDReceta" />
+          </Key>
+          <Property Name="IDOrdenVenta" Type="int" Nullable="false" />
+          <Property Name="IDReceta" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TiposClientes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tipo" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TiposMensajesBitacora">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tipo" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UnidadesMedida">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Unidad" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="Nick" />
+          </Key>
+          <Property Name="Nick" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IDPerfil" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Bitacora_TipoMensajeBitacora">
+          <End Role="TiposMensajesBitacora" Type="Self.TiposMensajesBitacora" Multiplicity="1" />
+          <End Role="Bitacora" Type="Self.Bitacora" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposMensajesBitacora">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Bitacora">
+              <PropertyRef Name="IDTipoMensaje" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Bitacora_Usuarios">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+          <End Role="Bitacora" Type="Self.Bitacora" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="Nick" />
+            </Principal>
+            <Dependent Role="Bitacora">
+              <PropertyRef Name="IDUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Clientes_Localidades">
+          <End Role="Localidades" Type="Self.Localidades" Multiplicity="1" />
+          <End Role="Clientes" Type="Self.Clientes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Localidades">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Clientes">
+              <PropertyRef Name="IDLocalidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Clientes_TiposClientes">
+          <End Role="TiposClientes" Type="Self.TiposClientes" Multiplicity="1" />
+          <End Role="Clientes" Type="Self.Clientes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposClientes">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Clientes">
+              <PropertyRef Name="IDTipoCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleados_Localidades">
+          <End Role="Localidades" Type="Self.Localidades" Multiplicity="1" />
+          <End Role="Empleados" Type="Self.Empleados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Localidades">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Empleados">
+              <PropertyRef Name="IDLocalidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Facturas_OrdenesVenta">
+          <End Role="OrdenesVenta" Type="Self.OrdenesVenta" Multiplicity="1" />
+          <End Role="Facturas" Type="Self.Facturas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrdenesVenta">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Facturas">
+              <PropertyRef Name="IDOrdenVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IngredientesReceta_Ingredientes">
+          <End Role="Ingredientes" Type="Self.Ingredientes" Multiplicity="1" />
+          <End Role="IngredientesRecetas" Type="Self.IngredientesRecetas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ingredientes">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="IngredientesRecetas">
+              <PropertyRef Name="IDIngrediente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IngredientesReceta_Recetas">
+          <End Role="Recetas" Type="Self.Recetas" Multiplicity="1" />
+          <End Role="IngredientesRecetas" Type="Self.IngredientesRecetas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Recetas">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="IngredientesRecetas">
+              <PropertyRef Name="IDReceta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IngredientesRecetas_UnidadesMedida">
+          <End Role="UnidadesMedida" Type="Self.UnidadesMedida" Multiplicity="1" />
+          <End Role="IngredientesRecetas" Type="Self.IngredientesRecetas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UnidadesMedida">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="IngredientesRecetas">
+              <PropertyRef Name="IDUnidadMedida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItemsOrdenesCompra_Ingredientes">
+          <End Role="Ingredientes" Type="Self.Ingredientes" Multiplicity="1" />
+          <End Role="ItemsOrdenesCompra" Type="Self.ItemsOrdenesCompra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ingredientes">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ItemsOrdenesCompra">
+              <PropertyRef Name="IDIngrediente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItemsOrdenesCompra_OrdenesCompra">
+          <End Role="OrdenesCompra" Type="Self.OrdenesCompra" Multiplicity="1" />
+          <End Role="ItemsOrdenesCompra" Type="Self.ItemsOrdenesCompra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrdenesCompra">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ItemsOrdenesCompra">
+              <PropertyRef Name="IDOrdenCompra" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItemsOrdenesCompra_UnidadesMedida">
+          <End Role="UnidadesMedida" Type="Self.UnidadesMedida" Multiplicity="1" />
+          <End Role="ItemsOrdenesCompra" Type="Self.ItemsOrdenesCompra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UnidadesMedida">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ItemsOrdenesCompra">
+              <PropertyRef Name="IDUnidadMedida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItemsOrdenesPago_ItemsOrdenesCompra">
+          <End Role="ItemsOrdenesCompra" Type="Self.ItemsOrdenesCompra" Multiplicity="1" />
+          <End Role="ItemsOrdenesPago" Type="Self.ItemsOrdenesPago" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ItemsOrdenesCompra">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ItemsOrdenesPago">
+              <PropertyRef Name="IDItemOrdenCompra" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItemsOrdenesPago_OrdenesPago">
+          <End Role="OrdenesPago" Type="Self.OrdenesPago" Multiplicity="1" />
+          <End Role="ItemsOrdenesPago" Type="Self.ItemsOrdenesPago" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrdenesPago">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ItemsOrdenesPago">
+              <PropertyRef Name="IDOrdenPago" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Localidades_Provincias">
+          <End Role="Provincias" Type="Self.Provincias" Multiplicity="1" />
+          <End Role="Localidades" Type="Self.Localidades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Provincias">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Localidades">
+              <PropertyRef Name="IDProvincia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrdenesCompra_OrdenesVenta">
+          <End Role="OrdenesVenta" Type="Self.OrdenesVenta" Multiplicity="1" />
+          <End Role="OrdenesCompra" Type="Self.OrdenesCompra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrdenesVenta">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrdenesCompra">
+              <PropertyRef Name="IDOrdenVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrdenesPago_Proveedores">
+          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="1" />
+          <End Role="OrdenesPago" Type="Self.OrdenesPago" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proveedores">
+              <PropertyRef Name="CUIT" />
+            </Principal>
+            <Dependent Role="OrdenesPago">
+              <PropertyRef Name="IDProveedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrdenesVenta_Clientes">
+          <End Role="Clientes" Type="Self.Clientes" Multiplicity="1" />
+          <End Role="OrdenesVenta" Type="Self.OrdenesVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes">
+              <PropertyRef Name="CUIT" />
+            </Principal>
+            <Dependent Role="OrdenesVenta">
+              <PropertyRef Name="IDCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PreciosIngredientes_Ingredientes">
+          <End Role="Ingredientes" Type="Self.Ingredientes" Multiplicity="1" />
+          <End Role="PreciosIngredientes" Type="Self.PreciosIngredientes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ingredientes">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PreciosIngredientes">
+              <PropertyRef Name="IDIngrediente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PreciosIngredientes_UnidadesMedida">
+          <End Role="UnidadesMedida" Type="Self.UnidadesMedida" Multiplicity="0..1" />
+          <End Role="PreciosIngredientes" Type="Self.PreciosIngredientes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UnidadesMedida">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PreciosIngredientes">
+              <PropertyRef Name="IDUnidadMedida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Proveedores_Localidades">
+          <End Role="Localidades" Type="Self.Localidades" Multiplicity="1" />
+          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Localidades">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Proveedores">
+              <PropertyRef Name="IDLocalidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Recetas_EstadosRecetas">
+          <End Role="EstadosRecetas" Type="Self.EstadosRecetas" Multiplicity="1" />
+          <End Role="Recetas" Type="Self.Recetas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstadosRecetas">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Recetas">
+              <PropertyRef Name="IDEstadoReceta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RecetasOrdenesVenta_OrdenesVenta">
+          <End Role="OrdenesVenta" Type="Self.OrdenesVenta" Multiplicity="1" />
+          <End Role="RecetasOrdenesVenta" Type="Self.RecetasOrdenesVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrdenesVenta">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RecetasOrdenesVenta">
+              <PropertyRef Name="IDOrdenVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RecetasOrdenesVenta_Recetas">
+          <End Role="Recetas" Type="Self.Recetas" Multiplicity="1" />
+          <End Role="RecetasOrdenesVenta" Type="Self.RecetasOrdenesVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Recetas">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RecetasOrdenesVenta">
+              <PropertyRef Name="IDReceta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuarios_PerfilesUsuario">
+          <End Role="PerfilesUsuario" Type="Self.PerfilesUsuario" Multiplicity="1" />
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PerfilesUsuario">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Usuarios">
+              <PropertyRef Name="IDPerfil" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="OBMCateringModelStoreContainer">
+          <EntitySet Name="Bitacora" EntityType="Self.Bitacora" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Empleados" EntityType="Self.Empleados" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EstadosRecetas" EntityType="Self.EstadosRecetas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Facturas" EntityType="Self.Facturas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ingredientes" EntityType="Self.Ingredientes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IngredientesRecetas" EntityType="Self.IngredientesRecetas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ItemsOrdenesCompra" EntityType="Self.ItemsOrdenesCompra" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ItemsOrdenesPago" EntityType="Self.ItemsOrdenesPago" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Localidades" EntityType="Self.Localidades" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrdenesCompra" EntityType="Self.OrdenesCompra" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrdenesPago" EntityType="Self.OrdenesPago" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrdenesVenta" EntityType="Self.OrdenesVenta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PerfilesUsuario" EntityType="Self.PerfilesUsuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PreciosIngredientes" EntityType="Self.PreciosIngredientes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Proveedores" EntityType="Self.Proveedores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Provincias" EntityType="Self.Provincias" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Recetas" EntityType="Self.Recetas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RecetasOrdenesVenta" EntityType="Self.RecetasOrdenesVenta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TiposClientes" EntityType="Self.TiposClientes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TiposMensajesBitacora" EntityType="Self.TiposMensajesBitacora" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UnidadesMedida" EntityType="Self.UnidadesMedida" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Bitacora_TipoMensajeBitacora" Association="Self.FK_Bitacora_TipoMensajeBitacora">
+            <End Role="TiposMensajesBitacora" EntitySet="TiposMensajesBitacora" />
+            <End Role="Bitacora" EntitySet="Bitacora" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Bitacora_Usuarios" Association="Self.FK_Bitacora_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Bitacora" EntitySet="Bitacora" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Clientes_Localidades" Association="Self.FK_Clientes_Localidades">
+            <End Role="Localidades" EntitySet="Localidades" />
+            <End Role="Clientes" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Clientes_TiposClientes" Association="Self.FK_Clientes_TiposClientes">
+            <End Role="TiposClientes" EntitySet="TiposClientes" />
+            <End Role="Clientes" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleados_Localidades" Association="Self.FK_Empleados_Localidades">
+            <End Role="Localidades" EntitySet="Localidades" />
+            <End Role="Empleados" EntitySet="Empleados" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Facturas_OrdenesVenta" Association="Self.FK_Facturas_OrdenesVenta">
+            <End Role="OrdenesVenta" EntitySet="OrdenesVenta" />
+            <End Role="Facturas" EntitySet="Facturas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IngredientesReceta_Ingredientes" Association="Self.FK_IngredientesReceta_Ingredientes">
+            <End Role="Ingredientes" EntitySet="Ingredientes" />
+            <End Role="IngredientesRecetas" EntitySet="IngredientesRecetas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IngredientesReceta_Recetas" Association="Self.FK_IngredientesReceta_Recetas">
+            <End Role="Recetas" EntitySet="Recetas" />
+            <End Role="IngredientesRecetas" EntitySet="IngredientesRecetas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IngredientesRecetas_UnidadesMedida" Association="Self.FK_IngredientesRecetas_UnidadesMedida">
+            <End Role="UnidadesMedida" EntitySet="UnidadesMedida" />
+            <End Role="IngredientesRecetas" EntitySet="IngredientesRecetas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemsOrdenesCompra_Ingredientes" Association="Self.FK_ItemsOrdenesCompra_Ingredientes">
+            <End Role="Ingredientes" EntitySet="Ingredientes" />
+            <End Role="ItemsOrdenesCompra" EntitySet="ItemsOrdenesCompra" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemsOrdenesCompra_OrdenesCompra" Association="Self.FK_ItemsOrdenesCompra_OrdenesCompra">
+            <End Role="OrdenesCompra" EntitySet="OrdenesCompra" />
+            <End Role="ItemsOrdenesCompra" EntitySet="ItemsOrdenesCompra" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemsOrdenesCompra_UnidadesMedida" Association="Self.FK_ItemsOrdenesCompra_UnidadesMedida">
+            <End Role="UnidadesMedida" EntitySet="UnidadesMedida" />
+            <End Role="ItemsOrdenesCompra" EntitySet="ItemsOrdenesCompra" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemsOrdenesPago_ItemsOrdenesCompra" Association="Self.FK_ItemsOrdenesPago_ItemsOrdenesCompra">
+            <End Role="ItemsOrdenesCompra" EntitySet="ItemsOrdenesCompra" />
+            <End Role="ItemsOrdenesPago" EntitySet="ItemsOrdenesPago" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemsOrdenesPago_OrdenesPago" Association="Self.FK_ItemsOrdenesPago_OrdenesPago">
+            <End Role="OrdenesPago" EntitySet="OrdenesPago" />
+            <End Role="ItemsOrdenesPago" EntitySet="ItemsOrdenesPago" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Localidades_Provincias" Association="Self.FK_Localidades_Provincias">
+            <End Role="Provincias" EntitySet="Provincias" />
+            <End Role="Localidades" EntitySet="Localidades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrdenesCompra_OrdenesVenta" Association="Self.FK_OrdenesCompra_OrdenesVenta">
+            <End Role="OrdenesVenta" EntitySet="OrdenesVenta" />
+            <End Role="OrdenesCompra" EntitySet="OrdenesCompra" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrdenesPago_Proveedores" Association="Self.FK_OrdenesPago_Proveedores">
+            <End Role="Proveedores" EntitySet="Proveedores" />
+            <End Role="OrdenesPago" EntitySet="OrdenesPago" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrdenesVenta_Clientes" Association="Self.FK_OrdenesVenta_Clientes">
+            <End Role="Clientes" EntitySet="Clientes" />
+            <End Role="OrdenesVenta" EntitySet="OrdenesVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PreciosIngredientes_Ingredientes" Association="Self.FK_PreciosIngredientes_Ingredientes">
+            <End Role="Ingredientes" EntitySet="Ingredientes" />
+            <End Role="PreciosIngredientes" EntitySet="PreciosIngredientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PreciosIngredientes_UnidadesMedida" Association="Self.FK_PreciosIngredientes_UnidadesMedida">
+            <End Role="UnidadesMedida" EntitySet="UnidadesMedida" />
+            <End Role="PreciosIngredientes" EntitySet="PreciosIngredientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Proveedores_Localidades" Association="Self.FK_Proveedores_Localidades">
+            <End Role="Localidades" EntitySet="Localidades" />
+            <End Role="Proveedores" EntitySet="Proveedores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Recetas_EstadosRecetas" Association="Self.FK_Recetas_EstadosRecetas">
+            <End Role="EstadosRecetas" EntitySet="EstadosRecetas" />
+            <End Role="Recetas" EntitySet="Recetas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RecetasOrdenesVenta_OrdenesVenta" Association="Self.FK_RecetasOrdenesVenta_OrdenesVenta">
+            <End Role="OrdenesVenta" EntitySet="OrdenesVenta" />
+            <End Role="RecetasOrdenesVenta" EntitySet="RecetasOrdenesVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RecetasOrdenesVenta_Recetas" Association="Self.FK_RecetasOrdenesVenta_Recetas">
+            <End Role="Recetas" EntitySet="Recetas" />
+            <End Role="RecetasOrdenesVenta" EntitySet="RecetasOrdenesVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuarios_PerfilesUsuario" Association="Self.FK_Usuarios_PerfilesUsuario">
+            <End Role="PerfilesUsuario" EntitySet="PerfilesUsuario" />
+            <End Role="Usuarios" EntitySet="Usuarios" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OBMCateringModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Bitacora">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Mensaje" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Tipo" Relationship="Self.FK_Bitacora_TipoMensajeBitacora" FromRole="Bitacora" ToRole="TiposMensajesBitacora" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK_Bitacora_Usuarios" FromRole="Bitacora" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="CUIT" />
+          </Key>
+          <Property Name="CUIT" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Domicilio" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CodigoPostal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Telefono" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Localidad" Relationship="Self.FK_Clientes_Localidades" FromRole="Clientes" ToRole="Localidades" />
+          <NavigationProperty Name="Tipo" Relationship="Self.FK_Clientes_TiposClientes" FromRole="Clientes" ToRole="TiposClientes" />
+          <NavigationProperty Name="OrdenesVenta" Relationship="Self.FK_OrdenesVenta_Clientes" FromRole="Clientes" ToRole="OrdenesVenta" />
+        </EntityType>
+        <EntityType Name="Empleado">
+          <Key>
+            <PropertyRef Name="CUIT" />
+          </Key>
+          <Property Name="CUIT" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FechaNacimiento" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Domicilio" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CodigoPostal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Telefono" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FechaBaja" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Localidad" Relationship="Self.FK_Empleados_Localidades" FromRole="Empleados" ToRole="Localidades" />
+        </EntityType>
+        <EntityType Name="EstadoReceta">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Estado" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Recetas" Relationship="Self.FK_Recetas_EstadosRecetas" FromRole="EstadosRecetas" ToRole="Recetas" />
+        </EntityType>
+        <EntityType Name="Factura">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Cobrada" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="OrdenVenta" Relationship="Self.FK_Facturas_OrdenesVenta" FromRole="Facturas" ToRole="OrdenesVenta" />
+        </EntityType>
+        <EntityType Name="Ingrediente">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="IngredientesRecetas" Relationship="Self.FK_IngredientesReceta_Ingredientes" FromRole="Ingredientes" ToRole="IngredientesRecetas" />
+          <NavigationProperty Name="ItemsOrdenesCompra" Relationship="Self.FK_ItemsOrdenesCompra_Ingredientes" FromRole="Ingredientes" ToRole="ItemsOrdenesCompra" />
+          <NavigationProperty Name="PreciosIngredientes" Relationship="Self.FK_PreciosIngredientes_Ingredientes" FromRole="Ingredientes" ToRole="PreciosIngredientes" />
+        </EntityType>
+        <EntityType Name="IngredienteReceta">
+          <Key>
+            <PropertyRef Name="IDReceta" />
+            <PropertyRef Name="IDIngrediente" />
+          </Key>
+          <Property Name="IDReceta" Type="Int32" Nullable="false" />
+          <Property Name="IDIngrediente" Type="Int32" Nullable="false" />
+          <Property Name="Cantidad" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <NavigationProperty Name="Ingrediente" Relationship="Self.FK_IngredientesReceta_Ingredientes" FromRole="IngredientesRecetas" ToRole="Ingredientes" />
+          <NavigationProperty Name="Receta" Relationship="Self.FK_IngredientesReceta_Recetas" FromRole="IngredientesRecetas" ToRole="Recetas" />
+          <NavigationProperty Name="Unidad" Relationship="Self.FK_IngredientesRecetas_UnidadesMedida" FromRole="IngredientesRecetas" ToRole="UnidadesMedida" />
+        </EntityType>
+        <EntityType Name="ItemOrdenCompra">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cantidad" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <NavigationProperty Name="Ingrediente" Relationship="Self.FK_ItemsOrdenesCompra_Ingredientes" FromRole="ItemsOrdenesCompra" ToRole="Ingredientes" />
+          <NavigationProperty Name="OrdenCompra" Relationship="Self.FK_ItemsOrdenesCompra_OrdenesCompra" FromRole="ItemsOrdenesCompra" ToRole="OrdenesCompra" />
+          <NavigationProperty Name="Unidad" Relationship="Self.FK_ItemsOrdenesCompra_UnidadesMedida" FromRole="ItemsOrdenesCompra" ToRole="UnidadesMedida" />
+          <NavigationProperty Name="ItemsOrdenesPago" Relationship="Self.FK_ItemsOrdenesPago_ItemsOrdenesCompra" FromRole="ItemsOrdenesCompra" ToRole="ItemsOrdenesPago" />
+        </EntityType>
+        <EntityType Name="ItemOrdenPago">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Precio" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <NavigationProperty Name="ItemOrdenCompra" Relationship="Self.FK_ItemsOrdenesPago_ItemsOrdenesCompra" FromRole="ItemsOrdenesPago" ToRole="ItemsOrdenesCompra" />
+          <NavigationProperty Name="OrdenPago" Relationship="Self.FK_ItemsOrdenesPago_OrdenesPago" FromRole="ItemsOrdenesPago" ToRole="OrdenesPago" />
+        </EntityType>
+        <EntityType Name="Localidad">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Clientes" Relationship="Self.FK_Clientes_Localidades" FromRole="Localidades" ToRole="Clientes" />
+          <NavigationProperty Name="Empleados" Relationship="Self.FK_Empleados_Localidades" FromRole="Localidades" ToRole="Empleados" />
+          <NavigationProperty Name="Provincia" Relationship="Self.FK_Localidades_Provincias" FromRole="Localidades" ToRole="Provincias" />
+          <NavigationProperty Name="Proveedores" Relationship="Self.FK_Proveedores_Localidades" FromRole="Localidades" ToRole="Proveedores" />
+        </EntityType>
+        <EntityType Name="OrdenCompra">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Ejecutada" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="ItemsOrdenesCompra" Relationship="Self.FK_ItemsOrdenesCompra_OrdenesCompra" FromRole="OrdenesCompra" ToRole="ItemsOrdenesCompra" />
+          <NavigationProperty Name="OrdenVenta" Relationship="Self.FK_OrdenesCompra_OrdenesVenta" FromRole="OrdenesCompra" ToRole="OrdenesVenta" />
+        </EntityType>
+        <EntityType Name="OrdenPago">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Pagada" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="ItemsOrdenesPago" Relationship="Self.FK_ItemsOrdenesPago_OrdenesPago" FromRole="OrdenesPago" ToRole="ItemsOrdenesPago" />
+          <NavigationProperty Name="Proveedor" Relationship="Self.FK_OrdenesPago_Proveedores" FromRole="OrdenesPago" ToRole="Proveedores" />
+        </EntityType>
+        <EntityType Name="OrdenVenta">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FechaInicio" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FechaFin" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Comensales" Type="Int32" Nullable="false" />
+          <Property Name="Precio" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Aprobada" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Cliente" Relationship="Self.FK_OrdenesVenta_Clientes" FromRole="OrdenesVenta" ToRole="Clientes" />
+          <NavigationProperty Name="Facturas" Relationship="Self.FK_Facturas_OrdenesVenta" FromRole="OrdenesVenta" ToRole="Facturas" />
+          <NavigationProperty Name="OrdenesCompra" Relationship="Self.FK_OrdenesCompra_OrdenesVenta" FromRole="OrdenesVenta" ToRole="OrdenesCompra" />
+          <NavigationProperty Name="Recetas" Relationship="Self.RecetasOrdenesVenta" FromRole="OrdenesVenta" ToRole="Recetas" />
+        </EntityType>
+        <EntityType Name="PerfilUsuario">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK_Usuarios_PerfilesUsuario" FromRole="PerfilesUsuario" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="PrecioIngrediente">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Precio" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Cantidad" Type="Decimal" Precision="10" Scale="2" />
+          <NavigationProperty Name="Ingrediente" Relationship="Self.FK_PreciosIngredientes_Ingredientes" FromRole="PreciosIngredientes" ToRole="Ingredientes" />
+          <NavigationProperty Name="Unidad" Relationship="Self.FK_PreciosIngredientes_UnidadesMedida" FromRole="PreciosIngredientes" ToRole="UnidadesMedida" />
+        </EntityType>
+        <EntityType Name="Proveedor">
+          <Key>
+            <PropertyRef Name="CUIT" />
+          </Key>
+          <Property Name="CUIT" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Domicilio" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CodigoPostal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Telefono" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FechaBaja" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Localidad" Relationship="Self.FK_Proveedores_Localidades" FromRole="Proveedores" ToRole="Localidades" />
+          <NavigationProperty Name="OrdenesPago" Relationship="Self.FK_OrdenesPago_Proveedores" FromRole="Proveedores" ToRole="OrdenesPago" />
+        </EntityType>
+        <EntityType Name="Provincia">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Localidades" Relationship="Self.FK_Localidades_Provincias" FromRole="Provincias" ToRole="Localidades" />
+        </EntityType>
+        <EntityType Name="Receta">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Detalle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Estado" Relationship="Self.FK_Recetas_EstadosRecetas" FromRole="Recetas" ToRole="EstadosRecetas" />
+          <NavigationProperty Name="Ingredientes" Relationship="Self.FK_IngredientesReceta_Recetas" FromRole="Recetas" ToRole="IngredientesRecetas" />
+          <NavigationProperty Name="OrdenesVenta" Relationship="Self.RecetasOrdenesVenta" FromRole="Recetas" ToRole="OrdenesVenta" />
+        </EntityType>
+        <EntityType Name="TipoCliente">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Clientes" Relationship="Self.FK_Clientes_TiposClientes" FromRole="TiposClientes" ToRole="Clientes" />
+        </EntityType>
+        <EntityType Name="TipoMensajeBitacora">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Bitacora" Relationship="Self.FK_Bitacora_TipoMensajeBitacora" FromRole="TiposMensajesBitacora" ToRole="Bitacora" />
+        </EntityType>
+        <EntityType Name="UnidadMedida">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Unidad" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="IngredientesRecetas" Relationship="Self.FK_IngredientesRecetas_UnidadesMedida" FromRole="UnidadesMedida" ToRole="IngredientesRecetas" />
+          <NavigationProperty Name="ItemsOrdenesCompra" Relationship="Self.FK_ItemsOrdenesCompra_UnidadesMedida" FromRole="UnidadesMedida" ToRole="ItemsOrdenesCompra" />
+          <NavigationProperty Name="PreciosIngredientes" Relationship="Self.FK_PreciosIngredientes_UnidadesMedida" FromRole="UnidadesMedida" ToRole="PreciosIngredientes" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Nick" />
+          </Key>
+          <Property Name="Nick" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Bitacora" Relationship="Self.FK_Bitacora_Usuarios" FromRole="Usuarios" ToRole="Bitacora" />
+          <NavigationProperty Name="Perfil" Relationship="Self.FK_Usuarios_PerfilesUsuario" FromRole="Usuarios" ToRole="PerfilesUsuario" />
+        </EntityType>
+        <Association Name="FK_Bitacora_TipoMensajeBitacora">
+          <End Role="TiposMensajesBitacora" Type="OBMCateringModel.TipoMensajeBitacora" Multiplicity="1" />
+          <End Role="Bitacora" Type="Self.Bitacora" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Bitacora_Usuarios">
+          <End Role="Usuarios" Type="OBMCateringModel.Usuario" Multiplicity="1" />
+          <End Role="Bitacora" Type="Self.Bitacora" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Clientes_Localidades">
+          <End Role="Localidades" Type="OBMCateringModel.Localidad" Multiplicity="1" />
+          <End Role="Clientes" Type="OBMCateringModel.Cliente" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Clientes_TiposClientes">
+          <End Role="TiposClientes" Type="OBMCateringModel.TipoCliente" Multiplicity="1" />
+          <End Role="Clientes" Type="OBMCateringModel.Cliente" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_OrdenesVenta_Clientes">
+          <End Role="Clientes" Type="OBMCateringModel.Cliente" Multiplicity="1" />
+          <End Role="OrdenesVenta" Type="OBMCateringModel.OrdenVenta" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Empleados_Localidades">
+          <End Role="Localidades" Type="OBMCateringModel.Localidad" Multiplicity="1" />
+          <End Role="Empleados" Type="OBMCateringModel.Empleado" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Recetas_EstadosRecetas">
+          <End Role="EstadosRecetas" Type="OBMCateringModel.EstadoReceta" Multiplicity="1" />
+          <End Role="Recetas" Type="OBMCateringModel.Receta" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Facturas_OrdenesVenta">
+          <End Role="OrdenesVenta" Type="OBMCateringModel.OrdenVenta" Multiplicity="1" />
+          <End Role="Facturas" Type="OBMCateringModel.Factura" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_IngredientesReceta_Ingredientes">
+          <End Role="Ingredientes" Type="OBMCateringModel.Ingrediente" Multiplicity="1" />
+          <End Role="IngredientesRecetas" Type="OBMCateringModel.IngredienteReceta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ingredientes">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="IngredientesRecetas">
+              <PropertyRef Name="IDIngrediente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItemsOrdenesCompra_Ingredientes">
+          <End Role="Ingredientes" Type="OBMCateringModel.Ingrediente" Multiplicity="1" />
+          <End Role="ItemsOrdenesCompra" Type="OBMCateringModel.ItemOrdenCompra" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_PreciosIngredientes_Ingredientes">
+          <End Role="Ingredientes" Type="OBMCateringModel.Ingrediente" Multiplicity="1" />
+          <End Role="PreciosIngredientes" Type="OBMCateringModel.PrecioIngrediente" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_IngredientesReceta_Recetas">
+          <End Role="Recetas" Type="OBMCateringModel.Receta" Multiplicity="1" />
+          <End Role="IngredientesRecetas" Type="OBMCateringModel.IngredienteReceta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Recetas">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="IngredientesRecetas">
+              <PropertyRef Name="IDReceta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IngredientesRecetas_UnidadesMedida">
+          <End Role="UnidadesMedida" Type="OBMCateringModel.UnidadMedida" Multiplicity="1" />
+          <End Role="IngredientesRecetas" Type="OBMCateringModel.IngredienteReceta" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_ItemsOrdenesCompra_OrdenesCompra">
+          <End Role="OrdenesCompra" Type="OBMCateringModel.OrdenCompra" Multiplicity="1" />
+          <End Role="ItemsOrdenesCompra" Type="OBMCateringModel.ItemOrdenCompra" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_ItemsOrdenesCompra_UnidadesMedida">
+          <End Role="UnidadesMedida" Type="OBMCateringModel.UnidadMedida" Multiplicity="1" />
+          <End Role="ItemsOrdenesCompra" Type="OBMCateringModel.ItemOrdenCompra" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_ItemsOrdenesPago_ItemsOrdenesCompra">
+          <End Role="ItemsOrdenesCompra" Type="OBMCateringModel.ItemOrdenCompra" Multiplicity="1" />
+          <End Role="ItemsOrdenesPago" Type="OBMCateringModel.ItemOrdenPago" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_ItemsOrdenesPago_OrdenesPago">
+          <End Role="OrdenesPago" Type="OBMCateringModel.OrdenPago" Multiplicity="1" />
+          <End Role="ItemsOrdenesPago" Type="OBMCateringModel.ItemOrdenPago" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Localidades_Provincias">
+          <End Role="Provincias" Type="OBMCateringModel.Provincia" Multiplicity="1" />
+          <End Role="Localidades" Type="OBMCateringModel.Localidad" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Proveedores_Localidades">
+          <End Role="Localidades" Type="OBMCateringModel.Localidad" Multiplicity="1" />
+          <End Role="Proveedores" Type="OBMCateringModel.Proveedor" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_OrdenesCompra_OrdenesVenta">
+          <End Role="OrdenesVenta" Type="OBMCateringModel.OrdenVenta" Multiplicity="1" />
+          <End Role="OrdenesCompra" Type="OBMCateringModel.OrdenCompra" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_OrdenesPago_Proveedores">
+          <End Role="Proveedores" Type="OBMCateringModel.Proveedor" Multiplicity="1" />
+          <End Role="OrdenesPago" Type="OBMCateringModel.OrdenPago" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Usuarios_PerfilesUsuario">
+          <End Role="PerfilesUsuario" Type="OBMCateringModel.PerfilUsuario" Multiplicity="1" />
+          <End Role="Usuarios" Type="OBMCateringModel.Usuario" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_PreciosIngredientes_UnidadesMedida">
+          <End Role="UnidadesMedida" Type="OBMCateringModel.UnidadMedida" Multiplicity="0..1" />
+          <End Role="PreciosIngredientes" Type="OBMCateringModel.PrecioIngrediente" Multiplicity="*" />
+        </Association>
+        <Association Name="RecetasOrdenesVenta">
+          <End Role="OrdenesVenta" Type="OBMCateringModel.OrdenVenta" Multiplicity="*" />
+          <End Role="Recetas" Type="OBMCateringModel.Receta" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="OBMCateringEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Bitacora" EntityType="Self.Bitacora" />
+          <EntitySet Name="Clientes" EntityType="OBMCateringModel.Cliente" />
+          <EntitySet Name="Empleados" EntityType="OBMCateringModel.Empleado" />
+          <EntitySet Name="EstadosRecetas" EntityType="OBMCateringModel.EstadoReceta" />
+          <EntitySet Name="Facturas" EntityType="OBMCateringModel.Factura" />
+          <EntitySet Name="Ingredientes" EntityType="OBMCateringModel.Ingrediente" />
+          <EntitySet Name="IngredientesRecetas" EntityType="OBMCateringModel.IngredienteReceta" />
+          <EntitySet Name="ItemsOrdenesCompra" EntityType="OBMCateringModel.ItemOrdenCompra" />
+          <EntitySet Name="ItemsOrdenesPago" EntityType="OBMCateringModel.ItemOrdenPago" />
+          <EntitySet Name="Localidades" EntityType="OBMCateringModel.Localidad" />
+          <EntitySet Name="OrdenesCompra" EntityType="OBMCateringModel.OrdenCompra" />
+          <EntitySet Name="OrdenesPago" EntityType="OBMCateringModel.OrdenPago" />
+          <EntitySet Name="OrdenesVenta" EntityType="OBMCateringModel.OrdenVenta" />
+          <EntitySet Name="PerfilesUsuario" EntityType="OBMCateringModel.PerfilUsuario" />
+          <EntitySet Name="PreciosIngredientes" EntityType="OBMCateringModel.PrecioIngrediente" />
+          <EntitySet Name="Proveedores" EntityType="OBMCateringModel.Proveedor" />
+          <EntitySet Name="Provincias" EntityType="OBMCateringModel.Provincia" />
+          <EntitySet Name="Recetas" EntityType="OBMCateringModel.Receta" />
+          <EntitySet Name="TiposClientes" EntityType="OBMCateringModel.TipoCliente" />
+          <EntitySet Name="TiposMensajesBitacora" EntityType="OBMCateringModel.TipoMensajeBitacora" />
+          <EntitySet Name="UnidadesMedida" EntityType="OBMCateringModel.UnidadMedida" />
+          <EntitySet Name="Usuarios" EntityType="OBMCateringModel.Usuario" />
+          <AssociationSet Name="FK_Bitacora_TipoMensajeBitacora" Association="Self.FK_Bitacora_TipoMensajeBitacora">
+            <End Role="TiposMensajesBitacora" EntitySet="TiposMensajesBitacora" />
+            <End Role="Bitacora" EntitySet="Bitacora" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Bitacora_Usuarios" Association="Self.FK_Bitacora_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Bitacora" EntitySet="Bitacora" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Clientes_Localidades" Association="Self.FK_Clientes_Localidades">
+            <End Role="Localidades" EntitySet="Localidades" />
+            <End Role="Clientes" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Clientes_TiposClientes" Association="Self.FK_Clientes_TiposClientes">
+            <End Role="TiposClientes" EntitySet="TiposClientes" />
+            <End Role="Clientes" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrdenesVenta_Clientes" Association="Self.FK_OrdenesVenta_Clientes">
+            <End Role="Clientes" EntitySet="Clientes" />
+            <End Role="OrdenesVenta" EntitySet="OrdenesVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleados_Localidades" Association="Self.FK_Empleados_Localidades">
+            <End Role="Localidades" EntitySet="Localidades" />
+            <End Role="Empleados" EntitySet="Empleados" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Recetas_EstadosRecetas" Association="Self.FK_Recetas_EstadosRecetas">
+            <End Role="EstadosRecetas" EntitySet="EstadosRecetas" />
+            <End Role="Recetas" EntitySet="Recetas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Facturas_OrdenesVenta" Association="Self.FK_Facturas_OrdenesVenta">
+            <End Role="OrdenesVenta" EntitySet="OrdenesVenta" />
+            <End Role="Facturas" EntitySet="Facturas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IngredientesReceta_Ingredientes" Association="Self.FK_IngredientesReceta_Ingredientes">
+            <End Role="Ingredientes" EntitySet="Ingredientes" />
+            <End Role="IngredientesRecetas" EntitySet="IngredientesRecetas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemsOrdenesCompra_Ingredientes" Association="Self.FK_ItemsOrdenesCompra_Ingredientes">
+            <End Role="Ingredientes" EntitySet="Ingredientes" />
+            <End Role="ItemsOrdenesCompra" EntitySet="ItemsOrdenesCompra" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PreciosIngredientes_Ingredientes" Association="Self.FK_PreciosIngredientes_Ingredientes">
+            <End Role="Ingredientes" EntitySet="Ingredientes" />
+            <End Role="PreciosIngredientes" EntitySet="PreciosIngredientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IngredientesReceta_Recetas" Association="Self.FK_IngredientesReceta_Recetas">
+            <End Role="Recetas" EntitySet="Recetas" />
+            <End Role="IngredientesRecetas" EntitySet="IngredientesRecetas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IngredientesRecetas_UnidadesMedida" Association="Self.FK_IngredientesRecetas_UnidadesMedida">
+            <End Role="UnidadesMedida" EntitySet="UnidadesMedida" />
+            <End Role="IngredientesRecetas" EntitySet="IngredientesRecetas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemsOrdenesCompra_OrdenesCompra" Association="Self.FK_ItemsOrdenesCompra_OrdenesCompra">
+            <End Role="OrdenesCompra" EntitySet="OrdenesCompra" />
+            <End Role="ItemsOrdenesCompra" EntitySet="ItemsOrdenesCompra" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemsOrdenesCompra_UnidadesMedida" Association="Self.FK_ItemsOrdenesCompra_UnidadesMedida">
+            <End Role="UnidadesMedida" EntitySet="UnidadesMedida" />
+            <End Role="ItemsOrdenesCompra" EntitySet="ItemsOrdenesCompra" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemsOrdenesPago_ItemsOrdenesCompra" Association="Self.FK_ItemsOrdenesPago_ItemsOrdenesCompra">
+            <End Role="ItemsOrdenesCompra" EntitySet="ItemsOrdenesCompra" />
+            <End Role="ItemsOrdenesPago" EntitySet="ItemsOrdenesPago" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemsOrdenesPago_OrdenesPago" Association="Self.FK_ItemsOrdenesPago_OrdenesPago">
+            <End Role="OrdenesPago" EntitySet="OrdenesPago" />
+            <End Role="ItemsOrdenesPago" EntitySet="ItemsOrdenesPago" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Localidades_Provincias" Association="Self.FK_Localidades_Provincias">
+            <End Role="Provincias" EntitySet="Provincias" />
+            <End Role="Localidades" EntitySet="Localidades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Proveedores_Localidades" Association="Self.FK_Proveedores_Localidades">
+            <End Role="Localidades" EntitySet="Localidades" />
+            <End Role="Proveedores" EntitySet="Proveedores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrdenesCompra_OrdenesVenta" Association="Self.FK_OrdenesCompra_OrdenesVenta">
+            <End Role="OrdenesVenta" EntitySet="OrdenesVenta" />
+            <End Role="OrdenesCompra" EntitySet="OrdenesCompra" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrdenesPago_Proveedores" Association="Self.FK_OrdenesPago_Proveedores">
+            <End Role="Proveedores" EntitySet="Proveedores" />
+            <End Role="OrdenesPago" EntitySet="OrdenesPago" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuarios_PerfilesUsuario" Association="Self.FK_Usuarios_PerfilesUsuario">
+            <End Role="PerfilesUsuario" EntitySet="PerfilesUsuario" />
+            <End Role="Usuarios" EntitySet="Usuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PreciosIngredientes_UnidadesMedida" Association="Self.FK_PreciosIngredientes_UnidadesMedida">
+            <End Role="UnidadesMedida" EntitySet="UnidadesMedida" />
+            <End Role="PreciosIngredientes" EntitySet="PreciosIngredientes" />
+          </AssociationSet>
+          <AssociationSet Name="RecetasOrdenesVenta" Association="Self.RecetasOrdenesVenta">
+            <End Role="OrdenesVenta" EntitySet="OrdenesVenta" />
+            <End Role="Recetas" EntitySet="Recetas" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="OBMCateringModelStoreContainer" CdmEntityContainer="OBMCateringEntities">
+          <EntitySetMapping Name="Bitacora">
+            <EntityTypeMapping TypeName="OBMCateringModel.Bitacora">
+              <MappingFragment StoreEntitySet="Bitacora">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clientes">
+            <EntityTypeMapping TypeName="OBMCateringModel.Cliente">
+              <MappingFragment StoreEntitySet="Clientes">
+                <ScalarProperty Name="CUIT" ColumnName="CUIT" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="Domicilio" ColumnName="Domicilio" />
+                <ScalarProperty Name="CodigoPostal" ColumnName="CodigoPostal" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Empleados">
+            <EntityTypeMapping TypeName="OBMCateringModel.Empleado">
+              <MappingFragment StoreEntitySet="Empleados">
+                <ScalarProperty Name="CUIT" ColumnName="CUIT" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+                <ScalarProperty Name="Domicilio" ColumnName="Domicilio" />
+                <ScalarProperty Name="CodigoPostal" ColumnName="CodigoPostal" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="FechaBaja" ColumnName="FechaBaja" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EstadosRecetas">
+            <EntityTypeMapping TypeName="OBMCateringModel.EstadoReceta">
+              <MappingFragment StoreEntitySet="EstadosRecetas">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Facturas">
+            <EntityTypeMapping TypeName="OBMCateringModel.Factura">
+              <MappingFragment StoreEntitySet="Facturas">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Cobrada" ColumnName="Cobrada" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ingredientes">
+            <EntityTypeMapping TypeName="OBMCateringModel.Ingrediente">
+              <MappingFragment StoreEntitySet="Ingredientes">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IngredientesRecetas">
+            <EntityTypeMapping TypeName="OBMCateringModel.IngredienteReceta">
+              <MappingFragment StoreEntitySet="IngredientesRecetas">
+                <ScalarProperty Name="IDReceta" ColumnName="IDReceta" />
+                <ScalarProperty Name="IDIngrediente" ColumnName="IDIngrediente" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ItemsOrdenesCompra">
+            <EntityTypeMapping TypeName="OBMCateringModel.ItemOrdenCompra">
+              <MappingFragment StoreEntitySet="ItemsOrdenesCompra">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ItemsOrdenesPago">
+            <EntityTypeMapping TypeName="OBMCateringModel.ItemOrdenPago">
+              <MappingFragment StoreEntitySet="ItemsOrdenesPago">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Localidades">
+            <EntityTypeMapping TypeName="OBMCateringModel.Localidad">
+              <MappingFragment StoreEntitySet="Localidades">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrdenesCompra">
+            <EntityTypeMapping TypeName="OBMCateringModel.OrdenCompra">
+              <MappingFragment StoreEntitySet="OrdenesCompra">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Ejecutada" ColumnName="Ejecutada" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrdenesPago">
+            <EntityTypeMapping TypeName="OBMCateringModel.OrdenPago">
+              <MappingFragment StoreEntitySet="OrdenesPago">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Pagada" ColumnName="Pagada" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrdenesVenta">
+            <EntityTypeMapping TypeName="OBMCateringModel.OrdenVenta">
+              <MappingFragment StoreEntitySet="OrdenesVenta">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+                <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+                <ScalarProperty Name="Comensales" ColumnName="Comensales" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="Aprobada" ColumnName="Aprobada" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PerfilesUsuario">
+            <EntityTypeMapping TypeName="OBMCateringModel.PerfilUsuario">
+              <MappingFragment StoreEntitySet="PerfilesUsuario">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PreciosIngredientes">
+            <EntityTypeMapping TypeName="OBMCateringModel.PrecioIngrediente">
+              <MappingFragment StoreEntitySet="PreciosIngredientes">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Proveedores">
+            <EntityTypeMapping TypeName="OBMCateringModel.Proveedor">
+              <MappingFragment StoreEntitySet="Proveedores">
+                <ScalarProperty Name="CUIT" ColumnName="CUIT" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Domicilio" ColumnName="Domicilio" />
+                <ScalarProperty Name="CodigoPostal" ColumnName="CodigoPostal" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="FechaBaja" ColumnName="FechaBaja" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Provincias">
+            <EntityTypeMapping TypeName="OBMCateringModel.Provincia">
+              <MappingFragment StoreEntitySet="Provincias">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Recetas">
+            <EntityTypeMapping TypeName="OBMCateringModel.Receta">
+              <MappingFragment StoreEntitySet="Recetas">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Detalle" ColumnName="Detalle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TiposClientes">
+            <EntityTypeMapping TypeName="OBMCateringModel.TipoCliente">
+              <MappingFragment StoreEntitySet="TiposClientes">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TiposMensajesBitacora">
+            <EntityTypeMapping TypeName="OBMCateringModel.TipoMensajeBitacora">
+              <MappingFragment StoreEntitySet="TiposMensajesBitacora">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UnidadesMedida">
+            <EntityTypeMapping TypeName="OBMCateringModel.UnidadMedida">
+              <MappingFragment StoreEntitySet="UnidadesMedida">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Unidad" ColumnName="Unidad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="OBMCateringModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuarios">
+                <ScalarProperty Name="Nick" ColumnName="Nick" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_Bitacora_TipoMensajeBitacora" TypeName="OBMCateringModel.FK_Bitacora_TipoMensajeBitacora" StoreEntitySet="Bitacora">
+            <EndProperty Name="TiposMensajesBitacora">
+              <ScalarProperty Name="ID" ColumnName="IDTipoMensaje" />
+            </EndProperty>
+            <EndProperty Name="Bitacora">
+              <ScalarProperty Name="ID" ColumnName="ID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Bitacora_Usuarios" TypeName="OBMCateringModel.FK_Bitacora_Usuarios" StoreEntitySet="Bitacora">
+            <EndProperty Name="Usuarios">
+              <ScalarProperty Name="Nick" ColumnName="IDUsuario" />
+            </EndProperty>
+            <EndProperty Name="Bitacora">
+              <ScalarProperty Name="ID" ColumnName="ID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Clientes_Localidades" TypeName="OBMCateringModel.FK_Clientes_Localidades" StoreEntitySet="Clientes">
+            <EndProperty Name="Localidades">
+              <ScalarProperty Name="ID" ColumnName="IDLocalidad" />
+            </EndProperty>
+            <EndProperty Name="Clientes">
+              <ScalarProperty Name="CUIT" ColumnName="CUIT" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Clientes_TiposClientes" TypeName="OBMCateringModel.FK_Clientes_TiposClientes" StoreEntitySet="Clientes">
+            <EndProperty Name="TiposClientes">
+              <ScalarProperty Name="ID" ColumnName="IDTipoCliente" />
+            </EndProperty>
+            <EndProperty Name="Clientes">
+              <ScalarProperty Name="CUIT" ColumnName="CUIT" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_OrdenesVenta_Clientes" TypeName="OBMCateringModel.FK_OrdenesVenta_Clientes" StoreEntitySet="OrdenesVenta">
+            <EndProperty Name="Clientes">
+              <ScalarProperty Name="CUIT" ColumnName="IDCliente" />
+            </EndProperty>
+            <EndProperty Name="OrdenesVenta">
+              <ScalarProperty Name="ID" ColumnName="ID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Empleados_Localidades" TypeName="OBMCateringModel.FK_Empleados_Localidades" StoreEntitySet="Empleados">
+            <EndProperty Name="Localidades">
+              <ScalarProperty Name="ID" ColumnName="IDLocalidad" />
+            </EndProperty>
+            <EndProperty Name="Empleados">
+              <ScalarProperty Name="CUIT" ColumnName="CUIT" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Recetas_EstadosRecetas" TypeName="OBMCateringModel.FK_Recetas_EstadosRecetas" StoreEntitySet="Recetas">
+            <EndProperty Name="EstadosRecetas">
+              <ScalarProperty Name="ID" ColumnName="IDEstadoReceta" />
+            </EndProperty>
+            <EndProperty Name="Recetas">
+              <ScalarProperty Name="ID" ColumnName="ID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Facturas_OrdenesVenta" TypeName="OBMCateringModel.FK_Facturas_OrdenesVenta" StoreEntitySet="Facturas">
+            <EndProperty Name="OrdenesVenta">
+              <ScalarProperty Name="ID" ColumnName="IDOrdenVenta" />
+            </EndProperty>
+            <EndProperty Name="Facturas">
+              <ScalarProperty Name="ID" ColumnName="ID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_ItemsOrdenesCompra_Ingredientes" TypeName="OBMCateringModel.FK_ItemsOrdenesCompra_Ingredientes" StoreEntitySet="ItemsOrdenesCompra">
+            <EndProperty Name="Ingredientes">
+              <ScalarProperty Name="ID" ColumnName="IDIngrediente" />
+            </EndProperty>
+            <EndProperty Name="ItemsOrdenesCompra">
+              <ScalarProperty Name="ID" ColumnName="ID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_PreciosIngredientes_Ingredientes" TypeName="OBMCateringModel.FK_PreciosIngredientes_Ingredientes" StoreEntitySet="PreciosIngredientes">
+            <EndProperty Name="Ingredientes">
+              <ScalarProperty Name="ID" ColumnName="IDIngrediente" />
+            </EndProperty>
+            <EndProperty Name="PreciosIngredientes">
+              <ScalarProperty Name="ID" ColumnName="ID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_IngredientesRecetas_UnidadesMedida" TypeName="OBMCateringModel.FK_IngredientesRecetas_UnidadesMedida" StoreEntitySet="IngredientesRecetas">
+            <EndProperty Name="UnidadesMedida">
+              <ScalarProperty Name="ID" ColumnName="IDUnidadMedida" />
+            </EndProperty>
+            <EndProperty Name="IngredientesRecetas">
+              <ScalarProperty Name="IDReceta" ColumnName="IDReceta" />
+              <ScalarProperty Name="IDIngrediente" ColumnName="IDIngrediente" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_ItemsOrdenesCompra_OrdenesCompra" TypeName="OBMCateringModel.FK_ItemsOrdenesCompra_OrdenesCompra" StoreEntitySet="ItemsOrdenesCompra">
+            <EndProperty Name="OrdenesCompra">
+              <ScalarProperty Name="ID" ColumnName="IDOrdenCompra" />
+            </EndProperty>
+            <EndProperty Name="ItemsOrdenesCompra">
+              <ScalarProperty Name="ID" ColumnName="ID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_ItemsOrdenesCompra_UnidadesMedida" TypeName="OBMCateringModel.FK_ItemsOrdenesCompra_UnidadesMedida" StoreEntitySet="ItemsOrdenesCompra">
+            <EndProperty Name="UnidadesMedida">
+              <ScalarProperty Name="ID" ColumnName="IDUnidadMedida" />
+            </EndProperty>
+            <EndProperty Name="ItemsOrdenesCompra">
+              <ScalarProperty Name="ID" ColumnName="ID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_ItemsOrdenesPago_ItemsOrdenesCompra" TypeName="OBMCateringModel.FK_ItemsOrdenesPago_ItemsOrdenesCompra" StoreEntitySet="ItemsOrdenesPago">
+            <EndProperty Name="ItemsOrdenesCompra">
+              <ScalarProperty Name="ID" ColumnName="IDItemOrdenCompra" />
+            </EndProperty>
+            <EndProperty Name="ItemsOrdenesPago">
+              <ScalarProperty Name="ID" ColumnName="ID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_ItemsOrdenesPago_OrdenesPago" TypeName="OBMCateringModel.FK_ItemsOrdenesPago_OrdenesPago" StoreEntitySet="ItemsOrdenesPago">
+            <EndProperty Name="OrdenesPago">
+              <ScalarProperty Name="ID" ColumnName="IDOrdenPago" />
+            </EndProperty>
+            <EndProperty Name="ItemsOrdenesPago">
+              <ScalarProperty Name="ID" ColumnName="ID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Localidades_Provincias" TypeName="OBMCateringModel.FK_Localidades_Provincias" StoreEntitySet="Localidades">
+            <EndProperty Name="Provincias">
+              <ScalarProperty Name="ID" ColumnName="IDProvincia" />
+            </EndProperty>
+            <EndProperty Name="Localidades">
+              <ScalarProperty Name="ID" ColumnName="ID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Proveedores_Localidades" TypeName="OBMCateringModel.FK_Proveedores_Localidades" StoreEntitySet="Proveedores">
+            <EndProperty Name="Localidades">
+              <ScalarProperty Name="ID" ColumnName="IDLocalidad" />
+            </EndProperty>
+            <EndProperty Name="Proveedores">
+              <ScalarProperty Name="CUIT" ColumnName="CUIT" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_OrdenesCompra_OrdenesVenta" TypeName="OBMCateringModel.FK_OrdenesCompra_OrdenesVenta" StoreEntitySet="OrdenesCompra">
+            <EndProperty Name="OrdenesVenta">
+              <ScalarProperty Name="ID" ColumnName="IDOrdenVenta" />
+            </EndProperty>
+            <EndProperty Name="OrdenesCompra">
+              <ScalarProperty Name="ID" ColumnName="ID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_OrdenesPago_Proveedores" TypeName="OBMCateringModel.FK_OrdenesPago_Proveedores" StoreEntitySet="OrdenesPago">
+            <EndProperty Name="Proveedores">
+              <ScalarProperty Name="CUIT" ColumnName="IDProveedor" />
+            </EndProperty>
+            <EndProperty Name="OrdenesPago">
+              <ScalarProperty Name="ID" ColumnName="ID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Usuarios_PerfilesUsuario" TypeName="OBMCateringModel.FK_Usuarios_PerfilesUsuario" StoreEntitySet="Usuarios">
+            <EndProperty Name="PerfilesUsuario">
+              <ScalarProperty Name="ID" ColumnName="IDPerfil" />
+            </EndProperty>
+            <EndProperty Name="Usuarios">
+              <ScalarProperty Name="Nick" ColumnName="Nick" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_PreciosIngredientes_UnidadesMedida" TypeName="OBMCateringModel.FK_PreciosIngredientes_UnidadesMedida" StoreEntitySet="PreciosIngredientes">
+            <EndProperty Name="UnidadesMedida">
+              <ScalarProperty Name="ID" ColumnName="IDUnidadMedida" />
+            </EndProperty>
+            <EndProperty Name="PreciosIngredientes">
+              <ScalarProperty Name="ID" ColumnName="ID" />
+            </EndProperty>
+            <Condition IsNull="false" ColumnName="IDUnidadMedida" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="RecetasOrdenesVenta" TypeName="OBMCateringModel.RecetasOrdenesVenta" StoreEntitySet="RecetasOrdenesVenta">
+            <EndProperty Name="OrdenesVenta">
+              <ScalarProperty Name="ID" ColumnName="IDOrdenVenta" />
+            </EndProperty>
+            <EndProperty Name="Recetas">
+              <ScalarProperty Name="ID" ColumnName="IDReceta" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

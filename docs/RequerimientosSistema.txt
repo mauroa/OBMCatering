@@ -1,0 +1,24 @@
+OBMCatering es un sistema de administracion de pedidos de catering empresarial o personal.
+
+El sistema podra:
+
+- Administrar Clientes (Alta, Baja, Modificacion, Consulta)
+- Administrar Proveedores (Alta, Baja, Modificacion, Consulta)
+- Administrar Empleados (Alta, Baja, Modificacion, Consulta)
+- Administrar Recetas de cocina (Alta, Modificacion, Consulta). Al crear las recetas se crean tambien los ingredientes de las mismas.
+- Administrar Lista de precios (Modificacion, Consulta). La lista de precios se va creando a partir de los ingredientes de las recetas creadas, en el sistema solo se consultan y modifican precios por cantidad.
+- Crear ordenes de venta en base a los pedidos de los clientes. Los pedidos son por rango de fechas, indicando el menu a pedir (recetas) y la cantidad de empleados.
+- Generacion automatica de facturas. Las facturacion se crea a partir de una orden de venta cuando esta es aprobada. Una orden de venta esta aprobada cuando el cliente da el OK. Eso puede ser inmediato al hacer el pedido o demorado. La factura se marca como Cobrada cuando el cliente la paga a contra entrega de las viandas.
+- Generacion automatica de ordenes de compra. Las ordenes de compra se generan en base a cada orden de venta. Por cada orden de venta se crea una orden de compra. Las ordenes de compras son ejecutadas (se marcan como Ejecutadas en sistema) cuando se aprueba y se mandam a comprar.
+- Administrar Ordenes de Pago (Alta, Modificacion, Consulta). Las ordenes de pago se crean manualmente al recibir los productos de una orden de compra. Las ordenes de pago se pagan (se marcan como Pagadas en sistema) cuando el control de mercaderias de la orden de compra es satisfactorio.
+
+Aclaraciones:
+
+- El precio de las ordenes de venta se calcula consultando sumando el precio de cada receta
+- El precio de cada receta se calcula consultando el precio de cada ingrediente en la lista de precios, de acuerdo a la cantidad que lleve cada receta
+- Al crear las ordenes de venta solo se pueden elegir las recetas activas, es decir las que tienen todos los ingredientes y cada ingrediente tiene un precio en la lista de precios
+- El estado de las recetas se actualiza automaticamente al asignarle precio a los ingredientes en la lista de precios. Manualmente solo se puede setear una receta como Inactiva ("No Disponible")
+- Los usuarios con perfil admin o de cocina podran administrar las recetas
+- Los usuarios con perfil admin o de ventas podran administrar clientes, ordenes de venta y facturas
+- Los usuarios con perfil admin o de compras podran administrar proveedores, lista de precios, ordenes de compra y ordenes de pago
+- Los usuarios con perfil admin podran admnistrar empleados, ademas de todo lo ya mencionado
