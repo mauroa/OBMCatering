@@ -7,6 +7,7 @@ namespace OBMCatering.Presentacion
 {
     public partial class IngredientesForm : Form
     {
+        ContextoPresentacion contexto;
         PreciosIngredientesBL preciosIngredientesBL;
         RecetasBL recetasBL;
 
@@ -19,8 +20,9 @@ namespace OBMCatering.Presentacion
 
         void IngredientesForm_Load(object sender, EventArgs e)
         {
-            preciosIngredientesBL = new PreciosIngredientesBL(ContextoNegocio.Instancia);
-            recetasBL = new RecetasBL(ContextoNegocio.Instancia, preciosIngredientesBL);
+            contexto = ContextoPresentacion.Instancia;
+            preciosIngredientesBL = new PreciosIngredientesBL(contexto.Negocio);
+            recetasBL = new RecetasBL(contexto.Negocio, preciosIngredientesBL);
 
             btnGuardar.Click += BtnGuardar_Click;
             grvIngredientes.SelectionChanged += GrvIngredientes_SelectionChanged; ;
@@ -28,37 +30,48 @@ namespace OBMCatering.Presentacion
             CargarUnidades();
             CargarIngredientes();
             LimpiarFormulario();
+
+            contexto.RegistrarEvento("Ingreso a la pantalla de ingredientes");
         }
 
         void BtnGuardar_Click(object sender, EventArgs e)
         {
-            Receta receta = recetasBL.Obtener(Receta.Nombre);
-            IngredienteReceta ingredienteReceta = null;
-
-            foreach(IngredienteReceta ingrediente in receta.Ingredientes)
+            try
             {
-                if(ingrediente.Ingrediente.Nombre == txtIngrediente.Text)
+                Receta receta = recetasBL.Obtener(Receta.Nombre);
+                IngredienteReceta ingredienteReceta = null;
+
+                foreach (IngredienteReceta ingrediente in receta.Ingredientes)
                 {
-                    ingredienteReceta = ingrediente;
-                    break;
+                    if (ingrediente.Ingrediente.Nombre == txtIngrediente.Text)
+                    {
+                        ingredienteReceta = ingrediente;
+                        break;
+                    }
                 }
-            }
 
-            if (ingredienteReceta == null)
+                if (ingredienteReceta == null)
+                {
+                    ingredienteReceta = new IngredienteReceta();
+
+                    SetearIngrediente(ingredienteReceta);
+                    receta.Ingredientes.Add(ingredienteReceta);
+                }
+                else
+                {
+                    SetearIngrediente(ingredienteReceta);
+                }
+
+                recetasBL.Actualizar(receta);
+                CargarIngredientes();
+                LimpiarFormulario();
+
+                contexto.RegistrarEvento("La receta {0} ha sido actualizada", receta.Nombre);
+            }
+            catch(Exception ex)
             {
-                ingredienteReceta = new IngredienteReceta();
-
-                SetearIngrediente(ingredienteReceta);
-                receta.Ingredientes.Add(ingredienteReceta);
+                contexto.RegistrarError(ex);
             }
-            else
-            {
-                SetearIngrediente(ingredienteReceta);
-            }
-
-            recetasBL.Actualizar(receta);
-            CargarIngredientes();
-            LimpiarFormulario();
         }
 
         void GrvIngredientes_SelectionChanged(object sender, EventArgs e)
@@ -93,9 +106,16 @@ namespace OBMCatering.Presentacion
 
         void CargarIngredientes()
         {
-            Receta receta = recetasBL.Obtener(Receta.Nombre);
+            try
+            {
+                Receta receta = recetasBL.Obtener(Receta.Nombre);
 
-            grvIngredientes.DataSource = ObtenerIngredientesPresentacion(receta);
+                grvIngredientes.DataSource = ObtenerIngredientesPresentacion(receta);
+            }
+            catch (Exception ex)
+            {
+                contexto.RegistrarError(ex);
+            }
         }
 
         IEnumerable<IngredientePresentacion> ObtenerIngredientesPresentacion(Receta receta)

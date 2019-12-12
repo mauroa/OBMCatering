@@ -11,5 +11,7 @@
         public string Password { get; set; }
 
         public PerfilUsuario Perfil { get; set; }
+
+        public bool CambiarPassword { get; set; }
     }
 }

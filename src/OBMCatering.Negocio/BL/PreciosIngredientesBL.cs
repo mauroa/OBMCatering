@@ -14,6 +14,11 @@ namespace OBMCatering.Negocio
 
         public bool HayFaltantes(Receta receta)
         {
+            if (receta == null)
+            {
+                throw new OBMCateringException("La receta no puede ser nula");
+            }
+
             bool faltantes = false;
 
             Datos.IngredientesDAL dalIngredientes = dal.ObtenerIngredientesDAL();
@@ -43,6 +48,11 @@ namespace OBMCatering.Negocio
 
         public void CrearFaltantes(Receta receta)
         {
+            if (receta == null)
+            {
+                throw new OBMCateringException("La receta no puede ser nula");
+            }
+
             Datos.IngredientesDAL dalIngredientes = dal.ObtenerIngredientesDAL();
             Datos.PreciosIngredientesDAL dalPreciosIngredientes = dal.ObtenerPreciosIngredientesDAL();
 
@@ -55,6 +65,11 @@ namespace OBMCatering.Negocio
                 {
                     Datos.RecetasDAL dalRecetas = dal.ObtenerRecetasDAL();
                     Datos.UnidadMedida unidadMedidaDAL = dalRecetas.ObtenerUnidad(ingredienteReceta.Unidad.ToString());
+
+                    if (unidadMedidaDAL == null)
+                    {
+                        throw new OBMCateringException(string.Format("La unidad '{0}' es incorrecta o no es valida en el sistema", ingredienteReceta.Unidad));
+                    }
 
                     precioIngredienteDAL = new Datos.PrecioIngrediente
                     {
@@ -71,10 +86,23 @@ namespace OBMCatering.Negocio
 
         public void Actualizar(PrecioIngrediente precioIngrediente)
         {
+            ValidarPrecioIngrediente(precioIngrediente);
+
             Datos.PreciosIngredientesDAL dalPreciosIngredientes = dal.ObtenerPreciosIngredientesDAL();
             Datos.PrecioIngrediente precioIngredienteDAL = dalPreciosIngredientes.Obtener(precioIngrediente.Id);
+
+            if (precioIngredienteDAL == null)
+            {
+                throw new OBMCateringException("El item de la lista de precios es incorrecto o no es valido en el sistema");
+            }
+
             Datos.RecetasDAL dalRecetas = dal.ObtenerRecetasDAL();
             Datos.UnidadMedida unidadDAL = dalRecetas.ObtenerUnidad(precioIngrediente.Unidad.ToString());
+
+            if (unidadDAL == null)
+            {
+                throw new OBMCateringException(string.Format("La unidad '{0}' es incorrecta o no es valida en el sistema", precioIngrediente.Unidad));
+            }
 
             precioIngredienteDAL.Precio = precioIngrediente.Precio;
             precioIngredienteDAL.Cantidad = precioIngrediente.Cantidad;
@@ -102,12 +130,36 @@ namespace OBMCatering.Negocio
 
         public PrecioIngrediente Obtener(Ingrediente ingrediente)
         {
+            if (ingrediente == null)
+            {
+                throw new OBMCateringException("El ingrediente no puede ser nulo");
+            }
+
             Datos.IngredientesDAL dalIngredientes = dal.ObtenerIngredientesDAL();
             Datos.Ingrediente ingredienteDAL = dalIngredientes.Obtener(ingrediente.Nombre);
+
+            if (ingredienteDAL == null)
+            {
+                throw new OBMCateringException(string.Format("El ingrediente '{0}' no existe", ingrediente.Nombre));
+            }
+
             Datos.PreciosIngredientesDAL dalPreciosIngredientes = dal.ObtenerPreciosIngredientesDAL();
             Datos.PrecioIngrediente precioIngredienteDAL = dalPreciosIngredientes.Obtener(ingredienteDAL);
 
             return Obtener(precioIngredienteDAL);
+        }
+
+        void ValidarPrecioIngrediente(PrecioIngrediente precioIngrediente)
+        {
+            if (precioIngrediente == null)
+            {
+                throw new OBMCateringException("El item de la lista de precios no puede ser nulo");
+            }
+
+            if(precioIngrediente.Ingrediente == null)
+            {
+                throw new OBMCateringException("El ingrediente en el item de la lista de precios no puede ser nulo");
+            }
         }
 
         PrecioIngrediente Obtener(Datos.PrecioIngrediente precioIngredienteDAL)

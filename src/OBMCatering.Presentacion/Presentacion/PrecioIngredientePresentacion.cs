@@ -4,8 +4,12 @@ namespace OBMCatering.Presentacion
 {
     public class PrecioIngredientePresentacion
     {
+        PrecioIngrediente precioIngrediente;
+
         public PrecioIngredientePresentacion(PrecioIngrediente precioIngrediente)
         {
+            this.precioIngrediente = precioIngrediente;
+
             Ingrediente = precioIngrediente.Ingrediente.Nombre;
             Precio = precioIngrediente.Precio.ToString();
             Cantidad = precioIngrediente.Cantidad.ToString();
@@ -19,5 +23,10 @@ namespace OBMCatering.Presentacion
         public string Cantidad { get; set; }
 
         public string Unidad { get; set; }
+
+        public PrecioIngrediente ObtenerPrecioIngrediente()
+        {
+            return precioIngrediente;
+        }
     }
 }

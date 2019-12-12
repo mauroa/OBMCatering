@@ -47,5 +47,6 @@ namespace OBMCatering.Datos
         public virtual DbSet<TipoMensajeBitacora> TiposMensajesBitacora { get; set; }
         public virtual DbSet<UnidadMedida> UnidadesMedida { get; set; }
         public virtual DbSet<Usuario> Usuarios { get; set; }
+        public virtual DbSet<EstadoOrdenCompra> EstadosOrdenesCompra { get; set; }
     }
 }

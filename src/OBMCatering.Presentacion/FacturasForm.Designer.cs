@@ -35,7 +35,7 @@
             this.lblComensalesTitulo = new System.Windows.Forms.Label();
             this.lblRecetasTitulo = new System.Windows.Forms.Label();
             this.lblPrecioCalculado = new System.Windows.Forms.Label();
-            this.btnCobrar = new System.Windows.Forms.Button();
+            this.btnCobrada = new System.Windows.Forms.Button();
             this.lblCliente = new System.Windows.Forms.Label();
             this.lblFechaInicio = new System.Windows.Forms.Label();
             this.lblFechaFin = new System.Windows.Forms.Label();
@@ -44,8 +44,8 @@
             this.lblFechaTitulo = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblPrecio = new System.Windows.Forms.Label();
             this.lblPesos = new System.Windows.Forms.Label();
+            this.lblPrecio = new System.Windows.Forms.Label();
             this.lblFacturas = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grvFacturas)).BeginInit();
             this.panel1.SuspendLayout();
@@ -55,7 +55,7 @@
             // 
             this.grvFacturas.AllowUserToAddRows = false;
             this.grvFacturas.AllowUserToDeleteRows = false;
-            this.grvFacturas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.grvFacturas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.grvFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grvFacturas.Dock = System.Windows.Forms.DockStyle.Top;
             this.grvFacturas.Location = new System.Drawing.Point(0, 0);
@@ -121,15 +121,15 @@
             this.lblPrecioCalculado.Size = new System.Drawing.Size(0, 31);
             this.lblPrecioCalculado.TabIndex = 27;
             // 
-            // btnCobrar
+            // btnCobrada
             // 
-            this.btnCobrar.ForeColor = System.Drawing.Color.Black;
-            this.btnCobrar.Location = new System.Drawing.Point(1271, 238);
-            this.btnCobrar.Name = "btnCobrar";
-            this.btnCobrar.Size = new System.Drawing.Size(148, 50);
-            this.btnCobrar.TabIndex = 30;
-            this.btnCobrar.Text = "Cobrar";
-            this.btnCobrar.UseVisualStyleBackColor = true;
+            this.btnCobrada.ForeColor = System.Drawing.Color.Black;
+            this.btnCobrada.Location = new System.Drawing.Point(1271, 238);
+            this.btnCobrada.Name = "btnCobrada";
+            this.btnCobrada.Size = new System.Drawing.Size(148, 50);
+            this.btnCobrada.TabIndex = 30;
+            this.btnCobrada.Text = "Cobrada";
+            this.btnCobrada.UseVisualStyleBackColor = true;
             // 
             // lblCliente
             // 
@@ -204,7 +204,7 @@
             this.panel1.Controls.Add(this.lblFechaFin);
             this.panel1.Controls.Add(this.lblFechaInicio);
             this.panel1.Controls.Add(this.lblCliente);
-            this.panel1.Controls.Add(this.btnCobrar);
+            this.panel1.Controls.Add(this.btnCobrada);
             this.panel1.Controls.Add(this.lblPesos);
             this.panel1.Controls.Add(this.lblPrecioCalculado);
             this.panel1.Controls.Add(this.lblPrecio);
@@ -218,15 +218,6 @@
             this.panel1.Size = new System.Drawing.Size(1433, 307);
             this.panel1.TabIndex = 26;
             // 
-            // lblPrecio
-            // 
-            this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(19, 262);
-            this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(73, 25);
-            this.lblPrecio.TabIndex = 26;
-            this.lblPrecio.Text = "Precio";
-            // 
             // lblPesos
             // 
             this.lblPesos.AutoSize = true;
@@ -236,6 +227,15 @@
             this.lblPesos.Size = new System.Drawing.Size(30, 31);
             this.lblPesos.TabIndex = 29;
             this.lblPesos.Text = "$";
+            // 
+            // lblPrecio
+            // 
+            this.lblPrecio.AutoSize = true;
+            this.lblPrecio.Location = new System.Drawing.Point(19, 262);
+            this.lblPrecio.Name = "lblPrecio";
+            this.lblPrecio.Size = new System.Drawing.Size(73, 25);
+            this.lblPrecio.TabIndex = 26;
+            this.lblPrecio.Text = "Precio";
             // 
             // lblFacturas
             // 
@@ -275,7 +275,7 @@
         private System.Windows.Forms.Label lblComensalesTitulo;
         private System.Windows.Forms.Label lblRecetasTitulo;
         private System.Windows.Forms.Label lblPrecioCalculado;
-        private System.Windows.Forms.Button btnCobrar;
+        private System.Windows.Forms.Button btnCobrada;
         private System.Windows.Forms.Label lblCliente;
         private System.Windows.Forms.Label lblFechaInicio;
         private System.Windows.Forms.Label lblFechaFin;

@@ -301,7 +301,7 @@
             // 
             this.grvProveedores.AllowUserToAddRows = false;
             this.grvProveedores.AllowUserToDeleteRows = false;
-            this.grvProveedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.grvProveedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.grvProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grvProveedores.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.grvProveedores.Location = new System.Drawing.Point(0, 475);

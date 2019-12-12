@@ -4,13 +4,13 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="OBMCateringModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="OBMCateringModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Bitacora">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IDUsuario" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="IDUsuario" Type="nvarchar" MaxLength="50" />
           <Property Name="Fecha" Type="datetime" Nullable="false" />
           <Property Name="Mensaje" Type="nvarchar(max)" Nullable="false" />
           <Property Name="IDTipoMensaje" Type="int" Nullable="false" />
@@ -44,6 +44,13 @@
           <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
           <Property Name="FechaAlta" Type="datetime" Nullable="false" />
           <Property Name="FechaBaja" Type="datetime" />
+        </EntityType>
+        <EntityType Name="EstadosOrdenesCompra">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Estado" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="EstadosRecetas">
           <Key>
@@ -113,7 +120,7 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IDOrdenVenta" Type="int" Nullable="false" />
           <Property Name="Fecha" Type="datetime" Nullable="false" />
-          <Property Name="Ejecutada" Type="bit" Nullable="false" />
+          <Property Name="IDEstadoOrdenCompra" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="OrdenesPago">
           <Key>
@@ -216,11 +223,12 @@
           <Key>
             <PropertyRef Name="Nick" />
           </Key>
-          <Property Name="Nick" Type="nchar" MaxLength="20" Nullable="false" />
-          <Property Name="Nombre" Type="nvarchar(max)" />
+          <Property Name="Nick" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
           <Property Name="IDPerfil" Type="int" Nullable="false" />
+          <Property Name="CambiarPassword" Type="bit" Nullable="false" />
         </EntityType>
         <Association Name="FK_Bitacora_TipoMensajeBitacora">
           <End Role="TiposMensajesBitacora" Type="Self.TiposMensajesBitacora" Multiplicity="1" />
@@ -235,7 +243,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Bitacora_Usuarios">
-          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
           <End Role="Bitacora" Type="Self.Bitacora" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuarios">
@@ -402,6 +410,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_OrdenesCompra_EstadosOrdenesCompra">
+          <End Role="EstadosOrdenesCompra" Type="Self.EstadosOrdenesCompra" Multiplicity="1" />
+          <End Role="OrdenesCompra" Type="Self.OrdenesCompra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstadosOrdenesCompra">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrdenesCompra">
+              <PropertyRef Name="IDEstadoOrdenCompra" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_OrdenesCompra_OrdenesVenta">
           <End Role="OrdenesVenta" Type="Self.OrdenesVenta" Multiplicity="1" />
           <End Role="OrdenesCompra" Type="Self.OrdenesCompra" Multiplicity="*" />
@@ -526,6 +546,7 @@
           <EntitySet Name="Bitacora" EntityType="Self.Bitacora" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Empleados" EntityType="Self.Empleados" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EstadosOrdenesCompra" EntityType="Self.EstadosOrdenesCompra" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EstadosRecetas" EntityType="Self.EstadosRecetas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Facturas" EntityType="Self.Facturas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ingredientes" EntityType="Self.Ingredientes" Schema="dbo" store:Type="Tables" />
@@ -606,6 +627,10 @@
             <End Role="Provincias" EntitySet="Provincias" />
             <End Role="Localidades" EntitySet="Localidades" />
           </AssociationSet>
+          <AssociationSet Name="FK_OrdenesCompra_EstadosOrdenesCompra" Association="Self.FK_OrdenesCompra_EstadosOrdenesCompra">
+            <End Role="EstadosOrdenesCompra" EntitySet="EstadosOrdenesCompra" />
+            <End Role="OrdenesCompra" EntitySet="OrdenesCompra" />
+          </AssociationSet>
           <AssociationSet Name="FK_OrdenesCompra_OrdenesVenta" Association="Self.FK_OrdenesCompra_OrdenesVenta">
             <End Role="OrdenesVenta" EntitySet="OrdenesVenta" />
             <End Role="OrdenesCompra" EntitySet="OrdenesCompra" />
@@ -647,8 +672,7 @@
             <End Role="Usuarios" EntitySet="Usuarios" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="OBMCateringModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -770,9 +794,9 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Ejecutada" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="ItemsOrdenesCompra" Relationship="Self.FK_ItemsOrdenesCompra_OrdenesCompra" FromRole="OrdenesCompra" ToRole="ItemsOrdenesCompra" />
           <NavigationProperty Name="OrdenVenta" Relationship="Self.FK_OrdenesCompra_OrdenesVenta" FromRole="OrdenesCompra" ToRole="OrdenesVenta" />
+          <NavigationProperty Name="Estado" Relationship="OBMCateringModel.FK_OrdenesCompra_EstadosOrdenesCompra" FromRole="OrdenCompra" ToRole="EstadosOrdenesCompra" />
         </EntityType>
         <EntityType Name="OrdenPago">
           <Key>
@@ -881,19 +905,20 @@
           <Key>
             <PropertyRef Name="Nick" />
           </Key>
-          <Property Name="Nick" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Nick" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Bitacora" Relationship="Self.FK_Bitacora_Usuarios" FromRole="Usuarios" ToRole="Bitacora" />
           <NavigationProperty Name="Perfil" Relationship="Self.FK_Usuarios_PerfilesUsuario" FromRole="Usuarios" ToRole="PerfilesUsuario" />
+          <Property Name="CambiarPassword" Type="Boolean" Nullable="false" />
         </EntityType>
         <Association Name="FK_Bitacora_TipoMensajeBitacora">
           <End Role="TiposMensajesBitacora" Type="OBMCateringModel.TipoMensajeBitacora" Multiplicity="1" />
           <End Role="Bitacora" Type="Self.Bitacora" Multiplicity="*" />
         </Association>
         <Association Name="FK_Bitacora_Usuarios">
-          <End Role="Usuarios" Type="OBMCateringModel.Usuario" Multiplicity="1" />
+          <End Role="Usuarios" Type="OBMCateringModel.Usuario" Multiplicity="0..1" />
           <End Role="Bitacora" Type="Self.Bitacora" Multiplicity="*" />
         </Association>
         <Association Name="FK_Clientes_Localidades">
@@ -1119,7 +1144,24 @@
             <End Role="OrdenesVenta" EntitySet="OrdenesVenta" />
             <End Role="Recetas" EntitySet="Recetas" />
           </AssociationSet>
+          <EntitySet Name="EstadosOrdenesCompra" EntityType="OBMCateringModel.EstadoOrdenCompra" />
+          <AssociationSet Name="FK_OrdenesCompra_EstadosOrdenesCompra" Association="OBMCateringModel.FK_OrdenesCompra_EstadosOrdenesCompra">
+            <End Role="EstadosOrdenesCompra" EntitySet="EstadosOrdenesCompra" />
+            <End Role="OrdenCompra" EntitySet="OrdenesCompra" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="EstadoOrdenCompra">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Estado" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="OrdenesCompra" Relationship="OBMCateringModel.FK_OrdenesCompra_EstadosOrdenesCompra" FromRole="EstadosOrdenesCompra" ToRole="OrdenCompra" />
+        </EntityType>
+        <Association Name="FK_OrdenesCompra_EstadosOrdenesCompra">
+          <End Type="OBMCateringModel.EstadoOrdenCompra" Role="EstadosOrdenesCompra" Multiplicity="1" />
+          <End Type="OBMCateringModel.OrdenCompra" Role="OrdenCompra" Multiplicity="*" />
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1228,7 +1270,6 @@
               <MappingFragment StoreEntitySet="OrdenesCompra">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
-                <ScalarProperty Name="Ejecutada" ColumnName="Ejecutada" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1328,6 +1369,7 @@
           <EntitySetMapping Name="Usuarios">
             <EntityTypeMapping TypeName="OBMCateringModel.Usuario">
               <MappingFragment StoreEntitySet="Usuarios">
+                <ScalarProperty Name="CambiarPassword" ColumnName="CambiarPassword" />
                 <ScalarProperty Name="Nick" ColumnName="Nick" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
@@ -1350,6 +1392,7 @@
             <EndProperty Name="Bitacora">
               <ScalarProperty Name="ID" ColumnName="ID" />
             </EndProperty>
+            <Condition ColumnName="IDUsuario" IsNull="false" />
           </AssociationSetMapping>
           <AssociationSetMapping Name="FK_Clientes_Localidades" TypeName="OBMCateringModel.FK_Clientes_Localidades" StoreEntitySet="Clientes">
             <EndProperty Name="Localidades">
@@ -1511,6 +1554,22 @@
             </EndProperty>
             <EndProperty Name="Recetas">
               <ScalarProperty Name="ID" ColumnName="IDReceta" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="EstadosOrdenesCompra">
+            <EntityTypeMapping TypeName="OBMCateringModel.EstadoOrdenCompra">
+              <MappingFragment StoreEntitySet="EstadosOrdenesCompra">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_OrdenesCompra_EstadosOrdenesCompra" TypeName="OBMCateringModel.FK_OrdenesCompra_EstadosOrdenesCompra" StoreEntitySet="OrdenesCompra">
+            <EndProperty Name="OrdenCompra">
+              <ScalarProperty Name="ID" ColumnName="ID" />
+            </EndProperty>
+            <EndProperty Name="EstadosOrdenesCompra">
+              <ScalarProperty Name="ID" ColumnName="IDEstadoOrdenCompra" />
             </EndProperty>
           </AssociationSetMapping>
         </EntityContainerMapping>

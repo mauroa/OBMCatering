@@ -7,6 +7,7 @@ namespace OBMCatering.Presentacion
 {
     public partial class ProveedoresForm : Form
     {
+        ContextoPresentacion contexto;
         LocalidadesBL localidadesBL;
         ProveedoresBL proveedoresBL;
 
@@ -17,8 +18,9 @@ namespace OBMCatering.Presentacion
 
         void ProveedoresForm_Load(object sender, EventArgs e)
         {
-            localidadesBL = new LocalidadesBL(ContextoNegocio.Instancia);
-            proveedoresBL = new ProveedoresBL(ContextoNegocio.Instancia, localidadesBL);
+            contexto = ContextoPresentacion.Instancia;
+            localidadesBL = new LocalidadesBL(contexto.Negocio);
+            proveedoresBL = new ProveedoresBL(contexto.Negocio, localidadesBL);
             
             btnGuardar.Click += BtnGuardar_Click;
             grvProveedores.SelectionChanged += GrvClientes_SelectionChanged;
@@ -27,30 +29,43 @@ namespace OBMCatering.Presentacion
             CargarProvincias();
             CargarProveedores();
             LimpiarFormulario();
+
+            contexto.RegistrarEvento("Ingreso a la pantalla de proveedores");
         }
 
         void BtnGuardar_Click(object sender, EventArgs e)
         {
-            bool existeProveedor = proveedoresBL.Existe(txtCUIT.Text);
-            Proveedor proveedor;
-
-            if (existeProveedor)
+            try
             {
-                proveedor = proveedoresBL.ObtenerPorCUIT(txtCUIT.Text);
+                bool existeProveedor = proveedoresBL.Existe(txtCUIT.Text);
+                Proveedor proveedor;
 
-                SetearProveedor(proveedor);
-                proveedoresBL.Actualizar(proveedor); ;
+                if (existeProveedor)
+                {
+                    proveedor = proveedoresBL.ObtenerPorCUIT(txtCUIT.Text);
+
+                    SetearProveedor(proveedor);
+                    proveedoresBL.Actualizar(proveedor);
+
+                    contexto.RegistrarEvento("El proveedor {0} ha sido actualizado", proveedor.Nombre);
+                }
+                else
+                {
+                    proveedor = new Proveedor();
+
+                    SetearProveedor(proveedor);
+                    proveedoresBL.Crear(proveedor);
+
+                    contexto.RegistrarEvento("El proveedor {0} ha sido creado", proveedor.Nombre);
+                }
+
+                CargarProveedores();
+                LimpiarFormulario();
             }
-            else
+            catch(Exception ex)
             {
-                proveedor = new Proveedor();
-
-                SetearProveedor(proveedor);
-                proveedoresBL.Crear(proveedor);
+                contexto.RegistrarError(ex);
             }
-
-            CargarProveedores();
-            LimpiarFormulario();
         }
 
         void GrvClientes_SelectionChanged(object sender, EventArgs e)
@@ -113,32 +128,53 @@ namespace OBMCatering.Presentacion
 
         void CargarProvincias()
         {
-            IEnumerable<Provincia> provincias = localidadesBL.ObtenerProvincias();
-
-            foreach(Provincia provincia in provincias)
+            try
             {
-                cboProvincias.Items.Add(provincia.Nombre);
+                IEnumerable<Provincia> provincias = localidadesBL.ObtenerProvincias();
+
+                foreach (Provincia provincia in provincias)
+                {
+                    cboProvincias.Items.Add(provincia.Nombre);
+                }
+            }
+            catch (Exception ex)
+            {
+                contexto.RegistrarError(ex);
             }
         }
 
         void CargarLocalidades(string provinciaSeleccionada)
         {
-            Provincia provincia = localidadesBL.ObtenerProvincia(provinciaSeleccionada);
-            IEnumerable<Localidad> localidades = localidadesBL.ObtenerLocalidades(provincia);
-
-            cboLocalidades.Items.Clear();
-
-            foreach (Localidad localidad in localidades)
+            try
             {
-                cboLocalidades.Items.Add(localidad.Nombre);
+                Provincia provincia = localidadesBL.ObtenerProvincia(provinciaSeleccionada);
+                IEnumerable<Localidad> localidades = localidadesBL.ObtenerLocalidades(provincia);
+
+                cboLocalidades.Items.Clear();
+
+                foreach (Localidad localidad in localidades)
+                {
+                    cboLocalidades.Items.Add(localidad.Nombre);
+                }
+            }
+            catch (Exception ex)
+            {
+                contexto.RegistrarError(ex);
             }
         }
 
         void CargarProveedores()
         {
-            IEnumerable<Proveedor> proveedores = proveedoresBL.Obtener();
+            try
+            {
+                IEnumerable<Proveedor> proveedores = proveedoresBL.Obtener();
 
-            grvProveedores.DataSource = ObtenerProveedoresPresentacion(proveedores);
+                grvProveedores.DataSource = ObtenerProveedoresPresentacion(proveedores);
+            }
+            catch (Exception ex)
+            {
+                contexto.RegistrarError(ex);
+            }
         }
 
         IEnumerable<ProveedorPresentacion> ObtenerProveedoresPresentacion(IEnumerable<Proveedor> proveedores)
@@ -182,7 +218,7 @@ namespace OBMCatering.Presentacion
             txtCP.Text = string.Empty;
             txtTelefono.Text = string.Empty;
             txtEmail.Text = string.Empty;
-            dtpFechaAlta.Value = dtpFechaAlta.MinDate;
+            dtpFechaAlta.Value = DateTime.Now;
             dtpFechaBaja.Value = dtpFechaBaja.MinDate;
             chkActivo.Checked = false;
             grvProveedores.ClearSelection();

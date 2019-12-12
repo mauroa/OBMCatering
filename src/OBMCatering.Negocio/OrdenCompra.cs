@@ -14,7 +14,7 @@ namespace OBMCatering.Negocio
 
         public DateTime Fecha { get; set; }
 
-        public bool Ejecutada { get; set; }
+        public EstadoOrdenCompra Estado { get; set; }
 
         public OrdenVenta OrdenVenta { get; set; }
 

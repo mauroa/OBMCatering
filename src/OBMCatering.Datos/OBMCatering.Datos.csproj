@@ -65,6 +65,9 @@
       <DependentUpon>OBMCatering.tt</DependentUpon>
     </Compile>
     <Compile Include="EmpleadosDAL.cs" />
+    <Compile Include="EstadoOrdenCompra.cs">
+      <DependentUpon>OBMCatering.tt</DependentUpon>
+    </Compile>
     <Compile Include="EstadoReceta.cs">
       <DependentUpon>OBMCatering.tt</DependentUpon>
     </Compile>

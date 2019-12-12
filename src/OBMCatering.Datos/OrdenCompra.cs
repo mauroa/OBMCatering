@@ -22,10 +22,10 @@ namespace OBMCatering.Datos
     
         public int ID { get; set; }
         public System.DateTime Fecha { get; set; }
-        public bool Ejecutada { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ItemOrdenCompra> ItemsOrdenesCompra { get; set; }
         public virtual OrdenVenta OrdenVenta { get; set; }
+        public virtual EstadoOrdenCompra Estado { get; set; }
     }
 }

@@ -4,11 +4,17 @@ namespace OBMCatering.Presentacion
 {
     public class ItemOrdenCompraPresentacion
     {
-        public ItemOrdenCompraPresentacion(ItemOrdenCompra item)
+        int id;
+        ItemOrdenCompra itemOrdenCompra;
+
+        public ItemOrdenCompraPresentacion(ItemOrdenCompra itemOrdenCompra)
         {
-            Ingrediente = item.Ingrediente.Nombre;
-            Cantidad = item.Cantidad.ToString();
-            Unidad = item.Unidad.ToString();
+            this.itemOrdenCompra = itemOrdenCompra;
+            id = itemOrdenCompra.Id;
+
+            Ingrediente = itemOrdenCompra.Ingrediente.Nombre;
+            Cantidad = itemOrdenCompra.Cantidad.ToString();
+            Unidad = itemOrdenCompra.Unidad.ToString();
         }
 
         public string Ingrediente { get; set; }
@@ -16,5 +22,15 @@ namespace OBMCatering.Presentacion
         public string Cantidad { get; set; }
 
         public string Unidad { get; set; }
+
+        public int ObtenerId()
+        {
+            return id;
+        }
+
+        public ItemOrdenCompra ObtenerItemOrdenCompra()
+        {
+            return itemOrdenCompra;
+        }
     }
 }

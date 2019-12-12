@@ -29,6 +29,11 @@ namespace OBMCatering.Negocio
 
         public Ingrediente Obtener(string nombre)
         {
+            if(string.IsNullOrEmpty(nombre))
+            {
+                throw new OBMCateringException("El nombre del ingrediente no puede ser nulo");
+            }
+
             Datos.IngredientesDAL dalIngredientes = dal.ObtenerIngredientesDAL();
             Datos.Ingrediente ingredienteDAL = dalIngredientes.Obtener(nombre);
 

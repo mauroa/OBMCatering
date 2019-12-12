@@ -142,7 +142,7 @@
             // 
             this.grvPrecios.AllowUserToAddRows = false;
             this.grvPrecios.AllowUserToDeleteRows = false;
-            this.grvPrecios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.grvPrecios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.grvPrecios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grvPrecios.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.grvPrecios.Location = new System.Drawing.Point(0, 267);

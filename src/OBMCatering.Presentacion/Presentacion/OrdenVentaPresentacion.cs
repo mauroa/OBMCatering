@@ -6,24 +6,27 @@ namespace OBMCatering.Presentacion
 {
     public class OrdenVentaPresentacion
     {
+        OrdenVenta ordenVenta;
         int id;
         ICollection<string> recetas;
 
         public OrdenVentaPresentacion(OrdenVenta ordenVenta)
         {
+            this.ordenVenta = ordenVenta;
+            id = ordenVenta.Id;
+            recetas = new List<string>();
+
+            foreach (Receta receta in ordenVenta.Recetas)
+            {
+                recetas.Add(receta.Nombre);
+            }
+
             Cliente = ordenVenta.Cliente.Nombre;
             FechaInicio = ordenVenta.FechaInicio;
             FechaFin = ordenVenta.FechaFin;
             Comensales = ordenVenta.Comensales.ToString();
             Precio = ordenVenta.Precio.ToString();
             Aprobada = ordenVenta.Aprobada;
-            id = ordenVenta.Id;
-            recetas = new List<string>();
-
-            foreach(Receta receta in ordenVenta.Recetas)
-            {
-                recetas.Add(receta.Nombre);
-            }
         }
 
         public string Cliente { get; set; }
@@ -54,6 +57,11 @@ namespace OBMCatering.Presentacion
         public IEnumerable<string> ObtenerRecetas()
         {
             return recetas;
+        }
+
+        public OrdenVenta ObtenerOrdenVenta()
+        {
+            return ordenVenta;
         }
     }
 }

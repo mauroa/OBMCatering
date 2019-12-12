@@ -7,6 +7,7 @@ namespace OBMCatering.Presentacion
 {
     public partial class EmpleadosForm : Form
     {
+        ContextoPresentacion contexto;
         LocalidadesBL localidadesBL;
         EmpleadosBL empleadosBL;
 
@@ -17,8 +18,9 @@ namespace OBMCatering.Presentacion
 
         void EmpleadosForm_Load(object sender, EventArgs e)
         {
-            localidadesBL = new LocalidadesBL(ContextoNegocio.Instancia);
-            empleadosBL = new EmpleadosBL(ContextoNegocio.Instancia, localidadesBL);
+            contexto = ContextoPresentacion.Instancia;
+            localidadesBL = new LocalidadesBL(contexto.Negocio);
+            empleadosBL = new EmpleadosBL(contexto.Negocio, localidadesBL);
             
             btnGuardar.Click += BtnGuardar_Click;
             grvEmpleados.SelectionChanged += GrvClientes_SelectionChanged;
@@ -27,30 +29,43 @@ namespace OBMCatering.Presentacion
             CargarProvincias();
             CargarEmpleados();
             LimpiarFormulario();
+
+            contexto.RegistrarEvento("Ingreso a la pantalla de empleados");
         }
 
         void BtnGuardar_Click(object sender, EventArgs e)
         {
-            bool existeEmpleado = empleadosBL.Existe(txtCUIT.Text);
-            Empleado empleado;
-
-            if (existeEmpleado)
+            try
             {
-                empleado = empleadosBL.Obtener(txtCUIT.Text);
+                bool existeEmpleado = empleadosBL.Existe(txtCUIT.Text);
+                Empleado empleado;
 
-                SetearEmpleado(empleado);
-                empleadosBL.Actualizar(empleado); ;
+                if (existeEmpleado)
+                {
+                    empleado = empleadosBL.Obtener(txtCUIT.Text);
+
+                    SetearEmpleado(empleado);
+                    empleadosBL.Actualizar(empleado);
+
+                    contexto.RegistrarEvento("El empleado {0} ha sido actualizado", empleado.Nombre);
+                }
+                else
+                {
+                    empleado = new Empleado();
+
+                    SetearEmpleado(empleado);
+                    empleadosBL.Crear(empleado);
+
+                    contexto.RegistrarEvento("El empleado {0} ha sido creado", empleado.Nombre);
+                }
+
+                CargarEmpleados();
+                LimpiarFormulario();
             }
-            else
+            catch(Exception ex)
             {
-                empleado = new Empleado();
-
-                SetearEmpleado(empleado);
-                empleadosBL.Crear(empleado);
+                contexto.RegistrarError(ex);
             }
-
-            CargarEmpleados();
-            LimpiarFormulario();
         }
 
         void GrvClientes_SelectionChanged(object sender, EventArgs e)
@@ -114,32 +129,53 @@ namespace OBMCatering.Presentacion
 
         void CargarProvincias()
         {
-            IEnumerable<Provincia> provincias = localidadesBL.ObtenerProvincias();
-
-            foreach(Provincia provincia in provincias)
+            try
             {
-                cboProvincias.Items.Add(provincia.Nombre);
+                IEnumerable<Provincia> provincias = localidadesBL.ObtenerProvincias();
+
+                foreach (Provincia provincia in provincias)
+                {
+                    cboProvincias.Items.Add(provincia.Nombre);
+                }
+            }
+            catch (Exception ex)
+            {
+                contexto.RegistrarError(ex);
             }
         }
 
         void CargarLocalidades(string provinciaSeleccionada)
         {
-            Provincia provincia = localidadesBL.ObtenerProvincia(provinciaSeleccionada);
-            IEnumerable<Localidad> localidades = localidadesBL.ObtenerLocalidades(provincia);
-
-            cboLocalidades.Items.Clear();
-
-            foreach (Localidad localidad in localidades)
+            try
             {
-                cboLocalidades.Items.Add(localidad.Nombre);
+                Provincia provincia = localidadesBL.ObtenerProvincia(provinciaSeleccionada);
+                IEnumerable<Localidad> localidades = localidadesBL.ObtenerLocalidades(provincia);
+
+                cboLocalidades.Items.Clear();
+
+                foreach (Localidad localidad in localidades)
+                {
+                    cboLocalidades.Items.Add(localidad.Nombre);
+                }
+            }
+            catch (Exception ex)
+            {
+                contexto.RegistrarError(ex);
             }
         }
 
         void CargarEmpleados()
         {
-            IEnumerable<Empleado> empleados = empleadosBL.Obtener();
+            try
+            {
+                IEnumerable<Empleado> empleados = empleadosBL.Obtener();
 
-            grvEmpleados.DataSource = ObtenerEmpleadosPresentacion(empleados);
+                grvEmpleados.DataSource = ObtenerEmpleadosPresentacion(empleados);
+            }
+            catch (Exception ex)
+            {
+                contexto.RegistrarError(ex);
+            }
         }
 
         IEnumerable<EmpleadoPresentacion> ObtenerEmpleadosPresentacion(IEnumerable<Empleado> empleados)
@@ -168,7 +204,7 @@ namespace OBMCatering.Presentacion
             empleado.Email = txtEmail.Text;
             empleado.FechaAlta = dtpFechaAlta.Value;
 
-            if(dtpFechaBaja.Value != dtpFechaBaja.MinDate)
+            if (dtpFechaBaja.Value != dtpFechaBaja.MinDate)
             {
                 empleado.FechaBaja = dtpFechaBaja.Value;
             }
@@ -178,14 +214,14 @@ namespace OBMCatering.Presentacion
         {
             txtCUIT.Text = string.Empty;
             txtNombre.Text = string.Empty;
-            dtpFechaNacimiento.Value = dtpFechaNacimiento.MinDate;
+            dtpFechaNacimiento.Value = DateTime.Now;
             txtDomicilio.Text = string.Empty;
             cboProvincias.SelectedItem = null;
             cboLocalidades.SelectedItem = null;
             txtCP.Text = string.Empty;
             txtTelefono.Text = string.Empty;
             txtEmail.Text = string.Empty;
-            dtpFechaAlta.Value = dtpFechaAlta.MinDate;
+            dtpFechaAlta.Value = DateTime.Now;
             dtpFechaBaja.Value = dtpFechaAlta.MinDate;
             chkActivo.Checked = false;
             grvEmpleados.ClearSelection();

@@ -228,7 +228,7 @@
             // 
             this.grvPedidos.AllowUserToAddRows = false;
             this.grvPedidos.AllowUserToDeleteRows = false;
-            this.grvPedidos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.grvPedidos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.grvPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grvPedidos.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.grvPedidos.Location = new System.Drawing.Point(0, 540);

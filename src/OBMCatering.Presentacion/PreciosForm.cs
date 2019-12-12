@@ -7,6 +7,7 @@ namespace OBMCatering.Presentacion
 {
     public partial class PreciosForm : Form
     {
+        ContextoPresentacion contexto;
         IngredientesBL ingredientesBL;
         PreciosIngredientesBL preciosIngredientesBL;
         RecetasBL recetasBL;
@@ -18,9 +19,10 @@ namespace OBMCatering.Presentacion
 
         void PreciosForm_Load(object sender, EventArgs e)
         {
-            ingredientesBL = new IngredientesBL(ContextoNegocio.Instancia);
-            preciosIngredientesBL = new PreciosIngredientesBL(ContextoNegocio.Instancia);
-            recetasBL = new RecetasBL(ContextoNegocio.Instancia, preciosIngredientesBL);
+            contexto = ContextoPresentacion.Instancia;
+            ingredientesBL = new IngredientesBL(contexto.Negocio);
+            preciosIngredientesBL = new PreciosIngredientesBL(contexto.Negocio);
+            recetasBL = new RecetasBL(contexto.Negocio, preciosIngredientesBL);
 
             btnGuardar.Click += BtnGuardar_Click;
             grvPrecios.SelectionChanged += GrvRecetas_SelectionChanged; ;
@@ -28,21 +30,32 @@ namespace OBMCatering.Presentacion
             CargarUnidades();
             CargarPrecios();
             LimpiarFormulario();
+
+            contexto.RegistrarEvento("Ingreso a la pantalla de listado de precios");
         }
 
         void BtnGuardar_Click(object sender, EventArgs e)
         {
-            Ingrediente ingrediente = ingredientesBL.Obtener(lblIngrediente.Text);
-            PrecioIngrediente precioIngrediente = preciosIngredientesBL.Obtener(ingrediente);
+            try
+            {
+                Ingrediente ingrediente = ingredientesBL.Obtener(lblIngrediente.Text);
+                PrecioIngrediente precioIngrediente = preciosIngredientesBL.Obtener(ingrediente);
 
-            precioIngrediente.Precio = decimal.Parse(txtPrecio.Text);
-            precioIngrediente.Cantidad = decimal.Parse(txtCantidad.Text);
-            precioIngrediente.Unidad = (UnidadMedida)Enum.Parse(typeof(UnidadMedida), cboUnidad.SelectedItem.ToString());
+                precioIngrediente.Precio = decimal.Parse(txtPrecio.Text);
+                precioIngrediente.Cantidad = decimal.Parse(txtCantidad.Text);
+                precioIngrediente.Unidad = (UnidadMedida)Enum.Parse(typeof(UnidadMedida), cboUnidad.SelectedItem.ToString());
 
-            preciosIngredientesBL.Actualizar(precioIngrediente);
-            recetasBL.ActualizarRecetasSinPrecio();
-            CargarPrecios();
-            LimpiarFormulario();
+                preciosIngredientesBL.Actualizar(precioIngrediente);
+                recetasBL.ActualizarRecetasSinPrecio();
+                CargarPrecios();
+                LimpiarFormulario();
+
+                contexto.RegistrarEvento("La lista de precios fue actualizada para el ingrediente '{0}'", ingrediente.Nombre);
+            }
+            catch(Exception ex)
+            {
+                contexto.RegistrarError(ex);
+            }
         }
 
         void GrvRecetas_SelectionChanged(object sender, EventArgs e)
@@ -77,9 +90,16 @@ namespace OBMCatering.Presentacion
 
         void CargarPrecios()
         {
-            IEnumerable<PrecioIngrediente> precios = preciosIngredientesBL.Obtener();
+            try
+            {
+                IEnumerable<PrecioIngrediente> precios = preciosIngredientesBL.Obtener();
 
-            grvPrecios.DataSource = ObtenerPreciosPresentacion(precios);
+                grvPrecios.DataSource = ObtenerPreciosPresentacion(precios);
+            }
+            catch (Exception ex)
+            {
+                contexto.RegistrarError(ex);
+            }
         }
 
         IEnumerable<PrecioIngredientePresentacion> ObtenerPreciosPresentacion(IEnumerable<PrecioIngrediente> precios)

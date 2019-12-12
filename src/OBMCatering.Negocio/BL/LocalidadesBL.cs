@@ -39,6 +39,11 @@ namespace OBMCatering.Negocio
 
         public Provincia ObtenerProvincia(string nombre)
         {
+            if (string.IsNullOrEmpty(nombre))
+            {
+                throw new OBMCateringException("El nombre de la provincia no puede ser nulo");
+            }
+
             Datos.ProvinciasDAL dalProvincias = dal.ObtenerProvinciasDAL();
             Datos.Provincia provinciaDAL = dalProvincias.Obtener(nombre);
 
@@ -47,8 +52,19 @@ namespace OBMCatering.Negocio
         }
         public IEnumerable<Localidad> ObtenerLocalidades(Provincia provincia)
         {
+            if(provincia == null)
+            {
+                throw new OBMCateringException("La provincia no puede ser nula");
+            }
+
             Datos.ProvinciasDAL dalProvincias = dal.ObtenerProvinciasDAL();
             Datos.Provincia provinciaDAL = dalProvincias.Obtener(provincia.Id);
+
+            if (provinciaDAL == null)
+            {
+                throw new OBMCateringException("La provincia es incorrecta o no es valida en el sistema");
+            }
+
             Datos.LocalidadesDAL dalLocalidades = dal.ObtenerLocalidadesDAL();
             IEnumerable<Datos.Localidad> localidadesDAL = dalLocalidades.Obtener(provinciaDAL);
             List<Localidad> localidades = new List<Localidad>();
@@ -76,6 +92,11 @@ namespace OBMCatering.Negocio
 
         public Localidad ObtenerLocalidad(string nombre)
         {
+            if (string.IsNullOrEmpty(nombre))
+            {
+                throw new OBMCateringException("El nombre de la localidad no puede ser nulo");
+            }
+
             Datos.LocalidadesDAL dalLocalidades = dal.ObtenerLocalidadesDAL();
             Datos.Localidad localidadDAL = dalLocalidades.Obtener(nombre);
 

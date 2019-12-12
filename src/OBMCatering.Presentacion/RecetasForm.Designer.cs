@@ -137,7 +137,7 @@
             // 
             this.grvRecetas.AllowUserToAddRows = false;
             this.grvRecetas.AllowUserToDeleteRows = false;
-            this.grvRecetas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.grvRecetas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.grvRecetas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grvRecetas.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.grvRecetas.Location = new System.Drawing.Point(0, 528);

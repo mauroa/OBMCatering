@@ -16,6 +16,8 @@ namespace OBMCatering.Negocio
 
         public void Crear(Receta receta)
         {
+            ValidarReceta(receta);
+
             Datos.RecetasDAL dalRecetas = dal.ObtenerRecetasDAL();
             Datos.EstadoReceta estadoDAL = dalRecetas.ObtenerEstado(EstadoReceta.SinIngredientes.ToString());
 
@@ -32,6 +34,8 @@ namespace OBMCatering.Negocio
 
         public void Actualizar(Receta receta)
         {
+            ValidarReceta(receta);
+
             EstadoReceta estado;
 
             if (receta.Ingredientes.Count == 0)
@@ -54,7 +58,18 @@ namespace OBMCatering.Negocio
 
             Datos.RecetasDAL dalRecetas = dal.ObtenerRecetasDAL();
             Datos.Receta recetaDAL = dalRecetas.ObtenerPorNombre(receta.Nombre);
+
+            if (recetaDAL == null)
+            {
+                throw new OBMCateringException(string.Format("La receta '{0}' no existe", receta.Nombre));
+            }
+
             Datos.EstadoReceta estadoDAL = dalRecetas.ObtenerEstado(estado.ToString());
+
+            if (estadoDAL == null)
+            {
+                throw new OBMCateringException(string.Format("El estado '{0}' es incorrecto o no es valido en el sistema", estado));
+            }
 
             recetaDAL.Detalle = receta.Detalle;
             recetaDAL.Estado = estadoDAL;
@@ -133,8 +148,19 @@ namespace OBMCatering.Negocio
 
         public IEnumerable<Receta> Obtener(Ingrediente ingrediente)
         {
+            if (ingrediente == null)
+            {
+                throw new OBMCateringException("El ingrediente no puede ser nulo");
+            }
+
             Datos.IngredientesDAL dalIngredientes = dal.ObtenerIngredientesDAL();
             Datos.Ingrediente ingredienteDAL = dalIngredientes.Obtener(ingrediente.Nombre);
+
+            if (ingredienteDAL == null)
+            {
+                throw new OBMCateringException(string.Format("El ingrediente '{0}' no existe", ingrediente.Nombre));
+            }
+
             Datos.RecetasDAL dalRecetas = dal.ObtenerRecetasDAL();
             IEnumerable<Datos.Receta> recetasDAL = dalRecetas.Obtener(ingredienteDAL);
 
@@ -143,6 +169,11 @@ namespace OBMCatering.Negocio
 
         public Receta Obtener(string nombre)
         {
+            if (string.IsNullOrEmpty(nombre))
+            {
+                throw new OBMCateringException("El nombre de la receta no puede ser nulo o vacio");
+            }
+
             Datos.RecetasDAL dalRecetas = dal.ObtenerRecetasDAL();
             Datos.Receta recetaDAL = dalRecetas.ObtenerPorNombre(nombre);
 
@@ -151,6 +182,11 @@ namespace OBMCatering.Negocio
 
         public bool Existe(string nombre)
         {
+            if (string.IsNullOrEmpty(nombre))
+            {
+                throw new OBMCateringException("El nombre de la receta no puede ser nulo o vacio");
+            }
+
             Datos.RecetasDAL dalRecetas = dal.ObtenerRecetasDAL();
             Datos.Receta recetaDAL = dalRecetas.ObtenerPorNombre(nombre);
 
@@ -159,6 +195,11 @@ namespace OBMCatering.Negocio
 
         public decimal CalularPrecio(Receta receta)
         {
+            if (receta == null)
+            {
+                throw new OBMCateringException("La receta no puede ser nula");
+            }
+
             decimal precioTotal = 0m;
 
             foreach(IngredienteReceta ingredienteReceta in receta.Ingredientes)
@@ -191,6 +232,19 @@ namespace OBMCatering.Negocio
                 Estado = estado,
                 Ingredientes = ingredientes
             };
+        }
+
+        void ValidarReceta(Receta receta)
+        {
+            if (receta == null)
+            {
+                throw new OBMCateringException("La receta no puede ser nula");
+            }
+
+            if (receta.Ingredientes == null || receta.Ingredientes.Count == 0)
+            {
+                throw new OBMCateringException("La receta debe tener al menos un ingrediente");
+            }
         }
 
         IEnumerable<Receta> Obtener(IEnumerable<Datos.Receta> recetasDAL)
@@ -262,28 +316,6 @@ namespace OBMCatering.Negocio
             }
 
             return ingredienteDAL;
-        }
-
-        List<Datos.IngredienteReceta> CrearIngredientes(Receta receta)
-        {
-            Datos.RecetasDAL dalRecetas = dal.ObtenerRecetasDAL();
-            List<Datos.IngredienteReceta> ingredientesRecetaDAL = new List<Datos.IngredienteReceta>();
-
-            foreach (IngredienteReceta ingredienteReceta in receta.Ingredientes)
-            {
-                Datos.Ingrediente ingredienteDAL = PrepararIngrediente(ingredienteReceta.Ingrediente);
-                Datos.UnidadMedida unidadMedidaDAL = dalRecetas.ObtenerUnidad(ingredienteReceta.Unidad.ToString());
-                Datos.IngredienteReceta ingredienteRecetaDAL = new Datos.IngredienteReceta
-                {
-                    Ingrediente = ingredienteDAL,
-                    Cantidad = ingredienteReceta.Cantidad,
-                    Unidad = unidadMedidaDAL
-                };
-
-                ingredientesRecetaDAL.Add(ingredienteRecetaDAL);
-            }
-
-            return ingredientesRecetaDAL;
         }
     }
 }

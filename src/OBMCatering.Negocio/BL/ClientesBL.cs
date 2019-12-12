@@ -16,10 +16,24 @@ namespace OBMCatering.Negocio
 
         public void Crear(Cliente cliente)
         {
+            ValidarCliente(cliente);
+
             Datos.LocalidadesDAL dalLocalidades = dal.ObtenerLocalidadesDAL();
             Datos.Localidad localidadDAL = dalLocalidades.Obtener(cliente.Localidad.Id);
+
+            if(localidadDAL == null)
+            {
+                throw new OBMCateringException(string.Format("La localidad '{0}' es incorrecta o no es valida en el sistema", cliente.Localidad.Nombre));
+            }
+
             Datos.ClientesDAL dalClientes = dal.ObtenerClientesDAL();
             Datos.TipoCliente tipoClienteDAL = dalClientes.ObtenerTipo(cliente.Tipo.ToString());
+
+            if (tipoClienteDAL == null)
+            {
+                throw new OBMCateringException(string.Format("El tipo '{0}' es incorrecto o no es valido en el sistema", cliente.Tipo));
+            }
+
             Datos.Cliente clienteDAL = new Datos.Cliente
             {
                 CUIT = cliente.CUIT,
@@ -40,10 +54,23 @@ namespace OBMCatering.Negocio
 
         public void Actualizar(Cliente cliente)
         {
+            ValidarCliente(cliente);
+
             Datos.ClientesDAL dalClientes = dal.ObtenerClientesDAL();
             Datos.Cliente clienteDAL = dalClientes.Obtener(cliente.CUIT);
+
+            if (clienteDAL == null)
+            {
+                throw new OBMCateringException(string.Format("El cliente con CUIT '{0}' no existe", cliente.CUIT));
+            }
+
             Datos.LocalidadesDAL dalLocalidades = dal.ObtenerLocalidadesDAL();
             Datos.Localidad localidadDAL = dalLocalidades.Obtener(cliente.Localidad.Id);
+
+            if (localidadDAL == null)
+            {
+                throw new OBMCateringException(string.Format("La localidad '{0}' es incorrecta o no es valida en el sistema", cliente.Localidad.Nombre));
+            }
 
             clienteDAL.Domicilio = cliente.Domicilio;
             clienteDAL.Localidad = localidadDAL;
@@ -58,8 +85,15 @@ namespace OBMCatering.Negocio
 
         public void Eliminar(Cliente cliente)
         {
+            ValidarCliente(cliente);
+
             Datos.ClientesDAL dalClientes = dal.ObtenerClientesDAL();
             Datos.Cliente clienteDAL = dalClientes.Obtener(cliente.CUIT);
+
+            if (clienteDAL == null)
+            {
+                throw new OBMCateringException(string.Format("El cliente con CUIT '{0}' no existe", cliente.CUIT));
+            }
 
             dalClientes.Eliminar(clienteDAL);
             dal.Guardar();
@@ -77,6 +111,12 @@ namespace OBMCatering.Negocio
         {
             Datos.ClientesDAL dalClientes = dal.ObtenerClientesDAL();
             Datos.TipoCliente tipoClienteDAL = dalClientes.ObtenerTipo(tipo.ToString());
+
+            if (tipoClienteDAL == null)
+            {
+                throw new OBMCateringException(string.Format("El tipo '{0}' es incorrecto o no es valido en el sistema", tipo));
+            }
+
             IEnumerable<Datos.Cliente> clientesDAL = dalClientes.Obtener(tipoClienteDAL);
 
             return Obtener(clientesDAL);
@@ -92,6 +132,11 @@ namespace OBMCatering.Negocio
 
         public bool Existe(string cuit)
         {
+            if (string.IsNullOrEmpty(cuit))
+            {
+                throw new OBMCateringException("El CUIT del cliente no puede ser nulo o vacio");
+            }
+
             Datos.ClientesDAL dalClientes = dal.ObtenerClientesDAL();
             Datos.Cliente clienteDAL = dalClientes.Obtener(cuit);
 
@@ -100,6 +145,11 @@ namespace OBMCatering.Negocio
 
         public Cliente ObtenerPorCUIT(string cuit)
         {
+            if (string.IsNullOrEmpty(cuit))
+            {
+                throw new OBMCateringException("El CUIT del cliente no puede ser nulo o vacio");
+            }
+
             Datos.ClientesDAL dalClientes = dal.ObtenerClientesDAL();
             Datos.Cliente clienteDAL = dalClientes.Obtener(cuit);
 
@@ -108,6 +158,11 @@ namespace OBMCatering.Negocio
 
         public Cliente ObtenerPorNombre(string nombre)
         {
+            if (string.IsNullOrEmpty(nombre))
+            {
+                throw new OBMCateringException("El nombre del cliente no puede ser nulo o vacio");
+            }
+
             Datos.ClientesDAL dalClientes = dal.ObtenerClientesDAL();
             Datos.Cliente clienteDAL = dalClientes.ObtenerPorNombre(nombre);
 
@@ -132,6 +187,49 @@ namespace OBMCatering.Negocio
                 FechaAlta = clienteDAL.FechaAlta,
                 Activo = clienteDAL.Activo
             };
+        }
+
+        void ValidarCliente(Cliente cliente)
+        {
+            if(cliente == null)
+            {
+                throw new OBMCateringException("El cliente no puede ser nulo");
+            }
+
+            if (string.IsNullOrEmpty(cliente.CUIT))
+            {
+                throw new OBMCateringException("El CUIT del cliente no puede ser nulo o vacio");
+            }
+
+            if (string.IsNullOrEmpty(cliente.Nombre))
+            {
+                throw new OBMCateringException("El nombre del cliente no puede ser nulo o vacio");
+            }
+
+            if (string.IsNullOrEmpty(cliente.Domicilio))
+            {
+                throw new OBMCateringException("El domicilio del cliente no puede ser nulo o vacio");
+            }
+
+            if (cliente.Localidad == null)
+            {
+                throw new OBMCateringException("La localidad del cliente no puede ser nula");
+            }
+
+            if (string.IsNullOrEmpty(cliente.CodigoPostal))
+            {
+                throw new OBMCateringException("El codigo postal del cliente no puede ser nulo o vacio");
+            }
+
+            if (string.IsNullOrEmpty(cliente.Telefono))
+            {
+                throw new OBMCateringException("El telefono del cliente no puede ser nulo o vacio");
+            }
+
+            if (string.IsNullOrEmpty(cliente.Email))
+            {
+                throw new OBMCateringException("El email del cliente no puede ser nulo o vacio");
+            }
         }
 
         IEnumerable<Cliente> Obtener(IEnumerable<Datos.Cliente> clientesDAL)

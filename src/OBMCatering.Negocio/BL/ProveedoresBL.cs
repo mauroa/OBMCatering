@@ -15,8 +15,16 @@ namespace OBMCatering.Negocio
 
         public void Crear(Proveedor proveedor)
         {
+            ValidarProveedor(proveedor);
+
             Datos.LocalidadesDAL dalLocalidades = dal.ObtenerLocalidadesDAL();
             Datos.Localidad localidadDAL = dalLocalidades.Obtener(proveedor.Localidad.Id);
+
+            if (localidadDAL == null)
+            {
+                throw new OBMCateringException(string.Format("La localidad '{0}' es incorrecta o no es valida en el sistema", proveedor.Localidad.Nombre));
+            }
+
             Datos.Proveedor proveedorDAL = new Datos.Proveedor
             {
                 CUIT = proveedor.CUIT,
@@ -38,10 +46,23 @@ namespace OBMCatering.Negocio
 
         public void Actualizar(Proveedor proveedor)
         {
+            ValidarProveedor(proveedor);
+
             Datos.ProveedoresDAL dalProveedores = dal.ObtenerProveedoresDAL();
             Datos.Proveedor proveedorDAL = dalProveedores.Obtener(proveedor.CUIT);
+
+            if (proveedorDAL == null)
+            {
+                throw new OBMCateringException(string.Format("El proveedor con CUIT '{0}' no existe", proveedor.CUIT));
+            }
+
             Datos.LocalidadesDAL dalLocalidades = dal.ObtenerLocalidadesDAL();
             Datos.Localidad localidadDAL = dalLocalidades.Obtener(proveedor.Localidad.Id);
+
+            if (localidadDAL == null)
+            {
+                throw new OBMCateringException(string.Format("La localidad '{0}' es incorrecta o no es valida en el sistema", proveedor.Localidad.Nombre));
+            }
 
             proveedorDAL.Domicilio = proveedor.Domicilio;
             proveedorDAL.Localidad = localidadDAL;
@@ -56,8 +77,15 @@ namespace OBMCatering.Negocio
 
         public void Eliminar(Proveedor proveedor)
         {
+            ValidarProveedor(proveedor);
+
             Datos.ProveedoresDAL dalProveedores = dal.ObtenerProveedoresDAL();
             Datos.Proveedor proveedorDAL = dalProveedores.Obtener(proveedor.CUIT);
+
+            if (proveedorDAL == null)
+            {
+                throw new OBMCateringException(string.Format("El proveedor con CUIT '{0}' no existe", proveedor.CUIT));
+            }
 
             dalProveedores.Eliminar(proveedorDAL);
             dal.Guardar();
@@ -73,6 +101,11 @@ namespace OBMCatering.Negocio
 
         public bool Existe(string cuit)
         {
+            if (string.IsNullOrEmpty(cuit))
+            {
+                throw new OBMCateringException("El CUIT del proveedor no puede ser nulo o vacio");
+            }
+
             Datos.ProveedoresDAL dalProveedores = dal.ObtenerProveedoresDAL();
             Datos.Proveedor proveedorDAL = dalProveedores.Obtener(cuit);
 
@@ -89,6 +122,11 @@ namespace OBMCatering.Negocio
 
         public Proveedor ObtenerPorCUIT(string cuit)
         {
+            if (string.IsNullOrEmpty(cuit))
+            {
+                throw new OBMCateringException("El CUIT del proveedor no puede ser nulo o vacio");
+            }
+
             Datos.ProveedoresDAL dalProveedores = dal.ObtenerProveedoresDAL();
             Datos.Proveedor proveedorDAL = dalProveedores.Obtener(cuit);
 
@@ -97,6 +135,11 @@ namespace OBMCatering.Negocio
 
         public Proveedor ObtenerPorNombre(string nombre)
         {
+            if (string.IsNullOrEmpty(nombre))
+            {
+                throw new OBMCateringException("El nombre del proveedor no puede ser nulo o vacio");
+            }
+
             Datos.ProveedoresDAL dalProveedores = dal.ObtenerProveedoresDAL();
             Datos.Proveedor proveedorDAL = dalProveedores.ObtenerPorNombre(nombre);
 
@@ -119,6 +162,49 @@ namespace OBMCatering.Negocio
                 FechaAlta = proveedorDAL.FechaAlta,
                 FechaBaja = proveedorDAL.FechaBaja
             };
+        }
+
+        void ValidarProveedor(Proveedor proveedor)
+        {
+            if(proveedor == null)
+            {
+                throw new OBMCateringException("El proveedor no puede ser nulo");
+            }
+
+            if (string.IsNullOrEmpty(proveedor.CUIT))
+            {
+                throw new OBMCateringException("El CUIT del proveedor no puede ser nulo o vacio");
+            }
+
+            if (string.IsNullOrEmpty(proveedor.Nombre))
+            {
+                throw new OBMCateringException("El Nombre del proveedor no puede ser nulo o vacio");
+            }
+
+            if (string.IsNullOrEmpty(proveedor.Domicilio))
+            {
+                throw new OBMCateringException("El Domicilio del proveedor no puede ser nulo o vacio");
+            }
+
+            if (proveedor.Localidad == null)
+            {
+                throw new OBMCateringException("La Localidad del proveedor no puede ser nula");
+            }
+
+            if (string.IsNullOrEmpty(proveedor.CodigoPostal))
+            {
+                throw new OBMCateringException("El Codigo Postal del proveedor no puede ser nulo o vacio");
+            }
+
+            if (string.IsNullOrEmpty(proveedor.Telefono))
+            {
+                throw new OBMCateringException("El Telefono del proveedor no puede ser nulo o vacio");
+            }
+
+            if (string.IsNullOrEmpty(proveedor.Email))
+            {
+                throw new OBMCateringException("El Email del proveedor no puede ser nulo o vacio");
+            }
         }
 
         IEnumerable<Proveedor> Obtener(IEnumerable<Datos.Proveedor> proveedoresDAL)

@@ -33,6 +33,7 @@
             this.tsiClientes = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiProveedores = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiEmpleados = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsiUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.tsCocina = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiRecetas = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiPrecios = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,6 +42,10 @@
             this.tsiFacturas = new System.Windows.Forms.ToolStripMenuItem();
             this.tsCompras = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiOrdenesCompra = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsiOrdenesPago = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsBitacora = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsiBitacora = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsiPedidosCocina = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,10 +57,11 @@
             this.tsAdministrar,
             this.tsCocina,
             this.tsVentas,
-            this.tsCompras});
+            this.tsCompras,
+            this.tsBitacora});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1286, 42);
+            this.menuStrip1.Size = new System.Drawing.Size(1286, 48);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -64,48 +70,56 @@
             this.tsAdministrar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsiClientes,
             this.tsiProveedores,
-            this.tsiEmpleados});
+            this.tsiEmpleados,
+            this.tsiUsuarios});
             this.tsAdministrar.Name = "tsAdministrar";
-            this.tsAdministrar.Size = new System.Drawing.Size(157, 38);
+            this.tsAdministrar.Size = new System.Drawing.Size(157, 40);
             this.tsAdministrar.Text = "Administrar";
             // 
             // tsiClientes
             // 
             this.tsiClientes.Name = "tsiClientes";
-            this.tsiClientes.Size = new System.Drawing.Size(281, 44);
+            this.tsiClientes.Size = new System.Drawing.Size(359, 44);
             this.tsiClientes.Text = "Clientes";
             // 
             // tsiProveedores
             // 
             this.tsiProveedores.Name = "tsiProveedores";
-            this.tsiProveedores.Size = new System.Drawing.Size(281, 44);
+            this.tsiProveedores.Size = new System.Drawing.Size(359, 44);
             this.tsiProveedores.Text = "Proveedores";
             // 
             // tsiEmpleados
             // 
             this.tsiEmpleados.Name = "tsiEmpleados";
-            this.tsiEmpleados.Size = new System.Drawing.Size(281, 44);
+            this.tsiEmpleados.Size = new System.Drawing.Size(359, 44);
             this.tsiEmpleados.Text = "Empleados";
+            // 
+            // tsiUsuarios
+            // 
+            this.tsiUsuarios.Name = "tsiUsuarios";
+            this.tsiUsuarios.Size = new System.Drawing.Size(359, 44);
+            this.tsiUsuarios.Text = "Usuarios";
             // 
             // tsCocina
             // 
             this.tsCocina.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsiPedidosCocina,
             this.tsiRecetas,
             this.tsiPrecios});
             this.tsCocina.Name = "tsCocina";
-            this.tsCocina.Size = new System.Drawing.Size(107, 38);
+            this.tsCocina.Size = new System.Drawing.Size(107, 40);
             this.tsCocina.Text = "Cocina";
             // 
             // tsiRecetas
             // 
             this.tsiRecetas.Name = "tsiRecetas";
-            this.tsiRecetas.Size = new System.Drawing.Size(229, 44);
+            this.tsiRecetas.Size = new System.Drawing.Size(359, 44);
             this.tsiRecetas.Text = "Recetas";
             // 
             // tsiPrecios
             // 
             this.tsiPrecios.Name = "tsiPrecios";
-            this.tsiPrecios.Size = new System.Drawing.Size(229, 44);
+            this.tsiPrecios.Size = new System.Drawing.Size(359, 44);
             this.tsiPrecios.Text = "Precios";
             // 
             // tsVentas
@@ -114,7 +128,7 @@
             this.tsiPedidos,
             this.tsiFacturas});
             this.tsVentas.Name = "tsVentas";
-            this.tsVentas.Size = new System.Drawing.Size(105, 38);
+            this.tsVentas.Size = new System.Drawing.Size(105, 40);
             this.tsVentas.Text = "Ventas";
             // 
             // tsiPedidos
@@ -132,16 +146,43 @@
             // tsCompras
             // 
             this.tsCompras.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsiOrdenesCompra});
+            this.tsiOrdenesCompra,
+            this.tsiOrdenesPago});
             this.tsCompras.Name = "tsCompras";
-            this.tsCompras.Size = new System.Drawing.Size(129, 38);
+            this.tsCompras.Size = new System.Drawing.Size(129, 40);
             this.tsCompras.Text = "Compras";
             // 
             // tsiOrdenesCompra
             // 
             this.tsiOrdenesCompra.Name = "tsiOrdenesCompra";
-            this.tsiOrdenesCompra.Size = new System.Drawing.Size(359, 44);
+            this.tsiOrdenesCompra.Size = new System.Drawing.Size(239, 44);
             this.tsiOrdenesCompra.Text = "Ordenes";
+            // 
+            // tsiOrdenesPago
+            // 
+            this.tsiOrdenesPago.Name = "tsiOrdenesPago";
+            this.tsiOrdenesPago.Size = new System.Drawing.Size(239, 44);
+            this.tsiOrdenesPago.Text = "Pagos";
+            // 
+            // tsBitacora
+            // 
+            this.tsBitacora.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsiBitacora});
+            this.tsBitacora.Name = "tsBitacora";
+            this.tsBitacora.Size = new System.Drawing.Size(120, 40);
+            this.tsBitacora.Text = "Bitacora";
+            // 
+            // tsiBitacora
+            // 
+            this.tsiBitacora.Name = "tsiBitacora";
+            this.tsiBitacora.Size = new System.Drawing.Size(183, 44);
+            this.tsiBitacora.Text = "Ver";
+            // 
+            // tsiPedidosCocina
+            // 
+            this.tsiPedidosCocina.Name = "tsiPedidosCocina";
+            this.tsiPedidosCocina.Size = new System.Drawing.Size(359, 44);
+            this.tsiPedidosCocina.Text = "Pedidos";
             // 
             // InicioForm
             // 
@@ -175,5 +216,10 @@
         private System.Windows.Forms.ToolStripMenuItem tsiFacturas;
         private System.Windows.Forms.ToolStripMenuItem tsCompras;
         private System.Windows.Forms.ToolStripMenuItem tsiOrdenesCompra;
+        private System.Windows.Forms.ToolStripMenuItem tsiOrdenesPago;
+        private System.Windows.Forms.ToolStripMenuItem tsBitacora;
+        private System.Windows.Forms.ToolStripMenuItem tsiBitacora;
+        private System.Windows.Forms.ToolStripMenuItem tsiUsuarios;
+        private System.Windows.Forms.ToolStripMenuItem tsiPedidosCocina;
     }
 }

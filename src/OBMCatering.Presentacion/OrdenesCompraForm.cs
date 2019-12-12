@@ -7,14 +7,16 @@ namespace OBMCatering.Presentacion
 {
     public partial class OrdenesCompraForm : Form
     {
+        ContextoPresentacion contexto;
         LocalidadesBL localidadesBL;
         ClientesBL clientesBL;
         IngredientesBL ingredientesBL;
         PreciosIngredientesBL precioIngredientesBL;
         RecetasBL recetasBL;
         OrdenesVentaBL ordenesVentaBL;
-        FacturasBL facturasBL;
         OrdenesCompraBL ordenesCompraBL;
+        ProveedoresBL proveedoresBL;
+        OrdenesPagoBL ordenesPagoBL;
         OrdenCompraPresentacion ordenCompraSeleccionada;
 
         public OrdenesCompraForm()
@@ -24,30 +26,60 @@ namespace OBMCatering.Presentacion
 
         void OrdenesCompra_Load(object sender, EventArgs e)
         {
-            localidadesBL = new LocalidadesBL(ContextoNegocio.Instancia);
-            clientesBL = new ClientesBL(ContextoNegocio.Instancia, localidadesBL);
-            ingredientesBL = new IngredientesBL(ContextoNegocio.Instancia);
-            precioIngredientesBL = new PreciosIngredientesBL(ContextoNegocio.Instancia);
-            recetasBL = new RecetasBL(ContextoNegocio.Instancia, precioIngredientesBL);
-            ordenesVentaBL = new OrdenesVentaBL(ContextoNegocio.Instancia, recetasBL, clientesBL);
-            ordenesCompraBL = new OrdenesCompraBL(ContextoNegocio.Instancia, ordenesVentaBL, ingredientesBL);
+            contexto = ContextoPresentacion.Instancia;
+            localidadesBL = new LocalidadesBL(contexto.Negocio);
+            clientesBL = new ClientesBL(contexto.Negocio, localidadesBL);
+            ingredientesBL = new IngredientesBL(contexto.Negocio);
+            precioIngredientesBL = new PreciosIngredientesBL(contexto.Negocio);
+            recetasBL = new RecetasBL(contexto.Negocio, precioIngredientesBL);
+            ordenesVentaBL = new OrdenesVentaBL(contexto.Negocio, recetasBL, clientesBL);
+            ordenesCompraBL = new OrdenesCompraBL(contexto.Negocio, ordenesVentaBL, ingredientesBL);
+            proveedoresBL = new ProveedoresBL(contexto.Negocio, localidadesBL);
+            ordenesPagoBL = new OrdenesPagoBL(contexto.Negocio, proveedoresBL, ordenesCompraBL);
 
-            btnAprobar.Click += BtnAprobar_Click;
+            btnGuardar.Click += BtnGuardar_Click;
             grvOrdenesCompra.SelectionChanged += GrvOrdenesCompra_SelectionChanged;
             grvOrdenesCompra.CellEnter += GrvOrdenesCompra_CellEnter;
+            CargarProveedores();
             CargarOrdenesCompra();
             LimpiarFormulario();
+
+            contexto.RegistrarEvento("Ingreso a la pantalla de ordenes de compra");
         }
 
-        void BtnAprobar_Click(object sender, EventArgs e)
+        void BtnGuardar_Click(object sender, EventArgs e)
         {
-            OrdenCompra ordenCompra = ordenesCompraBL.Obtener(ordenCompraSeleccionada.ObtenerId());
+            try
+            {
+                OrdenCompra ordenCompra = ordenesCompraBL.Obtener(ordenCompraSeleccionada.ObtenerId());
+                EstadoOrdenCompra nuevoEstado = EstadoOrdenCompra.Generada;
 
-            ordenCompra.Ejecutada = true;
-            ordenesCompraBL.Actualizar(ordenCompra);
+                if (ordenCompra.Estado == EstadoOrdenCompra.Generada)
+                {
+                    nuevoEstado = EstadoOrdenCompra.Aprobada;
+                }
+                else if (ordenCompra.Estado == EstadoOrdenCompra.Aprobada)
+                {
+                    nuevoEstado = EstadoOrdenCompra.Realizada;
+                }
 
-            CargarOrdenesCompra();
-            LimpiarFormulario();
+                ordenCompra.Estado = nuevoEstado;
+                ordenesCompraBL.Actualizar(ordenCompra);
+
+                contexto.RegistrarEvento("La orden de compra para el pedido de {0} ha sido actualizada", ordenCompra.OrdenVenta.Cliente.Nombre);
+
+                if (nuevoEstado == EstadoOrdenCompra.Realizada)
+                {
+                    CrearOrdenPago();
+                }
+
+                CargarOrdenesCompra();
+                LimpiarFormulario();
+            }
+            catch(Exception ex)
+            {
+                contexto.RegistrarError(ex);
+            }
         }
 
         void GrvOrdenesCompra_SelectionChanged(object sender, EventArgs e)
@@ -73,11 +105,58 @@ namespace OBMCatering.Presentacion
             CargarOrdenCompraSeleccionada(ordenCompraSeleccionada);
         }
 
+        void CargarProveedores()
+        {
+            try
+            {
+                IEnumerable<Proveedor> proveedores = proveedoresBL.ObtenerActivos();
+
+                foreach (Proveedor proveedor in proveedores)
+                {
+                    cboProveedor.Items.Add(proveedor.Nombre);
+                }
+            }
+            catch (Exception ex)
+            {
+                contexto.RegistrarError(ex);
+            }
+        }
+
+        void CrearOrdenPago()
+        {
+            OrdenPago ordenPago = new OrdenPago();
+            Proveedor proveedor = proveedoresBL.ObtenerPorNombre(cboProveedor.SelectedItem.ToString());
+
+            ordenPago.Fecha = DateTime.Now;
+            ordenPago.Pagada = false;
+            ordenPago.Proveedor = proveedor;
+
+            foreach (ItemOrdenCompraPresentacion itemOrdenCompra in ordenCompraSeleccionada.ObtenerItems())
+            {
+                ItemOrdenPago itemOrdenPago = new ItemOrdenPago();
+
+                itemOrdenPago.ItemOrdenCompra = itemOrdenCompra.ObtenerItemOrdenCompra();
+                itemOrdenPago.Precio = 0m;
+
+                ordenPago.Items.Add(itemOrdenPago);
+            }
+
+            ordenesPagoBL.Crear(ordenPago);
+            contexto.RegistrarEvento("La orden de pago para el proveedor {0} ha sido creada", proveedor.Nombre);
+        }
+
         void CargarOrdenesCompra()
         {
-            IEnumerable<OrdenCompra> ordenesCompra = ordenesCompraBL.Obtener();
+            try
+            {
+                IEnumerable<OrdenCompra> ordenesCompra = ordenesCompraBL.Obtener();
 
-            grvOrdenesCompra.DataSource = ObtenerOrdenesCompraPresentacion(ordenesCompra);
+                grvOrdenesCompra.DataSource = ObtenerOrdenesCompraPresentacion(ordenesCompra);
+            }
+            catch (Exception ex)
+            {
+                contexto.RegistrarError(ex);
+            }
         }
 
         IEnumerable<OrdenCompraPresentacion> ObtenerOrdenesCompraPresentacion(IEnumerable<OrdenCompra> ordenesCompra)
@@ -96,7 +175,22 @@ namespace OBMCatering.Presentacion
         {
             lblFecha.Text = ordenCompraPresentacion.Fecha.ToShortDateString();
             lblCliente.Text = ordenCompraPresentacion.Cliente;
-            btnAprobar.Visible = !ordenCompraPresentacion.Ejecutada;
+            lblEstado.Text = ordenCompraPresentacion.Estado;
+
+            if(ordenCompraPresentacion.Estado == EstadoOrdenCompra.Aprobada.ToString())
+            {
+                lblProveedorTitulo.Visible = true;
+                cboProveedor.Visible = true;
+                btnGuardar.Text = "Realizada";
+            }
+            else
+            {
+                lblProveedorTitulo.Visible = false;
+                cboProveedor.Visible = false;
+                btnGuardar.Text = "Aprobar";
+            }
+
+            btnGuardar.Visible = ordenCompraPresentacion.Estado != EstadoOrdenCompra.Realizada.ToString();
             grvIngredientes.DataSource = ordenCompraPresentacion.ObtenerItems();
             ordenCompraSeleccionada = ordenCompraPresentacion;
         }
@@ -105,9 +199,12 @@ namespace OBMCatering.Presentacion
         {
             lblFecha.Text = string.Empty;
             lblCliente.Text = string.Empty;
+            lblEstado.Text = string.Empty;
             grvOrdenesCompra.ClearSelection();
             grvIngredientes.DataSource = new List<ItemOrdenCompraPresentacion>();
-            btnAprobar.Visible = false;
+            lblProveedorTitulo.Visible = false;
+            cboProveedor.Visible = false;
+            btnGuardar.Visible = false;
             ordenCompraSeleccionada = null;
         }
     }

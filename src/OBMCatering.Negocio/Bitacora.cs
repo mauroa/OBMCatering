@@ -12,6 +12,6 @@ namespace OBMCatering.Negocio
 
         public TipoMensajeBitacora Tipo { get; set; }
 
-        public virtual Usuario Usuario { get; set; }
+        public Usuario Usuario { get; set; }
     }
 }

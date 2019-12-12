@@ -5,8 +5,12 @@ namespace OBMCatering.Presentacion
 {
     public class EmpleadoPresentacion
     {
+        Empleado empleado;
+
         public EmpleadoPresentacion(Empleado empleado)
         {
+            this.empleado = empleado;
+
             CUIT = empleado.CUIT;
             Nombre = empleado.Nombre;
             FechaNacimiento = empleado.FechaNacimiento;
@@ -41,5 +45,10 @@ namespace OBMCatering.Presentacion
         public DateTime FechaAlta { get; set; }
 
         public DateTime? FechaBaja { get; set; }
+
+        public Empleado ObtenerEmpleado()
+        {
+            return empleado;
+        }
     }
 }

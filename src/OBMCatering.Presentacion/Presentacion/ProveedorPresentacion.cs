@@ -5,8 +5,12 @@ namespace OBMCatering.Presentacion
 {
     public class ProveedorPresentacion
     {
+        Proveedor proveedor;
+
         public ProveedorPresentacion(Proveedor proveedor)
         {
+            this.proveedor = proveedor;
+
             CUIT = proveedor.CUIT;
             Nombre = proveedor.Nombre;
             Domicilio = proveedor.Domicilio;
@@ -38,5 +42,10 @@ namespace OBMCatering.Presentacion
         public DateTime FechaAlta { get; set; }
 
         public DateTime? FechaBaja { get; set; }
+
+        public Proveedor ObtenerProveedor()
+        {
+            return proveedor;
+        }
     }
 }

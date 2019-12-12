@@ -324,7 +324,7 @@
             // 
             this.grvEmpleados.AllowUserToAddRows = false;
             this.grvEmpleados.AllowUserToDeleteRows = false;
-            this.grvEmpleados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.grvEmpleados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.grvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grvEmpleados.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.grvEmpleados.Location = new System.Drawing.Point(0, 470);

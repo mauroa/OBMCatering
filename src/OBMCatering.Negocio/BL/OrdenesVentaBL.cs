@@ -17,14 +17,27 @@ namespace OBMCatering.Negocio
 
         public void Crear(OrdenVenta ordenVenta)
         {
+            ValidarOrdenVenta(ordenVenta);
+
             Datos.ClientesDAL dalClientes = dal.ObtenerClientesDAL();
             Datos.Cliente clienteDAL = dalClientes.Obtener(ordenVenta.Cliente.CUIT);
+
+            if (clienteDAL == null)
+            {
+                throw new OBMCateringException(string.Format("El cliente con CUIT '{0}' es incorrecto o no es valido en el sistema", ordenVenta.Cliente.CUIT));
+            }
+
             Datos.RecetasDAL dalRecetas = dal.ObtenerRecetasDAL();
             List<Datos.Receta> recetasDAL = new List<Datos.Receta>();
 
             foreach(Receta receta in ordenVenta.Recetas)
             {
                 Datos.Receta recetaDAL = dalRecetas.Obtener(receta.Id);
+
+                if (recetaDAL == null)
+                {
+                    throw new OBMCateringException(string.Format("La receta '{0}' es incorrecta o no es valida en el sistema para la orden de venta", receta.Nombre));
+                }
 
                 recetasDAL.Add(recetaDAL);
             }
@@ -48,8 +61,15 @@ namespace OBMCatering.Negocio
 
         public void Actualizar(OrdenVenta ordenVenta)
         {
+            ValidarOrdenVenta(ordenVenta);
+
             Datos.OrdenesVentaDAL dalOrdenesVenta = dal.ObtenerOrdenesVentaDAL();
             Datos.OrdenVenta ordenVentaDAL = dalOrdenesVenta.Obtener(ordenVenta.Id);
+
+            if (ordenVentaDAL == null)
+            {
+                throw new OBMCateringException("La orden de venta es incorrecta o no es valida en el sistema");
+            }
 
             ordenVentaDAL.Comensales = ordenVenta.Comensales;
             ordenVentaDAL.Precio = ordenVenta.Precio;
@@ -61,6 +81,8 @@ namespace OBMCatering.Negocio
 
         public decimal CalcularPrecio(OrdenVenta ordenVenta)
         {
+            ValidarOrdenVenta(ordenVenta);
+
             decimal precio = 0m;
 
             foreach(Receta receta in ordenVenta.Recetas)
@@ -94,8 +116,19 @@ namespace OBMCatering.Negocio
 
         public IEnumerable<OrdenVenta> Obtener(Cliente cliente)
         {
+            if (cliente == null)
+            {
+                throw new OBMCateringException("El cliente no puede ser nulo");
+            }
+
             Datos.ClientesDAL dalClientes = dal.ObtenerClientesDAL();
             Datos.Cliente clienteDAL = dalClientes.Obtener(cliente.CUIT);
+
+            if (clienteDAL == null)
+            {
+                throw new OBMCateringException(string.Format("El cliente con CUIT '{0}' no existe", cliente.CUIT));
+            }
+
             Datos.OrdenesVentaDAL dalOrdenesVenta = dal.ObtenerOrdenesVentaDAL();
             IEnumerable<Datos.OrdenVenta> ordenesVentaDAL = dalOrdenesVenta.Obtener(clienteDAL);
 
@@ -104,8 +137,19 @@ namespace OBMCatering.Negocio
 
         public IEnumerable<OrdenVenta> Obtener(Receta receta)
         {
+            if (receta == null)
+            {
+                throw new OBMCateringException("La receta no puede ser nula");
+            }
+
             Datos.RecetasDAL dalRecetas = dal.ObtenerRecetasDAL();
             Datos.Receta recetaDAL = dalRecetas.Obtener(receta.Id);
+
+            if (recetaDAL == null)
+            {
+                throw new OBMCateringException(string.Format("La receta '{0}' no existe", receta.Nombre));
+            }
+
             Datos.OrdenesVentaDAL dalOrdenesVenta = dal.ObtenerOrdenesVentaDAL();
             IEnumerable<Datos.OrdenVenta> ordenesVentaDAL = dalOrdenesVenta.Obtener(recetaDAL);
 
@@ -152,6 +196,29 @@ namespace OBMCatering.Negocio
                 Cliente = cliente,
                 Recetas = recetas
             };
+        }
+
+        void ValidarOrdenVenta(OrdenVenta ordenVenta)
+        {
+            if (ordenVenta == null)
+            {
+                throw new OBMCateringException("La orden de venta no puede ser nula");
+            }
+
+            if (ordenVenta.Cliente == null)
+            {
+                throw new OBMCateringException("El cliente de la orden de venta no puede ser nulo");
+            }
+
+            if (ordenVenta.Comensales <= 0)
+            {
+                throw new OBMCateringException("La orden de venta debe tener al menos un comensal");
+            }
+
+            if (ordenVenta.Recetas == null || ordenVenta.Recetas.Count == 0)
+            {
+                throw new OBMCateringException("La orden de venta debe tener al menos una receta");
+            }
         }
 
         IEnumerable<OrdenVenta> Obtener(IEnumerable<Datos.OrdenVenta> ordenesVentaDAL)

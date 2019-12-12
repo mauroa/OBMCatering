@@ -6,28 +6,31 @@ namespace OBMCatering.Presentacion
 {
     public class OrdenCompraPresentacion
     {
+        OrdenCompra ordenCompra;
         int id;
         List<ItemOrdenCompraPresentacion> items;
 
         public OrdenCompraPresentacion(OrdenCompra ordenCompra)
         {
-            Fecha = ordenCompra.Fecha;
-            Cliente = ordenCompra.OrdenVenta.Cliente.Nombre;
-            Ejecutada = ordenCompra.Ejecutada;
+            this.ordenCompra = ordenCompra;
             id = ordenCompra.Id;
             items = new List<ItemOrdenCompraPresentacion>();
 
-            foreach(ItemOrdenCompra item in ordenCompra.Items)
+            foreach (ItemOrdenCompra item in ordenCompra.Items)
             {
                 items.Add(new ItemOrdenCompraPresentacion(item));
             }
+
+            Fecha = ordenCompra.Fecha;
+            Cliente = ordenCompra.OrdenVenta.Cliente.Nombre;
+            Estado = ordenCompra.Estado.ToString();
         }
 
         public DateTime Fecha { get; set; }
 
         public string Cliente { get; set; }
 
-        public bool Ejecutada { get; set; }
+        public string Estado { get; set; }
 
         public int ObtenerId()
         {
@@ -37,6 +40,11 @@ namespace OBMCatering.Presentacion
         public IEnumerable<ItemOrdenCompraPresentacion> ObtenerItems()
         {
             return items;
+        }
+
+        public OrdenCompra ObtenerOrdenCompra()
+        {
+            return ordenCompra;
         }
     }
 }

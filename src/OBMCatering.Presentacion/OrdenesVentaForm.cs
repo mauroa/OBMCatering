@@ -8,6 +8,7 @@ namespace OBMCatering.Presentacion
 {
     public partial class OrdenesVentaForm : Form
     {
+        ContextoPresentacion contexto;
         LocalidadesBL localidadesBL;
         ClientesBL clientesBL;
         IngredientesBL ingredientesBL;
@@ -25,14 +26,15 @@ namespace OBMCatering.Presentacion
 
         void OrdenesVentaForm_Load(object sender, EventArgs e)
         {
-            localidadesBL = new LocalidadesBL(ContextoNegocio.Instancia);
-            clientesBL = new ClientesBL(ContextoNegocio.Instancia, localidadesBL);
-            ingredientesBL = new IngredientesBL(ContextoNegocio.Instancia);
-            precioIngredientesBL = new PreciosIngredientesBL(ContextoNegocio.Instancia);
-            recetasBL = new RecetasBL(ContextoNegocio.Instancia, precioIngredientesBL);
-            ordenesVentaBL = new OrdenesVentaBL(ContextoNegocio.Instancia, recetasBL, clientesBL);
-            facturasBL = new FacturasBL(ContextoNegocio.Instancia, ordenesVentaBL);
-            ordenesCompraBL = new OrdenesCompraBL(ContextoNegocio.Instancia, ordenesVentaBL, ingredientesBL);
+            contexto = ContextoPresentacion.Instancia;
+            localidadesBL = new LocalidadesBL(contexto.Negocio);
+            clientesBL = new ClientesBL(contexto.Negocio, localidadesBL);
+            ingredientesBL = new IngredientesBL(contexto.Negocio);
+            precioIngredientesBL = new PreciosIngredientesBL(contexto.Negocio);
+            recetasBL = new RecetasBL(contexto.Negocio, precioIngredientesBL);
+            ordenesVentaBL = new OrdenesVentaBL(contexto.Negocio, recetasBL, clientesBL);
+            facturasBL = new FacturasBL(contexto.Negocio, ordenesVentaBL);
+            ordenesCompraBL = new OrdenesCompraBL(contexto.Negocio, ordenesVentaBL, ingredientesBL);
 
             btnGuardar.Click += BtnGuardar_Click;
             btnCalcularPrecio.Click += BtnCalcularPrecio_Click;
@@ -42,41 +44,66 @@ namespace OBMCatering.Presentacion
             CargarRecetas();
             CargarOrdenesVenta();
             LimpiarFormulario();
+
+            contexto.RegistrarEvento("Ingreso a la pantalla de ordenes de venta");
         }
 
         void BtnGuardar_Click(object sender, EventArgs e)
         {
-            bool existeOrdenVenta = ordenesVentaBL.Existe(ordenVentaSeleccionada.ObtenerId());
-            OrdenVenta ordenVenta;
-
-            if (existeOrdenVenta)
+            try
             {
-                ordenVenta = ordenesVentaBL.Obtener(ordenVentaSeleccionada.ObtenerId());
-                SetearOrdenVenta(ordenVenta);
-                ordenesVentaBL.Actualizar(ordenVenta);
-            }
-            else
-            {
-                ordenVenta = Crear();
-                ordenesVentaBL.Crear(ordenVenta);
-            }
+                bool existeOrdenVenta = false;
+                OrdenVenta ordenVenta;
 
-            if(!ordenVentaSeleccionada.Aprobada && ordenVenta.Aprobada)
-            {
-                CrearFactura();
-                CrearOrdenCompra();
-            }
+                if (ordenVentaSeleccionada != null)
+                {
+                    existeOrdenVenta = ordenesVentaBL.Existe(ordenVentaSeleccionada.ObtenerId());
+                }
 
-            CargarOrdenesVenta();
-            LimpiarFormulario();
+                if (existeOrdenVenta)
+                {
+                    ordenVenta = ordenesVentaBL.Obtener(ordenVentaSeleccionada.ObtenerId());
+                    SetearOrdenVenta(ordenVenta);
+                    ordenesVentaBL.Actualizar(ordenVenta);
+
+                    contexto.RegistrarEvento("La orden de venta para el cliente {0} ha sido actualizada", ordenVenta.Cliente.Nombre);
+                }
+                else
+                {
+                    ordenVenta = Crear();
+                    ordenesVentaBL.Crear(ordenVenta);
+
+                    contexto.RegistrarEvento("La orden de venta para el cliente {0} ha sido creada", ordenVenta.Cliente.Nombre);
+                }
+
+                if ((!existeOrdenVenta || !ordenVentaSeleccionada.Aprobada) && ordenVenta.Aprobada)
+                {
+                    CrearFactura();
+                    CrearOrdenCompra();
+                }
+
+                CargarOrdenesVenta();
+                LimpiarFormulario();
+            }
+            catch(Exception ex)
+            {
+                contexto.RegistrarError(ex);
+            }
         }
 
         void BtnCalcularPrecio_Click(object sender, EventArgs e)
         {
-            OrdenVenta ordenVenta = Crear();
-            decimal precio = ordenesVentaBL.CalcularPrecio(ordenVenta);
+            try
+            {
+                OrdenVenta ordenVenta = Crear();
+                decimal precio = ordenesVentaBL.CalcularPrecio(ordenVenta);
 
-            lblPrecioCalculado.Text = precio.ToString();
+                lblPrecioCalculado.Text = precio.ToString();
+            }
+            catch (Exception ex)
+            {
+                contexto.RegistrarError(ex);
+            }
         }
 
         void GrvPedidos_SelectionChanged(object sender, EventArgs e)
@@ -104,29 +131,50 @@ namespace OBMCatering.Presentacion
 
         void CargarClientes()
         {
-            IEnumerable<Cliente> clientes = clientesBL.ObtenerActivos();
-
-            foreach(Cliente cliente in clientes)
+            try
             {
-                cboClientes.Items.Add(cliente.Nombre);
+                IEnumerable<Cliente> clientes = clientesBL.ObtenerActivos();
+
+                foreach (Cliente cliente in clientes)
+                {
+                    cboClientes.Items.Add(cliente.Nombre);
+                }
+            }
+            catch (Exception ex)
+            {
+                contexto.RegistrarError(ex);
             }
         }
 
         void CargarRecetas()
         {
-            IEnumerable<Receta> recetas = recetasBL.Obtener(EstadoReceta.Activa);
-
-            foreach(Receta receta in recetas)
+            try
             {
-                lstRecetas.Items.Add(receta.Nombre);
+                IEnumerable<Receta> recetas = recetasBL.Obtener(EstadoReceta.Activa);
+
+                foreach (Receta receta in recetas)
+                {
+                    lstRecetas.Items.Add(receta.Nombre);
+                }
+            }
+            catch (Exception ex)
+            {
+                contexto.RegistrarError(ex);
             }
         }
 
         void CargarOrdenesVenta()
         {
-            IEnumerable<OrdenVenta> ordenesVenta = ordenesVentaBL.Obtener();
+            try
+            {
+                IEnumerable<OrdenVenta> ordenesVenta = ordenesVentaBL.Obtener();
 
-            grvPedidos.DataSource = ObtenerOrdenesVentaPresentacion(ordenesVenta);
+                grvPedidos.DataSource = ObtenerOrdenesVentaPresentacion(ordenesVenta);
+            }
+            catch (Exception ex)
+            {
+                contexto.RegistrarError(ex);
+            }
         }
 
         IEnumerable<OrdenVentaPresentacion> ObtenerOrdenesVentaPresentacion(IEnumerable<OrdenVenta> ordenesVenta)
@@ -158,35 +206,35 @@ namespace OBMCatering.Presentacion
             ordenVenta.FechaFin = dtpFechaFin.Value;
             ordenVenta.Comensales = int.Parse(txtComensales.Text);
 
-            if(!string.IsNullOrEmpty(lblPrecioCalculado.Text))
+            if (!string.IsNullOrEmpty(lblPrecioCalculado.Text))
             {
                 ordenVenta.Precio = decimal.Parse(lblPrecioCalculado.Text);
             }
 
             ordenVenta.Aprobada = chkAprobada.Checked;
 
-            foreach(Receta receta in ordenVenta.Recetas.ToList())
+            foreach (Receta receta in ordenVenta.Recetas.ToList())
             {
-                if(!lstRecetas.Items.Contains(receta.Nombre))
+                if (!lstRecetas.Items.Contains(receta.Nombre))
                 {
                     ordenVenta.Recetas.Remove(receta);
                 }
             }
 
-            foreach(object item in lstRecetas.SelectedItems)
+            foreach (object item in lstRecetas.SelectedItems)
             {
                 bool existeReceta = false;
 
                 foreach (Receta receta in ordenVenta.Recetas)
                 {
-                    if(receta.Nombre == item.ToString())
+                    if (receta.Nombre == item.ToString())
                     {
                         existeReceta = true;
                         break;
                     }
                 }
 
-                if(!existeReceta)
+                if (!existeReceta)
                 {
                     Receta receta = recetasBL.Obtener(item.ToString());
 
@@ -230,6 +278,7 @@ namespace OBMCatering.Presentacion
             factura.Fecha = DateTime.Now;
 
             facturasBL.Crear(factura);
+            contexto.RegistrarEvento("La factura para el cliente {0} ha sido creada", ordenVenta.Cliente.Nombre);
         }
 
         void CrearOrdenCompra()
@@ -237,6 +286,7 @@ namespace OBMCatering.Presentacion
             OrdenVenta ordenVenta = ordenesVentaBL.Obtener(ordenVentaSeleccionada.ObtenerId());
 
             ordenesCompraBL.Crear(ordenVenta);
+            contexto.RegistrarEvento("La orden de compra para el pedido del cliente {0} ha sido creada", ordenVenta.Cliente.Nombre);
         }
 
         void LimpiarFormulario()

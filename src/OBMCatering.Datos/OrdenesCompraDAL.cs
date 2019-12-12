@@ -34,13 +34,13 @@ namespace OBMCatering.Datos
             return modelo.OrdenesCompra.ToList();
         }
 
-        public IEnumerable<OrdenCompra> Obtener(bool ejecutadas)
+        public IEnumerable<OrdenCompra> Obtener(EstadoOrdenCompra estado)
         {
             List<OrdenCompra> ordenesCompra = new List<OrdenCompra>();
 
             foreach(OrdenCompra ordenCompra in modelo.OrdenesCompra)
             {
-                if(ordenCompra.Ejecutada == ejecutadas)
+                if(ordenCompra.Estado.Estado == estado.Estado)
                 {
                     ordenesCompra.Add(ordenCompra);
                 }
@@ -63,6 +63,22 @@ namespace OBMCatering.Datos
                 if(itemOrdenCompra.ID == id)
                 {
                     resultado = itemOrdenCompra;
+                    break;
+                }
+            }
+
+            return resultado;
+        }
+
+        public EstadoOrdenCompra ObtenerEstado(string estado)
+        {
+            EstadoOrdenCompra resultado = null;
+
+            foreach (EstadoOrdenCompra estadoOrdenCompra in modelo.EstadosOrdenesCompra)
+            {
+                if (estadoOrdenCompra.Estado == estado)
+                {
+                    resultado = estadoOrdenCompra;
                     break;
                 }
             }

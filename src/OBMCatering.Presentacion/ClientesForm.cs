@@ -7,6 +7,7 @@ namespace OBMCatering.Presentacion
 {
     public partial class ClientesForm : Form
     {
+        ContextoPresentacion contexto;
         LocalidadesBL localidadesBL;
         ClientesBL clientesBL;
 
@@ -17,8 +18,9 @@ namespace OBMCatering.Presentacion
 
         void ClientesForm_Load(object sender, EventArgs e)
         {
-            localidadesBL = new LocalidadesBL(ContextoNegocio.Instancia);
-            clientesBL = new ClientesBL(ContextoNegocio.Instancia, localidadesBL);
+            contexto = ContextoPresentacion.Instancia;
+            localidadesBL = new LocalidadesBL(contexto.Negocio);
+            clientesBL = new ClientesBL(contexto.Negocio, localidadesBL);
             
             btnGuardar.Click += BtnGuardar_Click;
             grvClientes.SelectionChanged += GrvClientes_SelectionChanged;
@@ -28,30 +30,43 @@ namespace OBMCatering.Presentacion
             CargarTiposCliente();
             CargarClientes();
             LimpiarFormulario();
+
+            contexto.RegistrarEvento("Ingreso a la pantalla de clientes");
         }
 
         void BtnGuardar_Click(object sender, EventArgs e)
         {
-            bool existeCliente = clientesBL.Existe(txtCUIT.Text);
-            Cliente cliente;
-
-            if (existeCliente)
+            try
             {
-                cliente = clientesBL.ObtenerPorCUIT(txtCUIT.Text);
+                bool existeCliente = clientesBL.Existe(txtCUIT.Text);
+                Cliente cliente;
 
-                SetearCliente(cliente);
-                clientesBL.Actualizar(cliente); ;
+                if (existeCliente)
+                {
+                    cliente = clientesBL.ObtenerPorCUIT(txtCUIT.Text);
+
+                    SetearCliente(cliente);
+                    clientesBL.Actualizar(cliente);
+
+                    contexto.RegistrarEvento("El cliente {0} ha sido actualizado", cliente.Nombre);
+                }
+                else
+                {
+                    cliente = new Cliente();
+
+                    SetearCliente(cliente);
+                    clientesBL.Crear(cliente);
+
+                    contexto.RegistrarEvento("El cliente {0} ha sido creado", cliente.Nombre);
+                }
+
+                CargarClientes();
+                LimpiarFormulario();
             }
-            else
+            catch(Exception ex)
             {
-                cliente = new Cliente();
-
-                SetearCliente(cliente);
-                clientesBL.Crear(cliente);
+                contexto.RegistrarError(ex);
             }
-
-            CargarClientes();
-            LimpiarFormulario();
         }
 
         void GrvClientes_SelectionChanged(object sender, EventArgs e)
@@ -106,24 +121,38 @@ namespace OBMCatering.Presentacion
 
         void CargarProvincias()
         {
-            IEnumerable<Provincia> provincias = localidadesBL.ObtenerProvincias();
-
-            foreach(Provincia provincia in provincias)
+            try
             {
-                cboProvincias.Items.Add(provincia.Nombre);
+                IEnumerable<Provincia> provincias = localidadesBL.ObtenerProvincias();
+
+                foreach (Provincia provincia in provincias)
+                {
+                    cboProvincias.Items.Add(provincia.Nombre);
+                }
+            }
+            catch (Exception ex)
+            {
+                contexto.RegistrarError(ex);
             }
         }
 
         void CargarLocalidades(string provinciaSeleccionada)
         {
-            Provincia provincia = localidadesBL.ObtenerProvincia(provinciaSeleccionada);
-            IEnumerable<Localidad> localidades = localidadesBL.ObtenerLocalidades(provincia);
-
-            cboLocalidades.Items.Clear();
-
-            foreach (Localidad localidad in localidades)
+            try
             {
-                cboLocalidades.Items.Add(localidad.Nombre);
+                Provincia provincia = localidadesBL.ObtenerProvincia(provinciaSeleccionada);
+                IEnumerable<Localidad> localidades = localidadesBL.ObtenerLocalidades(provincia);
+
+                cboLocalidades.Items.Clear();
+
+                foreach (Localidad localidad in localidades)
+                {
+                    cboLocalidades.Items.Add(localidad.Nombre);
+                }
+            }
+            catch (Exception ex)
+            {
+                contexto.RegistrarError(ex);
             }
         }
 
@@ -135,9 +164,16 @@ namespace OBMCatering.Presentacion
 
         void CargarClientes()
         {
-            IEnumerable<Cliente> clientes = clientesBL.Obtener();
+            try
+            {
+                IEnumerable<Cliente> clientes = clientesBL.Obtener();
 
-            grvClientes.DataSource = ObtenerClientesPresentacion(clientes);
+                grvClientes.DataSource = ObtenerClientesPresentacion(clientes);
+            }
+            catch (Exception ex)
+            {
+                contexto.RegistrarError(ex);
+            }
         }
 
         IEnumerable<ClientePresentacion> ObtenerClientesPresentacion(IEnumerable<Cliente> clientes)
@@ -173,7 +209,7 @@ namespace OBMCatering.Presentacion
         {
             txtCUIT.Text = string.Empty;
             txtNombre.Text = string.Empty;
-            dtpFechaAlta.Value = dtpFechaAlta.MinDate;
+            dtpFechaAlta.Value = DateTime.Now;
             txtDomicilio.Text = string.Empty;
             cboProvincias.SelectedItem = null;
             cboLocalidades.SelectedItem = null;

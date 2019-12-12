@@ -51,6 +51,8 @@
         <AssociationConnector Association="OBMCateringModel.FK_Usuarios_PerfilesUsuario" ManuallyRouted="false" />
         <AssociationConnector Association="OBMCateringModel.FK_PreciosIngredientes_UnidadesMedida" ManuallyRouted="false" />
         <AssociationConnector Association="OBMCateringModel.RecetasOrdenesVenta" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="OBMCateringModel.EstadoOrdenCompra" Width="1.5" PointX="6.375" PointY="3.75" />
+        <AssociationConnector Association="OBMCateringModel.FK_OrdenesCompra_EstadosOrdenesCompra" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

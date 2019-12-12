@@ -299,7 +299,7 @@
             // 
             this.grvClientes.AllowUserToAddRows = false;
             this.grvClientes.AllowUserToDeleteRows = false;
-            this.grvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.grvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.grvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grvClientes.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.grvClientes.Location = new System.Drawing.Point(0, 471);

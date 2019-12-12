@@ -7,6 +7,7 @@ namespace OBMCatering.Presentacion
 {
     public partial class FacturasForm : Form
     {
+        ContextoPresentacion contexto;
         LocalidadesBL localidadesBL;
         ClientesBL clientesBL;
         PreciosIngredientesBL precioIngredientesBL;
@@ -22,29 +23,41 @@ namespace OBMCatering.Presentacion
 
         void FacturasForm_Load(object sender, EventArgs e)
         {
-            localidadesBL = new LocalidadesBL(ContextoNegocio.Instancia);
-            clientesBL = new ClientesBL(ContextoNegocio.Instancia, localidadesBL);
-            precioIngredientesBL = new PreciosIngredientesBL(ContextoNegocio.Instancia);
-            recetasBL = new RecetasBL(ContextoNegocio.Instancia, precioIngredientesBL);
-            ordenesVentaBL = new OrdenesVentaBL(ContextoNegocio.Instancia, recetasBL, clientesBL);
-            facturasBL = new FacturasBL(ContextoNegocio.Instancia, ordenesVentaBL);
+            contexto = ContextoPresentacion.Instancia;
+            localidadesBL = new LocalidadesBL(contexto.Negocio);
+            clientesBL = new ClientesBL(contexto.Negocio, localidadesBL);
+            precioIngredientesBL = new PreciosIngredientesBL(contexto.Negocio);
+            recetasBL = new RecetasBL(contexto.Negocio, precioIngredientesBL);
+            ordenesVentaBL = new OrdenesVentaBL(contexto.Negocio, recetasBL, clientesBL);
+            facturasBL = new FacturasBL(contexto.Negocio, ordenesVentaBL);
 
-            btnCobrar.Click += BtnCobrar_Click;
+            btnCobrada.Click += BtnCobrada_Click;
             grvFacturas.SelectionChanged += GrvFacturas_SelectionChanged;
             grvFacturas.CellEnter += GrvFacturas_CellEnter;
             CargarFacturas();
             LimpiarFormulario();
+
+            contexto.RegistrarEvento("Ingreso a la pantalla de facturas");
         }
 
-        void BtnCobrar_Click(object sender, EventArgs e)
+        void BtnCobrada_Click(object sender, EventArgs e)
         {
-            Factura factura = facturasBL.Obtener(facturaSeleccionada.ObtenerId());
+            try
+            {
+                Factura factura = facturasBL.Obtener(facturaSeleccionada.ObtenerId());
 
-            factura.Cobrada = true;
-            facturasBL.Actualizar(factura);
+                factura.Cobrada = true;
+                facturasBL.Actualizar(factura);
 
-            CargarFacturas();
-            LimpiarFormulario();
+                CargarFacturas();
+                LimpiarFormulario();
+
+                contexto.RegistrarEvento("La factura para {0} ha sido marcada como cobrada", factura.OrdenVenta.Cliente.Nombre);
+            }
+            catch(Exception ex)
+            {
+                contexto.RegistrarError(ex);
+            }
         }
 
         void GrvFacturas_SelectionChanged(object sender, EventArgs e)
@@ -72,9 +85,16 @@ namespace OBMCatering.Presentacion
 
         void CargarFacturas()
         {
-            IEnumerable<Factura> facturas = facturasBL.Obtener();
+            try
+            {
+                IEnumerable<Factura> facturas = facturasBL.Obtener();
 
-            grvFacturas.DataSource = ObtenerFacturasPresentacion(facturas);
+                grvFacturas.DataSource = ObtenerFacturasPresentacion(facturas);
+            }
+            catch (Exception ex)
+            {
+                contexto.RegistrarError(ex);
+            }
         }
 
         IEnumerable<FacturaPresentacion> ObtenerFacturasPresentacion(IEnumerable<Factura> facturas)
@@ -98,7 +118,7 @@ namespace OBMCatering.Presentacion
             lblComensales.Text = facturaPresentacion.Comensales.ToString();
             lblRecetas.Text = facturaPresentacion.Recetas;
             lblPrecioCalculado.Text = facturaPresentacion.Precio.ToString();
-            btnCobrar.Visible = !facturaPresentacion.Cobrada;
+            btnCobrada.Visible = !facturaPresentacion.Cobrada;
             facturaSeleccionada = facturaPresentacion;
         }
 
@@ -111,7 +131,7 @@ namespace OBMCatering.Presentacion
             lblComensales.Text = string.Empty;
             lblRecetas.Text = string.Empty;
             lblPrecioCalculado.Text = string.Empty;
-            btnCobrar.Visible = false;
+            btnCobrada.Visible = false;
             grvFacturas.ClearSelection();
         }
     }

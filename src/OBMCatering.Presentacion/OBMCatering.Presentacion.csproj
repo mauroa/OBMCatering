@@ -62,6 +62,26 @@
     <Compile Include="BitacoraForm.Designer.cs">
       <DependentUpon>BitacoraForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ContextoPresentacion.cs" />
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrdenesPagoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrdenesPagoForm.Designer.cs">
+      <DependentUpon>OrdenesPagoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PedidosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PedidosForm.Designer.cs">
+      <DependentUpon>PedidosForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\BitacoraPresentacion.cs" />
     <Compile Include="Presentacion\ClientePresentacion.cs" />
     <Compile Include="Presentacion\FacturaPresentacion.cs" />
     <Compile Include="Presentacion\IngredientePresentacion.cs" />
@@ -72,11 +92,14 @@
       <DependentUpon>InicioForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\ItemOrdenCompraPresentacion.cs" />
+    <Compile Include="Presentacion\ItemOrdenPagoPresentacion.cs" />
     <Compile Include="Presentacion\OrdenCompraPresentacion.cs" />
+    <Compile Include="Presentacion\OrdenPagoPresentacion.cs" />
     <Compile Include="Presentacion\OrdenVentaPresentacion.cs" />
     <Compile Include="Presentacion\PrecioIngredientePresentacion.cs" />
     <Compile Include="Presentacion\ProveedorPresentacion.cs" />
     <Compile Include="Presentacion\EmpleadoPresentacion.cs" />
+    <Compile Include="Presentacion\UsuarioPresentacion.cs" />
     <Compile Include="ProveedoresForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,12 +130,6 @@
     <Compile Include="OrdenesCompraForm.Designer.cs">
       <DependentUpon>OrdenesCompraForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="OrdenesPagoForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OrdenesPagoForm.Designer.cs">
-      <DependentUpon>OrdenesPagoForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="OrdenesVentaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,20 +157,35 @@
     <Compile Include="RecetasForm.Designer.cs">
       <DependentUpon>RecetasForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UsuariosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsuariosForm.Designer.cs">
+      <DependentUpon>UsuariosForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BitacoraForm.resx">
+      <DependentUpon>BitacoraForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FacturasForm.resx">
       <DependentUpon>FacturasForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InicioForm.resx">
       <DependentUpon>InicioForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OrdenesCompraForm.resx">
-      <DependentUpon>OrdenesCompraForm.cs</DependentUpon>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrdenesPagoForm.resx">
       <DependentUpon>OrdenesPagoForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OrdenesCompraForm.resx">
+      <DependentUpon>OrdenesCompraForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OrdenesVentaForm.resx">
       <DependentUpon>OrdenesVentaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PedidosForm.resx">
+      <DependentUpon>PedidosForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PreciosForm.resx">
       <DependentUpon>PreciosForm.cs</DependentUpon>
@@ -181,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RecetasForm.resx">
       <DependentUpon>RecetasForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsuariosForm.resx">
+      <DependentUpon>UsuariosForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

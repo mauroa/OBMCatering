@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace OBMCatering.Presentacion
@@ -16,7 +13,18 @@ namespace OBMCatering.Presentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new InicioForm());
+
+            DialogResult resultado;
+
+            using (var loginForm = new LoginForm())
+            {
+                resultado = loginForm.ShowDialog();
+            }
+                
+            if (resultado == DialogResult.OK)
+            {
+                Application.Run(new InicioForm());
+            }
         }
     }
 }

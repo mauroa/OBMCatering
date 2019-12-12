@@ -5,8 +5,12 @@ namespace OBMCatering.Presentacion
 {
     public class ClientePresentacion
     {
+        Cliente cliente;
+
         public ClientePresentacion(Cliente cliente)
         {
+            this.cliente = cliente;
+
             CUIT = cliente.CUIT;
             Nombre = cliente.Nombre;
             Domicilio = cliente.Domicilio;
@@ -41,5 +45,10 @@ namespace OBMCatering.Presentacion
         public DateTime FechaAlta { get; set; }
 
         public bool Activo { get; set; }
+
+        public Cliente ObtenerCliente()
+        {
+            return cliente;
+        }
     }
 }

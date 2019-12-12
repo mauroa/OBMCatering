@@ -51,7 +51,9 @@
     <Compile Include="ContextoNegocio.cs" />
     <Compile Include="Empleado.cs" />
     <Compile Include="BL\EmpleadosBL.cs" />
+    <Compile Include="EstadoOrdenCompra.cs" />
     <Compile Include="EstadoReceta.cs" />
+    <Compile Include="Excepciones\OBMCateringException.cs" />
     <Compile Include="Factura.cs" />
     <Compile Include="BL\FacturasBL.cs" />
     <Compile Include="Ingrediente.cs" />

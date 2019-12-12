@@ -5,15 +5,18 @@ namespace OBMCatering.Presentacion
 {
     public class FacturaPresentacion
     {
+        Factura factura;
         int id;
         OrdenVentaPresentacion ordenVenta;
 
         public FacturaPresentacion(Factura factura)
         {
-            Fecha = factura.Fecha;
-            Cobrada = factura.Cobrada;
+            this.factura = factura;
             id = factura.Id;
             ordenVenta = new OrdenVentaPresentacion(factura.OrdenVenta);
+
+            Fecha = factura.Fecha;
+            Cobrada = factura.Cobrada;
         }
 
         public DateTime Fecha { get; set; }
@@ -71,6 +74,11 @@ namespace OBMCatering.Presentacion
         public int ObtenerId()
         {
             return id;
+        }
+
+        public Factura ObtenerFactura()
+        {
+            return factura;
         }
     }
 }

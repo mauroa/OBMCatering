@@ -17,14 +17,28 @@ namespace OBMCatering.Negocio
 
         public void Crear(OrdenPago ordenPago)
         {
+            ValidarOrdenPago(ordenPago);
+
             Datos.ProveedoresDAL dalProveedores = dal.ObtenerProveedoresDAL();
             Datos.Proveedor proveedorDAL = dalProveedores.Obtener(ordenPago.Proveedor.CUIT);
+
+            if (proveedorDAL == null)
+            {
+                throw new OBMCateringException(string.Format("El proveedor con CUIT '{0}' es incorrecto o no es valido en el sistema", ordenPago.Proveedor.CUIT));
+            }
+
             Datos.OrdenesCompraDAL dalOrdenesCompra = dal.ObtenerOrdenesCompraDAL();
             List<Datos.ItemOrdenPago> itemsOrdenesPagoDAL = new List<Datos.ItemOrdenPago>();
 
             foreach(ItemOrdenPago itemOrdenPago in ordenPago.Items)
             {
                 Datos.ItemOrdenCompra itemOrdenCompraDAL = dalOrdenesCompra.ObtenerItem(itemOrdenPago.ItemOrdenCompra.Id);
+
+                if (itemOrdenCompraDAL == null)
+                {
+                    throw new OBMCateringException("El item de orden de compra asociado a la orden de pago es incorrecto o no es valido en el sistema");
+                }
+
                 Datos.ItemOrdenPago itemOrdenPagoDAL = new Datos.ItemOrdenPago
                 {
                     ItemOrdenCompra = itemOrdenCompraDAL,
@@ -50,8 +64,34 @@ namespace OBMCatering.Negocio
 
         public void Actualizar(OrdenPago ordenPago)
         {
+            ValidarOrdenPago(ordenPago);
+
             Datos.OrdenesPagoDAL dalOrdenesPago = dal.ObtenerOrdenesPagoDAL();
             Datos.OrdenPago ordenPagoDAL = dalOrdenesPago.Obtener(ordenPago.Id);
+
+            if (ordenPagoDAL == null)
+            {
+                throw new OBMCateringException("La orden de pago es incorrecta o no es valida en el sistema");
+            }
+
+            foreach (Datos.ItemOrdenPago itemDAL in ordenPagoDAL.ItemsOrdenesPago)
+            {
+                ItemOrdenPago itemOrdenPago = null;
+
+                foreach (ItemOrdenPago item in ordenPago.Items)
+                {
+                    if (item.ItemOrdenCompra.Ingrediente.Nombre == itemDAL.ItemOrdenCompra.Ingrediente.Nombre)
+                    {
+                        itemOrdenPago = item;
+                        break;
+                    }
+                }
+
+                if (itemOrdenPago != null)
+                {
+                    itemDAL.Precio = itemOrdenPago.Precio;
+                }
+            }
 
             ordenPagoDAL.Pagada = ordenPago.Pagada;
 
@@ -77,12 +117,49 @@ namespace OBMCatering.Negocio
 
         public IEnumerable<OrdenPago> Obtener(Proveedor proveedor)
         {
+            if (proveedor == null)
+            {
+                throw new OBMCateringException("El proveedor no puede ser nulo");
+            }
+
             Datos.ProveedoresDAL dalProveedores = dal.ObtenerProveedoresDAL();
             Datos.Proveedor proveedorDAL = dalProveedores.Obtener(proveedor.CUIT);
+
+            if (proveedorDAL == null)
+            {
+                throw new OBMCateringException(string.Format("El proveedor con CUIT '{0}' no existe", proveedor.CUIT));
+            }
+
             Datos.OrdenesPagoDAL dalOrdenesPago = dal.ObtenerOrdenesPagoDAL();
             IEnumerable<Datos.OrdenPago> ordenesPagoDAL = dalOrdenesPago.Obtener(proveedorDAL);
 
             return Obtener(ordenesPagoDAL);
+        }
+
+        public OrdenPago Obtener(int id)
+        {
+            Datos.OrdenesPagoDAL dalOrdenesPago = dal.ObtenerOrdenesPagoDAL();
+            Datos.OrdenPago ordenPagoDAL = dalOrdenesPago.Obtener(id);
+
+            return Obtener(ordenPagoDAL);
+        }
+
+        void ValidarOrdenPago(OrdenPago ordenPago)
+        {
+            if (ordenPago == null)
+            {
+                throw new OBMCateringException("La orden de pago no puede ser nula");
+            }
+
+            if (ordenPago.Proveedor == null)
+            {
+                throw new OBMCateringException("El proveedor de la orden de pago no puede ser nulo");
+            }
+
+            if (ordenPago.Items == null || ordenPago.Items.Count == 0)
+            {
+                throw new OBMCateringException("La orden de pago debe tener al menos un item");
+            }
         }
 
         IEnumerable<OrdenPago> Obtener(IEnumerable<Datos.OrdenPago> ordenesPagoDAL)

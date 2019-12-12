@@ -7,6 +7,7 @@ namespace OBMCatering.Presentacion
 {
     public partial class RecetasForm : Form
     {
+        ContextoPresentacion contexto;
         PreciosIngredientesBL preciosIngredientesBL;
         RecetasBL recetasBL;
 
@@ -17,8 +18,9 @@ namespace OBMCatering.Presentacion
 
         void RecetasForm_Load(object sender, EventArgs e)
         {
-            preciosIngredientesBL = new PreciosIngredientesBL(ContextoNegocio.Instancia);
-            recetasBL = new RecetasBL(ContextoNegocio.Instancia, preciosIngredientesBL);
+            contexto = ContextoPresentacion.Instancia;
+            preciosIngredientesBL = new PreciosIngredientesBL(contexto.Negocio);
+            recetasBL = new RecetasBL(contexto.Negocio, preciosIngredientesBL);
 
             btnGuardar.Click += BtnGuardar_Click;
             btnVer.Click += BtnVer_Click; ;
@@ -26,30 +28,43 @@ namespace OBMCatering.Presentacion
             grvRecetas.CellEnter += GrvRecetas_CellEnter;
             CargarRecetas();
             LimpiarFormulario();
+
+            contexto.RegistrarEvento("Ingreso a la pantalla de recetas");
         }
 
         void BtnGuardar_Click(object sender, EventArgs e)
         {
-            bool existeReceta = recetasBL.Existe(txtNombre.Text);
-            Receta receta;
-
-            if (existeReceta)
+            try
             {
-                receta = recetasBL.Obtener(txtNombre.Text);
+                bool existeReceta = recetasBL.Existe(txtNombre.Text);
+                Receta receta;
 
-                SetearReceta(receta);
-                recetasBL.Actualizar(receta); ;
+                if (existeReceta)
+                {
+                    receta = recetasBL.Obtener(txtNombre.Text);
+
+                    SetearReceta(receta);
+                    recetasBL.Actualizar(receta);
+
+                    contexto.RegistrarEvento("La receta {0} ha sido actualizada", receta.Nombre);
+                }
+                else
+                {
+                    receta = new Receta();
+
+                    SetearReceta(receta);
+                    recetasBL.Crear(receta);
+
+                    contexto.RegistrarEvento("La receta {0} ha sido creada", receta.Nombre);
+                }
+
+                CargarRecetas();
+                LimpiarFormulario();
             }
-            else
+            catch(Exception ex)
             {
-                receta = new Receta();
-
-                SetearReceta(receta);
-                recetasBL.Crear(receta);
+                contexto.RegistrarError(ex);
             }
-
-            CargarRecetas();
-            LimpiarFormulario();
         }
 
         void BtnVer_Click(object sender, EventArgs e)
@@ -88,9 +103,16 @@ namespace OBMCatering.Presentacion
 
         void CargarRecetas()
         {
-            IEnumerable<Receta> recetas = recetasBL.Obtener();
+            try
+            {
+                IEnumerable<Receta> recetas = recetasBL.Obtener();
 
-            grvRecetas.DataSource = ObtenerRecetasPresentacion(recetas);
+                grvRecetas.DataSource = ObtenerRecetasPresentacion(recetas);
+            }
+            catch (Exception ex)
+            {
+                contexto.RegistrarError(ex);
+            }
         }
 
         IEnumerable<RecetaPresentacion> ObtenerRecetasPresentacion(IEnumerable<Receta> recetas)

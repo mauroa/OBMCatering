@@ -11,6 +11,7 @@ namespace OBMCatering.Negocio
         private ContextoNegocio()
         {
             dal = new OBMCateringDAL(new OBMCateringEntities());
+            Bitacora = new BitacoraBL(this, new UsuariosBL(this));
         }
 
         public static ContextoNegocio Instancia
@@ -25,6 +26,8 @@ namespace OBMCatering.Negocio
                 return instancia;
             }
         }
+
+        public BitacoraBL Bitacora { get; }
 
         public OBMCateringDAL ObtenerDatos()
         {

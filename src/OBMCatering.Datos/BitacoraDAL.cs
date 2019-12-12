@@ -28,7 +28,7 @@ namespace OBMCatering.Datos
 
             foreach(Bitacora bitacora in modelo.Bitacora)
             {
-                if(bitacora.Usuario.Nick == usuario.Nick)
+                if(bitacora.Usuario != null && bitacora.Usuario.Nick == usuario.Nick)
                 {
                     bitacoras.Add(bitacora);
                 }
