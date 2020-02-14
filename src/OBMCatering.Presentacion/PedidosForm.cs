@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Linq;
+using OBMCatering.Presentacion.Properties;
 
 namespace OBMCatering.Presentacion
 {
@@ -17,7 +18,15 @@ namespace OBMCatering.Presentacion
 
         public PedidosForm()
         {
+            this.CargarLenguaje();
             InitializeComponent();
+
+            Text = Resources.PedidosForm_Titulo;
+            lblDesde.Text = Resources.PedidosForm_Datos_Desde;
+            lblHasta.Text = Resources.PedidosForm_Datos_Hasta;
+            lblCliente.Text = Resources.PedidosForm_Datos_Cliente;
+            btnFiltrar.Text = Resources.PedidosForm_Datos_Filtrar;
+            btnRecetas.Text = Resources.PedidosForm_Datos_Recetas;
         }
 
         void PedidosForm_Load(object sender, EventArgs e)
@@ -36,7 +45,7 @@ namespace OBMCatering.Presentacion
             CargarPedidos();
             LimpiarFormulario();
 
-            contexto.RegistrarEvento("Ingreso a la pantalla de consulta de pedidos");
+            contexto.RegistrarEvento(Resources.PedidosForm_Ingreso);
         }
 
         void BtnFiltrar_Click(object sender, EventArgs e)

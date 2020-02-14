@@ -1,4 +1,5 @@
 ﻿using OBMCatering.Negocio;
+using OBMCatering.Presentacion.Properties;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -13,7 +14,22 @@ namespace OBMCatering.Presentacion
 
         public ClientesForm()
         {
+            this.CargarLenguaje();
             InitializeComponent();
+
+            Text = Resources.ClientesForm_Titulo;
+            lblCUIT.Text = Resources.ClientesForm_Datos_CUIT;
+            lblNombre.Text = Resources.ClientesForm_Datos_Nombre;
+            lblFechaAlta.Text = Resources.ClientesForm_Datos_FechaAlta;
+            lblDomicilio.Text = Resources.ClientesForm_Datos_Domicilio;
+            lblProvincia.Text = Resources.ClientesForm_Datos_Provincia;
+            lblLocalidad.Text = Resources.ClientesForm_Datos_Localidad;
+            lblCP.Text = Resources.ClientesForm_Datos_CP;
+            lblTelefono.Text = Resources.ClientesForm_Datos_Telefono;
+            lblEmail.Text = Resources.ClientesForm_Datos_Email;
+            lblTipo.Text = Resources.ClientesForm_Datos_Tipo;
+            chkActivo.Text = Resources.ClientesForm_Datos_Activo;
+            btnGuardar.Text = Resources.ClientesForm_Datos_Guardar;
         }
 
         void ClientesForm_Load(object sender, EventArgs e)
@@ -31,7 +47,7 @@ namespace OBMCatering.Presentacion
             CargarClientes();
             LimpiarFormulario();
 
-            contexto.RegistrarEvento("Ingreso a la pantalla de clientes");
+            contexto.RegistrarEvento(Resources.ClientesForm_Ingreso);
         }
 
         void BtnGuardar_Click(object sender, EventArgs e)
@@ -48,7 +64,7 @@ namespace OBMCatering.Presentacion
                     SetearCliente(cliente);
                     clientesBL.Actualizar(cliente);
 
-                    contexto.RegistrarEvento("El cliente {0} ha sido actualizado", cliente.Nombre);
+                    contexto.RegistrarEvento(Resources.ClientesForm_ClienteActualizado, cliente.Nombre);
                 }
                 else
                 {
@@ -57,7 +73,7 @@ namespace OBMCatering.Presentacion
                     SetearCliente(cliente);
                     clientesBL.Crear(cliente);
 
-                    contexto.RegistrarEvento("El cliente {0} ha sido creado", cliente.Nombre);
+                    contexto.RegistrarEvento(Resources.ClientesForm_ClienteCreado, cliente.Nombre);
                 }
 
                 CargarClientes();

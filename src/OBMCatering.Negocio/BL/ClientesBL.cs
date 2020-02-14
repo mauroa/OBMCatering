@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OBMCatering.Negocio.Properties;
+using System;
 using System.Collections.Generic;
 
 namespace OBMCatering.Negocio
@@ -23,7 +24,7 @@ namespace OBMCatering.Negocio
 
             if(localidadDAL == null)
             {
-                throw new OBMCateringException(string.Format("La localidad '{0}' es incorrecta o no es valida en el sistema", cliente.Localidad.Nombre));
+                throw new OBMCateringException(string.Format(Resources.BL_Validaciones_LocalidadInvalida, cliente.Localidad.Nombre));
             }
 
             Datos.ClientesDAL dalClientes = dal.ObtenerClientesDAL();
@@ -31,7 +32,7 @@ namespace OBMCatering.Negocio
 
             if (tipoClienteDAL == null)
             {
-                throw new OBMCateringException(string.Format("El tipo '{0}' es incorrecto o no es valido en el sistema", cliente.Tipo));
+                throw new OBMCateringException(string.Format(Resources.ClientesBL_Validaciones_TipoInvalido, cliente.Tipo));
             }
 
             Datos.Cliente clienteDAL = new Datos.Cliente
@@ -61,7 +62,7 @@ namespace OBMCatering.Negocio
 
             if (clienteDAL == null)
             {
-                throw new OBMCateringException(string.Format("El cliente con CUIT '{0}' no existe", cliente.CUIT));
+                throw new OBMCateringException(string.Format(Resources.BL_Validaciones_ClienteInvalido, cliente.CUIT));
             }
 
             Datos.LocalidadesDAL dalLocalidades = dal.ObtenerLocalidadesDAL();
@@ -69,7 +70,7 @@ namespace OBMCatering.Negocio
 
             if (localidadDAL == null)
             {
-                throw new OBMCateringException(string.Format("La localidad '{0}' es incorrecta o no es valida en el sistema", cliente.Localidad.Nombre));
+                throw new OBMCateringException(string.Format(Resources.BL_Validaciones_LocalidadInvalida, cliente.Localidad.Nombre));
             }
 
             clienteDAL.Domicilio = cliente.Domicilio;
@@ -92,7 +93,7 @@ namespace OBMCatering.Negocio
 
             if (clienteDAL == null)
             {
-                throw new OBMCateringException(string.Format("El cliente con CUIT '{0}' no existe", cliente.CUIT));
+                throw new OBMCateringException(string.Format(Resources.BL_Validaciones_ClienteInvalido, cliente.CUIT));
             }
 
             dalClientes.Eliminar(clienteDAL);
@@ -114,7 +115,7 @@ namespace OBMCatering.Negocio
 
             if (tipoClienteDAL == null)
             {
-                throw new OBMCateringException(string.Format("El tipo '{0}' es incorrecto o no es valido en el sistema", tipo));
+                throw new OBMCateringException(string.Format(Resources.ClientesBL_Validaciones_TipoInvalido, tipo));
             }
 
             IEnumerable<Datos.Cliente> clientesDAL = dalClientes.Obtener(tipoClienteDAL);
@@ -134,7 +135,7 @@ namespace OBMCatering.Negocio
         {
             if (string.IsNullOrEmpty(cuit))
             {
-                throw new OBMCateringException("El CUIT del cliente no puede ser nulo o vacio");
+                throw new OBMCateringException(Resources.BL_Validaciones_CUITNull);
             }
 
             Datos.ClientesDAL dalClientes = dal.ObtenerClientesDAL();
@@ -147,7 +148,7 @@ namespace OBMCatering.Negocio
         {
             if (string.IsNullOrEmpty(cuit))
             {
-                throw new OBMCateringException("El CUIT del cliente no puede ser nulo o vacio");
+                throw new OBMCateringException(Resources.BL_Validaciones_CUITNull);
             }
 
             Datos.ClientesDAL dalClientes = dal.ObtenerClientesDAL();
@@ -160,7 +161,7 @@ namespace OBMCatering.Negocio
         {
             if (string.IsNullOrEmpty(nombre))
             {
-                throw new OBMCateringException("El nombre del cliente no puede ser nulo o vacio");
+                throw new OBMCateringException(Resources.ClientesBL_Validaciones_NombreNull);
             }
 
             Datos.ClientesDAL dalClientes = dal.ObtenerClientesDAL();
@@ -193,42 +194,42 @@ namespace OBMCatering.Negocio
         {
             if(cliente == null)
             {
-                throw new OBMCateringException("El cliente no puede ser nulo");
+                throw new OBMCateringException(Resources.BL_Validaciones_ClienteNull);
             }
 
             if (string.IsNullOrEmpty(cliente.CUIT))
             {
-                throw new OBMCateringException("El CUIT del cliente no puede ser nulo o vacio");
+                throw new OBMCateringException(Resources.BL_Validaciones_CUITNull);
             }
 
             if (string.IsNullOrEmpty(cliente.Nombre))
             {
-                throw new OBMCateringException("El nombre del cliente no puede ser nulo o vacio");
+                throw new OBMCateringException(Resources.ClientesBL_Validaciones_NombreNull);
             }
 
             if (string.IsNullOrEmpty(cliente.Domicilio))
             {
-                throw new OBMCateringException("El domicilio del cliente no puede ser nulo o vacio");
+                throw new OBMCateringException(Resources.BL_Validaciones_DomicilioNull);
             }
 
             if (cliente.Localidad == null)
             {
-                throw new OBMCateringException("La localidad del cliente no puede ser nula");
+                throw new OBMCateringException(Resources.BL_Validaciones_LocalidadNull);
             }
 
             if (string.IsNullOrEmpty(cliente.CodigoPostal))
             {
-                throw new OBMCateringException("El codigo postal del cliente no puede ser nulo o vacio");
+                throw new OBMCateringException(Resources.BL_Validaciones_CPNull);
             }
 
             if (string.IsNullOrEmpty(cliente.Telefono))
             {
-                throw new OBMCateringException("El telefono del cliente no puede ser nulo o vacio");
+                throw new OBMCateringException(Resources.BL_Validaciones_TelefonoNull);
             }
 
             if (string.IsNullOrEmpty(cliente.Email))
             {
-                throw new OBMCateringException("El email del cliente no puede ser nulo o vacio");
+                throw new OBMCateringException(Resources.BL_Validaciones_EmailNull);
             }
         }
 

@@ -1,4 +1,5 @@
 ﻿using OBMCatering.Negocio;
+using OBMCatering.Presentacion.Properties;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -21,7 +22,15 @@ namespace OBMCatering.Presentacion
 
         public OrdenesCompraForm()
         {
+            this.CargarLenguaje();
             InitializeComponent();
+
+            Text = Resources.OrdenesCompraForm_Titulo;
+            lblFechaTitulo.Text = Resources.OrdenesCompraForm_Datos_Fecha;
+            lblClienteTitulo.Text = Resources.OrdenesCompraForm_Datos_Cliente;
+            lblEstadoTitulo.Text = Resources.OrdenesCompraForm_Datos_Estado;
+            lblProveedorTitulo.Text = Resources.OrdenesCompraForm_Datos_Proveedor;
+            lblItems.Text = Resources.OrdenesCompraForm_Datos_Items;
         }
 
         void OrdenesCompra_Load(object sender, EventArgs e)
@@ -44,7 +53,7 @@ namespace OBMCatering.Presentacion
             CargarOrdenesCompra();
             LimpiarFormulario();
 
-            contexto.RegistrarEvento("Ingreso a la pantalla de ordenes de compra");
+            contexto.RegistrarEvento(Resources.OrdenesCompraForm_Ingreso);
         }
 
         void BtnGuardar_Click(object sender, EventArgs e)
@@ -66,7 +75,7 @@ namespace OBMCatering.Presentacion
                 ordenCompra.Estado = nuevoEstado;
                 ordenesCompraBL.Actualizar(ordenCompra);
 
-                contexto.RegistrarEvento("La orden de compra para el pedido de {0} ha sido actualizada", ordenCompra.OrdenVenta.Cliente.Nombre);
+                contexto.RegistrarEvento(Resources.OrdenesCompraForm_OrdenCompraActualizada, ordenCompra.OrdenVenta.Cliente.Nombre);
 
                 if (nuevoEstado == EstadoOrdenCompra.Realizada)
                 {
@@ -142,7 +151,7 @@ namespace OBMCatering.Presentacion
             }
 
             ordenesPagoBL.Crear(ordenPago);
-            contexto.RegistrarEvento("La orden de pago para el proveedor {0} ha sido creada", proveedor.Nombre);
+            contexto.MostrarEvento(Resources.OrdenesCompraForm_OrdenPagoCreada, proveedor.Nombre);
         }
 
         void CargarOrdenesCompra()
@@ -181,13 +190,13 @@ namespace OBMCatering.Presentacion
             {
                 lblProveedorTitulo.Visible = true;
                 cboProveedor.Visible = true;
-                btnGuardar.Text = "Realizada";
+                btnGuardar.Text = Resources.OrdenesCompraForm_BotonGuardar_Realizada;
             }
             else
             {
                 lblProveedorTitulo.Visible = false;
                 cboProveedor.Visible = false;
-                btnGuardar.Text = "Aprobar";
+                btnGuardar.Text = Resources.OrdenesCompraForm_BotonGuardar_Aprobar;
             }
 
             btnGuardar.Visible = ordenCompraPresentacion.Estado != EstadoOrdenCompra.Realizada.ToString();

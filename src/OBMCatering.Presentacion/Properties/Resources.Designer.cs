@@ -8,10 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OBMCatering.Presentacion.Properties
-{
-
-
+namespace OBMCatering.Presentacion.Properties {
+    using System;
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -19,52 +19,1655 @@ namespace OBMCatering.Presentacion.Properties
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources
-    {
-
+    internal class Resources {
+        
         private static global::System.Resources.ResourceManager resourceMan;
-
+        
         private static global::System.Globalization.CultureInfo resourceCulture;
-
+        
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources()
-        {
+        internal Resources() {
         }
-
+        
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager
-        {
-            get
-            {
-                if ((resourceMan == null))
-                {
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("OBMCatering.Presentacion.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
             }
         }
-
+        
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture
-        {
-            get
-            {
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
                 return resourceCulture;
             }
-            set
-            {
+            set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Filtrar.
+        /// </summary>
+        internal static string BitacoraForm_Filtrar {
+            get {
+                return ResourceManager.GetString("BitacoraForm_Filtrar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Desde.
+        /// </summary>
+        internal static string BitacoraForm_Filtros_Desde {
+            get {
+                return ResourceManager.GetString("BitacoraForm_Filtros_Desde", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hasta.
+        /// </summary>
+        internal static string BitacoraForm_Filtros_Hasta {
+            get {
+                return ResourceManager.GetString("BitacoraForm_Filtros_Hasta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tipo.
+        /// </summary>
+        internal static string BitacoraForm_Filtros_Tipo {
+            get {
+                return ResourceManager.GetString("BitacoraForm_Filtros_Tipo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usuario.
+        /// </summary>
+        internal static string BitacoraForm_Filtros_Usuario {
+            get {
+                return ResourceManager.GetString("BitacoraForm_Filtros_Usuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ingreso a la pantalla de bitacora.
+        /// </summary>
+        internal static string BitacoraForm_Ingreso {
+            get {
+                return ResourceManager.GetString("BitacoraForm_Ingreso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bitacora del Sistema.
+        /// </summary>
+        internal static string BitacoraForm_Titulo {
+            get {
+                return ResourceManager.GetString("BitacoraForm_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El cliente {0} ha sido actualizado.
+        /// </summary>
+        internal static string ClientesForm_ClienteActualizado {
+            get {
+                return ResourceManager.GetString("ClientesForm_ClienteActualizado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El cliente {0} ha sido creado.
+        /// </summary>
+        internal static string ClientesForm_ClienteCreado {
+            get {
+                return ResourceManager.GetString("ClientesForm_ClienteCreado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Activo.
+        /// </summary>
+        internal static string ClientesForm_Datos_Activo {
+            get {
+                return ResourceManager.GetString("ClientesForm_Datos_Activo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Codigo Postal.
+        /// </summary>
+        internal static string ClientesForm_Datos_CP {
+            get {
+                return ResourceManager.GetString("ClientesForm_Datos_CP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CUIT.
+        /// </summary>
+        internal static string ClientesForm_Datos_CUIT {
+            get {
+                return ResourceManager.GetString("ClientesForm_Datos_CUIT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Domicilio.
+        /// </summary>
+        internal static string ClientesForm_Datos_Domicilio {
+            get {
+                return ResourceManager.GetString("ClientesForm_Datos_Domicilio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        internal static string ClientesForm_Datos_Email {
+            get {
+                return ResourceManager.GetString("ClientesForm_Datos_Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fecha Alta.
+        /// </summary>
+        internal static string ClientesForm_Datos_FechaAlta {
+            get {
+                return ResourceManager.GetString("ClientesForm_Datos_FechaAlta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Guardar.
+        /// </summary>
+        internal static string ClientesForm_Datos_Guardar {
+            get {
+                return ResourceManager.GetString("ClientesForm_Datos_Guardar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Localidad.
+        /// </summary>
+        internal static string ClientesForm_Datos_Localidad {
+            get {
+                return ResourceManager.GetString("ClientesForm_Datos_Localidad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nombre.
+        /// </summary>
+        internal static string ClientesForm_Datos_Nombre {
+            get {
+                return ResourceManager.GetString("ClientesForm_Datos_Nombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Provincia.
+        /// </summary>
+        internal static string ClientesForm_Datos_Provincia {
+            get {
+                return ResourceManager.GetString("ClientesForm_Datos_Provincia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Telefono.
+        /// </summary>
+        internal static string ClientesForm_Datos_Telefono {
+            get {
+                return ResourceManager.GetString("ClientesForm_Datos_Telefono", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tipo.
+        /// </summary>
+        internal static string ClientesForm_Datos_Tipo {
+            get {
+                return ResourceManager.GetString("ClientesForm_Datos_Tipo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ingreso a la pantalla de clientes.
+        /// </summary>
+        internal static string ClientesForm_Ingreso {
+            get {
+                return ResourceManager.GetString("ClientesForm_Ingreso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Administracion de Clientes.
+        /// </summary>
+        internal static string ClientesForm_Titulo {
+            get {
+                return ResourceManager.GetString("ClientesForm_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Activo.
+        /// </summary>
+        internal static string EmpleadosForm_Datos_Activo {
+            get {
+                return ResourceManager.GetString("EmpleadosForm_Datos_Activo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Codigo Postal.
+        /// </summary>
+        internal static string EmpleadosForm_Datos_CP {
+            get {
+                return ResourceManager.GetString("EmpleadosForm_Datos_CP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CUIT.
+        /// </summary>
+        internal static string EmpleadosForm_Datos_CUIT {
+            get {
+                return ResourceManager.GetString("EmpleadosForm_Datos_CUIT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Domicilio.
+        /// </summary>
+        internal static string EmpleadosForm_Datos_Domicilio {
+            get {
+                return ResourceManager.GetString("EmpleadosForm_Datos_Domicilio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        internal static string EmpleadosForm_Datos_Email {
+            get {
+                return ResourceManager.GetString("EmpleadosForm_Datos_Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fecha Alta.
+        /// </summary>
+        internal static string EmpleadosForm_Datos_FechaAlta {
+            get {
+                return ResourceManager.GetString("EmpleadosForm_Datos_FechaAlta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fecha Baja.
+        /// </summary>
+        internal static string EmpleadosForm_Datos_FechaBaja {
+            get {
+                return ResourceManager.GetString("EmpleadosForm_Datos_FechaBaja", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fecha Nacimiento.
+        /// </summary>
+        internal static string EmpleadosForm_Datos_FechaNacimiento {
+            get {
+                return ResourceManager.GetString("EmpleadosForm_Datos_FechaNacimiento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Guardar.
+        /// </summary>
+        internal static string EmpleadosForm_Datos_Guardar {
+            get {
+                return ResourceManager.GetString("EmpleadosForm_Datos_Guardar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Localidad.
+        /// </summary>
+        internal static string EmpleadosForm_Datos_Localidad {
+            get {
+                return ResourceManager.GetString("EmpleadosForm_Datos_Localidad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nombre.
+        /// </summary>
+        internal static string EmpleadosForm_Datos_Nombre {
+            get {
+                return ResourceManager.GetString("EmpleadosForm_Datos_Nombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Provincia.
+        /// </summary>
+        internal static string EmpleadosForm_Datos_Provincia {
+            get {
+                return ResourceManager.GetString("EmpleadosForm_Datos_Provincia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Telefono.
+        /// </summary>
+        internal static string EmpleadosForm_Datos_Telefono {
+            get {
+                return ResourceManager.GetString("EmpleadosForm_Datos_Telefono", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El empleado {0} ha sido actualizado.
+        /// </summary>
+        internal static string EmpleadosForm_EmpleadoActualizado {
+            get {
+                return ResourceManager.GetString("EmpleadosForm_EmpleadoActualizado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El empleado {0} ha sido creado.
+        /// </summary>
+        internal static string EmpleadosForm_EmpleadoCreado {
+            get {
+                return ResourceManager.GetString("EmpleadosForm_EmpleadoCreado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ingreso a la pantalla de empleados.
+        /// </summary>
+        internal static string EmpleadosForm_Ingreso {
+            get {
+                return ResourceManager.GetString("EmpleadosForm_Ingreso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Administracion de Empleados.
+        /// </summary>
+        internal static string EmpleadosForm_Titulo {
+            get {
+                return ResourceManager.GetString("EmpleadosForm_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cobrar.
+        /// </summary>
+        internal static string FacturasForm_Cobrada {
+            get {
+                return ResourceManager.GetString("FacturasForm_Cobrada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cliente.
+        /// </summary>
+        internal static string FacturasForm_Datos_Cliente {
+            get {
+                return ResourceManager.GetString("FacturasForm_Datos_Cliente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Comensales.
+        /// </summary>
+        internal static string FacturasForm_Datos_Comensales {
+            get {
+                return ResourceManager.GetString("FacturasForm_Datos_Comensales", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Desde.
+        /// </summary>
+        internal static string FacturasForm_Datos_Desde {
+            get {
+                return ResourceManager.GetString("FacturasForm_Datos_Desde", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fecha.
+        /// </summary>
+        internal static string FacturasForm_Datos_Fecha {
+            get {
+                return ResourceManager.GetString("FacturasForm_Datos_Fecha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hasta.
+        /// </summary>
+        internal static string FacturasForm_Datos_Hasta {
+            get {
+                return ResourceManager.GetString("FacturasForm_Datos_Hasta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Precio.
+        /// </summary>
+        internal static string FacturasForm_Datos_Precio {
+            get {
+                return ResourceManager.GetString("FacturasForm_Datos_Precio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recetas.
+        /// </summary>
+        internal static string FacturasForm_Datos_Recetas {
+            get {
+                return ResourceManager.GetString("FacturasForm_Datos_Recetas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to La factura para {0} ha sido marcada como cobrada.
+        /// </summary>
+        internal static string FacturasForm_FacturaCobrada {
+            get {
+                return ResourceManager.GetString("FacturasForm_FacturaCobrada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ingreso a la pantalla de facturas.
+        /// </summary>
+        internal static string FacturasForm_Ingreso {
+            get {
+                return ResourceManager.GetString("FacturasForm_Ingreso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Facturas.
+        /// </summary>
+        internal static string FacturasForm_Titulo {
+            get {
+                return ResourceManager.GetString("FacturasForm_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cantidad.
+        /// </summary>
+        internal static string IngredientesForm_Datos_Cantidad {
+            get {
+                return ResourceManager.GetString("IngredientesForm_Datos_Cantidad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Guardar.
+        /// </summary>
+        internal static string IngredientesForm_Datos_Guardar {
+            get {
+                return ResourceManager.GetString("IngredientesForm_Datos_Guardar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ingrediente.
+        /// </summary>
+        internal static string IngredientesForm_Datos_Ingrediente {
+            get {
+                return ResourceManager.GetString("IngredientesForm_Datos_Ingrediente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unidad.
+        /// </summary>
+        internal static string IngredientesForm_Datos_Unidad {
+            get {
+                return ResourceManager.GetString("IngredientesForm_Datos_Unidad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ingreso a la pantalla de ingredientes.
+        /// </summary>
+        internal static string IngredientesForm_Ingreso {
+            get {
+                return ResourceManager.GetString("IngredientesForm_Ingreso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to La receta {0} ha sido actualizada.
+        /// </summary>
+        internal static string IngredientesForm_RecetaActualizada {
+            get {
+                return ResourceManager.GetString("IngredientesForm_RecetaActualizada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ingredientes.
+        /// </summary>
+        internal static string IngredientesForm_Titulo {
+            get {
+                return ResourceManager.GetString("IngredientesForm_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clientes.
+        /// </summary>
+        internal static string InicioForm_Menu_Administrar_Clientes {
+            get {
+                return ResourceManager.GetString("InicioForm_Menu_Administrar_Clientes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Empleados.
+        /// </summary>
+        internal static string InicioForm_Menu_Administrar_Empleados {
+            get {
+                return ResourceManager.GetString("InicioForm_Menu_Administrar_Empleados", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Proveedores.
+        /// </summary>
+        internal static string InicioForm_Menu_Administrar_Proveedores {
+            get {
+                return ResourceManager.GetString("InicioForm_Menu_Administrar_Proveedores", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Administrar.
+        /// </summary>
+        internal static string InicioForm_Menu_Administrar_Titulo {
+            get {
+                return ResourceManager.GetString("InicioForm_Menu_Administrar_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usuarios.
+        /// </summary>
+        internal static string InicioForm_Menu_Administrar_Usuarios {
+            get {
+                return ResourceManager.GetString("InicioForm_Menu_Administrar_Usuarios", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ver.
+        /// </summary>
+        internal static string InicioForm_Menu_Bitacora_Ver {
+            get {
+                return ResourceManager.GetString("InicioForm_Menu_Bitacora_Ver", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pedidos.
+        /// </summary>
+        internal static string InicioForm_Menu_Cocina_Pedidos {
+            get {
+                return ResourceManager.GetString("InicioForm_Menu_Cocina_Pedidos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Precios.
+        /// </summary>
+        internal static string InicioForm_Menu_Cocina_Precios {
+            get {
+                return ResourceManager.GetString("InicioForm_Menu_Cocina_Precios", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recetas.
+        /// </summary>
+        internal static string InicioForm_Menu_Cocina_Recetas {
+            get {
+                return ResourceManager.GetString("InicioForm_Menu_Cocina_Recetas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cocina.
+        /// </summary>
+        internal static string InicioForm_Menu_Cocina_Titulo {
+            get {
+                return ResourceManager.GetString("InicioForm_Menu_Cocina_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ordenes.
+        /// </summary>
+        internal static string InicioForm_Menu_Compras_Ordenes {
+            get {
+                return ResourceManager.GetString("InicioForm_Menu_Compras_Ordenes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pagos.
+        /// </summary>
+        internal static string InicioForm_Menu_Compras_Pagos {
+            get {
+                return ResourceManager.GetString("InicioForm_Menu_Compras_Pagos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compras.
+        /// </summary>
+        internal static string InicioForm_Menu_Compras_Titulo {
+            get {
+                return ResourceManager.GetString("InicioForm_Menu_Compras_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bitacora.
+        /// </summary>
+        internal static string InicioForm_Menu_Opciones_Bitacora {
+            get {
+                return ResourceManager.GetString("InicioForm_Menu_Opciones_Bitacora", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Español.
+        /// </summary>
+        internal static string InicioForm_Menu_Opciones_Espaniol {
+            get {
+                return ResourceManager.GetString("InicioForm_Menu_Opciones_Espaniol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ingles.
+        /// </summary>
+        internal static string InicioForm_Menu_Opciones_Ingles {
+            get {
+                return ResourceManager.GetString("InicioForm_Menu_Opciones_Ingles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lenguaje.
+        /// </summary>
+        internal static string InicioForm_Menu_Opciones_Lenguaje {
+            get {
+                return ResourceManager.GetString("InicioForm_Menu_Opciones_Lenguaje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Salir.
+        /// </summary>
+        internal static string InicioForm_Menu_Opciones_Salir {
+            get {
+                return ResourceManager.GetString("InicioForm_Menu_Opciones_Salir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Opciones.
+        /// </summary>
+        internal static string InicioForm_Menu_Opciones_Titulo {
+            get {
+                return ResourceManager.GetString("InicioForm_Menu_Opciones_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Facturas.
+        /// </summary>
+        internal static string InicioForm_Menu_Ventas_Facturas {
+            get {
+                return ResourceManager.GetString("InicioForm_Menu_Ventas_Facturas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pedidos.
+        /// </summary>
+        internal static string InicioForm_Menu_Ventas_Pedidos {
+            get {
+                return ResourceManager.GetString("InicioForm_Menu_Ventas_Pedidos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ventas.
+        /// </summary>
+        internal static string InicioForm_Menu_Ventas_Titulo {
+            get {
+                return ResourceManager.GetString("InicioForm_Menu_Ventas_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OBM Catering.
+        /// </summary>
+        internal static string InicioForm_Titulo {
+            get {
+                return ResourceManager.GetString("InicioForm_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Se necesita un cambio de password antes de ingresar al sistema. Por favor ingresar nuevo password y continuar.
+        /// </summary>
+        internal static string LoginForm_CambiarPassword {
+            get {
+                return ResourceManager.GetString("LoginForm_CambiarPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancelar.
+        /// </summary>
+        internal static string LoginForm_Cancelar {
+            get {
+                return ResourceManager.GetString("LoginForm_Cancelar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error de autenticacion. Intentar nuevamente.
+        /// </summary>
+        internal static string LoginForm_ErrorAutenticacion {
+            get {
+                return ResourceManager.GetString("LoginForm_ErrorAutenticacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ingresar.
+        /// </summary>
+        internal static string LoginForm_Ingresar {
+            get {
+                return ResourceManager.GetString("LoginForm_Ingresar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ingrese Usuario y Password para acceder al sistema OBM Catering.
+        /// </summary>
+        internal static string LoginForm_IngresarCredenciales {
+            get {
+                return ResourceManager.GetString("LoginForm_IngresarCredenciales", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ingreso a la pantalla de login.
+        /// </summary>
+        internal static string LoginForm_Ingreso {
+            get {
+                return ResourceManager.GetString("LoginForm_Ingreso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nuevo Password.
+        /// </summary>
+        internal static string LoginForm_NuevoPassword {
+            get {
+                return ResourceManager.GetString("LoginForm_NuevoPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password.
+        /// </summary>
+        internal static string LoginForm_Password {
+            get {
+                return ResourceManager.GetString("LoginForm_Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El password ha sido reseteado.
+        /// </summary>
+        internal static string LoginForm_PasswordReseteado {
+            get {
+                return ResourceManager.GetString("LoginForm_PasswordReseteado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Login.
+        /// </summary>
+        internal static string LoginForm_Titulo {
+            get {
+                return ResourceManager.GetString("LoginForm_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usuario.
+        /// </summary>
+        internal static string LoginForm_Usuario {
+            get {
+                return ResourceManager.GetString("LoginForm_Usuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El usuario ha sido autenticado correctamente.
+        /// </summary>
+        internal static string LoginForm_UsuarioAutenticado {
+            get {
+                return ResourceManager.GetString("LoginForm_UsuarioAutenticado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Aprobar.
+        /// </summary>
+        internal static string OrdenesCompraForm_BotonGuardar_Aprobar {
+            get {
+                return ResourceManager.GetString("OrdenesCompraForm_BotonGuardar_Aprobar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Realizada.
+        /// </summary>
+        internal static string OrdenesCompraForm_BotonGuardar_Realizada {
+            get {
+                return ResourceManager.GetString("OrdenesCompraForm_BotonGuardar_Realizada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cliente.
+        /// </summary>
+        internal static string OrdenesCompraForm_Datos_Cliente {
+            get {
+                return ResourceManager.GetString("OrdenesCompraForm_Datos_Cliente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Estado.
+        /// </summary>
+        internal static string OrdenesCompraForm_Datos_Estado {
+            get {
+                return ResourceManager.GetString("OrdenesCompraForm_Datos_Estado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fecha.
+        /// </summary>
+        internal static string OrdenesCompraForm_Datos_Fecha {
+            get {
+                return ResourceManager.GetString("OrdenesCompraForm_Datos_Fecha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Items.
+        /// </summary>
+        internal static string OrdenesCompraForm_Datos_Items {
+            get {
+                return ResourceManager.GetString("OrdenesCompraForm_Datos_Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Proveedor.
+        /// </summary>
+        internal static string OrdenesCompraForm_Datos_Proveedor {
+            get {
+                return ResourceManager.GetString("OrdenesCompraForm_Datos_Proveedor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ingreso a la pantalla de ordenes de compra.
+        /// </summary>
+        internal static string OrdenesCompraForm_Ingreso {
+            get {
+                return ResourceManager.GetString("OrdenesCompraForm_Ingreso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to La orden de compra para el pedido de {0} ha sido actualizada.
+        /// </summary>
+        internal static string OrdenesCompraForm_OrdenCompraActualizada {
+            get {
+                return ResourceManager.GetString("OrdenesCompraForm_OrdenCompraActualizada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to La orden de pago para el proveedor {0} ha sido creada.
+        /// </summary>
+        internal static string OrdenesCompraForm_OrdenPagoCreada {
+            get {
+                return ResourceManager.GetString("OrdenesCompraForm_OrdenPagoCreada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ordenes de Compra.
+        /// </summary>
+        internal static string OrdenesCompraForm_Titulo {
+            get {
+                return ResourceManager.GetString("OrdenesCompraForm_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fecha.
+        /// </summary>
+        internal static string OrdenesPagoForm_Datos_Fecha {
+            get {
+                return ResourceManager.GetString("OrdenesPagoForm_Datos_Fecha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Guardar.
+        /// </summary>
+        internal static string OrdenesPagoForm_Datos_Guardar {
+            get {
+                return ResourceManager.GetString("OrdenesPagoForm_Datos_Guardar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Items.
+        /// </summary>
+        internal static string OrdenesPagoForm_Datos_Items {
+            get {
+                return ResourceManager.GetString("OrdenesPagoForm_Datos_Items", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pagada.
+        /// </summary>
+        internal static string OrdenesPagoForm_Datos_Pagada {
+            get {
+                return ResourceManager.GetString("OrdenesPagoForm_Datos_Pagada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Proveedor.
+        /// </summary>
+        internal static string OrdenesPagoForm_Datos_Proveedor {
+            get {
+                return ResourceManager.GetString("OrdenesPagoForm_Datos_Proveedor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ingreso a la pantalla de ordenes de pago.
+        /// </summary>
+        internal static string OrdenesPagoForm_Ingreso {
+            get {
+                return ResourceManager.GetString("OrdenesPagoForm_Ingreso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to La orden de pago para el proveedor {0} ha sido actualizada.
+        /// </summary>
+        internal static string OrdenesPagoForm_OrdenPagoActualizada {
+            get {
+                return ResourceManager.GetString("OrdenesPagoForm_OrdenPagoActualizada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ordenes de Pago.
+        /// </summary>
+        internal static string OrdenesPagoForm_Titulo {
+            get {
+                return ResourceManager.GetString("OrdenesPagoForm_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Aprobada.
+        /// </summary>
+        internal static string OrdenesVentaForm_Datos_Aprobada {
+            get {
+                return ResourceManager.GetString("OrdenesVentaForm_Datos_Aprobada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Calcular.
+        /// </summary>
+        internal static string OrdenesVentaForm_Datos_Calcular {
+            get {
+                return ResourceManager.GetString("OrdenesVentaForm_Datos_Calcular", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cliente.
+        /// </summary>
+        internal static string OrdenesVentaForm_Datos_Cliente {
+            get {
+                return ResourceManager.GetString("OrdenesVentaForm_Datos_Cliente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Comensales.
+        /// </summary>
+        internal static string OrdenesVentaForm_Datos_Comensales {
+            get {
+                return ResourceManager.GetString("OrdenesVentaForm_Datos_Comensales", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Desde.
+        /// </summary>
+        internal static string OrdenesVentaForm_Datos_Desde {
+            get {
+                return ResourceManager.GetString("OrdenesVentaForm_Datos_Desde", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Guardar.
+        /// </summary>
+        internal static string OrdenesVentaForm_Datos_Guardar {
+            get {
+                return ResourceManager.GetString("OrdenesVentaForm_Datos_Guardar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hasta.
+        /// </summary>
+        internal static string OrdenesVentaForm_Datos_Hasta {
+            get {
+                return ResourceManager.GetString("OrdenesVentaForm_Datos_Hasta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Precio.
+        /// </summary>
+        internal static string OrdenesVentaForm_Datos_Precio {
+            get {
+                return ResourceManager.GetString("OrdenesVentaForm_Datos_Precio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recetas.
+        /// </summary>
+        internal static string OrdenesVentaForm_Datos_Recetas {
+            get {
+                return ResourceManager.GetString("OrdenesVentaForm_Datos_Recetas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to La factura para el cliente {0} ha sido creada.
+        /// </summary>
+        internal static string OrdenesVentaForm_FacturaCreada {
+            get {
+                return ResourceManager.GetString("OrdenesVentaForm_FacturaCreada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ingreso a la pantalla de ordenes de venta.
+        /// </summary>
+        internal static string OrdenesVentaForm_Ingreso {
+            get {
+                return ResourceManager.GetString("OrdenesVentaForm_Ingreso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to La orden de compra para el pedido del cliente {0} ha sido creada.
+        /// </summary>
+        internal static string OrdenesVentaForm_OrdenCompraCreada {
+            get {
+                return ResourceManager.GetString("OrdenesVentaForm_OrdenCompraCreada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to La orden de venta para el cliente {0} ha sido actualizada.
+        /// </summary>
+        internal static string OrdenesVentaForm_OrdenVentaActualizada {
+            get {
+                return ResourceManager.GetString("OrdenesVentaForm_OrdenVentaActualizada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to La orden de venta para el cliente {0} ha sido creada.
+        /// </summary>
+        internal static string OrdenesVentaForm_OrdenVentaCreada {
+            get {
+                return ResourceManager.GetString("OrdenesVentaForm_OrdenVentaCreada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ordenes de Venta.
+        /// </summary>
+        internal static string OrdenesVentaForm_Titulo {
+            get {
+                return ResourceManager.GetString("OrdenesVentaForm_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cliente.
+        /// </summary>
+        internal static string PedidosForm_Datos_Cliente {
+            get {
+                return ResourceManager.GetString("PedidosForm_Datos_Cliente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Desde.
+        /// </summary>
+        internal static string PedidosForm_Datos_Desde {
+            get {
+                return ResourceManager.GetString("PedidosForm_Datos_Desde", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Filtrar.
+        /// </summary>
+        internal static string PedidosForm_Datos_Filtrar {
+            get {
+                return ResourceManager.GetString("PedidosForm_Datos_Filtrar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hasta.
+        /// </summary>
+        internal static string PedidosForm_Datos_Hasta {
+            get {
+                return ResourceManager.GetString("PedidosForm_Datos_Hasta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recetas.
+        /// </summary>
+        internal static string PedidosForm_Datos_Recetas {
+            get {
+                return ResourceManager.GetString("PedidosForm_Datos_Recetas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ingreso a la pantalla de consulta de pedidos.
+        /// </summary>
+        internal static string PedidosForm_Ingreso {
+            get {
+                return ResourceManager.GetString("PedidosForm_Ingreso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Listado de Pedidos.
+        /// </summary>
+        internal static string PedidosForm_Titulo {
+            get {
+                return ResourceManager.GetString("PedidosForm_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cantidad.
+        /// </summary>
+        internal static string PreciosForm_Datos_Cantidad {
+            get {
+                return ResourceManager.GetString("PreciosForm_Datos_Cantidad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Guardar.
+        /// </summary>
+        internal static string PreciosForm_Datos_Guardar {
+            get {
+                return ResourceManager.GetString("PreciosForm_Datos_Guardar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ingrediente.
+        /// </summary>
+        internal static string PreciosForm_Datos_Ingrediente {
+            get {
+                return ResourceManager.GetString("PreciosForm_Datos_Ingrediente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Precio.
+        /// </summary>
+        internal static string PreciosForm_Datos_Precio {
+            get {
+                return ResourceManager.GetString("PreciosForm_Datos_Precio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unidad.
+        /// </summary>
+        internal static string PreciosForm_Datos_Unidad {
+            get {
+                return ResourceManager.GetString("PreciosForm_Datos_Unidad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ingreso a la pantalla de listado de precios.
+        /// </summary>
+        internal static string PreciosForm_Ingreso {
+            get {
+                return ResourceManager.GetString("PreciosForm_Ingreso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to La lista de precios fue actualizada para el ingrediente &apos;{0}&apos;.
+        /// </summary>
+        internal static string PreciosForm_ListaActualizada {
+            get {
+                return ResourceManager.GetString("PreciosForm_ListaActualizada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Listado de Precios.
+        /// </summary>
+        internal static string PreciosForm_Titulo {
+            get {
+                return ResourceManager.GetString("PreciosForm_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Activo.
+        /// </summary>
+        internal static string ProveedoresForm_Datos_Activo {
+            get {
+                return ResourceManager.GetString("ProveedoresForm_Datos_Activo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Codigo Postal.
+        /// </summary>
+        internal static string ProveedoresForm_Datos_CodigoPostal {
+            get {
+                return ResourceManager.GetString("ProveedoresForm_Datos_CodigoPostal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CUIT.
+        /// </summary>
+        internal static string ProveedoresForm_Datos_CUIT {
+            get {
+                return ResourceManager.GetString("ProveedoresForm_Datos_CUIT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Domicilio.
+        /// </summary>
+        internal static string ProveedoresForm_Datos_Domicilio {
+            get {
+                return ResourceManager.GetString("ProveedoresForm_Datos_Domicilio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        internal static string ProveedoresForm_Datos_Email {
+            get {
+                return ResourceManager.GetString("ProveedoresForm_Datos_Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fecha Alta.
+        /// </summary>
+        internal static string ProveedoresForm_Datos_FechaAlta {
+            get {
+                return ResourceManager.GetString("ProveedoresForm_Datos_FechaAlta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fecha Baja.
+        /// </summary>
+        internal static string ProveedoresForm_Datos_FechaBaja {
+            get {
+                return ResourceManager.GetString("ProveedoresForm_Datos_FechaBaja", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Guardar.
+        /// </summary>
+        internal static string ProveedoresForm_Datos_Guardar {
+            get {
+                return ResourceManager.GetString("ProveedoresForm_Datos_Guardar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Localidad.
+        /// </summary>
+        internal static string ProveedoresForm_Datos_Localidad {
+            get {
+                return ResourceManager.GetString("ProveedoresForm_Datos_Localidad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nombre.
+        /// </summary>
+        internal static string ProveedoresForm_Datos_Nombre {
+            get {
+                return ResourceManager.GetString("ProveedoresForm_Datos_Nombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Provincia.
+        /// </summary>
+        internal static string ProveedoresForm_Datos_Provincia {
+            get {
+                return ResourceManager.GetString("ProveedoresForm_Datos_Provincia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Telefono.
+        /// </summary>
+        internal static string ProveedoresForm_Datos_Telefono {
+            get {
+                return ResourceManager.GetString("ProveedoresForm_Datos_Telefono", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ingreso a la pantalla de proveedores.
+        /// </summary>
+        internal static string ProveedoresForm_Ingreso {
+            get {
+                return ResourceManager.GetString("ProveedoresForm_Ingreso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El proveedor {0} ha sido actualizado.
+        /// </summary>
+        internal static string ProveedoresForm_ProveedorActualizado {
+            get {
+                return ResourceManager.GetString("ProveedoresForm_ProveedorActualizado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El proveedor {0} ha sido creado.
+        /// </summary>
+        internal static string ProveedoresForm_ProveedorCreado {
+            get {
+                return ResourceManager.GetString("ProveedoresForm_ProveedorCreado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Administracion de Proveedores.
+        /// </summary>
+        internal static string ProveedoresForm_Titulo {
+            get {
+                return ResourceManager.GetString("ProveedoresForm_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Detalle.
+        /// </summary>
+        internal static string RecetasForm_Datos_Detalle {
+            get {
+                return ResourceManager.GetString("RecetasForm_Datos_Detalle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Guardar.
+        /// </summary>
+        internal static string RecetasForm_Datos_Guardar {
+            get {
+                return ResourceManager.GetString("RecetasForm_Datos_Guardar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No Disponible.
+        /// </summary>
+        internal static string RecetasForm_Datos_NoDisponible {
+            get {
+                return ResourceManager.GetString("RecetasForm_Datos_NoDisponible", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nombre.
+        /// </summary>
+        internal static string RecetasForm_Datos_Nombre {
+            get {
+                return ResourceManager.GetString("RecetasForm_Datos_Nombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ver Detalle.
+        /// </summary>
+        internal static string RecetasForm_Datos_VerDetalle {
+            get {
+                return ResourceManager.GetString("RecetasForm_Datos_VerDetalle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ingredientes {0}.
+        /// </summary>
+        internal static string RecetasForm_Ingredientes_Ver {
+            get {
+                return ResourceManager.GetString("RecetasForm_Ingredientes_Ver", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ingreso a la pantalla de recetas.
+        /// </summary>
+        internal static string RecetasForm_Ingreso {
+            get {
+                return ResourceManager.GetString("RecetasForm_Ingreso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to La receta {0} ha sido actualizada.
+        /// </summary>
+        internal static string RecetasForm_RecetaActualizada {
+            get {
+                return ResourceManager.GetString("RecetasForm_RecetaActualizada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to La receta {0} ha sido creada.
+        /// </summary>
+        internal static string RecetasForm_RecetaCreada {
+            get {
+                return ResourceManager.GetString("RecetasForm_RecetaCreada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recetas.
+        /// </summary>
+        internal static string RecetasForm_Titulo {
+            get {
+                return ResourceManager.GetString("RecetasForm_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        internal static string UsuariosForm_Datos_Email {
+            get {
+                return ResourceManager.GetString("UsuariosForm_Datos_Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Guardar.
+        /// </summary>
+        internal static string UsuariosForm_Datos_Guardar {
+            get {
+                return ResourceManager.GetString("UsuariosForm_Datos_Guardar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nombre Completo.
+        /// </summary>
+        internal static string UsuariosForm_Datos_Nombre {
+            get {
+                return ResourceManager.GetString("UsuariosForm_Datos_Nombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password.
+        /// </summary>
+        internal static string UsuariosForm_Datos_Password {
+            get {
+                return ResourceManager.GetString("UsuariosForm_Datos_Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Perfil.
+        /// </summary>
+        internal static string UsuariosForm_Datos_Perfil {
+            get {
+                return ResourceManager.GetString("UsuariosForm_Datos_Perfil", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Resetear Password.
+        /// </summary>
+        internal static string UsuariosForm_Datos_Resetear {
+            get {
+                return ResourceManager.GetString("UsuariosForm_Datos_Resetear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Usuario.
+        /// </summary>
+        internal static string UsuariosForm_Datos_Usuario {
+            get {
+                return ResourceManager.GetString("UsuariosForm_Datos_Usuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ingreso a la pantalla de usuarios.
+        /// </summary>
+        internal static string UsuariosForm_Ingreso {
+            get {
+                return ResourceManager.GetString("UsuariosForm_Ingreso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Administracion de Usuarios.
+        /// </summary>
+        internal static string UsuariosForm_Titulo {
+            get {
+                return ResourceManager.GetString("UsuariosForm_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El usuario {0} ha sido actualizado.
+        /// </summary>
+        internal static string UsuariosForm_UsuarioActualizado {
+            get {
+                return ResourceManager.GetString("UsuariosForm_UsuarioActualizado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El usuario {0} ha sido creado.
+        /// </summary>
+        internal static string UsuariosForm_UsuarioCreado {
+            get {
+                return ResourceManager.GetString("UsuariosForm_UsuarioCreado", resourceCulture);
             }
         }
     }

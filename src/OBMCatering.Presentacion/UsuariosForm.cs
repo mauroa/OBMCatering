@@ -1,4 +1,5 @@
 ﻿using OBMCatering.Negocio;
+using OBMCatering.Presentacion.Properties;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -12,7 +13,17 @@ namespace OBMCatering.Presentacion
 
         public UsuariosForm()
         {
+            this.CargarLenguaje();
             InitializeComponent();
+
+            Text = Resources.UsuariosForm_Titulo;
+            lblUsuario.Text = Resources.UsuariosForm_Datos_Usuario;
+            lblNombre.Text = Resources.UsuariosForm_Datos_Nombre;
+            lblEmail.Text = Resources.UsuariosForm_Datos_Email;
+            lblPassword.Text = Resources.UsuariosForm_Datos_Password;
+            lblPerfil.Text = Resources.UsuariosForm_Datos_Perfil;
+            chkResetear.Text = Resources.UsuariosForm_Datos_Resetear;
+            btnGuardar.Text = Resources.UsuariosForm_Datos_Guardar;
         }
 
         void UsuariosForm_Load(object sender, EventArgs e)
@@ -27,7 +38,7 @@ namespace OBMCatering.Presentacion
             CargarUsuarios();
             LimpiarFormulario();
 
-            contexto.RegistrarEvento("Ingreso a la pantalla de usuarios");
+            contexto.RegistrarEvento(Resources.UsuariosForm_Ingreso);
         }
 
         void BtnGuardar_Click(object sender, EventArgs e)
@@ -44,7 +55,7 @@ namespace OBMCatering.Presentacion
                     SetearUsuario(usuario, esActualizacion: true);
                     usuariosBL.Actualizar(usuario);
 
-                    contexto.RegistrarEvento("El usuario {0} ha sido actualizado", usuario.Nombre);
+                    contexto.RegistrarEvento(Resources.UsuariosForm_UsuarioActualizado, usuario.Nombre);
                 }
                 else
                 {
@@ -53,7 +64,7 @@ namespace OBMCatering.Presentacion
                     SetearUsuario(usuario, esActualizacion: false);
                     usuariosBL.Crear(usuario);
 
-                    contexto.RegistrarEvento("El usuario {0} ha sido creado", usuario.Nombre);
+                    contexto.RegistrarEvento(Resources.UsuariosForm_UsuarioCreado, usuario.Nombre);
                 }
 
                 CargarUsuarios();

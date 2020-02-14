@@ -1,4 +1,5 @@
 ﻿using OBMCatering.Negocio;
+using OBMCatering.Presentacion.Properties;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -13,7 +14,22 @@ namespace OBMCatering.Presentacion
 
         public ProveedoresForm()
         {
+            this.CargarLenguaje();
             InitializeComponent();
+
+            Text = Resources.ProveedoresForm_Titulo;
+            lblCUIT.Text = Resources.ProveedoresForm_Datos_CUIT;
+            lblNombre.Text = Resources.ProveedoresForm_Datos_Nombre;
+            lblDomicilio.Text = Resources.ProveedoresForm_Datos_Domicilio;
+            lblProvincia.Text = Resources.ProveedoresForm_Datos_Provincia;
+            lblLocalidad.Text = Resources.ProveedoresForm_Datos_Localidad;
+            lblCP.Text = Resources.ProveedoresForm_Datos_CodigoPostal;
+            lblTelefono.Text = Resources.ProveedoresForm_Datos_Telefono;
+            lblEmail.Text = Resources.ProveedoresForm_Datos_Email;
+            lblFechaAlta.Text = Resources.ProveedoresForm_Datos_FechaAlta;
+            lblFechaBaja.Text = Resources.ProveedoresForm_Datos_FechaBaja;
+            chkActivo.Text = Resources.ProveedoresForm_Datos_Activo;
+            btnGuardar.Text = Resources.ProveedoresForm_Datos_Guardar;
         }
 
         void ProveedoresForm_Load(object sender, EventArgs e)
@@ -30,7 +46,7 @@ namespace OBMCatering.Presentacion
             CargarProveedores();
             LimpiarFormulario();
 
-            contexto.RegistrarEvento("Ingreso a la pantalla de proveedores");
+            contexto.RegistrarEvento(Resources.ProveedoresForm_Ingreso);
         }
 
         void BtnGuardar_Click(object sender, EventArgs e)
@@ -47,7 +63,7 @@ namespace OBMCatering.Presentacion
                     SetearProveedor(proveedor);
                     proveedoresBL.Actualizar(proveedor);
 
-                    contexto.RegistrarEvento("El proveedor {0} ha sido actualizado", proveedor.Nombre);
+                    contexto.RegistrarEvento(Resources.ProveedoresForm_ProveedorActualizado, proveedor.Nombre);
                 }
                 else
                 {
@@ -56,7 +72,7 @@ namespace OBMCatering.Presentacion
                     SetearProveedor(proveedor);
                     proveedoresBL.Crear(proveedor);
 
-                    contexto.RegistrarEvento("El proveedor {0} ha sido creado", proveedor.Nombre);
+                    contexto.RegistrarEvento(Resources.ProveedoresForm_ProveedorCreado, proveedor.Nombre);
                 }
 
                 CargarProveedores();

@@ -63,6 +63,7 @@
       <DependentUpon>BitacoraForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ContextoPresentacion.cs" />
+    <Compile Include="Extensiones.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +191,7 @@
     <EmbeddedResource Include="PreciosForm.resx">
       <DependentUpon>PreciosForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.en.resx" />
     <EmbeddedResource Include="ProveedoresForm.resx">
       <DependentUpon>ProveedoresForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -207,6 +209,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="IngredientesForm.resx">
       <DependentUpon>IngredientesForm.cs</DependentUpon>

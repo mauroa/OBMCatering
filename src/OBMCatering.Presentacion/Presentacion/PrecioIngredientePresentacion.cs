@@ -11,7 +11,16 @@ namespace OBMCatering.Presentacion
             this.precioIngrediente = precioIngrediente;
 
             Ingrediente = precioIngrediente.Ingrediente.Nombre;
-            Precio = precioIngrediente.Precio.ToString();
+
+            if(precioIngrediente.Precio.HasValue)
+            {
+                Precio = precioIngrediente.Precio.Value.ToString("N2");
+            }
+            else
+            {
+                Precio = string.Empty;
+            }
+
             Cantidad = precioIngrediente.Cantidad.ToString();
             Unidad = precioIngrediente.Unidad.ToString();
         }

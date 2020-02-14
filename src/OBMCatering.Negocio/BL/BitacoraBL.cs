@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OBMCatering.Negocio.Properties;
+using System;
 using System.Collections.Generic;
 
 namespace OBMCatering.Negocio
@@ -20,7 +21,7 @@ namespace OBMCatering.Negocio
         {
             if(string.IsNullOrEmpty(mensaje))
             {
-                throw new OBMCateringException("El mensaje de la bitacora no puede ser nulo o vacio");
+                throw new OBMCateringException(Resources.BitacoraBL_Validaciones_MensajeNull);
             }
 
             Datos.BitacoraDAL dalBitacoras = dal.ObtenerBitacoraDAL();
@@ -28,7 +29,7 @@ namespace OBMCatering.Negocio
 
             if (tipoMensajeDAL == null)
             {
-                throw new OBMCateringException(string.Format("El tipo de mensaje '{0}' es incorrecto o no es valido en el sistema", tipo));
+                throw new OBMCateringException(string.Format(Resources.BitacoraBL_Validaciones_TipoInvalido, tipo));
             }
 
             Usuario usuarioAutenticado = contexto.ObtenerUsuarioAutenticado();
@@ -65,7 +66,7 @@ namespace OBMCatering.Negocio
         {
             if(usuario == null)
             {
-                throw new OBMCateringException("El usuario no puede ser nulo");
+                throw new OBMCateringException(Resources.BitacoraBL_Validaciones_UsuarioNull);
             }
 
             Datos.UsuariosDAL dalUsuarios = dal.ObtenerUsuariosDAL();
@@ -73,7 +74,7 @@ namespace OBMCatering.Negocio
 
             if(usuarioDAL == null)
             {
-                throw new OBMCateringException(string.Format("No existe un usuario valido para el nick '{0}'", usuario.Nick));
+                throw new OBMCateringException(string.Format(Resources.BitacoraBL_Validaciones_UsuarioInvalido, usuario.Nick));
             }
 
             Datos.BitacoraDAL dalBitacoras = dal.ObtenerBitacoraDAL();
@@ -89,7 +90,7 @@ namespace OBMCatering.Negocio
 
             if (tipoMensajeDAL == null)
             {
-                throw new OBMCateringException(string.Format("El tipo de mensaje '{0}' es incorrecto o no es valido en el sistema", tipo));
+                throw new OBMCateringException(string.Format(Resources.BitacoraBL_Validaciones_TipoInvalido, tipo));
             }
 
             IEnumerable<Datos.Bitacora> bitacorasDAL = dalBitacoras.Obtener(tipoMensajeDAL);

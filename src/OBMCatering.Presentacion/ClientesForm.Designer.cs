@@ -53,7 +53,6 @@
             this.txtCUIT = new System.Windows.Forms.TextBox();
             this.lblCUIT = new System.Windows.Forms.Label();
             this.grvClientes = new System.Windows.Forms.DataGridView();
-            this.lblClientes = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvClientes)).BeginInit();
             this.SuspendLayout();
@@ -84,16 +83,18 @@
             this.panel1.Controls.Add(this.lblNombre);
             this.panel1.Controls.Add(this.txtCUIT);
             this.panel1.Controls.Add(this.lblCUIT);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel1.Location = new System.Drawing.Point(31, 33);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1236, 376);
+            this.panel1.Size = new System.Drawing.Size(1439, 376);
             this.panel1.TabIndex = 0;
             // 
             // btnGuardar
             // 
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGuardar.ForeColor = System.Drawing.Color.Black;
-            this.btnGuardar.Location = new System.Drawing.Point(1074, 312);
+            this.btnGuardar.Location = new System.Drawing.Point(1278, 312);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(148, 50);
             this.btnGuardar.TabIndex = 22;
@@ -299,35 +300,23 @@
             // 
             this.grvClientes.AllowUserToAddRows = false;
             this.grvClientes.AllowUserToDeleteRows = false;
-            this.grvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.grvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grvClientes.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.grvClientes.Location = new System.Drawing.Point(0, 471);
+            this.grvClientes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grvClientes.Location = new System.Drawing.Point(0, 376);
             this.grvClientes.MultiSelect = false;
             this.grvClientes.Name = "grvClientes";
             this.grvClientes.ReadOnly = true;
             this.grvClientes.RowHeadersWidth = 82;
             this.grvClientes.RowTemplate.Height = 33;
-            this.grvClientes.Size = new System.Drawing.Size(1439, 487);
+            this.grvClientes.Size = new System.Drawing.Size(1439, 480);
             this.grvClientes.TabIndex = 1;
-            // 
-            // lblClientes
-            // 
-            this.lblClientes.AutoSize = true;
-            this.lblClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClientes.ForeColor = System.Drawing.Color.Black;
-            this.lblClientes.Location = new System.Drawing.Point(26, 426);
-            this.lblClientes.Name = "lblClientes";
-            this.lblClientes.Size = new System.Drawing.Size(98, 25);
-            this.lblClientes.TabIndex = 22;
-            this.lblClientes.Text = "Clientes";
             // 
             // ClientesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1439, 958);
-            this.Controls.Add(this.lblClientes);
+            this.ClientSize = new System.Drawing.Size(1439, 856);
             this.Controls.Add(this.grvClientes);
             this.Controls.Add(this.panel1);
             this.Name = "ClientesForm";
@@ -337,7 +326,6 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvClientes)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -367,7 +355,6 @@
         private System.Windows.Forms.Label lblActivo;
         private System.Windows.Forms.CheckBox chkActivo;
         private System.Windows.Forms.DataGridView grvClientes;
-        private System.Windows.Forms.Label lblClientes;
         private System.Windows.Forms.Button btnGuardar;
     }
 }

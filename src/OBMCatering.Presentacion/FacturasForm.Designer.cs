@@ -46,7 +46,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblPesos = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
-            this.lblFacturas = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grvFacturas)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -55,7 +54,7 @@
             // 
             this.grvFacturas.AllowUserToAddRows = false;
             this.grvFacturas.AllowUserToDeleteRows = false;
-            this.grvFacturas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.grvFacturas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grvFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grvFacturas.Dock = System.Windows.Forms.DockStyle.Top;
             this.grvFacturas.Location = new System.Drawing.Point(0, 0);
@@ -64,7 +63,7 @@
             this.grvFacturas.ReadOnly = true;
             this.grvFacturas.RowHeadersWidth = 82;
             this.grvFacturas.RowTemplate.Height = 33;
-            this.grvFacturas.Size = new System.Drawing.Size(1469, 414);
+            this.grvFacturas.Size = new System.Drawing.Size(1469, 485);
             this.grvFacturas.TabIndex = 24;
             // 
             // lblClienteTitulo
@@ -123,8 +122,9 @@
             // 
             // btnCobrada
             // 
+            this.btnCobrada.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCobrada.ForeColor = System.Drawing.Color.Black;
-            this.btnCobrada.Location = new System.Drawing.Point(1271, 238);
+            this.btnCobrada.Location = new System.Drawing.Point(1308, 279);
             this.btnCobrada.Name = "btnCobrada";
             this.btnCobrada.Size = new System.Drawing.Size(148, 50);
             this.btnCobrada.TabIndex = 30;
@@ -213,9 +213,10 @@
             this.panel1.Controls.Add(this.lblFechaFinTitulo);
             this.panel1.Controls.Add(this.lblFechaInicioTitulo);
             this.panel1.Controls.Add(this.lblClienteTitulo);
-            this.panel1.Location = new System.Drawing.Point(12, 495);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 485);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1433, 307);
+            this.panel1.Size = new System.Drawing.Size(1469, 342);
             this.panel1.TabIndex = 26;
             // 
             // lblPesos
@@ -237,24 +238,12 @@
             this.lblPrecio.TabIndex = 26;
             this.lblPrecio.Text = "Precio";
             // 
-            // lblFacturas
-            // 
-            this.lblFacturas.AutoSize = true;
-            this.lblFacturas.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFacturas.ForeColor = System.Drawing.Color.Black;
-            this.lblFacturas.Location = new System.Drawing.Point(12, 443);
-            this.lblFacturas.Name = "lblFacturas";
-            this.lblFacturas.Size = new System.Drawing.Size(104, 25);
-            this.lblFacturas.TabIndex = 25;
-            this.lblFacturas.Text = "Facturas";
-            // 
             // FacturasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1469, 827);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.lblFacturas);
             this.Controls.Add(this.grvFacturas);
             this.Name = "FacturasForm";
             this.Text = "Facturas";
@@ -263,7 +252,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -286,6 +274,5 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblPesos;
         private System.Windows.Forms.Label lblPrecio;
-        private System.Windows.Forms.Label lblFacturas;
     }
 }

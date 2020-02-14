@@ -1,4 +1,5 @@
 ﻿using OBMCatering.Negocio;
+using OBMCatering.Presentacion.Properties;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -13,7 +14,23 @@ namespace OBMCatering.Presentacion
 
         public EmpleadosForm()
         {
+            this.CargarLenguaje();
             InitializeComponent();
+
+            Text = Resources.EmpleadosForm_Titulo;
+            lblCUIT.Text = Resources.EmpleadosForm_Datos_CUIT;
+            lblNombre.Text = Resources.EmpleadosForm_Datos_Nombre;
+            lblFechaNacimiento.Text = Resources.EmpleadosForm_Datos_FechaNacimiento;
+            lblDomicilio.Text = Resources.EmpleadosForm_Datos_Domicilio;
+            lblProvincia.Text = Resources.EmpleadosForm_Datos_Provincia;
+            lblLocalidad.Text = Resources.EmpleadosForm_Datos_Localidad;
+            lblCP.Text = Resources.EmpleadosForm_Datos_CP;
+            lblTelefono.Text = Resources.EmpleadosForm_Datos_Telefono;
+            lblEmail.Text = Resources.EmpleadosForm_Datos_Email;
+            lblFechaAlta.Text = Resources.EmpleadosForm_Datos_FechaAlta;
+            lblFechaBaja.Text = Resources.EmpleadosForm_Datos_FechaBaja;
+            chkActivo.Text = Resources.EmpleadosForm_Datos_Activo;
+            btnGuardar.Text = Resources.EmpleadosForm_Datos_Guardar;
         }
 
         void EmpleadosForm_Load(object sender, EventArgs e)
@@ -30,7 +47,7 @@ namespace OBMCatering.Presentacion
             CargarEmpleados();
             LimpiarFormulario();
 
-            contexto.RegistrarEvento("Ingreso a la pantalla de empleados");
+            contexto.RegistrarEvento(Resources.EmpleadosForm_Ingreso);
         }
 
         void BtnGuardar_Click(object sender, EventArgs e)
@@ -47,7 +64,7 @@ namespace OBMCatering.Presentacion
                     SetearEmpleado(empleado);
                     empleadosBL.Actualizar(empleado);
 
-                    contexto.RegistrarEvento("El empleado {0} ha sido actualizado", empleado.Nombre);
+                    contexto.RegistrarEvento(Resources.EmpleadosForm_EmpleadoActualizado, empleado.Nombre);
                 }
                 else
                 {
@@ -56,7 +73,7 @@ namespace OBMCatering.Presentacion
                     SetearEmpleado(empleado);
                     empleadosBL.Crear(empleado);
 
-                    contexto.RegistrarEvento("El empleado {0} ha sido creado", empleado.Nombre);
+                    contexto.RegistrarEvento(Resources.EmpleadosForm_EmpleadoCreado, empleado.Nombre);
                 }
 
                 CargarEmpleados();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OBMCatering.Negocio.Properties;
+using System;
 using System.Collections.Generic;
 
 namespace OBMCatering.Negocio
@@ -16,7 +17,7 @@ namespace OBMCatering.Negocio
         {
             if (receta == null)
             {
-                throw new OBMCateringException("La receta no puede ser nula");
+                throw new OBMCateringException(Resources.BL_Validaciones_RecetaNull);
             }
 
             bool faltantes = false;
@@ -50,7 +51,7 @@ namespace OBMCatering.Negocio
         {
             if (receta == null)
             {
-                throw new OBMCateringException("La receta no puede ser nula");
+                throw new OBMCateringException(Resources.BL_Validaciones_RecetaNull);
             }
 
             Datos.IngredientesDAL dalIngredientes = dal.ObtenerIngredientesDAL();
@@ -68,7 +69,7 @@ namespace OBMCatering.Negocio
 
                     if (unidadMedidaDAL == null)
                     {
-                        throw new OBMCateringException(string.Format("La unidad '{0}' es incorrecta o no es valida en el sistema", ingredienteReceta.Unidad));
+                        throw new OBMCateringException(string.Format(Resources.BL_Validaciones_UnidadMedidaInvalida, ingredienteReceta.Unidad));
                     }
 
                     precioIngredienteDAL = new Datos.PrecioIngrediente
@@ -93,7 +94,7 @@ namespace OBMCatering.Negocio
 
             if (precioIngredienteDAL == null)
             {
-                throw new OBMCateringException("El item de la lista de precios es incorrecto o no es valido en el sistema");
+                throw new OBMCateringException(Resources.PreciosIngredientesBL_Validaciones_ItemInvalido);
             }
 
             Datos.RecetasDAL dalRecetas = dal.ObtenerRecetasDAL();
@@ -101,7 +102,7 @@ namespace OBMCatering.Negocio
 
             if (unidadDAL == null)
             {
-                throw new OBMCateringException(string.Format("La unidad '{0}' es incorrecta o no es valida en el sistema", precioIngrediente.Unidad));
+                throw new OBMCateringException(string.Format(Resources.BL_Validaciones_UnidadMedidaInvalida, precioIngrediente.Unidad));
             }
 
             precioIngredienteDAL.Precio = precioIngrediente.Precio;
@@ -132,7 +133,7 @@ namespace OBMCatering.Negocio
         {
             if (ingrediente == null)
             {
-                throw new OBMCateringException("El ingrediente no puede ser nulo");
+                throw new OBMCateringException(Resources.BL_Validaciones_IngredienteNull);
             }
 
             Datos.IngredientesDAL dalIngredientes = dal.ObtenerIngredientesDAL();
@@ -140,7 +141,7 @@ namespace OBMCatering.Negocio
 
             if (ingredienteDAL == null)
             {
-                throw new OBMCateringException(string.Format("El ingrediente '{0}' no existe", ingrediente.Nombre));
+                throw new OBMCateringException(string.Format(Resources.BL_Validaciones_IngredienteInvalido, ingrediente.Nombre));
             }
 
             Datos.PreciosIngredientesDAL dalPreciosIngredientes = dal.ObtenerPreciosIngredientesDAL();
@@ -153,12 +154,12 @@ namespace OBMCatering.Negocio
         {
             if (precioIngrediente == null)
             {
-                throw new OBMCateringException("El item de la lista de precios no puede ser nulo");
+                throw new OBMCateringException(Resources.PreciosIngredientesBL_Validaciones_ItemNull);
             }
 
             if(precioIngrediente.Ingrediente == null)
             {
-                throw new OBMCateringException("El ingrediente en el item de la lista de precios no puede ser nulo");
+                throw new OBMCateringException(Resources.BL_Validaciones_IngredienteNull);
             }
         }
 

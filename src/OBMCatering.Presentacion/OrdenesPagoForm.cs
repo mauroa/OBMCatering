@@ -1,4 +1,5 @@
 ﻿using OBMCatering.Negocio;
+using OBMCatering.Presentacion.Properties;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -21,7 +22,15 @@ namespace OBMCatering.Presentacion
 
         public OrdenesPagoForm()
         {
+            this.CargarLenguaje();
             InitializeComponent();
+
+            Text = Resources.OrdenesPagoForm_Titulo;
+            lblFechaTitulo.Text = Resources.OrdenesPagoForm_Datos_Fecha;
+            lblProveedorTitulo.Text = Resources.OrdenesPagoForm_Datos_Proveedor;
+            chkPagada.Text = Resources.OrdenesPagoForm_Datos_Pagada;
+            lblItems.Text = Resources.OrdenesPagoForm_Datos_Items;
+            btnGuardar.Text = Resources.OrdenesPagoForm_Datos_Guardar;
         }
 
         void OrdenesPago_Load(object sender, EventArgs e)
@@ -43,7 +52,7 @@ namespace OBMCatering.Presentacion
             CargarOrdenesPago();
             LimpiarFormulario();
 
-            contexto.RegistrarEvento("Ingreso a la pantalla de ordenes de pago");
+            contexto.RegistrarEvento(Resources.OrdenesPagoForm_Ingreso);
         }
 
         void BtnGuardar_Click(object sender, EventArgs e)
@@ -78,7 +87,7 @@ namespace OBMCatering.Presentacion
                 CargarOrdenesPago();
                 LimpiarFormulario();
 
-                contexto.RegistrarEvento("La orden de pago para el proveedor {0} ha sido actualizada", ordenPago.Proveedor.Nombre);
+                contexto.RegistrarEvento(Resources.OrdenesPagoForm_OrdenPagoActualizada, ordenPago.Proveedor.Nombre);
             }
             catch(Exception ex)
             {

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using OBMCatering.Negocio.Properties;
+using System.Collections.Generic;
 
 namespace OBMCatering.Negocio
 {
@@ -31,7 +32,7 @@ namespace OBMCatering.Negocio
         {
             if(string.IsNullOrEmpty(nombre))
             {
-                throw new OBMCateringException("El nombre del ingrediente no puede ser nulo");
+                throw new OBMCateringException(Resources.IngredientesBL_Validaciones_NombreIngredienteNull);
             }
 
             Datos.IngredientesDAL dalIngredientes = dal.ObtenerIngredientesDAL();

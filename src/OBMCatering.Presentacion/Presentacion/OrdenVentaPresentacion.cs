@@ -25,7 +25,7 @@ namespace OBMCatering.Presentacion
             FechaInicio = ordenVenta.FechaInicio;
             FechaFin = ordenVenta.FechaFin;
             Comensales = ordenVenta.Comensales.ToString();
-            Precio = ordenVenta.Precio.ToString();
+            Precio = ordenVenta.Precio.ToString("N2");
             Aprobada = ordenVenta.Aprobada;
         }
 

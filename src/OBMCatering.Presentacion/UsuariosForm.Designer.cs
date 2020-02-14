@@ -38,7 +38,6 @@
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.lblUsuarios = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.chkResetear = new System.Windows.Forms.CheckBox();
             this.btnGuardar = new System.Windows.Forms.Button();
@@ -129,16 +128,6 @@
             this.txtEmail.Size = new System.Drawing.Size(306, 31);
             this.txtEmail.TabIndex = 9;
             // 
-            // lblUsuarios
-            // 
-            this.lblUsuarios.AutoSize = true;
-            this.lblUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuarios.Location = new System.Drawing.Point(26, 335);
-            this.lblUsuarios.Name = "lblUsuarios";
-            this.lblUsuarios.Size = new System.Drawing.Size(105, 25);
-            this.lblUsuarios.TabIndex = 11;
-            this.lblUsuarios.Text = "Usuarios";
-            // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -154,9 +143,10 @@
             this.panel1.Controls.Add(this.lblPassword);
             this.panel1.Controls.Add(this.lblPerfil);
             this.panel1.Controls.Add(this.txtPassword);
-            this.panel1.Location = new System.Drawing.Point(31, 34);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1028, 277);
+            this.panel1.Size = new System.Drawing.Size(1130, 277);
             this.panel1.TabIndex = 12;
             // 
             // chkResetear
@@ -171,8 +161,9 @@
             // 
             // btnGuardar
             // 
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGuardar.ForeColor = System.Drawing.Color.Black;
-            this.btnGuardar.Location = new System.Drawing.Point(859, 204);
+            this.btnGuardar.Location = new System.Drawing.Point(969, 213);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(148, 50);
             this.btnGuardar.TabIndex = 23;
@@ -183,16 +174,16 @@
             // 
             this.grvUsuarios.AllowUserToAddRows = false;
             this.grvUsuarios.AllowUserToDeleteRows = false;
-            this.grvUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.grvUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grvUsuarios.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.grvUsuarios.Location = new System.Drawing.Point(0, 388);
+            this.grvUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grvUsuarios.Location = new System.Drawing.Point(0, 277);
             this.grvUsuarios.MultiSelect = false;
             this.grvUsuarios.Name = "grvUsuarios";
             this.grvUsuarios.ReadOnly = true;
             this.grvUsuarios.RowHeadersWidth = 82;
             this.grvUsuarios.RowTemplate.Height = 33;
-            this.grvUsuarios.Size = new System.Drawing.Size(1130, 348);
+            this.grvUsuarios.Size = new System.Drawing.Size(1130, 459);
             this.grvUsuarios.TabIndex = 24;
             // 
             // UsuariosForm
@@ -202,7 +193,6 @@
             this.ClientSize = new System.Drawing.Size(1130, 736);
             this.Controls.Add(this.grvUsuarios);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.lblUsuarios);
             this.Name = "UsuariosForm";
             this.Text = "Administracion de Usuarios";
             this.Load += new System.EventHandler(this.UsuariosForm_Load);
@@ -210,7 +200,6 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvUsuarios)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -226,7 +215,6 @@
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.Label lblUsuarios;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.DataGridView grvUsuarios;

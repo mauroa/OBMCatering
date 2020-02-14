@@ -53,7 +53,6 @@
             this.txtCUIT = new System.Windows.Forms.TextBox();
             this.lblCUIT = new System.Windows.Forms.Label();
             this.grvProveedores = new System.Windows.Forms.DataGridView();
-            this.lblProveedores = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvProveedores)).BeginInit();
             this.SuspendLayout();
@@ -84,10 +83,11 @@
             this.panel1.Controls.Add(this.lblNombre);
             this.panel1.Controls.Add(this.txtCUIT);
             this.panel1.Controls.Add(this.lblCUIT);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel1.Location = new System.Drawing.Point(31, 33);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1373, 376);
+            this.panel1.Size = new System.Drawing.Size(1439, 376);
             this.panel1.TabIndex = 0;
             // 
             // chkActivo
@@ -132,8 +132,9 @@
             // 
             // btnGuardar
             // 
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGuardar.ForeColor = System.Drawing.Color.Black;
-            this.btnGuardar.Location = new System.Drawing.Point(1210, 312);
+            this.btnGuardar.Location = new System.Drawing.Point(1278, 311);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(148, 50);
             this.btnGuardar.TabIndex = 22;
@@ -301,35 +302,23 @@
             // 
             this.grvProveedores.AllowUserToAddRows = false;
             this.grvProveedores.AllowUserToDeleteRows = false;
-            this.grvProveedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.grvProveedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grvProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grvProveedores.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.grvProveedores.Location = new System.Drawing.Point(0, 475);
+            this.grvProveedores.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grvProveedores.Location = new System.Drawing.Point(0, 376);
             this.grvProveedores.MultiSelect = false;
             this.grvProveedores.Name = "grvProveedores";
             this.grvProveedores.ReadOnly = true;
             this.grvProveedores.RowHeadersWidth = 82;
             this.grvProveedores.RowTemplate.Height = 33;
-            this.grvProveedores.Size = new System.Drawing.Size(1439, 483);
+            this.grvProveedores.Size = new System.Drawing.Size(1439, 582);
             this.grvProveedores.TabIndex = 1;
-            // 
-            // lblProveedores
-            // 
-            this.lblProveedores.AutoSize = true;
-            this.lblProveedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProveedores.ForeColor = System.Drawing.Color.Black;
-            this.lblProveedores.Location = new System.Drawing.Point(26, 426);
-            this.lblProveedores.Name = "lblProveedores";
-            this.lblProveedores.Size = new System.Drawing.Size(145, 25);
-            this.lblProveedores.TabIndex = 22;
-            this.lblProveedores.Text = "Proveedores";
             // 
             // ProveedoresForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1439, 958);
-            this.Controls.Add(this.lblProveedores);
             this.Controls.Add(this.grvProveedores);
             this.Controls.Add(this.panel1);
             this.Name = "ProveedoresForm";
@@ -339,7 +328,6 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvProveedores)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -365,7 +353,6 @@
         private System.Windows.Forms.Label lblFechaAlta;
         private System.Windows.Forms.Label lblActivo;
         private System.Windows.Forms.DataGridView grvProveedores;
-        private System.Windows.Forms.Label lblProveedores;
         private System.Windows.Forms.DateTimePicker dtpFechaBaja;
         private System.Windows.Forms.Label lblFechaBaja;
         private System.Windows.Forms.DateTimePicker dtpFechaAlta;

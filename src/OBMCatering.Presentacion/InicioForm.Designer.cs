@@ -35,6 +35,7 @@
             this.tsiEmpleados = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.tsCocina = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsiPedidosCocina = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiRecetas = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiPrecios = new System.Windows.Forms.ToolStripMenuItem();
             this.tsVentas = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,9 +44,12 @@
             this.tsCompras = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiOrdenesCompra = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiOrdenesPago = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsBitacora = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsOpciones = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiBitacora = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsiPedidosCocina = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsiLenguaje = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsiEspaniol = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsiIngles = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsiSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,10 +62,10 @@
             this.tsCocina,
             this.tsVentas,
             this.tsCompras,
-            this.tsBitacora});
+            this.tsOpciones});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1286, 48);
+            this.menuStrip1.Size = new System.Drawing.Size(1286, 40);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -73,31 +77,31 @@
             this.tsiEmpleados,
             this.tsiUsuarios});
             this.tsAdministrar.Name = "tsAdministrar";
-            this.tsAdministrar.Size = new System.Drawing.Size(157, 40);
+            this.tsAdministrar.Size = new System.Drawing.Size(157, 36);
             this.tsAdministrar.Text = "Administrar";
             // 
             // tsiClientes
             // 
             this.tsiClientes.Name = "tsiClientes";
-            this.tsiClientes.Size = new System.Drawing.Size(359, 44);
+            this.tsiClientes.Size = new System.Drawing.Size(281, 44);
             this.tsiClientes.Text = "Clientes";
             // 
             // tsiProveedores
             // 
             this.tsiProveedores.Name = "tsiProveedores";
-            this.tsiProveedores.Size = new System.Drawing.Size(359, 44);
+            this.tsiProveedores.Size = new System.Drawing.Size(281, 44);
             this.tsiProveedores.Text = "Proveedores";
             // 
             // tsiEmpleados
             // 
             this.tsiEmpleados.Name = "tsiEmpleados";
-            this.tsiEmpleados.Size = new System.Drawing.Size(359, 44);
+            this.tsiEmpleados.Size = new System.Drawing.Size(281, 44);
             this.tsiEmpleados.Text = "Empleados";
             // 
             // tsiUsuarios
             // 
             this.tsiUsuarios.Name = "tsiUsuarios";
-            this.tsiUsuarios.Size = new System.Drawing.Size(359, 44);
+            this.tsiUsuarios.Size = new System.Drawing.Size(281, 44);
             this.tsiUsuarios.Text = "Usuarios";
             // 
             // tsCocina
@@ -107,19 +111,25 @@
             this.tsiRecetas,
             this.tsiPrecios});
             this.tsCocina.Name = "tsCocina";
-            this.tsCocina.Size = new System.Drawing.Size(107, 40);
+            this.tsCocina.Size = new System.Drawing.Size(107, 36);
             this.tsCocina.Text = "Cocina";
+            // 
+            // tsiPedidosCocina
+            // 
+            this.tsiPedidosCocina.Name = "tsiPedidosCocina";
+            this.tsiPedidosCocina.Size = new System.Drawing.Size(232, 44);
+            this.tsiPedidosCocina.Text = "Pedidos";
             // 
             // tsiRecetas
             // 
             this.tsiRecetas.Name = "tsiRecetas";
-            this.tsiRecetas.Size = new System.Drawing.Size(359, 44);
+            this.tsiRecetas.Size = new System.Drawing.Size(232, 44);
             this.tsiRecetas.Text = "Recetas";
             // 
             // tsiPrecios
             // 
             this.tsiPrecios.Name = "tsiPrecios";
-            this.tsiPrecios.Size = new System.Drawing.Size(359, 44);
+            this.tsiPrecios.Size = new System.Drawing.Size(232, 44);
             this.tsiPrecios.Text = "Precios";
             // 
             // tsVentas
@@ -128,19 +138,19 @@
             this.tsiPedidos,
             this.tsiFacturas});
             this.tsVentas.Name = "tsVentas";
-            this.tsVentas.Size = new System.Drawing.Size(105, 40);
+            this.tsVentas.Size = new System.Drawing.Size(105, 36);
             this.tsVentas.Text = "Ventas";
             // 
             // tsiPedidos
             // 
             this.tsiPedidos.Name = "tsiPedidos";
-            this.tsiPedidos.Size = new System.Drawing.Size(359, 44);
+            this.tsiPedidos.Size = new System.Drawing.Size(235, 44);
             this.tsiPedidos.Text = "Pedidos";
             // 
             // tsiFacturas
             // 
             this.tsiFacturas.Name = "tsiFacturas";
-            this.tsiFacturas.Size = new System.Drawing.Size(359, 44);
+            this.tsiFacturas.Size = new System.Drawing.Size(235, 44);
             this.tsiFacturas.Text = "Facturas";
             // 
             // tsCompras
@@ -149,7 +159,7 @@
             this.tsiOrdenesCompra,
             this.tsiOrdenesPago});
             this.tsCompras.Name = "tsCompras";
-            this.tsCompras.Size = new System.Drawing.Size(129, 40);
+            this.tsCompras.Size = new System.Drawing.Size(129, 36);
             this.tsCompras.Text = "Compras";
             // 
             // tsiOrdenesCompra
@@ -164,25 +174,48 @@
             this.tsiOrdenesPago.Size = new System.Drawing.Size(239, 44);
             this.tsiOrdenesPago.Text = "Pagos";
             // 
-            // tsBitacora
+            // tsOpciones
             // 
-            this.tsBitacora.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsiBitacora});
-            this.tsBitacora.Name = "tsBitacora";
-            this.tsBitacora.Size = new System.Drawing.Size(120, 40);
-            this.tsBitacora.Text = "Bitacora";
+            this.tsOpciones.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsiBitacora,
+            this.tsiLenguaje,
+            this.tsiSalir});
+            this.tsOpciones.Name = "tsOpciones";
+            this.tsOpciones.Size = new System.Drawing.Size(135, 36);
+            this.tsOpciones.Text = "Opciones";
             // 
             // tsiBitacora
             // 
             this.tsiBitacora.Name = "tsiBitacora";
-            this.tsiBitacora.Size = new System.Drawing.Size(183, 44);
-            this.tsiBitacora.Text = "Ver";
+            this.tsiBitacora.Size = new System.Drawing.Size(246, 44);
+            this.tsiBitacora.Text = "Bitacora";
             // 
-            // tsiPedidosCocina
+            // tsiLenguaje
             // 
-            this.tsiPedidosCocina.Name = "tsiPedidosCocina";
-            this.tsiPedidosCocina.Size = new System.Drawing.Size(359, 44);
-            this.tsiPedidosCocina.Text = "Pedidos";
+            this.tsiLenguaje.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsiEspaniol,
+            this.tsiIngles});
+            this.tsiLenguaje.Name = "tsiLenguaje";
+            this.tsiLenguaje.Size = new System.Drawing.Size(246, 44);
+            this.tsiLenguaje.Text = "Lenguaje";
+            // 
+            // tsiEspaniol
+            // 
+            this.tsiEspaniol.Name = "tsiEspaniol";
+            this.tsiEspaniol.Size = new System.Drawing.Size(231, 44);
+            this.tsiEspaniol.Text = "Español";
+            // 
+            // tsiIngles
+            // 
+            this.tsiIngles.Name = "tsiIngles";
+            this.tsiIngles.Size = new System.Drawing.Size(231, 44);
+            this.tsiIngles.Text = "Ingles";
+            // 
+            // tsiSalir
+            // 
+            this.tsiSalir.Name = "tsiSalir";
+            this.tsiSalir.Size = new System.Drawing.Size(246, 44);
+            this.tsiSalir.Text = "Salir";
             // 
             // InicioForm
             // 
@@ -193,7 +226,6 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "InicioForm";
             this.Text = "OBM Catering";
-            this.Load += new System.EventHandler(this.InicioForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -217,9 +249,13 @@
         private System.Windows.Forms.ToolStripMenuItem tsCompras;
         private System.Windows.Forms.ToolStripMenuItem tsiOrdenesCompra;
         private System.Windows.Forms.ToolStripMenuItem tsiOrdenesPago;
-        private System.Windows.Forms.ToolStripMenuItem tsBitacora;
-        private System.Windows.Forms.ToolStripMenuItem tsiBitacora;
         private System.Windows.Forms.ToolStripMenuItem tsiUsuarios;
         private System.Windows.Forms.ToolStripMenuItem tsiPedidosCocina;
+        private System.Windows.Forms.ToolStripMenuItem tsOpciones;
+        private System.Windows.Forms.ToolStripMenuItem tsiBitacora;
+        private System.Windows.Forms.ToolStripMenuItem tsiLenguaje;
+        private System.Windows.Forms.ToolStripMenuItem tsiEspaniol;
+        private System.Windows.Forms.ToolStripMenuItem tsiIngles;
+        private System.Windows.Forms.ToolStripMenuItem tsiSalir;
     }
 }

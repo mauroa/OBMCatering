@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Linq;
+using OBMCatering.Presentacion.Properties;
 
 namespace OBMCatering.Presentacion
 {
@@ -14,7 +15,15 @@ namespace OBMCatering.Presentacion
 
         public BitacoraForm()
         {
+            this.CargarLenguaje();
             InitializeComponent();
+
+            Text = Resources.BitacoraForm_Titulo;
+            lblDesde.Text = Resources.BitacoraForm_Filtros_Desde;
+            lblHasta.Text = Resources.BitacoraForm_Filtros_Hasta;
+            lblTipo.Text = Resources.BitacoraForm_Filtros_Tipo;
+            lblUsuario.Text = Resources.BitacoraForm_Filtros_Usuario;
+            btnFiltrar.Text = Resources.BitacoraForm_Filtrar;
         }
 
         void BitacoraForm_Load(object sender, EventArgs e)
@@ -29,7 +38,7 @@ namespace OBMCatering.Presentacion
             CargarBitacora();
             LimpiarFormulario();
 
-            contexto.RegistrarEvento("Ingreso a la pantalla de bitacora");
+            contexto.RegistrarEvento(Resources.BitacoraForm_Ingreso);
         }
 
         void BtnFiltrar_Click(object sender, EventArgs e)

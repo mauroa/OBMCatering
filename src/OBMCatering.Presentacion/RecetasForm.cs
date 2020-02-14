@@ -1,4 +1,5 @@
 ﻿using OBMCatering.Negocio;
+using OBMCatering.Presentacion.Properties;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -13,7 +14,15 @@ namespace OBMCatering.Presentacion
 
         public RecetasForm()
         {
+            this.CargarLenguaje();
             InitializeComponent();
+
+            Text = Resources.RecetasForm_Titulo;
+            lblNombre.Text = Resources.RecetasForm_Datos_Nombre;
+            chkNoDisponible.Text = Resources.RecetasForm_Datos_NoDisponible;
+            lblDetalle.Text = Resources.RecetasForm_Datos_Detalle;
+            btnVer.Text = Resources.RecetasForm_Datos_VerDetalle;
+            btnGuardar.Text = Resources.RecetasForm_Datos_Guardar;
         }
 
         void RecetasForm_Load(object sender, EventArgs e)
@@ -29,7 +38,7 @@ namespace OBMCatering.Presentacion
             CargarRecetas();
             LimpiarFormulario();
 
-            contexto.RegistrarEvento("Ingreso a la pantalla de recetas");
+            contexto.RegistrarEvento(Resources.RecetasForm_Ingreso);
         }
 
         void BtnGuardar_Click(object sender, EventArgs e)
@@ -46,7 +55,7 @@ namespace OBMCatering.Presentacion
                     SetearReceta(receta);
                     recetasBL.Actualizar(receta);
 
-                    contexto.RegistrarEvento("La receta {0} ha sido actualizada", receta.Nombre);
+                    contexto.RegistrarEvento(Resources.RecetasForm_RecetaActualizada, receta.Nombre);
                 }
                 else
                 {
@@ -55,7 +64,7 @@ namespace OBMCatering.Presentacion
                     SetearReceta(receta);
                     recetasBL.Crear(receta);
 
-                    contexto.RegistrarEvento("La receta {0} ha sido creada", receta.Nombre);
+                    contexto.RegistrarEvento(Resources.RecetasForm_RecetaCreada, receta.Nombre);
                 }
 
                 CargarRecetas();
@@ -74,7 +83,7 @@ namespace OBMCatering.Presentacion
             RecetaPresentacion recetaSeleccionada = (RecetaPresentacion)filaSeleccionada.DataBoundItem;
 
             form.Receta = recetaSeleccionada;
-            form.Text = "Ingredientes " + recetaSeleccionada.Nombre;
+            form.Text = string.Format(Resources.RecetasForm_Ingredientes_Ver, recetaSeleccionada.Nombre);
             form.Show();
         }
 

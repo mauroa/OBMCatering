@@ -46,7 +46,6 @@
             this.cboClientes = new System.Windows.Forms.ComboBox();
             this.lblCliente = new System.Windows.Forms.Label();
             this.grvPedidos = new System.Windows.Forms.DataGridView();
-            this.lblPedidos = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvPedidos)).BeginInit();
             this.SuspendLayout();
@@ -70,9 +69,10 @@
             this.panel1.Controls.Add(this.lblFechaInicio);
             this.panel1.Controls.Add(this.cboClientes);
             this.panel1.Controls.Add(this.lblCliente);
-            this.panel1.Location = new System.Drawing.Point(21, 26);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1215, 437);
+            this.panel1.Size = new System.Drawing.Size(1486, 437);
             this.panel1.TabIndex = 0;
             // 
             // lblPesos
@@ -87,8 +87,9 @@
             // 
             // btnCalcularPrecio
             // 
+            this.btnCalcularPrecio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCalcularPrecio.ForeColor = System.Drawing.Color.Black;
-            this.btnCalcularPrecio.Location = new System.Drawing.Point(831, 364);
+            this.btnCalcularPrecio.Location = new System.Drawing.Point(1107, 366);
             this.btnCalcularPrecio.Name = "btnCalcularPrecio";
             this.btnCalcularPrecio.Size = new System.Drawing.Size(201, 50);
             this.btnCalcularPrecio.TabIndex = 28;
@@ -115,8 +116,9 @@
             // 
             // btnGuardar
             // 
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGuardar.ForeColor = System.Drawing.Color.Black;
-            this.btnGuardar.Location = new System.Drawing.Point(1049, 364);
+            this.btnGuardar.Location = new System.Drawing.Point(1314, 366);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(148, 50);
             this.btnGuardar.TabIndex = 25;
@@ -134,6 +136,8 @@
             // 
             // lstRecetas
             // 
+            this.lstRecetas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lstRecetas.ColumnWidth = 100;
             this.lstRecetas.FormattingEnabled = true;
             this.lstRecetas.ItemHeight = 25;
@@ -141,7 +145,7 @@
             this.lstRecetas.MultiColumn = true;
             this.lstRecetas.Name = "lstRecetas";
             this.lstRecetas.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.lstRecetas.Size = new System.Drawing.Size(1173, 204);
+            this.lstRecetas.Size = new System.Drawing.Size(1438, 204);
             this.lstRecetas.TabIndex = 23;
             // 
             // chkAprobada
@@ -228,35 +232,23 @@
             // 
             this.grvPedidos.AllowUserToAddRows = false;
             this.grvPedidos.AllowUserToDeleteRows = false;
-            this.grvPedidos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.grvPedidos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grvPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grvPedidos.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.grvPedidos.Location = new System.Drawing.Point(0, 540);
+            this.grvPedidos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grvPedidos.Location = new System.Drawing.Point(0, 437);
             this.grvPedidos.MultiSelect = false;
             this.grvPedidos.Name = "grvPedidos";
             this.grvPedidos.ReadOnly = true;
             this.grvPedidos.RowHeadersWidth = 82;
             this.grvPedidos.RowTemplate.Height = 33;
-            this.grvPedidos.Size = new System.Drawing.Size(1486, 440);
+            this.grvPedidos.Size = new System.Drawing.Size(1486, 543);
             this.grvPedidos.TabIndex = 2;
-            // 
-            // lblPedidos
-            // 
-            this.lblPedidos.AutoSize = true;
-            this.lblPedidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPedidos.ForeColor = System.Drawing.Color.Black;
-            this.lblPedidos.Location = new System.Drawing.Point(22, 487);
-            this.lblPedidos.Name = "lblPedidos";
-            this.lblPedidos.Size = new System.Drawing.Size(97, 25);
-            this.lblPedidos.TabIndex = 23;
-            this.lblPedidos.Text = "Pedidos";
             // 
             // OrdenesVentaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1486, 980);
-            this.Controls.Add(this.lblPedidos);
             this.Controls.Add(this.grvPedidos);
             this.Controls.Add(this.panel1);
             this.Name = "OrdenesVentaForm";
@@ -266,7 +258,6 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvPedidos)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -289,7 +280,6 @@
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.Button btnCalcularPrecio;
         private System.Windows.Forms.DataGridView grvPedidos;
-        private System.Windows.Forms.Label lblPedidos;
         private System.Windows.Forms.Label lblPesos;
     }
 }

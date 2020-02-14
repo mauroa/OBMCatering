@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using OBMCatering.Negocio.Properties;
+using System.Collections.Generic;
 
 namespace OBMCatering.Negocio
 {
@@ -24,7 +25,7 @@ namespace OBMCatering.Negocio
 
             if (clienteDAL == null)
             {
-                throw new OBMCateringException(string.Format("El cliente con CUIT '{0}' es incorrecto o no es valido en el sistema", ordenVenta.Cliente.CUIT));
+                throw new OBMCateringException(string.Format(Resources.BL_Validaciones_ClienteInvalido, ordenVenta.Cliente.CUIT));
             }
 
             Datos.RecetasDAL dalRecetas = dal.ObtenerRecetasDAL();
@@ -36,7 +37,7 @@ namespace OBMCatering.Negocio
 
                 if (recetaDAL == null)
                 {
-                    throw new OBMCateringException(string.Format("La receta '{0}' es incorrecta o no es valida en el sistema para la orden de venta", receta.Nombre));
+                    throw new OBMCateringException(string.Format(Resources.OrdenesVentaBL_Validaciones_RecetaInvalida, receta.Nombre));
                 }
 
                 recetasDAL.Add(recetaDAL);
@@ -68,7 +69,7 @@ namespace OBMCatering.Negocio
 
             if (ordenVentaDAL == null)
             {
-                throw new OBMCateringException("La orden de venta es incorrecta o no es valida en el sistema");
+                throw new OBMCateringException(Resources.BL_Validaciones_OrdenVentaInvalida);
             }
 
             ordenVentaDAL.Comensales = ordenVenta.Comensales;
@@ -118,7 +119,7 @@ namespace OBMCatering.Negocio
         {
             if (cliente == null)
             {
-                throw new OBMCateringException("El cliente no puede ser nulo");
+                throw new OBMCateringException(Resources.BL_Validaciones_ClienteNull);
             }
 
             Datos.ClientesDAL dalClientes = dal.ObtenerClientesDAL();
@@ -126,7 +127,7 @@ namespace OBMCatering.Negocio
 
             if (clienteDAL == null)
             {
-                throw new OBMCateringException(string.Format("El cliente con CUIT '{0}' no existe", cliente.CUIT));
+                throw new OBMCateringException(string.Format(Resources.BL_Validaciones_ClienteInvalido, cliente.CUIT));
             }
 
             Datos.OrdenesVentaDAL dalOrdenesVenta = dal.ObtenerOrdenesVentaDAL();
@@ -139,7 +140,7 @@ namespace OBMCatering.Negocio
         {
             if (receta == null)
             {
-                throw new OBMCateringException("La receta no puede ser nula");
+                throw new OBMCateringException(Resources.BL_Validaciones_RecetaNull);
             }
 
             Datos.RecetasDAL dalRecetas = dal.ObtenerRecetasDAL();
@@ -147,7 +148,7 @@ namespace OBMCatering.Negocio
 
             if (recetaDAL == null)
             {
-                throw new OBMCateringException(string.Format("La receta '{0}' no existe", receta.Nombre));
+                throw new OBMCateringException(string.Format(Resources.BL_Validaciones_RecetaInvalida, receta.Nombre));
             }
 
             Datos.OrdenesVentaDAL dalOrdenesVenta = dal.ObtenerOrdenesVentaDAL();
@@ -202,22 +203,22 @@ namespace OBMCatering.Negocio
         {
             if (ordenVenta == null)
             {
-                throw new OBMCateringException("La orden de venta no puede ser nula");
+                throw new OBMCateringException(Resources.BL_Validaciones_OrdenVentaNull);
             }
 
             if (ordenVenta.Cliente == null)
             {
-                throw new OBMCateringException("El cliente de la orden de venta no puede ser nulo");
+                throw new OBMCateringException(Resources.BL_Validaciones_ClienteNull);
             }
 
             if (ordenVenta.Comensales <= 0)
             {
-                throw new OBMCateringException("La orden de venta debe tener al menos un comensal");
+                throw new OBMCateringException(Resources.BL_Validaciones_OrdenVentaSinComensales);
             }
 
             if (ordenVenta.Recetas == null || ordenVenta.Recetas.Count == 0)
             {
-                throw new OBMCateringException("La orden de venta debe tener al menos una receta");
+                throw new OBMCateringException(Resources.BL_Validaciones_OrdenVentaSinRecetas);
             }
         }
 

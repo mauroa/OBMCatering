@@ -71,6 +71,11 @@
     <Compile Include="PerfilUsuario.cs" />
     <Compile Include="PrecioIngrediente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Proveedor.cs" />
     <Compile Include="BL\ProveedoresBL.cs" />
     <Compile Include="Provincia.cs" />
@@ -86,6 +91,13 @@
       <Project>{5f92b3fb-cdba-431a-8093-ebe86dc873f1}</Project>
       <Name>OBMCatering.Datos</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.en.resx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

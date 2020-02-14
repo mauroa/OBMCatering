@@ -1,4 +1,5 @@
 ﻿using OBMCatering.Negocio;
+using OBMCatering.Presentacion.Properties;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -18,7 +19,18 @@ namespace OBMCatering.Presentacion
 
         public FacturasForm()
         {
+            this.CargarLenguaje();
             InitializeComponent();
+
+            Text = Resources.FacturasForm_Titulo;
+            lblFechaTitulo.Text = Resources.FacturasForm_Datos_Fecha;
+            lblClienteTitulo.Text = Resources.FacturasForm_Datos_Cliente;
+            lblFechaInicioTitulo.Text = Resources.FacturasForm_Datos_Desde;
+            lblFechaFinTitulo.Text = Resources.FacturasForm_Datos_Hasta;
+            lblComensalesTitulo.Text = Resources.FacturasForm_Datos_Comensales;
+            lblRecetasTitulo.Text = Resources.FacturasForm_Datos_Recetas;
+            lblPrecio.Text = Resources.FacturasForm_Datos_Precio;
+            btnCobrada.Text = Resources.FacturasForm_Cobrada;
         }
 
         void FacturasForm_Load(object sender, EventArgs e)
@@ -37,7 +49,7 @@ namespace OBMCatering.Presentacion
             CargarFacturas();
             LimpiarFormulario();
 
-            contexto.RegistrarEvento("Ingreso a la pantalla de facturas");
+            contexto.RegistrarEvento(Resources.FacturasForm_Ingreso);
         }
 
         void BtnCobrada_Click(object sender, EventArgs e)
@@ -52,7 +64,7 @@ namespace OBMCatering.Presentacion
                 CargarFacturas();
                 LimpiarFormulario();
 
-                contexto.RegistrarEvento("La factura para {0} ha sido marcada como cobrada", factura.OrdenVenta.Cliente.Nombre);
+                contexto.RegistrarEvento(Resources.FacturasForm_FacturaCobrada, factura.OrdenVenta.Cliente.Nombre);
             }
             catch(Exception ex)
             {

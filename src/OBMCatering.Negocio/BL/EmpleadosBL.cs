@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using OBMCatering.Negocio.Properties;
+using System.Collections.Generic;
 
 namespace OBMCatering.Negocio
 {
@@ -22,7 +23,7 @@ namespace OBMCatering.Negocio
 
             if (localidadDAL == null)
             {
-                throw new OBMCateringException(string.Format("La localidad '{0}' es incorrecta o no es valida en el sistema", empleado.Localidad.Nombre));
+                throw new OBMCateringException(string.Format(Resources.BL_Validaciones_LocalidadInvalida, empleado.Localidad.Nombre));
             }
 
             Datos.Empleado empleadoDAL = new Datos.Empleado
@@ -54,7 +55,7 @@ namespace OBMCatering.Negocio
 
             if (empleadoDAL == null)
             {
-                throw new OBMCateringException(string.Format("El empleado con CUIT '{0}' no existe", empleado.CUIT));
+                throw new OBMCateringException(string.Format(Resources.EmpleadosBL_Validaciones_CUITInvalido, empleado.CUIT));
             }
 
             Datos.LocalidadesDAL dalLocalidades = dal.ObtenerLocalidadesDAL();
@@ -62,7 +63,7 @@ namespace OBMCatering.Negocio
 
             if (localidadDAL == null)
             {
-                throw new OBMCateringException(string.Format("La localidad '{0}' es incorrecta o no es valida en el sistema", empleado.Localidad.Nombre));
+                throw new OBMCateringException(string.Format(Resources.BL_Validaciones_LocalidadInvalida, empleado.Localidad.Nombre));
             }
 
             empleadoDAL.Domicilio = empleado.Domicilio;
@@ -85,7 +86,7 @@ namespace OBMCatering.Negocio
 
             if (empleadoDAL == null)
             {
-                throw new OBMCateringException(string.Format("El empleado con CUIT '{0}' no existe", empleado.CUIT));
+                throw new OBMCateringException(string.Format(Resources.EmpleadosBL_Validaciones_CUITInvalido, empleado.CUIT));
             }
 
             dalEmpleados.Eliminar(empleadoDAL);
@@ -112,7 +113,7 @@ namespace OBMCatering.Negocio
         {
             if (string.IsNullOrEmpty(cuit))
             {
-                throw new OBMCateringException("El CUIT del empleado no puede ser nulo o vacio");
+                throw new OBMCateringException(Resources.BL_Validaciones_CUITNull);
             }
 
             Datos.EmpleadosDAL dalEmpleados = dal.ObtenerEmpleadosDAL();
@@ -125,7 +126,7 @@ namespace OBMCatering.Negocio
         {
             if (string.IsNullOrEmpty(cuit))
             {
-                throw new OBMCateringException("El CUIT del empleado no puede ser nulo o vacio");
+                throw new OBMCateringException(Resources.BL_Validaciones_CUITNull);
             }
 
             Datos.EmpleadosDAL dalEmpleados = dal.ObtenerEmpleadosDAL();
@@ -152,42 +153,42 @@ namespace OBMCatering.Negocio
         {
             if (empleado == null)
             {
-                throw new OBMCateringException("El empleado no puede ser nulo");
+                throw new OBMCateringException(Resources.EmpleadosBL_Validaciones_EmpleadoNull);
             }
 
             if (string.IsNullOrEmpty(empleado.CUIT))
             {
-                throw new OBMCateringException("El CUIT del empleado no puede ser nulo o vacio");
+                throw new OBMCateringException(Resources.BL_Validaciones_CUITNull);
             }
 
             if (string.IsNullOrEmpty(empleado.Nombre))
             {
-                throw new OBMCateringException("El nombre del empleado no puede ser nulo o vacio");
+                throw new OBMCateringException(Resources.EmpleadosBL_Validaciones_NombreNull);
             }
 
             if (string.IsNullOrEmpty(empleado.Domicilio))
             {
-                throw new OBMCateringException("El domicilio del empleado no puede ser nulo o vacio");
+                throw new OBMCateringException(Resources.BL_Validaciones_DomicilioNull);
             }
 
             if (empleado.Localidad == null)
             {
-                throw new OBMCateringException("La localidad del empleado no puede ser nula");
+                throw new OBMCateringException(Resources.BL_Validaciones_LocalidadNull);
             }
 
             if (string.IsNullOrEmpty(empleado.CodigoPostal))
             {
-                throw new OBMCateringException("El codigo postal del empleado no puede ser nulo o vacio");
+                throw new OBMCateringException(Resources.BL_Validaciones_CPNull);
             }
 
             if (string.IsNullOrEmpty(empleado.Telefono))
             {
-                throw new OBMCateringException("El telefono del empleado no puede ser nulo o vacio");
+                throw new OBMCateringException(Resources.BL_Validaciones_TelefonoNull);
             }
 
             if (string.IsNullOrEmpty(empleado.Email))
             {
-                throw new OBMCateringException("El email del empleado no puede ser nulo o vacio");
+                throw new OBMCateringException(Resources.BL_Validaciones_EmailNull);
             }
         }
 

@@ -1,4 +1,5 @@
 ﻿using OBMCatering.Negocio;
+using OBMCatering.Presentacion.Properties;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -13,7 +14,14 @@ namespace OBMCatering.Presentacion
 
         public IngredientesForm()
         {
+            this.CargarLenguaje();
             InitializeComponent();
+
+            Text = Resources.IngredientesForm_Titulo;
+            lblIngrediente.Text = Resources.IngredientesForm_Datos_Ingrediente;
+            lblCantidad.Text = Resources.IngredientesForm_Datos_Cantidad;
+            lblUnidad.Text = Resources.IngredientesForm_Datos_Unidad;
+            btnGuardar.Text = Resources.IngredientesForm_Datos_Guardar;
         }
 
         public RecetaPresentacion Receta { get; set; }
@@ -31,7 +39,7 @@ namespace OBMCatering.Presentacion
             CargarIngredientes();
             LimpiarFormulario();
 
-            contexto.RegistrarEvento("Ingreso a la pantalla de ingredientes");
+            contexto.RegistrarEvento(Resources.IngredientesForm_Ingreso);
         }
 
         void BtnGuardar_Click(object sender, EventArgs e)
@@ -66,7 +74,7 @@ namespace OBMCatering.Presentacion
                 CargarIngredientes();
                 LimpiarFormulario();
 
-                contexto.RegistrarEvento("La receta {0} ha sido actualizada", receta.Nombre);
+                contexto.RegistrarEvento(Resources.IngredientesForm_RecetaActualizada, receta.Nombre);
             }
             catch(Exception ex)
             {

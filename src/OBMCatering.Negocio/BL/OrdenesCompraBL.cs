@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OBMCatering.Negocio.Properties;
+using System;
 using System.Collections.Generic;
 
 namespace OBMCatering.Negocio
@@ -20,12 +21,12 @@ namespace OBMCatering.Negocio
         {
             if(ordenVenta == null)
             {
-                throw new OBMCateringException("La orden de venta no puede ser nula");
+                throw new OBMCateringException(Resources.BL_Validaciones_OrdenVentaNull);
             }
 
             if(ordenVenta.Comensales <= 0)
             {
-                throw new OBMCateringException("La orden de venta debe tener al menos un comensal");
+                throw new OBMCateringException(Resources.BL_Validaciones_OrdenVentaSinComensales);
             }
 
             Datos.OrdenCompra ordenCompraDAL = new Datos.OrdenCompra();
@@ -40,7 +41,7 @@ namespace OBMCatering.Negocio
 
                     if (ingredienteReceta.Cantidad <= 0)
                     {
-                        throw new OBMCateringException(string.Format("La cantidad del ingrediente '{0}' para la receta '{1}' tienen que ser mayor a cero", ingrediente.Nombre, receta.Nombre));
+                        throw new OBMCateringException(string.Format(Resources.OrdenesCompraBL_Validaciones_RecetaSinIngredientes, ingrediente.Nombre, receta.Nombre));
                     }
 
                     decimal cantidad = ingredienteReceta.Cantidad * ordenVenta.Comensales;
@@ -59,7 +60,7 @@ namespace OBMCatering.Negocio
 
                         if (ingredienteDAL == null)
                         {
-                            throw new OBMCateringException(string.Format("El ingredinte '{0}' es incorrecto o no es valido en el sistema para la receta '{1}'", ingrediente.Nombre, receta.Nombre));
+                            throw new OBMCateringException(string.Format(Resources.OrdenesCompraBL_Validaciones_IngredienteInvalido, ingrediente.Nombre, receta.Nombre));
                         }
 
                         Datos.RecetasDAL dalRecetas = dal.ObtenerRecetasDAL();
@@ -67,7 +68,7 @@ namespace OBMCatering.Negocio
 
                         if (unidadDAL == null)
                         {
-                            throw new OBMCateringException(string.Format("La unidad '{0}' es incorrecta o no es valida en el sistema", ingredienteReceta.Unidad));
+                            throw new OBMCateringException(string.Format(Resources.BL_Validaciones_UnidadMedidaInvalida, ingredienteReceta.Unidad));
                         }
 
                         itemOrdenCompraDAL.Ingrediente = ingredienteDAL;
@@ -84,7 +85,7 @@ namespace OBMCatering.Negocio
 
             if (ordenVentaDAL == null)
             {
-                throw new OBMCateringException("La orden de venta es incorrecta o no es valida en el sistema");
+                throw new OBMCateringException(Resources.BL_Validaciones_OrdenVentaInvalida);
             }
 
             Datos.OrdenesCompraDAL dalOrdenesCompra = dal.ObtenerOrdenesCompraDAL();
@@ -112,14 +113,14 @@ namespace OBMCatering.Negocio
 
             if (ordenCompraDAL == null)
             {
-                throw new OBMCateringException("La orden de compra es incorrecta o no es valida en el sistema");
+                throw new OBMCateringException(Resources.BL_Validaciones_OrdenCompraInvalida);
             }
 
             Datos.EstadoOrdenCompra estadoDAL = dalOrdenesCompra.ObtenerEstado(ordenCompra.Estado.ToString());
 
             if (estadoDAL == null)
             {
-                throw new OBMCateringException(string.Format("El estado '{0}' es incorrecto o no es valido en el sistema", ordenCompra.Estado));
+                throw new OBMCateringException(string.Format(Resources.OrdenesCompraBL_Validaciones_EstadoInvalido, ordenCompra.Estado));
             }
 
             ordenCompraDAL.Estado = estadoDAL;
@@ -143,7 +144,7 @@ namespace OBMCatering.Negocio
 
             if (estadoDAL == null)
             {
-                throw new OBMCateringException(string.Format("El estado '{0}' es incorrecto o no es valido en el sistema", estado));
+                throw new OBMCateringException(string.Format(Resources.OrdenesCompraBL_Validaciones_EstadoInvalido, estado));
             }
 
             IEnumerable<Datos.OrdenCompra> ordenesCompraDAL = dalOrdenesCompra.Obtener(estadoDAL);
@@ -202,17 +203,17 @@ namespace OBMCatering.Negocio
         {
             if (ordenCompra == null)
             {
-                throw new OBMCateringException("La orden de compra no puede ser nula");
+                throw new OBMCateringException(Resources.BL_Validaciones_OrdenCompraNull);
             }
 
             if (ordenCompra.OrdenVenta == null)
             {
-                throw new OBMCateringException("La orden de venta asociada a la orden de compra no puede ser nula");
+                throw new OBMCateringException(Resources.OrdenesCompraBL_Validaciones_OrdenVentaNull);
             }
 
             if (ordenCompra.Items == null || ordenCompra.Items.Count == 0)
             {
-                throw new OBMCateringException("La orden de compra debe tener al menos un item");
+                throw new OBMCateringException(Resources.OrdenesCompraBL_Validaciones_OrdenCompraSinItems);
             }
         }
 

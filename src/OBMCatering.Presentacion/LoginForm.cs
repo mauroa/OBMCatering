@@ -1,4 +1,5 @@
 ﻿using OBMCatering.Negocio;
+using OBMCatering.Presentacion.Properties;
 using System;
 using System.Windows.Forms;
 
@@ -12,7 +13,15 @@ namespace OBMCatering.Presentacion
 
         public LoginForm()
         {
+            this.CargarLenguaje();
             InitializeComponent();
+
+            Text = Resources.LoginForm_Titulo;
+            lblUsuario.Text = Resources.LoginForm_Usuario;
+            lblPassword.Text = Resources.LoginForm_Password;
+            lblNuevoPassword.Text = Resources.LoginForm_NuevoPassword;
+            btnIngresar.Text = Resources.LoginForm_Ingresar;
+            btnCancelar.Text = Resources.LoginForm_Cancelar;
         }
 
         void LoginForm_Load(object sender, EventArgs e)
@@ -27,7 +36,7 @@ namespace OBMCatering.Presentacion
 
             LimpiarFormulario();
 
-            contexto.RegistrarEvento("Ingreso a la pantalla de login");
+            contexto.RegistrarEvento(Resources.LoginForm_Ingreso);
         }
 
         void BtnIngresar_Click(object sender, EventArgs e)
@@ -41,7 +50,7 @@ namespace OBMCatering.Presentacion
                 {
                     lblNuevoPassword.Visible = true;
                     txtNuevoPassword.Visible = true;
-                    lblMensaje.Text = "Se necesita un cambio de password antes de ingresar al sistema. Por favor ingresar nuevo password y continuar";
+                    lblMensaje.Text = Resources.LoginForm_CambiarPassword;
                     modoReset = true;
 
                     return;
@@ -60,7 +69,7 @@ namespace OBMCatering.Presentacion
                     password = nuevoPassword;
                     modoReset = false;
 
-                    contexto.RegistrarEvento("El password ha sido reseteado");
+                    contexto.RegistrarEvento(Resources.LoginForm_PasswordReseteado);
                 }
                 else
                 {
@@ -71,18 +80,17 @@ namespace OBMCatering.Presentacion
 
                 if (autenticado)
                 {
-                    contexto.RegistrarEvento("El usuario ha sido autenticado correctamente");
+                    contexto.RegistrarEvento(Resources.LoginForm_UsuarioAutenticado);
                     DialogResult = DialogResult.OK;
                 }
                 else
                 {
-                    contexto.RegistrarEvento("El usuario ha fallado la autenticacion");
-                    DialogResult = DialogResult.Abort;
+                    contexto.RegistrarError(Resources.LoginForm_ErrorAutenticacion);
                 }
             }
             catch(Exception ex)
             {
-                contexto.RegistrarError(ex);
+                contexto.RegistrarError(ex, Resources.LoginForm_ErrorAutenticacion);
             }
         }
 
@@ -93,7 +101,7 @@ namespace OBMCatering.Presentacion
 
         void LimpiarFormulario()
         {
-            lblMensaje.Text = "Ingrese Usuario y Password para acceder al sistema OBM Catering";
+            lblMensaje.Text = Resources.LoginForm_IngresarCredenciales;
             txtUsuario.Text = string.Empty;
             txtPassword.Text = string.Empty;
             txtNuevoPassword.Text = string.Empty;

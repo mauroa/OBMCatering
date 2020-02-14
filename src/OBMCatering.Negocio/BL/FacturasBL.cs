@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using OBMCatering.Negocio.Properties;
+using System.Collections.Generic;
 
 namespace OBMCatering.Negocio
 {
@@ -22,7 +23,7 @@ namespace OBMCatering.Negocio
 
             if (ordenVentaDAL == null)
             {
-                throw new OBMCateringException("La orden de venta asociada a la factura es incorrecta o no es valida en el sistema");
+                throw new OBMCateringException(Resources.BL_Validaciones_OrdenVentaInvalida);
             }
 
             Datos.Factura facturaDAL = new Datos.Factura
@@ -47,7 +48,7 @@ namespace OBMCatering.Negocio
 
             if (facturaDAL == null)
             {
-                throw new OBMCateringException("La factura a actualizar no existe en el sistema");
+                throw new OBMCateringException(Resources.FacturasBL_Validaciones_FacturaInvalida);
             }
 
             facturaDAL.Cobrada = factura.Cobrada;
@@ -76,7 +77,7 @@ namespace OBMCatering.Negocio
         {
             if (cliente == null)
             {
-                throw new OBMCateringException("El cliente no puede ser nulo");
+                throw new OBMCateringException(Resources.FacturasBL_Validaciones_ClienteNull);
             }
 
             Datos.ClientesDAL dalClientes = dal.ObtenerClientesDAL();
@@ -84,7 +85,7 @@ namespace OBMCatering.Negocio
 
             if (clienteDAL == null)
             {
-                throw new OBMCateringException(string.Format("El cliente con CUIT '{0}' no existe", cliente.CUIT));
+                throw new OBMCateringException(string.Format(Resources.BL_Validaciones_ClienteInvalido, cliente.CUIT));
             }
 
             Datos.FacturasDAL dalFacturas = dal.ObtenerFacturasDAL();
@@ -105,7 +106,7 @@ namespace OBMCatering.Negocio
         {
             if (ordenVenta == null)
             {
-                throw new OBMCateringException("La orden de venta no puede ser nula");
+                throw new OBMCateringException(Resources.BL_Validaciones_OrdenVentaNull);
             }
 
             Datos.OrdenesVentaDAL dalOrdenesVenta = dal.ObtenerOrdenesVentaDAL();
@@ -113,7 +114,7 @@ namespace OBMCatering.Negocio
 
             if (ordenVentaDAL == null)
             {
-                throw new OBMCateringException("La orden de venta es incorrecta o no es valida en el sistema");
+                throw new OBMCateringException(Resources.BL_Validaciones_OrdenVentaInvalida);
             }
 
             Datos.FacturasDAL dalFacturas = dal.ObtenerFacturasDAL();
@@ -126,12 +127,12 @@ namespace OBMCatering.Negocio
         {
             if (factura == null)
             {
-                throw new OBMCateringException("La factura no puede ser nula");
+                throw new OBMCateringException(Resources.FacturasBL_Validaciones_FacturaNull);
             }
 
             if (factura.OrdenVenta == null)
             {
-                throw new OBMCateringException("La orden de venta asociada a la factura no puede ser nula");
+                throw new OBMCateringException(Resources.BL_Validaciones_OrdenVentaNull);
             }
         }
 

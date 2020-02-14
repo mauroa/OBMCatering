@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using OBMCatering.Negocio.Properties;
+using System.Collections.Generic;
 
 namespace OBMCatering.Negocio
 {
@@ -24,7 +25,7 @@ namespace OBMCatering.Negocio
 
             if (proveedorDAL == null)
             {
-                throw new OBMCateringException(string.Format("El proveedor con CUIT '{0}' es incorrecto o no es valido en el sistema", ordenPago.Proveedor.CUIT));
+                throw new OBMCateringException(string.Format(Resources.BL_Validaciones_ProveedorInvalido, ordenPago.Proveedor.CUIT));
             }
 
             Datos.OrdenesCompraDAL dalOrdenesCompra = dal.ObtenerOrdenesCompraDAL();
@@ -36,7 +37,7 @@ namespace OBMCatering.Negocio
 
                 if (itemOrdenCompraDAL == null)
                 {
-                    throw new OBMCateringException("El item de orden de compra asociado a la orden de pago es incorrecto o no es valido en el sistema");
+                    throw new OBMCateringException(Resources.OrdenesPagoBL_Validaciones_ItemOrdenCompraInvalido);
                 }
 
                 Datos.ItemOrdenPago itemOrdenPagoDAL = new Datos.ItemOrdenPago
@@ -71,7 +72,7 @@ namespace OBMCatering.Negocio
 
             if (ordenPagoDAL == null)
             {
-                throw new OBMCateringException("La orden de pago es incorrecta o no es valida en el sistema");
+                throw new OBMCateringException(Resources.BL_Validaciones_OrdenPagoInvalida);
             }
 
             foreach (Datos.ItemOrdenPago itemDAL in ordenPagoDAL.ItemsOrdenesPago)
@@ -119,7 +120,7 @@ namespace OBMCatering.Negocio
         {
             if (proveedor == null)
             {
-                throw new OBMCateringException("El proveedor no puede ser nulo");
+                throw new OBMCateringException(Resources.BL_Validaciones_ProveedorNull);
             }
 
             Datos.ProveedoresDAL dalProveedores = dal.ObtenerProveedoresDAL();
@@ -127,7 +128,7 @@ namespace OBMCatering.Negocio
 
             if (proveedorDAL == null)
             {
-                throw new OBMCateringException(string.Format("El proveedor con CUIT '{0}' no existe", proveedor.CUIT));
+                throw new OBMCateringException(string.Format(Resources.BL_Validaciones_ProveedorInvalido, proveedor.CUIT));
             }
 
             Datos.OrdenesPagoDAL dalOrdenesPago = dal.ObtenerOrdenesPagoDAL();
@@ -148,17 +149,17 @@ namespace OBMCatering.Negocio
         {
             if (ordenPago == null)
             {
-                throw new OBMCateringException("La orden de pago no puede ser nula");
+                throw new OBMCateringException(Resources.BL_Validaciones_OrdenPagoNull);
             }
 
             if (ordenPago.Proveedor == null)
             {
-                throw new OBMCateringException("El proveedor de la orden de pago no puede ser nulo");
+                throw new OBMCateringException(Resources.BL_Validaciones_ProveedorNull);
             }
 
             if (ordenPago.Items == null || ordenPago.Items.Count == 0)
             {
-                throw new OBMCateringException("La orden de pago debe tener al menos un item");
+                throw new OBMCateringException(Resources.OrdenesPagoBL_Validaciones_OrdenPagoSinItems);
             }
         }
 

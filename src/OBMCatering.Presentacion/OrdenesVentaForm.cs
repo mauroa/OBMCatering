@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Linq;
+using OBMCatering.Presentacion.Properties;
 
 namespace OBMCatering.Presentacion
 {
@@ -21,7 +22,19 @@ namespace OBMCatering.Presentacion
 
         public OrdenesVentaForm()
         {
+            this.CargarLenguaje();
             InitializeComponent();
+
+            Text = Resources.OrdenesVentaForm_Titulo;
+            lblCliente.Text = Resources.OrdenesVentaForm_Datos_Cliente;
+            lblFechaInicio.Text = Resources.OrdenesVentaForm_Datos_Desde;
+            lblFechaFin.Text = Resources.OrdenesVentaForm_Datos_Hasta;
+            lblComensales.Text = Resources.OrdenesVentaForm_Datos_Comensales;
+            chkAprobada.Text = Resources.OrdenesVentaForm_Datos_Aprobada;
+            lblRecetas.Text = Resources.OrdenesVentaForm_Datos_Recetas;
+            lblPrecio.Text = Resources.OrdenesVentaForm_Datos_Precio;
+            btnCalcularPrecio.Text = Resources.OrdenesVentaForm_Datos_Calcular;
+            btnGuardar.Text = Resources.OrdenesVentaForm_Datos_Guardar;
         }
 
         void OrdenesVentaForm_Load(object sender, EventArgs e)
@@ -45,7 +58,7 @@ namespace OBMCatering.Presentacion
             CargarOrdenesVenta();
             LimpiarFormulario();
 
-            contexto.RegistrarEvento("Ingreso a la pantalla de ordenes de venta");
+            contexto.RegistrarEvento(Resources.OrdenesVentaForm_Ingreso);
         }
 
         void BtnGuardar_Click(object sender, EventArgs e)
@@ -66,14 +79,14 @@ namespace OBMCatering.Presentacion
                     SetearOrdenVenta(ordenVenta);
                     ordenesVentaBL.Actualizar(ordenVenta);
 
-                    contexto.RegistrarEvento("La orden de venta para el cliente {0} ha sido actualizada", ordenVenta.Cliente.Nombre);
+                    contexto.RegistrarEvento(Resources.OrdenesVentaForm_OrdenVentaActualizada, ordenVenta.Cliente.Nombre);
                 }
                 else
                 {
                     ordenVenta = Crear();
                     ordenesVentaBL.Crear(ordenVenta);
 
-                    contexto.RegistrarEvento("La orden de venta para el cliente {0} ha sido creada", ordenVenta.Cliente.Nombre);
+                    contexto.RegistrarEvento(Resources.OrdenesVentaForm_OrdenVentaCreada, ordenVenta.Cliente.Nombre);
                 }
 
                 if ((!existeOrdenVenta || !ordenVentaSeleccionada.Aprobada) && ordenVenta.Aprobada)
@@ -98,7 +111,7 @@ namespace OBMCatering.Presentacion
                 OrdenVenta ordenVenta = Crear();
                 decimal precio = ordenesVentaBL.CalcularPrecio(ordenVenta);
 
-                lblPrecioCalculado.Text = precio.ToString();
+                lblPrecioCalculado.Text = precio.ToString("N2");
             }
             catch (Exception ex)
             {
@@ -278,7 +291,7 @@ namespace OBMCatering.Presentacion
             factura.Fecha = DateTime.Now;
 
             facturasBL.Crear(factura);
-            contexto.RegistrarEvento("La factura para el cliente {0} ha sido creada", ordenVenta.Cliente.Nombre);
+            contexto.MostrarEvento(Resources.OrdenesVentaForm_FacturaCreada, ordenVenta.Cliente.Nombre);
         }
 
         void CrearOrdenCompra()
@@ -286,7 +299,7 @@ namespace OBMCatering.Presentacion
             OrdenVenta ordenVenta = ordenesVentaBL.Obtener(ordenVentaSeleccionada.ObtenerId());
 
             ordenesCompraBL.Crear(ordenVenta);
-            contexto.RegistrarEvento("La orden de compra para el pedido del cliente {0} ha sido creada", ordenVenta.Cliente.Nombre);
+            contexto.MostrarEvento(Resources.OrdenesVentaForm_OrdenCompraCreada, ordenVenta.Cliente.Nombre);
         }
 
         void LimpiarFormulario()

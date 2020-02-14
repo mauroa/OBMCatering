@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OBMCatering.Negocio.Properties;
+using System;
 using System.Collections.Generic;
 
 namespace OBMCatering.Negocio
@@ -36,6 +37,11 @@ namespace OBMCatering.Negocio
         {
             ValidarReceta(receta);
 
+            if (receta.Ingredientes == null || receta.Ingredientes.Count == 0)
+            {
+                throw new OBMCateringException(Resources.RecetasBL_Validaciones_SinIngredientes);
+            }
+
             EstadoReceta estado;
 
             if (receta.Ingredientes.Count == 0)
@@ -61,14 +67,14 @@ namespace OBMCatering.Negocio
 
             if (recetaDAL == null)
             {
-                throw new OBMCateringException(string.Format("La receta '{0}' no existe", receta.Nombre));
+                throw new OBMCateringException(string.Format(Resources.BL_Validaciones_RecetaInvalida, receta.Nombre));
             }
 
             Datos.EstadoReceta estadoDAL = dalRecetas.ObtenerEstado(estado.ToString());
 
             if (estadoDAL == null)
             {
-                throw new OBMCateringException(string.Format("El estado '{0}' es incorrecto o no es valido en el sistema", estado));
+                throw new OBMCateringException(string.Format(Resources.OrdenesCompraBL_Validaciones_EstadoInvalido, estado));
             }
 
             recetaDAL.Detalle = receta.Detalle;
@@ -150,7 +156,7 @@ namespace OBMCatering.Negocio
         {
             if (ingrediente == null)
             {
-                throw new OBMCateringException("El ingrediente no puede ser nulo");
+                throw new OBMCateringException(Resources.BL_Validaciones_IngredienteNull);
             }
 
             Datos.IngredientesDAL dalIngredientes = dal.ObtenerIngredientesDAL();
@@ -158,7 +164,7 @@ namespace OBMCatering.Negocio
 
             if (ingredienteDAL == null)
             {
-                throw new OBMCateringException(string.Format("El ingrediente '{0}' no existe", ingrediente.Nombre));
+                throw new OBMCateringException(string.Format(Resources.BL_Validaciones_IngredienteInvalido, ingrediente.Nombre));
             }
 
             Datos.RecetasDAL dalRecetas = dal.ObtenerRecetasDAL();
@@ -171,7 +177,7 @@ namespace OBMCatering.Negocio
         {
             if (string.IsNullOrEmpty(nombre))
             {
-                throw new OBMCateringException("El nombre de la receta no puede ser nulo o vacio");
+                throw new OBMCateringException(Resources.RecetasBL_Validaciones_NombreNull);
             }
 
             Datos.RecetasDAL dalRecetas = dal.ObtenerRecetasDAL();
@@ -184,7 +190,7 @@ namespace OBMCatering.Negocio
         {
             if (string.IsNullOrEmpty(nombre))
             {
-                throw new OBMCateringException("El nombre de la receta no puede ser nulo o vacio");
+                throw new OBMCateringException(Resources.RecetasBL_Validaciones_NombreNull);
             }
 
             Datos.RecetasDAL dalRecetas = dal.ObtenerRecetasDAL();
@@ -197,7 +203,7 @@ namespace OBMCatering.Negocio
         {
             if (receta == null)
             {
-                throw new OBMCateringException("La receta no puede ser nula");
+                throw new OBMCateringException(Resources.BL_Validaciones_RecetaNull);
             }
 
             decimal precioTotal = 0m;
@@ -238,12 +244,7 @@ namespace OBMCatering.Negocio
         {
             if (receta == null)
             {
-                throw new OBMCateringException("La receta no puede ser nula");
-            }
-
-            if (receta.Ingredientes == null || receta.Ingredientes.Count == 0)
-            {
-                throw new OBMCateringException("La receta debe tener al menos un ingrediente");
+                throw new OBMCateringException(Resources.BL_Validaciones_RecetaNull);
             }
         }
 

@@ -1,4 +1,5 @@
 ﻿using OBMCatering.Negocio;
+using OBMCatering.Presentacion.Properties;
 using System;
 using System.Windows.Forms;
 
@@ -10,12 +11,39 @@ namespace OBMCatering.Presentacion
 
         public InicioForm()
         {
-            InitializeComponent();
+            Inicializar();
         }
 
-        void InicioForm_Load(object sender, EventArgs e)
+        void Inicializar()
         {
+            this.CargarLenguaje();
+
+            InitializeComponent();
+
             contexto = ContextoPresentacion.Instancia;
+
+            Text = Resources.InicioForm_Titulo;
+            tsAdministrar.Text = Resources.InicioForm_Menu_Administrar_Titulo;
+            tsiClientes.Text = Resources.InicioForm_Menu_Administrar_Clientes;
+            tsiProveedores.Text = Resources.InicioForm_Menu_Administrar_Proveedores;
+            tsiEmpleados.Text = Resources.InicioForm_Menu_Administrar_Empleados;
+            tsiUsuarios.Text = Resources.InicioForm_Menu_Administrar_Usuarios;
+            tsCocina.Text = Resources.InicioForm_Menu_Cocina_Titulo;
+            tsiPedidosCocina.Text = Resources.InicioForm_Menu_Cocina_Pedidos;
+            tsiRecetas.Text = Resources.InicioForm_Menu_Cocina_Recetas;
+            tsiPrecios.Text = Resources.InicioForm_Menu_Cocina_Precios;
+            tsVentas.Text = Resources.InicioForm_Menu_Ventas_Titulo;
+            tsiPedidos.Text = Resources.InicioForm_Menu_Ventas_Pedidos;
+            tsiFacturas.Text = Resources.InicioForm_Menu_Ventas_Facturas;
+            tsCompras.Text = Resources.InicioForm_Menu_Compras_Titulo;
+            tsiOrdenesCompra.Text = Resources.InicioForm_Menu_Compras_Ordenes;
+            tsiOrdenesPago.Text = Resources.InicioForm_Menu_Compras_Pagos;
+            tsOpciones.Text = Resources.InicioForm_Menu_Opciones_Titulo;
+            tsiBitacora.Text = Resources.InicioForm_Menu_Opciones_Bitacora;
+            tsiLenguaje.Text = Resources.InicioForm_Menu_Opciones_Lenguaje;
+            tsiEspaniol.Text = Resources.InicioForm_Menu_Opciones_Espaniol;
+            tsiIngles.Text = Resources.InicioForm_Menu_Opciones_Ingles;
+            tsiSalir.Text = Resources.InicioForm_Menu_Opciones_Salir;
 
             tsiClientes.Click += TsiClientes_Click;
             tsiProveedores.Click += TsiProveedores_Click;
@@ -29,8 +57,9 @@ namespace OBMCatering.Presentacion
             tsiOrdenesCompra.Click += TsiOrdenesCompra_Click;
             tsiOrdenesPago.Click += TsiOrdenesPago_Click;
             tsiBitacora.Click += TsiBitacora_Click;
-
-            ConfigurarPerfil();
+            tsiEspaniol.Click += TsiEspaniol_Click;
+            tsiIngles.Click += TsiIngles_Click;
+            tsiSalir.Click += TsSalir_Click;
         }
 
         void ConfigurarPerfil()
@@ -44,14 +73,14 @@ namespace OBMCatering.Presentacion
                     tsCocina.Visible = true;
                     tsCompras.Visible = true;
                     tsVentas.Visible = true;
-                    tsBitacora.Visible = true;
+                    tsiBitacora.Visible = true;
                     break;
                 case PerfilUsuario.Cocina:
                     tsCocina.Visible = true;
                     tsAdministrar.Visible = false;
                     tsCompras.Visible = false;
                     tsVentas.Visible = false;
-                    tsBitacora.Visible = false;
+                    tsiBitacora.Visible = false;
                     break;
                 case PerfilUsuario.Compras:
                     tsCompras.Visible = true;
@@ -62,7 +91,7 @@ namespace OBMCatering.Presentacion
                     tsiUsuarios.Visible = false;
                     tsCocina.Visible = false;
                     tsVentas.Visible = false;
-                    tsBitacora.Visible = false;
+                    tsiBitacora.Visible = false;
                     break;
                 case PerfilUsuario.Ventas:
                     tsVentas.Visible = true;
@@ -73,7 +102,7 @@ namespace OBMCatering.Presentacion
                     tsiUsuarios.Visible = false;
                     tsCocina.Visible = false;
                     tsCompras.Visible = false;
-                    tsBitacora.Visible = false;
+                    tsiBitacora.Visible = false;
                     break;
             }
         }
@@ -160,6 +189,47 @@ namespace OBMCatering.Presentacion
             BitacoraForm form = new BitacoraForm();
 
             form.Show();
+        }
+
+        void TsiEspaniol_Click(object sender, EventArgs e)
+        {
+            contexto.DefinirLenguaje(cultura: "es-AR");
+            ActualizarLenguaje();
+        }
+
+        void TsiIngles_Click(object sender, EventArgs e)
+        {
+            contexto.DefinirLenguaje(cultura: "en-US");
+            ActualizarLenguaje();
+        }
+
+        void ActualizarLenguaje()
+        {
+            Controls.Clear();
+            Inicializar();
+        }
+
+        void TsSalir_Click(object sender, EventArgs e)
+        {
+            contexto.Negocio.AsignarUsuarioAutenticado(null);
+            Hide();
+            
+            DialogResult resultado;
+
+            using (var loginForm = new LoginForm())
+            {
+                resultado = loginForm.ShowDialog();
+            }
+
+            if (resultado == DialogResult.OK)
+            {
+                ConfigurarPerfil();
+                Show();
+            }
+            else
+            {
+                Dispose();
+            }
         }
     }
 }

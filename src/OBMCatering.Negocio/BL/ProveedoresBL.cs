@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using OBMCatering.Negocio.Properties;
+using System.Collections.Generic;
 
 namespace OBMCatering.Negocio
 {
@@ -22,7 +23,7 @@ namespace OBMCatering.Negocio
 
             if (localidadDAL == null)
             {
-                throw new OBMCateringException(string.Format("La localidad '{0}' es incorrecta o no es valida en el sistema", proveedor.Localidad.Nombre));
+                throw new OBMCateringException(string.Format(Resources.BL_Validaciones_LocalidadInvalida, proveedor.Localidad.Nombre));
             }
 
             Datos.Proveedor proveedorDAL = new Datos.Proveedor
@@ -53,7 +54,7 @@ namespace OBMCatering.Negocio
 
             if (proveedorDAL == null)
             {
-                throw new OBMCateringException(string.Format("El proveedor con CUIT '{0}' no existe", proveedor.CUIT));
+                throw new OBMCateringException(string.Format(Resources.BL_Validaciones_ProveedorInvalido, proveedor.CUIT));
             }
 
             Datos.LocalidadesDAL dalLocalidades = dal.ObtenerLocalidadesDAL();
@@ -61,7 +62,7 @@ namespace OBMCatering.Negocio
 
             if (localidadDAL == null)
             {
-                throw new OBMCateringException(string.Format("La localidad '{0}' es incorrecta o no es valida en el sistema", proveedor.Localidad.Nombre));
+                throw new OBMCateringException(string.Format(Resources.BL_Validaciones_LocalidadInvalida, proveedor.Localidad.Nombre));
             }
 
             proveedorDAL.Domicilio = proveedor.Domicilio;
@@ -84,7 +85,7 @@ namespace OBMCatering.Negocio
 
             if (proveedorDAL == null)
             {
-                throw new OBMCateringException(string.Format("El proveedor con CUIT '{0}' no existe", proveedor.CUIT));
+                throw new OBMCateringException(string.Format(Resources.BL_Validaciones_ProveedorInvalido, proveedor.CUIT));
             }
 
             dalProveedores.Eliminar(proveedorDAL);
@@ -103,7 +104,7 @@ namespace OBMCatering.Negocio
         {
             if (string.IsNullOrEmpty(cuit))
             {
-                throw new OBMCateringException("El CUIT del proveedor no puede ser nulo o vacio");
+                throw new OBMCateringException(Resources.BL_Validaciones_CUITNull);
             }
 
             Datos.ProveedoresDAL dalProveedores = dal.ObtenerProveedoresDAL();
@@ -124,7 +125,7 @@ namespace OBMCatering.Negocio
         {
             if (string.IsNullOrEmpty(cuit))
             {
-                throw new OBMCateringException("El CUIT del proveedor no puede ser nulo o vacio");
+                throw new OBMCateringException(Resources.BL_Validaciones_CUITNull);
             }
 
             Datos.ProveedoresDAL dalProveedores = dal.ObtenerProveedoresDAL();
@@ -137,7 +138,7 @@ namespace OBMCatering.Negocio
         {
             if (string.IsNullOrEmpty(nombre))
             {
-                throw new OBMCateringException("El nombre del proveedor no puede ser nulo o vacio");
+                throw new OBMCateringException(Resources.ProveedoresBL_Validaciones_NombreNull);
             }
 
             Datos.ProveedoresDAL dalProveedores = dal.ObtenerProveedoresDAL();
@@ -168,42 +169,42 @@ namespace OBMCatering.Negocio
         {
             if(proveedor == null)
             {
-                throw new OBMCateringException("El proveedor no puede ser nulo");
+                throw new OBMCateringException(Resources.BL_Validaciones_ProveedorNull);
             }
 
             if (string.IsNullOrEmpty(proveedor.CUIT))
             {
-                throw new OBMCateringException("El CUIT del proveedor no puede ser nulo o vacio");
+                throw new OBMCateringException(Resources.BL_Validaciones_CUITNull);
             }
 
             if (string.IsNullOrEmpty(proveedor.Nombre))
             {
-                throw new OBMCateringException("El Nombre del proveedor no puede ser nulo o vacio");
+                throw new OBMCateringException(Resources.ProveedoresBL_Validaciones_NombreNull);
             }
 
             if (string.IsNullOrEmpty(proveedor.Domicilio))
             {
-                throw new OBMCateringException("El Domicilio del proveedor no puede ser nulo o vacio");
+                throw new OBMCateringException(Resources.BL_Validaciones_DomicilioNull);
             }
 
             if (proveedor.Localidad == null)
             {
-                throw new OBMCateringException("La Localidad del proveedor no puede ser nula");
+                throw new OBMCateringException(Resources.BL_Validaciones_LocalidadNull);
             }
 
             if (string.IsNullOrEmpty(proveedor.CodigoPostal))
             {
-                throw new OBMCateringException("El Codigo Postal del proveedor no puede ser nulo o vacio");
+                throw new OBMCateringException(Resources.BL_Validaciones_CPNull);
             }
 
             if (string.IsNullOrEmpty(proveedor.Telefono))
             {
-                throw new OBMCateringException("El Telefono del proveedor no puede ser nulo o vacio");
+                throw new OBMCateringException(Resources.BL_Validaciones_TelefonoNull);
             }
 
             if (string.IsNullOrEmpty(proveedor.Email))
             {
-                throw new OBMCateringException("El Email del proveedor no puede ser nulo o vacio");
+                throw new OBMCateringException(Resources.BL_Validaciones_EmailNull);
             }
         }
 

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using OBMCatering.Negocio.Properties;
+using System.Collections.Generic;
 
 namespace OBMCatering.Negocio
 {
@@ -41,7 +42,7 @@ namespace OBMCatering.Negocio
         {
             if (string.IsNullOrEmpty(nombre))
             {
-                throw new OBMCateringException("El nombre de la provincia no puede ser nulo");
+                throw new OBMCateringException(Resources.BL_Validaciones_ProvinciaNull);
             }
 
             Datos.ProvinciasDAL dalProvincias = dal.ObtenerProvinciasDAL();
@@ -54,7 +55,7 @@ namespace OBMCatering.Negocio
         {
             if(provincia == null)
             {
-                throw new OBMCateringException("La provincia no puede ser nula");
+                throw new OBMCateringException(Resources.BL_Validaciones_ProvinciaNull);
             }
 
             Datos.ProvinciasDAL dalProvincias = dal.ObtenerProvinciasDAL();
@@ -62,7 +63,7 @@ namespace OBMCatering.Negocio
 
             if (provinciaDAL == null)
             {
-                throw new OBMCateringException("La provincia es incorrecta o no es valida en el sistema");
+                throw new OBMCateringException(Resources.BL_Validaciones_ProvinciaInvalida);
             }
 
             Datos.LocalidadesDAL dalLocalidades = dal.ObtenerLocalidadesDAL();
@@ -94,7 +95,7 @@ namespace OBMCatering.Negocio
         {
             if (string.IsNullOrEmpty(nombre))
             {
-                throw new OBMCateringException("El nombre de la localidad no puede ser nulo");
+                throw new OBMCateringException(Resources.BL_Validaciones_LocalidadNull);
             }
 
             Datos.LocalidadesDAL dalLocalidades = dal.ObtenerLocalidadesDAL();

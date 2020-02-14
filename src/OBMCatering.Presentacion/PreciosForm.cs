@@ -1,4 +1,5 @@
 ﻿using OBMCatering.Negocio;
+using OBMCatering.Presentacion.Properties;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -14,7 +15,15 @@ namespace OBMCatering.Presentacion
 
         public PreciosForm()
         {
+            this.CargarLenguaje();
             InitializeComponent();
+
+            Text = Resources.PreciosForm_Titulo;
+            lblIngredienteTitulo.Text = Resources.PreciosForm_Datos_Ingrediente;
+            lblPrecio.Text = Resources.PreciosForm_Datos_Precio;
+            lblCantidad.Text = Resources.PreciosForm_Datos_Cantidad;
+            lblUnidad.Text = Resources.PreciosForm_Datos_Unidad;
+            btnGuardar.Text = Resources.PreciosForm_Datos_Guardar;
         }
 
         void PreciosForm_Load(object sender, EventArgs e)
@@ -31,7 +40,7 @@ namespace OBMCatering.Presentacion
             CargarPrecios();
             LimpiarFormulario();
 
-            contexto.RegistrarEvento("Ingreso a la pantalla de listado de precios");
+            contexto.RegistrarEvento(Resources.PreciosForm_Ingreso);
         }
 
         void BtnGuardar_Click(object sender, EventArgs e)
@@ -50,7 +59,7 @@ namespace OBMCatering.Presentacion
                 CargarPrecios();
                 LimpiarFormulario();
 
-                contexto.RegistrarEvento("La lista de precios fue actualizada para el ingrediente '{0}'", ingrediente.Nombre);
+                contexto.RegistrarEvento(Resources.PreciosForm_ListaActualizada, ingrediente.Nombre);
             }
             catch(Exception ex)
             {

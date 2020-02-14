@@ -55,7 +55,6 @@
             this.txtCUIT = new System.Windows.Forms.TextBox();
             this.lblCUIT = new System.Windows.Forms.Label();
             this.grvEmpleados = new System.Windows.Forms.DataGridView();
-            this.lblEmpleados = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvEmpleados)).BeginInit();
             this.SuspendLayout();
@@ -88,10 +87,11 @@
             this.panel1.Controls.Add(this.lblNombre);
             this.panel1.Controls.Add(this.txtCUIT);
             this.panel1.Controls.Add(this.lblCUIT);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel1.Location = new System.Drawing.Point(31, 33);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1373, 376);
+            this.panel1.Size = new System.Drawing.Size(1439, 376);
             this.panel1.TabIndex = 0;
             // 
             // chkActivo
@@ -136,8 +136,9 @@
             // 
             // btnGuardar
             // 
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGuardar.ForeColor = System.Drawing.Color.Black;
-            this.btnGuardar.Location = new System.Drawing.Point(1210, 312);
+            this.btnGuardar.Location = new System.Drawing.Point(1278, 312);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(148, 50);
             this.btnGuardar.TabIndex = 22;
@@ -324,35 +325,23 @@
             // 
             this.grvEmpleados.AllowUserToAddRows = false;
             this.grvEmpleados.AllowUserToDeleteRows = false;
-            this.grvEmpleados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.grvEmpleados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grvEmpleados.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.grvEmpleados.Location = new System.Drawing.Point(0, 470);
+            this.grvEmpleados.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grvEmpleados.Location = new System.Drawing.Point(0, 376);
             this.grvEmpleados.MultiSelect = false;
             this.grvEmpleados.Name = "grvEmpleados";
             this.grvEmpleados.ReadOnly = true;
             this.grvEmpleados.RowHeadersWidth = 82;
             this.grvEmpleados.RowTemplate.Height = 33;
-            this.grvEmpleados.Size = new System.Drawing.Size(1439, 488);
+            this.grvEmpleados.Size = new System.Drawing.Size(1439, 582);
             this.grvEmpleados.TabIndex = 1;
-            // 
-            // lblEmpleados
-            // 
-            this.lblEmpleados.AutoSize = true;
-            this.lblEmpleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmpleados.ForeColor = System.Drawing.Color.Black;
-            this.lblEmpleados.Location = new System.Drawing.Point(26, 426);
-            this.lblEmpleados.Name = "lblEmpleados";
-            this.lblEmpleados.Size = new System.Drawing.Size(128, 25);
-            this.lblEmpleados.TabIndex = 22;
-            this.lblEmpleados.Text = "Empleados";
             // 
             // EmpleadosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1439, 958);
-            this.Controls.Add(this.lblEmpleados);
             this.Controls.Add(this.grvEmpleados);
             this.Controls.Add(this.panel1);
             this.Name = "EmpleadosForm";
@@ -362,7 +351,6 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvEmpleados)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -390,7 +378,6 @@
         private System.Windows.Forms.Label lblFechaAlta;
         private System.Windows.Forms.Label lblActivo;
         private System.Windows.Forms.DataGridView grvEmpleados;
-        private System.Windows.Forms.Label lblEmpleados;
         private System.Windows.Forms.DateTimePicker dtpFechaBaja;
         private System.Windows.Forms.Label lblFechaBaja;
         private System.Windows.Forms.DateTimePicker dtpFechaAlta;

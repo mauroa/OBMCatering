@@ -1,0 +1,657 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BitacoraForm_Filtrar" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="BitacoraForm_Filtros_Desde" xml:space="preserve">
+    <value>From</value>
+  </data>
+  <data name="BitacoraForm_Filtros_Hasta" xml:space="preserve">
+    <value>To</value>
+  </data>
+  <data name="BitacoraForm_Filtros_Tipo" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="BitacoraForm_Filtros_Usuario" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="BitacoraForm_Ingreso" xml:space="preserve">
+    <value>Entered to logging screen</value>
+  </data>
+  <data name="BitacoraForm_Titulo" xml:space="preserve">
+    <value>Logging</value>
+  </data>
+  <data name="ClientesForm_ClienteActualizado" xml:space="preserve">
+    <value>The client {0} has been updated</value>
+  </data>
+  <data name="ClientesForm_ClienteCreado" xml:space="preserve">
+    <value>The client {0} has been created</value>
+  </data>
+  <data name="ClientesForm_Datos_Activo" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="ClientesForm_Datos_CP" xml:space="preserve">
+    <value>Zip Code</value>
+  </data>
+  <data name="ClientesForm_Datos_CUIT" xml:space="preserve">
+    <value>CUIT</value>
+  </data>
+  <data name="ClientesForm_Datos_Domicilio" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="ClientesForm_Datos_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="ClientesForm_Datos_FechaAlta" xml:space="preserve">
+    <value>Start Date</value>
+  </data>
+  <data name="ClientesForm_Datos_Guardar" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="ClientesForm_Datos_Localidad" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="ClientesForm_Datos_Nombre" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="ClientesForm_Datos_Provincia" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="ClientesForm_Datos_Telefono" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="ClientesForm_Datos_Tipo" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="ClientesForm_Ingreso" xml:space="preserve">
+    <value>Entered to clients screen</value>
+  </data>
+  <data name="ClientesForm_Titulo" xml:space="preserve">
+    <value>Clients Management</value>
+  </data>
+  <data name="EmpleadosForm_Datos_Activo" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="EmpleadosForm_Datos_CP" xml:space="preserve">
+    <value>Zip Code</value>
+  </data>
+  <data name="EmpleadosForm_Datos_CUIT" xml:space="preserve">
+    <value>CUIT</value>
+  </data>
+  <data name="EmpleadosForm_Datos_Domicilio" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="EmpleadosForm_Datos_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="EmpleadosForm_Datos_FechaAlta" xml:space="preserve">
+    <value>Start Date</value>
+  </data>
+  <data name="EmpleadosForm_Datos_FechaBaja" xml:space="preserve">
+    <value>End Date</value>
+  </data>
+  <data name="EmpleadosForm_Datos_FechaNacimiento" xml:space="preserve">
+    <value>Birth Date</value>
+  </data>
+  <data name="EmpleadosForm_Datos_Guardar" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="EmpleadosForm_Datos_Localidad" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="EmpleadosForm_Datos_Nombre" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="EmpleadosForm_Datos_Provincia" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="EmpleadosForm_Datos_Telefono" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="EmpleadosForm_EmpleadoActualizado" xml:space="preserve">
+    <value>The employee {0} has been updated</value>
+  </data>
+  <data name="EmpleadosForm_EmpleadoCreado" xml:space="preserve">
+    <value>The employee {0} has been created</value>
+  </data>
+  <data name="EmpleadosForm_Ingreso" xml:space="preserve">
+    <value>Entered to employees screen</value>
+  </data>
+  <data name="EmpleadosForm_Titulo" xml:space="preserve">
+    <value>Employees Management</value>
+  </data>
+  <data name="FacturasForm_Cobrada" xml:space="preserve">
+    <value>Charge</value>
+  </data>
+  <data name="FacturasForm_Datos_Cliente" xml:space="preserve">
+    <value>Client</value>
+  </data>
+  <data name="FacturasForm_Datos_Comensales" xml:space="preserve">
+    <value>Diners</value>
+  </data>
+  <data name="FacturasForm_Datos_Desde" xml:space="preserve">
+    <value>From</value>
+  </data>
+  <data name="FacturasForm_Datos_Fecha" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="FacturasForm_Datos_Hasta" xml:space="preserve">
+    <value>To</value>
+  </data>
+  <data name="FacturasForm_Datos_Precio" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="FacturasForm_Datos_Recetas" xml:space="preserve">
+    <value>Recipes</value>
+  </data>
+  <data name="FacturasForm_FacturaCobrada" xml:space="preserve">
+    <value>The invoice to {0} has been marked as charged</value>
+  </data>
+  <data name="FacturasForm_Ingreso" xml:space="preserve">
+    <value>Entered to invoices screen</value>
+  </data>
+  <data name="FacturasForm_Titulo" xml:space="preserve">
+    <value>Invoices</value>
+  </data>
+  <data name="IngredientesForm_Datos_Cantidad" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="IngredientesForm_Datos_Guardar" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="IngredientesForm_Datos_Ingrediente" xml:space="preserve">
+    <value>Ingredient</value>
+  </data>
+  <data name="IngredientesForm_Datos_Unidad" xml:space="preserve">
+    <value>Unity</value>
+  </data>
+  <data name="IngredientesForm_Ingreso" xml:space="preserve">
+    <value>Entered to ingredients screen</value>
+  </data>
+  <data name="IngredientesForm_RecetaActualizada" xml:space="preserve">
+    <value>The recipe {0} has been updated</value>
+  </data>
+  <data name="IngredientesForm_Titulo" xml:space="preserve">
+    <value>Ingredients</value>
+  </data>
+  <data name="InicioForm_Menu_Administrar_Clientes" xml:space="preserve">
+    <value>Clients</value>
+  </data>
+  <data name="InicioForm_Menu_Administrar_Empleados" xml:space="preserve">
+    <value>Employess</value>
+  </data>
+  <data name="InicioForm_Menu_Administrar_Proveedores" xml:space="preserve">
+    <value>Suppliers</value>
+  </data>
+  <data name="InicioForm_Menu_Administrar_Titulo" xml:space="preserve">
+    <value>Manage</value>
+  </data>
+  <data name="InicioForm_Menu_Administrar_Usuarios" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="InicioForm_Menu_Bitacora_Ver" xml:space="preserve">
+    <value>See</value>
+  </data>
+  <data name="InicioForm_Menu_Cocina_Pedidos" xml:space="preserve">
+    <value>Orders</value>
+  </data>
+  <data name="InicioForm_Menu_Cocina_Precios" xml:space="preserve">
+    <value>Prices</value>
+  </data>
+  <data name="InicioForm_Menu_Cocina_Recetas" xml:space="preserve">
+    <value>Recipes</value>
+  </data>
+  <data name="InicioForm_Menu_Cocina_Titulo" xml:space="preserve">
+    <value>Kitchen</value>
+  </data>
+  <data name="InicioForm_Menu_Compras_Ordenes" xml:space="preserve">
+    <value>Orders</value>
+  </data>
+  <data name="InicioForm_Menu_Compras_Pagos" xml:space="preserve">
+    <value>Payments</value>
+  </data>
+  <data name="InicioForm_Menu_Compras_Titulo" xml:space="preserve">
+    <value>Purchases</value>
+  </data>
+  <data name="InicioForm_Menu_Opciones_Bitacora" xml:space="preserve">
+    <value>Logging</value>
+  </data>
+  <data name="InicioForm_Menu_Opciones_Espaniol" xml:space="preserve">
+    <value>Spanish</value>
+  </data>
+  <data name="InicioForm_Menu_Opciones_Ingles" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="InicioForm_Menu_Opciones_Lenguaje" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="InicioForm_Menu_Opciones_Salir" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="InicioForm_Menu_Opciones_Titulo" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="InicioForm_Menu_Ventas_Facturas" xml:space="preserve">
+    <value>Invoices</value>
+  </data>
+  <data name="InicioForm_Menu_Ventas_Pedidos" xml:space="preserve">
+    <value>Orders</value>
+  </data>
+  <data name="InicioForm_Menu_Ventas_Titulo" xml:space="preserve">
+    <value>Sells</value>
+  </data>
+  <data name="InicioForm_Titulo" xml:space="preserve">
+    <value>OBM Catering</value>
+  </data>
+  <data name="LoginForm_CambiarPassword" xml:space="preserve">
+    <value>A password change is needed before entering the system. Please try again</value>
+  </data>
+  <data name="LoginForm_Cancelar" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="LoginForm_ErrorAutenticacion" xml:space="preserve">
+    <value>Authentication error. Please try again</value>
+  </data>
+  <data name="LoginForm_Ingresar" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="LoginForm_IngresarCredenciales" xml:space="preserve">
+    <value>Enter User and Password to login to OBM Catering</value>
+  </data>
+  <data name="LoginForm_Ingreso" xml:space="preserve">
+    <value>Entered to login screen</value>
+  </data>
+  <data name="LoginForm_NuevoPassword" xml:space="preserve">
+    <value>New Password</value>
+  </data>
+  <data name="LoginForm_Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="LoginForm_PasswordReseteado" xml:space="preserve">
+    <value>The password has been reset</value>
+  </data>
+  <data name="LoginForm_Titulo" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="LoginForm_Usuario" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="LoginForm_UsuarioAutenticado" xml:space="preserve">
+    <value>The user has been loged in correctly</value>
+  </data>
+  <data name="OrdenesCompraForm_BotonGuardar_Aprobar" xml:space="preserve">
+    <value>Approve</value>
+  </data>
+  <data name="OrdenesCompraForm_BotonGuardar_Realizada" xml:space="preserve">
+    <value>Done</value>
+  </data>
+  <data name="OrdenesCompraForm_Datos_Cliente" xml:space="preserve">
+    <value>Client</value>
+  </data>
+  <data name="OrdenesCompraForm_Datos_Estado" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="OrdenesCompraForm_Datos_Fecha" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="OrdenesCompraForm_Datos_Items" xml:space="preserve">
+    <value>Items</value>
+  </data>
+  <data name="OrdenesCompraForm_Datos_Proveedor" xml:space="preserve">
+    <value>Supplier</value>
+  </data>
+  <data name="OrdenesCompraForm_Ingreso" xml:space="preserve">
+    <value>Entered to purchase orders screen</value>
+  </data>
+  <data name="OrdenesCompraForm_OrdenCompraActualizada" xml:space="preserve">
+    <value>The purchase order for the order {0} has been updated</value>
+  </data>
+  <data name="OrdenesCompraForm_OrdenPagoCreada" xml:space="preserve">
+    <value>The payment order for the supplier {0} has been created</value>
+  </data>
+  <data name="OrdenesCompraForm_Titulo" xml:space="preserve">
+    <value>Purchase Orders</value>
+  </data>
+  <data name="OrdenesPagoForm_Datos_Fecha" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="OrdenesPagoForm_Datos_Guardar" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="OrdenesPagoForm_Datos_Items" xml:space="preserve">
+    <value>Items</value>
+  </data>
+  <data name="OrdenesPagoForm_Datos_Pagada" xml:space="preserve">
+    <value>Paid</value>
+  </data>
+  <data name="OrdenesPagoForm_Datos_Proveedor" xml:space="preserve">
+    <value>Supplier</value>
+  </data>
+  <data name="OrdenesPagoForm_Ingreso" xml:space="preserve">
+    <value>Entered to payment orders screen</value>
+  </data>
+  <data name="OrdenesPagoForm_OrdenPagoActualizada" xml:space="preserve">
+    <value>The payment order for the supplier {0} has been updated</value>
+  </data>
+  <data name="OrdenesPagoForm_Titulo" xml:space="preserve">
+    <value>Payment Orders</value>
+  </data>
+  <data name="OrdenesVentaForm_Datos_Aprobada" xml:space="preserve">
+    <value>Approved</value>
+  </data>
+  <data name="OrdenesVentaForm_Datos_Calcular" xml:space="preserve">
+    <value>Calculate</value>
+  </data>
+  <data name="OrdenesVentaForm_Datos_Cliente" xml:space="preserve">
+    <value>Client</value>
+  </data>
+  <data name="OrdenesVentaForm_Datos_Comensales" xml:space="preserve">
+    <value>Diners</value>
+  </data>
+  <data name="OrdenesVentaForm_Datos_Desde" xml:space="preserve">
+    <value>From</value>
+  </data>
+  <data name="OrdenesVentaForm_Datos_Guardar" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="OrdenesVentaForm_Datos_Hasta" xml:space="preserve">
+    <value>To</value>
+  </data>
+  <data name="OrdenesVentaForm_Datos_Precio" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="OrdenesVentaForm_Datos_Recetas" xml:space="preserve">
+    <value>Recipes</value>
+  </data>
+  <data name="OrdenesVentaForm_FacturaCreada" xml:space="preserve">
+    <value>The invoice for client {0} has been created</value>
+  </data>
+  <data name="OrdenesVentaForm_Ingreso" xml:space="preserve">
+    <value>Entered to sell orders screen</value>
+  </data>
+  <data name="OrdenesVentaForm_OrdenCompraCreada" xml:space="preserve">
+    <value>The purchase order for client {0} has been created</value>
+  </data>
+  <data name="OrdenesVentaForm_OrdenVentaActualizada" xml:space="preserve">
+    <value>The sell order for client {0} has been updated</value>
+  </data>
+  <data name="OrdenesVentaForm_OrdenVentaCreada" xml:space="preserve">
+    <value>The sell order for client {0} has been created</value>
+  </data>
+  <data name="OrdenesVentaForm_Titulo" xml:space="preserve">
+    <value>Sells Orders</value>
+  </data>
+  <data name="PedidosForm_Datos_Cliente" xml:space="preserve">
+    <value>Client</value>
+  </data>
+  <data name="PedidosForm_Datos_Desde" xml:space="preserve">
+    <value>From</value>
+  </data>
+  <data name="PedidosForm_Datos_Filtrar" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="PedidosForm_Datos_Hasta" xml:space="preserve">
+    <value>To</value>
+  </data>
+  <data name="PedidosForm_Datos_Recetas" xml:space="preserve">
+    <value>Recipes</value>
+  </data>
+  <data name="PedidosForm_Ingreso" xml:space="preserve">
+    <value>Entered to orders query screen</value>
+  </data>
+  <data name="PedidosForm_Titulo" xml:space="preserve">
+    <value>Orders List</value>
+  </data>
+  <data name="PreciosForm_Datos_Cantidad" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="PreciosForm_Datos_Guardar" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="PreciosForm_Datos_Ingrediente" xml:space="preserve">
+    <value>Ingredient</value>
+  </data>
+  <data name="PreciosForm_Datos_Precio" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="PreciosForm_Datos_Unidad" xml:space="preserve">
+    <value>Unity</value>
+  </data>
+  <data name="PreciosForm_Ingreso" xml:space="preserve">
+    <value>Entered to prices list screen</value>
+  </data>
+  <data name="PreciosForm_ListaActualizada" xml:space="preserve">
+    <value>The prices list has been updated for the ingredient '{0}'</value>
+  </data>
+  <data name="PreciosForm_Titulo" xml:space="preserve">
+    <value>Prices List</value>
+  </data>
+  <data name="ProveedoresForm_Datos_Activo" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="ProveedoresForm_Datos_CodigoPostal" xml:space="preserve">
+    <value>Zip Code</value>
+  </data>
+  <data name="ProveedoresForm_Datos_CUIT" xml:space="preserve">
+    <value>CUIT</value>
+  </data>
+  <data name="ProveedoresForm_Datos_Domicilio" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="ProveedoresForm_Datos_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="ProveedoresForm_Datos_FechaAlta" xml:space="preserve">
+    <value>Start Date</value>
+  </data>
+  <data name="ProveedoresForm_Datos_FechaBaja" xml:space="preserve">
+    <value>End Date</value>
+  </data>
+  <data name="ProveedoresForm_Datos_Guardar" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="ProveedoresForm_Datos_Localidad" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="ProveedoresForm_Datos_Nombre" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="ProveedoresForm_Datos_Provincia" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="ProveedoresForm_Datos_Telefono" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="ProveedoresForm_Ingreso" xml:space="preserve">
+    <value>Entered to suppliers screen</value>
+  </data>
+  <data name="ProveedoresForm_ProveedorActualizado" xml:space="preserve">
+    <value>The supplier {0} has been updated</value>
+  </data>
+  <data name="ProveedoresForm_ProveedorCreado" xml:space="preserve">
+    <value>The supplier {0} has been created</value>
+  </data>
+  <data name="ProveedoresForm_Titulo" xml:space="preserve">
+    <value>Suppliers Management</value>
+  </data>
+  <data name="RecetasForm_Datos_Detalle" xml:space="preserve">
+    <value>Detail</value>
+  </data>
+  <data name="RecetasForm_Datos_Guardar" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="RecetasForm_Datos_NoDisponible" xml:space="preserve">
+    <value>Not Available</value>
+  </data>
+  <data name="RecetasForm_Datos_Nombre" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="RecetasForm_Datos_VerDetalle" xml:space="preserve">
+    <value>View Details</value>
+  </data>
+  <data name="RecetasForm_Ingredientes_Ver" xml:space="preserve">
+    <value>Ingredients {0}</value>
+  </data>
+  <data name="RecetasForm_Ingreso" xml:space="preserve">
+    <value>Entered to recipes screen</value>
+  </data>
+  <data name="RecetasForm_RecetaActualizada" xml:space="preserve">
+    <value>The recipe {0} has been updated</value>
+  </data>
+  <data name="RecetasForm_RecetaCreada" xml:space="preserve">
+    <value>The recipe {0} has been created</value>
+  </data>
+  <data name="RecetasForm_Titulo" xml:space="preserve">
+    <value>Recipes</value>
+  </data>
+  <data name="UsuariosForm_Datos_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="UsuariosForm_Datos_Guardar" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="UsuariosForm_Datos_Nombre" xml:space="preserve">
+    <value>Full Name</value>
+  </data>
+  <data name="UsuariosForm_Datos_Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="UsuariosForm_Datos_Perfil" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="UsuariosForm_Datos_Resetear" xml:space="preserve">
+    <value>Password Reset</value>
+  </data>
+  <data name="UsuariosForm_Datos_Usuario" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="UsuariosForm_Ingreso" xml:space="preserve">
+    <value>Entered to users screen</value>
+  </data>
+  <data name="UsuariosForm_Titulo" xml:space="preserve">
+    <value>Users Management</value>
+  </data>
+  <data name="UsuariosForm_UsuarioActualizado" xml:space="preserve">
+    <value>The user {0} has been updated</value>
+  </data>
+  <data name="UsuariosForm_UsuarioCreado" xml:space="preserve">
+    <value>The user {0} has been created</value>
+  </data>
+</root>

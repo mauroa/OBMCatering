@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OBMCatering.Negocio.Properties;
+using System;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
@@ -20,7 +21,7 @@ namespace OBMCatering.Negocio
         {
             if(string.IsNullOrEmpty(password))
             {
-                throw new OBMCateringException("El password no puede ser nulo o vacio");
+                throw new OBMCateringException(Resources.UsuariosBL_Validaciones_PasswordNull);
             }
 
             using (var md5 = MD5.Create())
@@ -46,7 +47,7 @@ namespace OBMCatering.Negocio
 
             if (perfilDAL == null)
             {
-                throw new OBMCateringException(string.Format("El perfil '{0}' es incorrecto o no es valido en el sistema", usuario.Perfil));
+                throw new OBMCateringException(string.Format(Resources.UsuariosBL_Validaciones_PerfilInvalido, usuario.Perfil));
             }
 
             Datos.Usuario usuarioDAL = new Datos.Usuario
@@ -72,14 +73,14 @@ namespace OBMCatering.Negocio
 
             if (perfilDAL == null)
             {
-                throw new OBMCateringException(string.Format("El perfil '{0}' es incorrecto o no es valido en el sistema", usuario.Perfil));
+                throw new OBMCateringException(string.Format(Resources.UsuariosBL_Validaciones_PerfilInvalido, usuario.Perfil));
             }
 
             Datos.Usuario usuarioDAL = dalUsuarios.Obtener(usuario.Nick);
 
             if (usuarioDAL == null)
             {
-                throw new OBMCateringException(string.Format("El usuario '{0}' no existe", usuario.Nick));
+                throw new OBMCateringException(string.Format(Resources.UsuariosBL_Validaciones_UsuarioInvalido, usuario.Nick));
             }
 
             usuarioDAL.Nombre = usuario.Nombre;
@@ -101,7 +102,7 @@ namespace OBMCatering.Negocio
 
             if (usuarioDAL == null)
             {
-                throw new OBMCateringException(string.Format("El usuario '{0}' no existe", usuario.Nick));
+                throw new OBMCateringException(string.Format(Resources.UsuariosBL_Validaciones_UsuarioInvalido, usuario.Nick));
             }
 
             dalUsuarios.Eliminar(usuarioDAL);
@@ -112,12 +113,12 @@ namespace OBMCatering.Negocio
         {
             if (string.IsNullOrEmpty(nick))
             {
-                throw new OBMCateringException("El nombre de usuario no puede ser nulo o vacio");
+                throw new OBMCateringException(Resources.UsuariosBL_Validaciones_NombreNull);
             }
 
             if (string.IsNullOrEmpty(password))
             {
-                throw new OBMCateringException("El password no puede ser nulo o vacio");
+                throw new OBMCateringException(Resources.UsuariosBL_Validaciones_PasswordNull);
             }
 
             Datos.UsuariosDAL dalUsuarios = dal.ObtenerUsuariosDAL();
@@ -125,7 +126,7 @@ namespace OBMCatering.Negocio
 
             if (usuarioDAL == null)
             {
-                throw new OBMCateringException(string.Format("El usuario '{0}' no existe", nick));
+                throw new OBMCateringException(string.Format(Resources.UsuariosBL_Validaciones_UsuarioInvalido, nick));
             }
 
             bool autenticado = usuarioDAL != null && usuarioDAL.Password == password;
@@ -160,7 +161,7 @@ namespace OBMCatering.Negocio
         {
             if (string.IsNullOrEmpty(nick))
             {
-                throw new OBMCateringException("El nick del usuario no puede ser nulo o vacio");
+                throw new OBMCateringException(Resources.UsuariosBL_Validaciones_NickNull);
             }
 
             Datos.UsuariosDAL dalUsuarios = dal.ObtenerUsuariosDAL();
@@ -173,7 +174,7 @@ namespace OBMCatering.Negocio
         {
             if (string.IsNullOrEmpty(nick))
             {
-                throw new OBMCateringException("El nick del usuario no puede ser nulo o vacio");
+                throw new OBMCateringException(Resources.UsuariosBL_Validaciones_NickNull);
             }
 
             Datos.UsuariosDAL dalUsuarios = dal.ObtenerUsuariosDAL();
@@ -201,27 +202,27 @@ namespace OBMCatering.Negocio
         {
             if (usuario == null)
             {
-                throw new OBMCateringException("El usuario no puede ser nulo");
+                throw new OBMCateringException(Resources.UsuariosBL_Validaciones_UsuarioNull);
             }
 
             if (string.IsNullOrEmpty(usuario.Nick))
             {
-                throw new OBMCateringException("El nick del usuario no puede ser nulo o vacio");
+                throw new OBMCateringException(Resources.UsuariosBL_Validaciones_NickNull);
             }
 
             if (string.IsNullOrEmpty(usuario.Nombre))
             {
-                throw new OBMCateringException("El nombre del usuario no puede ser nulo o vacio");
+                throw new OBMCateringException(Resources.UsuariosBL_Validaciones_NombreNull);
             }
 
             if (string.IsNullOrEmpty(usuario.Password))
             {
-                throw new OBMCateringException("El password del usuario no puede ser nulo o vacio");
+                throw new OBMCateringException(Resources.UsuariosBL_Validaciones_PasswordNull);
             }
 
             if (string.IsNullOrEmpty(usuario.Email))
             {
-                throw new OBMCateringException("El email del usuario no puede ser nulo o vacio");
+                throw new OBMCateringException(Resources.BL_Validaciones_EmailNull);
             }
         }
 
