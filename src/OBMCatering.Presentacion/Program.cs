@@ -16,11 +16,19 @@ namespace OBMCatering.Presentacion
 
             DialogResult resultado;
 
-            using (var loginForm = new LoginForm())
+            using (var bienvenidaForm = new BienvenidaForm())
             {
-                resultado = loginForm.ShowDialog();
+                resultado = bienvenidaForm.ShowDialog();
             }
-                
+
+            if (resultado == DialogResult.OK)
+            {
+                using (var loginForm = new LoginForm())
+                {
+                    resultado = loginForm.ShowDialog();
+                }
+            }
+
             if (resultado == DialogResult.OK)
             {
                 Application.Run(new InicioForm());

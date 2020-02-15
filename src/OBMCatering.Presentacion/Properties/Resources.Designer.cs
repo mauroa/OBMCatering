@@ -331,6 +331,15 @@ namespace OBMCatering.Presentacion.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to La carga de datos inicial ha finalizado. Puede trabajar en las pantallas normalmente.
+        /// </summary>
+        internal static string ContextoPresentacion_InicializacionFinalizada {
+            get {
+                return ResourceManager.GetString("ContextoPresentacion_InicializacionFinalizada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Activo.
         /// </summary>
         internal static string EmpleadosForm_Datos_Activo {
@@ -744,6 +753,15 @@ namespace OBMCatering.Presentacion.Properties {
         internal static string InicioForm_Datos_FiltroArchivos {
             get {
                 return ResourceManager.GetString("InicioForm_Datos_FiltroArchivos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Aun se estan inicializando los datos por primera vez. Es posible que algunas pantallas no contengan toda la informacion necesaria para funcionar correctamente. Recibira una notificacion al finalizar la inicializacion.
+        /// </summary>
+        internal static string InicioForm_InicializandoDatos {
+            get {
+                return ResourceManager.GetString("InicioForm_InicializandoDatos", resourceCulture);
             }
         }
         

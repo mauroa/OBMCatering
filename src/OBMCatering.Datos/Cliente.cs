@@ -24,9 +24,11 @@ namespace OBMCatering.Datos
         public string Nombre { get; set; }
         public System.DateTime FechaAlta { get; set; }
         public string Domicilio { get; set; }
+        public int IDLocalidad { get; set; }
         public string CodigoPostal { get; set; }
         public string Telefono { get; set; }
         public string Email { get; set; }
+        public int IDTipoCliente { get; set; }
         public bool Activo { get; set; }
     
         public virtual Localidad Localidad { get; set; }

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="OBMCateringModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="OBMCateringModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Bitacora">
           <Key>
             <PropertyRef Name="ID" />
@@ -672,7 +672,8 @@
             <End Role="Usuarios" EntitySet="Usuarios" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="OBMCateringModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -681,8 +682,10 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Mensaje" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IDTipoMensaje" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Tipo" Relationship="Self.FK_Bitacora_TipoMensajeBitacora" FromRole="Bitacora" ToRole="TiposMensajesBitacora" />
           <NavigationProperty Name="Usuario" Relationship="Self.FK_Bitacora_Usuarios" FromRole="Bitacora" ToRole="Usuarios" />
         </EntityType>
@@ -694,9 +697,11 @@
           <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Domicilio" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IDLocalidad" Type="Int32" Nullable="false" />
           <Property Name="CodigoPostal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Telefono" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IDTipoCliente" Type="Int32" Nullable="false" />
           <Property Name="Activo" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Localidad" Relationship="Self.FK_Clientes_Localidades" FromRole="Clientes" ToRole="Localidades" />
           <NavigationProperty Name="Tipo" Relationship="Self.FK_Clientes_TiposClientes" FromRole="Clientes" ToRole="TiposClientes" />
@@ -710,12 +715,21 @@
           <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="FechaNacimiento" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Domicilio" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IDLocalidad" Type="Int32" Nullable="false" />
           <Property Name="CodigoPostal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Telefono" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="FechaBaja" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Localidad" Relationship="Self.FK_Empleados_Localidades" FromRole="Empleados" ToRole="Localidades" />
+        </EntityType>
+        <EntityType Name="EstadoOrdenCompra">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Estado" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="OrdenesCompra" Relationship="Self.FK_OrdenesCompra_EstadosOrdenesCompra" FromRole="EstadosOrdenesCompra" ToRole="OrdenesCompra" />
         </EntityType>
         <EntityType Name="EstadoReceta">
           <Key>
@@ -731,6 +745,7 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IDOrdenVenta" Type="Int32" Nullable="false" />
           <Property Name="Cobrada" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="OrdenVenta" Relationship="Self.FK_Facturas_OrdenesVenta" FromRole="Facturas" ToRole="OrdenesVenta" />
         </EntityType>
@@ -753,6 +768,7 @@
           <Property Name="IDReceta" Type="Int32" Nullable="false" />
           <Property Name="IDIngrediente" Type="Int32" Nullable="false" />
           <Property Name="Cantidad" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="IDUnidadMedida" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Ingrediente" Relationship="Self.FK_IngredientesReceta_Ingredientes" FromRole="IngredientesRecetas" ToRole="Ingredientes" />
           <NavigationProperty Name="Receta" Relationship="Self.FK_IngredientesReceta_Recetas" FromRole="IngredientesRecetas" ToRole="Recetas" />
           <NavigationProperty Name="Unidad" Relationship="Self.FK_IngredientesRecetas_UnidadesMedida" FromRole="IngredientesRecetas" ToRole="UnidadesMedida" />
@@ -762,7 +778,10 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDOrdenCompra" Type="Int32" Nullable="false" />
+          <Property Name="IDIngrediente" Type="Int32" Nullable="false" />
           <Property Name="Cantidad" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="IDUnidadMedida" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Ingrediente" Relationship="Self.FK_ItemsOrdenesCompra_Ingredientes" FromRole="ItemsOrdenesCompra" ToRole="Ingredientes" />
           <NavigationProperty Name="OrdenCompra" Relationship="Self.FK_ItemsOrdenesCompra_OrdenesCompra" FromRole="ItemsOrdenesCompra" ToRole="OrdenesCompra" />
           <NavigationProperty Name="Unidad" Relationship="Self.FK_ItemsOrdenesCompra_UnidadesMedida" FromRole="ItemsOrdenesCompra" ToRole="UnidadesMedida" />
@@ -773,6 +792,8 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDOrdenPago" Type="Int32" Nullable="false" />
+          <Property Name="IDItemOrdenCompra" Type="Int32" Nullable="false" />
           <Property Name="Precio" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
           <NavigationProperty Name="ItemOrdenCompra" Relationship="Self.FK_ItemsOrdenesPago_ItemsOrdenesCompra" FromRole="ItemsOrdenesPago" ToRole="ItemsOrdenesCompra" />
           <NavigationProperty Name="OrdenPago" Relationship="Self.FK_ItemsOrdenesPago_OrdenesPago" FromRole="ItemsOrdenesPago" ToRole="OrdenesPago" />
@@ -783,6 +804,7 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" />
           <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IDProvincia" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Clientes" Relationship="Self.FK_Clientes_Localidades" FromRole="Localidades" ToRole="Clientes" />
           <NavigationProperty Name="Empleados" Relationship="Self.FK_Empleados_Localidades" FromRole="Localidades" ToRole="Empleados" />
           <NavigationProperty Name="Provincia" Relationship="Self.FK_Localidades_Provincias" FromRole="Localidades" ToRole="Provincias" />
@@ -793,10 +815,12 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDOrdenVenta" Type="Int32" Nullable="false" />
           <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IDEstadoOrdenCompra" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Estado" Relationship="Self.FK_OrdenesCompra_EstadosOrdenesCompra" FromRole="OrdenesCompra" ToRole="EstadosOrdenesCompra" />
           <NavigationProperty Name="ItemsOrdenesCompra" Relationship="Self.FK_ItemsOrdenesCompra_OrdenesCompra" FromRole="OrdenesCompra" ToRole="ItemsOrdenesCompra" />
           <NavigationProperty Name="OrdenVenta" Relationship="Self.FK_OrdenesCompra_OrdenesVenta" FromRole="OrdenesCompra" ToRole="OrdenesVenta" />
-          <NavigationProperty Name="Estado" Relationship="OBMCateringModel.FK_OrdenesCompra_EstadosOrdenesCompra" FromRole="OrdenCompra" ToRole="EstadosOrdenesCompra" />
         </EntityType>
         <EntityType Name="OrdenPago">
           <Key>
@@ -804,6 +828,7 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IDProveedor" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="Pagada" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="ItemsOrdenesPago" Relationship="Self.FK_ItemsOrdenesPago_OrdenesPago" FromRole="OrdenesPago" ToRole="ItemsOrdenesPago" />
           <NavigationProperty Name="Proveedor" Relationship="Self.FK_OrdenesPago_Proveedores" FromRole="OrdenesPago" ToRole="Proveedores" />
@@ -813,6 +838,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDCliente" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="FechaInicio" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="FechaFin" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Comensales" Type="Int32" Nullable="false" />
@@ -836,8 +862,10 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDIngrediente" Type="Int32" Nullable="false" />
           <Property Name="Precio" Type="Decimal" Precision="10" Scale="2" />
           <Property Name="Cantidad" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="IDUnidadMedida" Type="Int32" />
           <NavigationProperty Name="Ingrediente" Relationship="Self.FK_PreciosIngredientes_Ingredientes" FromRole="PreciosIngredientes" ToRole="Ingredientes" />
           <NavigationProperty Name="Unidad" Relationship="Self.FK_PreciosIngredientes_UnidadesMedida" FromRole="PreciosIngredientes" ToRole="UnidadesMedida" />
         </EntityType>
@@ -848,6 +876,7 @@
           <Property Name="CUIT" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Domicilio" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IDLocalidad" Type="Int32" Nullable="false" />
           <Property Name="CodigoPostal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Telefono" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
@@ -871,6 +900,7 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Detalle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IDEstadoReceta" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Estado" Relationship="Self.FK_Recetas_EstadosRecetas" FromRole="Recetas" ToRole="EstadosRecetas" />
           <NavigationProperty Name="Ingredientes" Relationship="Self.FK_IngredientesReceta_Recetas" FromRole="Recetas" ToRole="IngredientesRecetas" />
           <NavigationProperty Name="OrdenesVenta" Relationship="Self.RecetasOrdenesVenta" FromRole="Recetas" ToRole="OrdenesVenta" />
@@ -909,41 +939,118 @@
           <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IDPerfil" Type="Int32" Nullable="false" />
+          <Property Name="CambiarPassword" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Bitacora" Relationship="Self.FK_Bitacora_Usuarios" FromRole="Usuarios" ToRole="Bitacora" />
           <NavigationProperty Name="Perfil" Relationship="Self.FK_Usuarios_PerfilesUsuario" FromRole="Usuarios" ToRole="PerfilesUsuario" />
-          <Property Name="CambiarPassword" Type="Boolean" Nullable="false" />
         </EntityType>
         <Association Name="FK_Bitacora_TipoMensajeBitacora">
           <End Role="TiposMensajesBitacora" Type="OBMCateringModel.TipoMensajeBitacora" Multiplicity="1" />
           <End Role="Bitacora" Type="Self.Bitacora" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposMensajesBitacora">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Bitacora">
+              <PropertyRef Name="IDTipoMensaje" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_Bitacora_Usuarios">
           <End Role="Usuarios" Type="OBMCateringModel.Usuario" Multiplicity="0..1" />
           <End Role="Bitacora" Type="Self.Bitacora" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="Nick" />
+            </Principal>
+            <Dependent Role="Bitacora">
+              <PropertyRef Name="IDUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_Clientes_Localidades">
           <End Role="Localidades" Type="OBMCateringModel.Localidad" Multiplicity="1" />
           <End Role="Clientes" Type="OBMCateringModel.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Localidades">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Clientes">
+              <PropertyRef Name="IDLocalidad" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_Clientes_TiposClientes">
           <End Role="TiposClientes" Type="OBMCateringModel.TipoCliente" Multiplicity="1" />
           <End Role="Clientes" Type="OBMCateringModel.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposClientes">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Clientes">
+              <PropertyRef Name="IDTipoCliente" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrdenesVenta_Clientes">
           <End Role="Clientes" Type="OBMCateringModel.Cliente" Multiplicity="1" />
           <End Role="OrdenesVenta" Type="OBMCateringModel.OrdenVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes">
+              <PropertyRef Name="CUIT" />
+            </Principal>
+            <Dependent Role="OrdenesVenta">
+              <PropertyRef Name="IDCliente" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_Empleados_Localidades">
           <End Role="Localidades" Type="OBMCateringModel.Localidad" Multiplicity="1" />
           <End Role="Empleados" Type="OBMCateringModel.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Localidades">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Empleados">
+              <PropertyRef Name="IDLocalidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrdenesCompra_EstadosOrdenesCompra">
+          <End Role="EstadosOrdenesCompra" Type="OBMCateringModel.EstadoOrdenCompra" Multiplicity="1" />
+          <End Role="OrdenesCompra" Type="OBMCateringModel.OrdenCompra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstadosOrdenesCompra">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrdenesCompra">
+              <PropertyRef Name="IDEstadoOrdenCompra" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_Recetas_EstadosRecetas">
           <End Role="EstadosRecetas" Type="OBMCateringModel.EstadoReceta" Multiplicity="1" />
           <End Role="Recetas" Type="OBMCateringModel.Receta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstadosRecetas">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Recetas">
+              <PropertyRef Name="IDEstadoReceta" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_Facturas_OrdenesVenta">
           <End Role="OrdenesVenta" Type="OBMCateringModel.OrdenVenta" Multiplicity="1" />
           <End Role="Facturas" Type="OBMCateringModel.Factura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrdenesVenta">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Facturas">
+              <PropertyRef Name="IDOrdenVenta" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_IngredientesReceta_Ingredientes">
           <End Role="Ingredientes" Type="OBMCateringModel.Ingrediente" Multiplicity="1" />
@@ -960,10 +1067,26 @@
         <Association Name="FK_ItemsOrdenesCompra_Ingredientes">
           <End Role="Ingredientes" Type="OBMCateringModel.Ingrediente" Multiplicity="1" />
           <End Role="ItemsOrdenesCompra" Type="OBMCateringModel.ItemOrdenCompra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ingredientes">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ItemsOrdenesCompra">
+              <PropertyRef Name="IDIngrediente" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_PreciosIngredientes_Ingredientes">
           <End Role="Ingredientes" Type="OBMCateringModel.Ingrediente" Multiplicity="1" />
           <End Role="PreciosIngredientes" Type="OBMCateringModel.PrecioIngrediente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ingredientes">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PreciosIngredientes">
+              <PropertyRef Name="IDIngrediente" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_IngredientesReceta_Recetas">
           <End Role="Recetas" Type="OBMCateringModel.Receta" Multiplicity="1" />
@@ -980,46 +1103,134 @@
         <Association Name="FK_IngredientesRecetas_UnidadesMedida">
           <End Role="UnidadesMedida" Type="OBMCateringModel.UnidadMedida" Multiplicity="1" />
           <End Role="IngredientesRecetas" Type="OBMCateringModel.IngredienteReceta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UnidadesMedida">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="IngredientesRecetas">
+              <PropertyRef Name="IDUnidadMedida" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_ItemsOrdenesCompra_OrdenesCompra">
           <End Role="OrdenesCompra" Type="OBMCateringModel.OrdenCompra" Multiplicity="1" />
           <End Role="ItemsOrdenesCompra" Type="OBMCateringModel.ItemOrdenCompra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrdenesCompra">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ItemsOrdenesCompra">
+              <PropertyRef Name="IDOrdenCompra" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_ItemsOrdenesCompra_UnidadesMedida">
           <End Role="UnidadesMedida" Type="OBMCateringModel.UnidadMedida" Multiplicity="1" />
           <End Role="ItemsOrdenesCompra" Type="OBMCateringModel.ItemOrdenCompra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UnidadesMedida">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ItemsOrdenesCompra">
+              <PropertyRef Name="IDUnidadMedida" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_ItemsOrdenesPago_ItemsOrdenesCompra">
           <End Role="ItemsOrdenesCompra" Type="OBMCateringModel.ItemOrdenCompra" Multiplicity="1" />
           <End Role="ItemsOrdenesPago" Type="OBMCateringModel.ItemOrdenPago" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ItemsOrdenesCompra">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ItemsOrdenesPago">
+              <PropertyRef Name="IDItemOrdenCompra" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_ItemsOrdenesPago_OrdenesPago">
           <End Role="OrdenesPago" Type="OBMCateringModel.OrdenPago" Multiplicity="1" />
           <End Role="ItemsOrdenesPago" Type="OBMCateringModel.ItemOrdenPago" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrdenesPago">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ItemsOrdenesPago">
+              <PropertyRef Name="IDOrdenPago" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_Localidades_Provincias">
           <End Role="Provincias" Type="OBMCateringModel.Provincia" Multiplicity="1" />
           <End Role="Localidades" Type="OBMCateringModel.Localidad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Provincias">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Localidades">
+              <PropertyRef Name="IDProvincia" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_Proveedores_Localidades">
           <End Role="Localidades" Type="OBMCateringModel.Localidad" Multiplicity="1" />
           <End Role="Proveedores" Type="OBMCateringModel.Proveedor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Localidades">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Proveedores">
+              <PropertyRef Name="IDLocalidad" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrdenesCompra_OrdenesVenta">
           <End Role="OrdenesVenta" Type="OBMCateringModel.OrdenVenta" Multiplicity="1" />
           <End Role="OrdenesCompra" Type="OBMCateringModel.OrdenCompra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrdenesVenta">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrdenesCompra">
+              <PropertyRef Name="IDOrdenVenta" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_OrdenesPago_Proveedores">
           <End Role="Proveedores" Type="OBMCateringModel.Proveedor" Multiplicity="1" />
           <End Role="OrdenesPago" Type="OBMCateringModel.OrdenPago" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proveedores">
+              <PropertyRef Name="CUIT" />
+            </Principal>
+            <Dependent Role="OrdenesPago">
+              <PropertyRef Name="IDProveedor" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_Usuarios_PerfilesUsuario">
           <End Role="PerfilesUsuario" Type="OBMCateringModel.PerfilUsuario" Multiplicity="1" />
           <End Role="Usuarios" Type="OBMCateringModel.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PerfilesUsuario">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Usuarios">
+              <PropertyRef Name="IDPerfil" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_PreciosIngredientes_UnidadesMedida">
           <End Role="UnidadesMedida" Type="OBMCateringModel.UnidadMedida" Multiplicity="0..1" />
           <End Role="PreciosIngredientes" Type="OBMCateringModel.PrecioIngrediente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UnidadesMedida">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PreciosIngredientes">
+              <PropertyRef Name="IDUnidadMedida" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="RecetasOrdenesVenta">
           <End Role="OrdenesVenta" Type="OBMCateringModel.OrdenVenta" Multiplicity="*" />
@@ -1029,6 +1240,7 @@
           <EntitySet Name="Bitacora" EntityType="Self.Bitacora" />
           <EntitySet Name="Clientes" EntityType="OBMCateringModel.Cliente" />
           <EntitySet Name="Empleados" EntityType="OBMCateringModel.Empleado" />
+          <EntitySet Name="EstadosOrdenesCompra" EntityType="OBMCateringModel.EstadoOrdenCompra" />
           <EntitySet Name="EstadosRecetas" EntityType="OBMCateringModel.EstadoReceta" />
           <EntitySet Name="Facturas" EntityType="OBMCateringModel.Factura" />
           <EntitySet Name="Ingredientes" EntityType="OBMCateringModel.Ingrediente" />
@@ -1071,6 +1283,10 @@
           <AssociationSet Name="FK_Empleados_Localidades" Association="Self.FK_Empleados_Localidades">
             <End Role="Localidades" EntitySet="Localidades" />
             <End Role="Empleados" EntitySet="Empleados" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrdenesCompra_EstadosOrdenesCompra" Association="Self.FK_OrdenesCompra_EstadosOrdenesCompra">
+            <End Role="EstadosOrdenesCompra" EntitySet="EstadosOrdenesCompra" />
+            <End Role="OrdenesCompra" EntitySet="OrdenesCompra" />
           </AssociationSet>
           <AssociationSet Name="FK_Recetas_EstadosRecetas" Association="Self.FK_Recetas_EstadosRecetas">
             <End Role="EstadosRecetas" EntitySet="EstadosRecetas" />
@@ -1144,24 +1360,7 @@
             <End Role="OrdenesVenta" EntitySet="OrdenesVenta" />
             <End Role="Recetas" EntitySet="Recetas" />
           </AssociationSet>
-          <EntitySet Name="EstadosOrdenesCompra" EntityType="OBMCateringModel.EstadoOrdenCompra" />
-          <AssociationSet Name="FK_OrdenesCompra_EstadosOrdenesCompra" Association="OBMCateringModel.FK_OrdenesCompra_EstadosOrdenesCompra">
-            <End Role="EstadosOrdenesCompra" EntitySet="EstadosOrdenesCompra" />
-            <End Role="OrdenCompra" EntitySet="OrdenesCompra" />
-          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="EstadoOrdenCompra">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Estado" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="OrdenesCompra" Relationship="OBMCateringModel.FK_OrdenesCompra_EstadosOrdenesCompra" FromRole="EstadosOrdenesCompra" ToRole="OrdenCompra" />
-        </EntityType>
-        <Association Name="FK_OrdenesCompra_EstadosOrdenesCompra">
-          <End Type="OBMCateringModel.EstadoOrdenCompra" Role="EstadosOrdenesCompra" Multiplicity="1" />
-          <End Type="OBMCateringModel.OrdenCompra" Role="OrdenCompra" Multiplicity="*" />
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1172,8 +1371,10 @@
             <EntityTypeMapping TypeName="OBMCateringModel.Bitacora">
               <MappingFragment StoreEntitySet="Bitacora">
                 <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDUsuario" ColumnName="IDUsuario" />
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
                 <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+                <ScalarProperty Name="IDTipoMensaje" ColumnName="IDTipoMensaje" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1184,9 +1385,11 @@
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
                 <ScalarProperty Name="Domicilio" ColumnName="Domicilio" />
+                <ScalarProperty Name="IDLocalidad" ColumnName="IDLocalidad" />
                 <ScalarProperty Name="CodigoPostal" ColumnName="CodigoPostal" />
                 <ScalarProperty Name="Telefono" ColumnName="Telefono" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="IDTipoCliente" ColumnName="IDTipoCliente" />
                 <ScalarProperty Name="Activo" ColumnName="Activo" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1198,11 +1401,20 @@
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
                 <ScalarProperty Name="Domicilio" ColumnName="Domicilio" />
+                <ScalarProperty Name="IDLocalidad" ColumnName="IDLocalidad" />
                 <ScalarProperty Name="CodigoPostal" ColumnName="CodigoPostal" />
                 <ScalarProperty Name="Telefono" ColumnName="Telefono" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
                 <ScalarProperty Name="FechaBaja" ColumnName="FechaBaja" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EstadosOrdenesCompra">
+            <EntityTypeMapping TypeName="OBMCateringModel.EstadoOrdenCompra">
+              <MappingFragment StoreEntitySet="EstadosOrdenesCompra">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1219,6 +1431,7 @@
               <MappingFragment StoreEntitySet="Facturas">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="IDOrdenVenta" ColumnName="IDOrdenVenta" />
                 <ScalarProperty Name="Cobrada" ColumnName="Cobrada" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1238,6 +1451,7 @@
                 <ScalarProperty Name="IDReceta" ColumnName="IDReceta" />
                 <ScalarProperty Name="IDIngrediente" ColumnName="IDIngrediente" />
                 <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="IDUnidadMedida" ColumnName="IDUnidadMedida" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1245,7 +1459,10 @@
             <EntityTypeMapping TypeName="OBMCateringModel.ItemOrdenCompra">
               <MappingFragment StoreEntitySet="ItemsOrdenesCompra">
                 <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDOrdenCompra" ColumnName="IDOrdenCompra" />
+                <ScalarProperty Name="IDIngrediente" ColumnName="IDIngrediente" />
                 <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="IDUnidadMedida" ColumnName="IDUnidadMedida" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1253,6 +1470,8 @@
             <EntityTypeMapping TypeName="OBMCateringModel.ItemOrdenPago">
               <MappingFragment StoreEntitySet="ItemsOrdenesPago">
                 <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDOrdenPago" ColumnName="IDOrdenPago" />
+                <ScalarProperty Name="IDItemOrdenCompra" ColumnName="IDItemOrdenCompra" />
                 <ScalarProperty Name="Precio" ColumnName="Precio" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1262,6 +1481,7 @@
               <MappingFragment StoreEntitySet="Localidades">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="IDProvincia" ColumnName="IDProvincia" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1269,7 +1489,9 @@
             <EntityTypeMapping TypeName="OBMCateringModel.OrdenCompra">
               <MappingFragment StoreEntitySet="OrdenesCompra">
                 <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDOrdenVenta" ColumnName="IDOrdenVenta" />
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="IDEstadoOrdenCompra" ColumnName="IDEstadoOrdenCompra" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1278,6 +1500,7 @@
               <MappingFragment StoreEntitySet="OrdenesPago">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="IDProveedor" ColumnName="IDProveedor" />
                 <ScalarProperty Name="Pagada" ColumnName="Pagada" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1286,6 +1509,7 @@
             <EntityTypeMapping TypeName="OBMCateringModel.OrdenVenta">
               <MappingFragment StoreEntitySet="OrdenesVenta">
                 <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDCliente" ColumnName="IDCliente" />
                 <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
                 <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
                 <ScalarProperty Name="Comensales" ColumnName="Comensales" />
@@ -1306,8 +1530,10 @@
             <EntityTypeMapping TypeName="OBMCateringModel.PrecioIngrediente">
               <MappingFragment StoreEntitySet="PreciosIngredientes">
                 <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDIngrediente" ColumnName="IDIngrediente" />
                 <ScalarProperty Name="Precio" ColumnName="Precio" />
                 <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="IDUnidadMedida" ColumnName="IDUnidadMedida" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1317,6 +1543,7 @@
                 <ScalarProperty Name="CUIT" ColumnName="CUIT" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="Domicilio" ColumnName="Domicilio" />
+                <ScalarProperty Name="IDLocalidad" ColumnName="IDLocalidad" />
                 <ScalarProperty Name="CodigoPostal" ColumnName="CodigoPostal" />
                 <ScalarProperty Name="Telefono" ColumnName="Telefono" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
@@ -1339,6 +1566,7 @@
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="Detalle" ColumnName="Detalle" />
+                <ScalarProperty Name="IDEstadoReceta" ColumnName="IDEstadoReceta" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1369,207 +1597,21 @@
           <EntitySetMapping Name="Usuarios">
             <EntityTypeMapping TypeName="OBMCateringModel.Usuario">
               <MappingFragment StoreEntitySet="Usuarios">
-                <ScalarProperty Name="CambiarPassword" ColumnName="CambiarPassword" />
                 <ScalarProperty Name="Nick" ColumnName="Nick" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="IDPerfil" ColumnName="IDPerfil" />
+                <ScalarProperty Name="CambiarPassword" ColumnName="CambiarPassword" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="FK_Bitacora_TipoMensajeBitacora" TypeName="OBMCateringModel.FK_Bitacora_TipoMensajeBitacora" StoreEntitySet="Bitacora">
-            <EndProperty Name="TiposMensajesBitacora">
-              <ScalarProperty Name="ID" ColumnName="IDTipoMensaje" />
-            </EndProperty>
-            <EndProperty Name="Bitacora">
-              <ScalarProperty Name="ID" ColumnName="ID" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_Bitacora_Usuarios" TypeName="OBMCateringModel.FK_Bitacora_Usuarios" StoreEntitySet="Bitacora">
-            <EndProperty Name="Usuarios">
-              <ScalarProperty Name="Nick" ColumnName="IDUsuario" />
-            </EndProperty>
-            <EndProperty Name="Bitacora">
-              <ScalarProperty Name="ID" ColumnName="ID" />
-            </EndProperty>
-            <Condition ColumnName="IDUsuario" IsNull="false" />
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_Clientes_Localidades" TypeName="OBMCateringModel.FK_Clientes_Localidades" StoreEntitySet="Clientes">
-            <EndProperty Name="Localidades">
-              <ScalarProperty Name="ID" ColumnName="IDLocalidad" />
-            </EndProperty>
-            <EndProperty Name="Clientes">
-              <ScalarProperty Name="CUIT" ColumnName="CUIT" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_Clientes_TiposClientes" TypeName="OBMCateringModel.FK_Clientes_TiposClientes" StoreEntitySet="Clientes">
-            <EndProperty Name="TiposClientes">
-              <ScalarProperty Name="ID" ColumnName="IDTipoCliente" />
-            </EndProperty>
-            <EndProperty Name="Clientes">
-              <ScalarProperty Name="CUIT" ColumnName="CUIT" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_OrdenesVenta_Clientes" TypeName="OBMCateringModel.FK_OrdenesVenta_Clientes" StoreEntitySet="OrdenesVenta">
-            <EndProperty Name="Clientes">
-              <ScalarProperty Name="CUIT" ColumnName="IDCliente" />
-            </EndProperty>
-            <EndProperty Name="OrdenesVenta">
-              <ScalarProperty Name="ID" ColumnName="ID" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_Empleados_Localidades" TypeName="OBMCateringModel.FK_Empleados_Localidades" StoreEntitySet="Empleados">
-            <EndProperty Name="Localidades">
-              <ScalarProperty Name="ID" ColumnName="IDLocalidad" />
-            </EndProperty>
-            <EndProperty Name="Empleados">
-              <ScalarProperty Name="CUIT" ColumnName="CUIT" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_Recetas_EstadosRecetas" TypeName="OBMCateringModel.FK_Recetas_EstadosRecetas" StoreEntitySet="Recetas">
-            <EndProperty Name="EstadosRecetas">
-              <ScalarProperty Name="ID" ColumnName="IDEstadoReceta" />
-            </EndProperty>
-            <EndProperty Name="Recetas">
-              <ScalarProperty Name="ID" ColumnName="ID" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_Facturas_OrdenesVenta" TypeName="OBMCateringModel.FK_Facturas_OrdenesVenta" StoreEntitySet="Facturas">
-            <EndProperty Name="OrdenesVenta">
-              <ScalarProperty Name="ID" ColumnName="IDOrdenVenta" />
-            </EndProperty>
-            <EndProperty Name="Facturas">
-              <ScalarProperty Name="ID" ColumnName="ID" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_ItemsOrdenesCompra_Ingredientes" TypeName="OBMCateringModel.FK_ItemsOrdenesCompra_Ingredientes" StoreEntitySet="ItemsOrdenesCompra">
-            <EndProperty Name="Ingredientes">
-              <ScalarProperty Name="ID" ColumnName="IDIngrediente" />
-            </EndProperty>
-            <EndProperty Name="ItemsOrdenesCompra">
-              <ScalarProperty Name="ID" ColumnName="ID" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_PreciosIngredientes_Ingredientes" TypeName="OBMCateringModel.FK_PreciosIngredientes_Ingredientes" StoreEntitySet="PreciosIngredientes">
-            <EndProperty Name="Ingredientes">
-              <ScalarProperty Name="ID" ColumnName="IDIngrediente" />
-            </EndProperty>
-            <EndProperty Name="PreciosIngredientes">
-              <ScalarProperty Name="ID" ColumnName="ID" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_IngredientesRecetas_UnidadesMedida" TypeName="OBMCateringModel.FK_IngredientesRecetas_UnidadesMedida" StoreEntitySet="IngredientesRecetas">
-            <EndProperty Name="UnidadesMedida">
-              <ScalarProperty Name="ID" ColumnName="IDUnidadMedida" />
-            </EndProperty>
-            <EndProperty Name="IngredientesRecetas">
-              <ScalarProperty Name="IDReceta" ColumnName="IDReceta" />
-              <ScalarProperty Name="IDIngrediente" ColumnName="IDIngrediente" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_ItemsOrdenesCompra_OrdenesCompra" TypeName="OBMCateringModel.FK_ItemsOrdenesCompra_OrdenesCompra" StoreEntitySet="ItemsOrdenesCompra">
-            <EndProperty Name="OrdenesCompra">
-              <ScalarProperty Name="ID" ColumnName="IDOrdenCompra" />
-            </EndProperty>
-            <EndProperty Name="ItemsOrdenesCompra">
-              <ScalarProperty Name="ID" ColumnName="ID" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_ItemsOrdenesCompra_UnidadesMedida" TypeName="OBMCateringModel.FK_ItemsOrdenesCompra_UnidadesMedida" StoreEntitySet="ItemsOrdenesCompra">
-            <EndProperty Name="UnidadesMedida">
-              <ScalarProperty Name="ID" ColumnName="IDUnidadMedida" />
-            </EndProperty>
-            <EndProperty Name="ItemsOrdenesCompra">
-              <ScalarProperty Name="ID" ColumnName="ID" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_ItemsOrdenesPago_ItemsOrdenesCompra" TypeName="OBMCateringModel.FK_ItemsOrdenesPago_ItemsOrdenesCompra" StoreEntitySet="ItemsOrdenesPago">
-            <EndProperty Name="ItemsOrdenesCompra">
-              <ScalarProperty Name="ID" ColumnName="IDItemOrdenCompra" />
-            </EndProperty>
-            <EndProperty Name="ItemsOrdenesPago">
-              <ScalarProperty Name="ID" ColumnName="ID" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_ItemsOrdenesPago_OrdenesPago" TypeName="OBMCateringModel.FK_ItemsOrdenesPago_OrdenesPago" StoreEntitySet="ItemsOrdenesPago">
-            <EndProperty Name="OrdenesPago">
-              <ScalarProperty Name="ID" ColumnName="IDOrdenPago" />
-            </EndProperty>
-            <EndProperty Name="ItemsOrdenesPago">
-              <ScalarProperty Name="ID" ColumnName="ID" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_Localidades_Provincias" TypeName="OBMCateringModel.FK_Localidades_Provincias" StoreEntitySet="Localidades">
-            <EndProperty Name="Provincias">
-              <ScalarProperty Name="ID" ColumnName="IDProvincia" />
-            </EndProperty>
-            <EndProperty Name="Localidades">
-              <ScalarProperty Name="ID" ColumnName="ID" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_Proveedores_Localidades" TypeName="OBMCateringModel.FK_Proveedores_Localidades" StoreEntitySet="Proveedores">
-            <EndProperty Name="Localidades">
-              <ScalarProperty Name="ID" ColumnName="IDLocalidad" />
-            </EndProperty>
-            <EndProperty Name="Proveedores">
-              <ScalarProperty Name="CUIT" ColumnName="CUIT" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_OrdenesCompra_OrdenesVenta" TypeName="OBMCateringModel.FK_OrdenesCompra_OrdenesVenta" StoreEntitySet="OrdenesCompra">
-            <EndProperty Name="OrdenesVenta">
-              <ScalarProperty Name="ID" ColumnName="IDOrdenVenta" />
-            </EndProperty>
-            <EndProperty Name="OrdenesCompra">
-              <ScalarProperty Name="ID" ColumnName="ID" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_OrdenesPago_Proveedores" TypeName="OBMCateringModel.FK_OrdenesPago_Proveedores" StoreEntitySet="OrdenesPago">
-            <EndProperty Name="Proveedores">
-              <ScalarProperty Name="CUIT" ColumnName="IDProveedor" />
-            </EndProperty>
-            <EndProperty Name="OrdenesPago">
-              <ScalarProperty Name="ID" ColumnName="ID" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_Usuarios_PerfilesUsuario" TypeName="OBMCateringModel.FK_Usuarios_PerfilesUsuario" StoreEntitySet="Usuarios">
-            <EndProperty Name="PerfilesUsuario">
-              <ScalarProperty Name="ID" ColumnName="IDPerfil" />
-            </EndProperty>
-            <EndProperty Name="Usuarios">
-              <ScalarProperty Name="Nick" ColumnName="Nick" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_PreciosIngredientes_UnidadesMedida" TypeName="OBMCateringModel.FK_PreciosIngredientes_UnidadesMedida" StoreEntitySet="PreciosIngredientes">
-            <EndProperty Name="UnidadesMedida">
-              <ScalarProperty Name="ID" ColumnName="IDUnidadMedida" />
-            </EndProperty>
-            <EndProperty Name="PreciosIngredientes">
-              <ScalarProperty Name="ID" ColumnName="ID" />
-            </EndProperty>
-            <Condition IsNull="false" ColumnName="IDUnidadMedida" />
-          </AssociationSetMapping>
           <AssociationSetMapping Name="RecetasOrdenesVenta" TypeName="OBMCateringModel.RecetasOrdenesVenta" StoreEntitySet="RecetasOrdenesVenta">
             <EndProperty Name="OrdenesVenta">
               <ScalarProperty Name="ID" ColumnName="IDOrdenVenta" />
             </EndProperty>
             <EndProperty Name="Recetas">
               <ScalarProperty Name="ID" ColumnName="IDReceta" />
-            </EndProperty>
-          </AssociationSetMapping>
-          <EntitySetMapping Name="EstadosOrdenesCompra">
-            <EntityTypeMapping TypeName="OBMCateringModel.EstadoOrdenCompra">
-              <MappingFragment StoreEntitySet="EstadosOrdenesCompra">
-                <ScalarProperty Name="Estado" ColumnName="Estado" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <AssociationSetMapping Name="FK_OrdenesCompra_EstadosOrdenesCompra" TypeName="OBMCateringModel.FK_OrdenesCompra_EstadosOrdenesCompra" StoreEntitySet="OrdenesCompra">
-            <EndProperty Name="OrdenCompra">
-              <ScalarProperty Name="ID" ColumnName="ID" />
-            </EndProperty>
-            <EndProperty Name="EstadosOrdenesCompra">
-              <ScalarProperty Name="ID" ColumnName="IDEstadoOrdenCompra" />
             </EndProperty>
           </AssociationSetMapping>
         </EntityContainerMapping>
@@ -1587,7 +1629,7 @@
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="false" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>

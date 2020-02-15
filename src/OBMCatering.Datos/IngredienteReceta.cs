@@ -17,6 +17,7 @@ namespace OBMCatering.Datos
         public int IDReceta { get; set; }
         public int IDIngrediente { get; set; }
         public decimal Cantidad { get; set; }
+        public int IDUnidadMedida { get; set; }
     
         public virtual Ingrediente Ingrediente { get; set; }
         public virtual Receta Receta { get; set; }

@@ -28,6 +28,7 @@ namespace OBMCatering.Datos
         public virtual DbSet<Bitacora> Bitacora { get; set; }
         public virtual DbSet<Cliente> Clientes { get; set; }
         public virtual DbSet<Empleado> Empleados { get; set; }
+        public virtual DbSet<EstadoOrdenCompra> EstadosOrdenesCompra { get; set; }
         public virtual DbSet<EstadoReceta> EstadosRecetas { get; set; }
         public virtual DbSet<Factura> Facturas { get; set; }
         public virtual DbSet<Ingrediente> Ingredientes { get; set; }
@@ -47,6 +48,5 @@ namespace OBMCatering.Datos
         public virtual DbSet<TipoMensajeBitacora> TiposMensajesBitacora { get; set; }
         public virtual DbSet<UnidadMedida> UnidadesMedida { get; set; }
         public virtual DbSet<Usuario> Usuarios { get; set; }
-        public virtual DbSet<EstadoOrdenCompra> EstadosOrdenesCompra { get; set; }
     }
 }

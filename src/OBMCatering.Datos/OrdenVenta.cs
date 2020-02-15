@@ -23,6 +23,7 @@ namespace OBMCatering.Datos
         }
     
         public int ID { get; set; }
+        public string IDCliente { get; set; }
         public System.DateTime FechaInicio { get; set; }
         public System.DateTime FechaFin { get; set; }
         public int Comensales { get; set; }

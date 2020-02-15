@@ -15,6 +15,8 @@ namespace OBMCatering.Datos
     public partial class ItemOrdenPago
     {
         public int ID { get; set; }
+        public int IDOrdenPago { get; set; }
+        public int IDItemOrdenCompra { get; set; }
         public decimal Precio { get; set; }
     
         public virtual ItemOrdenCompra ItemOrdenCompra { get; set; }

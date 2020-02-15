@@ -16,6 +16,7 @@ namespace OBMCatering.Datos
     {
         public int ID { get; set; }
         public System.DateTime Fecha { get; set; }
+        public int IDOrdenVenta { get; set; }
         public bool Cobrada { get; set; }
     
         public virtual OrdenVenta OrdenVenta { get; set; }

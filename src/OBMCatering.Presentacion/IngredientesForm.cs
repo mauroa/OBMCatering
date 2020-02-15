@@ -122,7 +122,7 @@ namespace OBMCatering.Presentacion
         {
             cboUnidad.Items.Add(UnidadMedida.gr.ToString());
             cboUnidad.Items.Add(UnidadMedida.ml.ToString());
-            cboUnidad.Items.Add(UnidadMedida.unidad.ToString());
+            cboUnidad.Items.Add(UnidadMedida.u.ToString());
         }
 
         void CargarIngredientes()

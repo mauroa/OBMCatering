@@ -15,8 +15,10 @@ namespace OBMCatering.Datos
     public partial class Bitacora
     {
         public int ID { get; set; }
+        public string IDUsuario { get; set; }
         public System.DateTime Fecha { get; set; }
         public string Mensaje { get; set; }
+        public int IDTipoMensaje { get; set; }
     
         public virtual TipoMensajeBitacora Tipo { get; set; }
         public virtual Usuario Usuario { get; set; }

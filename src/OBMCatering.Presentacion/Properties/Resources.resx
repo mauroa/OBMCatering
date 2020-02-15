@@ -207,6 +207,9 @@
   <data name="ContextoPresentacion_Informacion" xml:space="preserve">
     <value>Informacion</value>
   </data>
+  <data name="ContextoPresentacion_InicializacionFinalizada" xml:space="preserve">
+    <value>La carga de datos inicial ha finalizado. Puede trabajar en las pantallas normalmente</value>
+  </data>
   <data name="EmpleadosForm_Datos_Activo" xml:space="preserve">
     <value>Activo</value>
   </data>
@@ -345,6 +348,9 @@
   </data>
   <data name="InicioForm_Datos_FiltroArchivos" xml:space="preserve">
     <value>Archivos de Backup (*.bak)|*.bak</value>
+  </data>
+  <data name="InicioForm_InicializandoDatos" xml:space="preserve">
+    <value>Aun se estan inicializando los datos por primera vez. Es posible que algunas pantallas no contengan toda la informacion necesaria para funcionar correctamente. Recibira una notificacion al finalizar la inicializacion</value>
   </data>
   <data name="InicioForm_Menu_Administrar_Clientes" xml:space="preserve">
     <value>Clientes</value>

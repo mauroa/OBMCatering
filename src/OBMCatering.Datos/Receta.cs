@@ -24,6 +24,7 @@ namespace OBMCatering.Datos
         public int ID { get; set; }
         public string Nombre { get; set; }
         public string Detalle { get; set; }
+        public int IDEstadoReceta { get; set; }
     
         public virtual EstadoReceta Estado { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

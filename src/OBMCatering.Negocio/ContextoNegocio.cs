@@ -1,5 +1,6 @@
 ﻿using OBMCatering.Datos;
 using OBMCatering.Negocio.Properties;
+using System;
 using System.IO;
 
 namespace OBMCatering.Negocio
@@ -13,6 +14,8 @@ namespace OBMCatering.Negocio
         private ContextoNegocio()
         {
             dal = new OBMCateringDAL(new OBMCateringEntities());
+            dal.DatosInicializados += Dal_DatosInicializados;
+
             Bitacora = new BitacoraBL(this, new UsuariosBL(this));
         }
 
@@ -26,6 +29,16 @@ namespace OBMCatering.Negocio
                 }
 
                 return instancia;
+            }
+        }
+
+        public event EventHandler DatosInicializados;
+
+        public bool EstaInicializando
+        {
+            get
+            {
+                return dal.EstaInicializando;
             }
         }
 
@@ -61,6 +74,14 @@ namespace OBMCatering.Negocio
         public Usuario ObtenerUsuarioAutenticado()
         {
             return usuarioAutenticado;
+        }
+
+        void Dal_DatosInicializados(object sender, EventArgs e)
+        {
+            if (DatosInicializados != null)
+            {
+                DatosInicializados(this, EventArgs.Empty);
+            }
         }
     }
 }

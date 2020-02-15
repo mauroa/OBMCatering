@@ -12,6 +12,16 @@ namespace OBMCatering.Presentacion
         public InicioForm()
         {
             Inicializar();
+
+            Load += InicioForm_Load;
+        }
+
+        void InicioForm_Load(object sender, EventArgs e)
+        {
+            if (contexto.Negocio.EstaInicializando)
+            {
+                contexto.MostrarEvento(Resources.InicioForm_InicializandoDatos);
+            }
         }
 
         void Inicializar()

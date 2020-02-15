@@ -22,6 +22,7 @@ namespace OBMCatering.Datos
     
         public int ID { get; set; }
         public System.DateTime Fecha { get; set; }
+        public string IDProveedor { get; set; }
         public bool Pagada { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -15,8 +15,10 @@ namespace OBMCatering.Datos
     public partial class PrecioIngrediente
     {
         public int ID { get; set; }
+        public int IDIngrediente { get; set; }
         public Nullable<decimal> Precio { get; set; }
         public Nullable<decimal> Cantidad { get; set; }
+        public Nullable<int> IDUnidadMedida { get; set; }
     
         public virtual Ingrediente Ingrediente { get; set; }
         public virtual UnidadMedida Unidad { get; set; }

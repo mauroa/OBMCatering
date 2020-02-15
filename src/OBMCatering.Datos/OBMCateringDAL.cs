@@ -1,10 +1,12 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 
 namespace OBMCatering.Datos
 {
     public class OBMCateringDAL
     {
         OBMCateringEntities modelo;
+        InicializadorDatos inicializador;
         EmpleadosDAL empleados;
         ClientesDAL clientes;
         ProveedoresDAL proveedores;
@@ -23,6 +25,7 @@ namespace OBMCatering.Datos
         public OBMCateringDAL(OBMCateringEntities modelo)
         {
             this.modelo = modelo;
+
             empleados = new EmpleadosDAL(modelo);
             clientes = new ClientesDAL(modelo);
             proveedores = new ProveedoresDAL(modelo);
@@ -37,6 +40,20 @@ namespace OBMCatering.Datos
             localidades = new LocalidadesDAL(modelo);
             usuarios = new UsuariosDAL(modelo);
             bitacora = new BitacoraDAL(modelo);
+
+            inicializador = new InicializadorDatos(modelo);
+            inicializador.DatosInicializados += Inicializador_DatosInicializados;
+            inicializador.Inicializar();
+        }
+
+        public event EventHandler DatosInicializados;
+
+        public bool EstaInicializando
+        {
+            get
+            {
+                return inicializador.EstaInicializando;
+            }
         }
 
         public EmpleadosDAL ObtenerEmpleadosDAL()
@@ -130,6 +147,14 @@ namespace OBMCatering.Datos
         public void Guardar()
         {
             modelo.SaveChanges();
+        }
+
+        void Inicializador_DatosInicializados(object sender, EventArgs e)
+        {
+            if (DatosInicializados != null)
+            {
+                DatosInicializados(this, EventArgs.Empty);
+            }
         }
     }
 }

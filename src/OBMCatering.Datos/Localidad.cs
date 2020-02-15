@@ -24,6 +24,7 @@ namespace OBMCatering.Datos
     
         public int ID { get; set; }
         public string Nombre { get; set; }
+        public int IDProvincia { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cliente> Clientes { get; set; }

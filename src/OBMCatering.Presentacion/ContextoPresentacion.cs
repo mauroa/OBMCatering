@@ -15,6 +15,8 @@ namespace OBMCatering.Presentacion
         {
             Negocio = ContextoNegocio.Instancia;
             Lenguaje = CultureInfo.GetCultureInfo(lenguajeDefault);
+
+            Negocio.DatosInicializados += Negocio_DatosInicializados;
         }
 
         public static ContextoPresentacion Instancia
@@ -109,6 +111,11 @@ namespace OBMCatering.Presentacion
 
             Negocio.Bitacora.Registrar(mensaje, TipoMensajeBitacora.Error);
             MessageBox.Show(mensaje, Resources.ContextoPresentacion_Error_Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        void Negocio_DatosInicializados(object sender, EventArgs e)
+        {
+            MostrarEvento(Resources.ContextoPresentacion_InicializacionFinalizada);
         }
     }
 }

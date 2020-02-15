@@ -1,0 +1,24 @@
+54#Misiones
+74#San Luis
+70#San Juan
+30#Entre Ríos
+78#Santa Cruz
+62#Río Negro
+26#Chubut
+14#Córdoba
+50#Mendoza
+46#La Rioja
+10#Catamarca
+42#La Pampa
+86#Santiago del Estero
+18#Corrientes
+82#Santa Fe
+90#Tucumán
+58#Neuquén
+66#Salta
+22#Chaco
+34#Formosa
+38#Jujuy
+2#Ciudad Autónoma de Buenos Aires
+6#Buenos Aires
+94#Tierra del Fuego

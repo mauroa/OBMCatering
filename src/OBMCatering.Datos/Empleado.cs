@@ -18,6 +18,7 @@ namespace OBMCatering.Datos
         public string Nombre { get; set; }
         public System.DateTime FechaNacimiento { get; set; }
         public string Domicilio { get; set; }
+        public int IDLocalidad { get; set; }
         public string CodigoPostal { get; set; }
         public string Telefono { get; set; }
         public string Email { get; set; }

@@ -21,7 +21,10 @@ namespace OBMCatering.Datos
         }
     
         public int ID { get; set; }
+        public int IDOrdenCompra { get; set; }
+        public int IDIngrediente { get; set; }
         public decimal Cantidad { get; set; }
+        public int IDUnidadMedida { get; set; }
     
         public virtual Ingrediente Ingrediente { get; set; }
         public virtual OrdenCompra OrdenCompra { get; set; }

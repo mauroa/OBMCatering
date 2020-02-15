@@ -207,6 +207,9 @@
   <data name="ContextoPresentacion_Informacion" xml:space="preserve">
     <value>Information</value>
   </data>
+  <data name="ContextoPresentacion_InicializacionFinalizada" xml:space="preserve">
+    <value>The initial data loading finished successfully. You can work on the screens normally</value>
+  </data>
   <data name="EmpleadosForm_Datos_Activo" xml:space="preserve">
     <value>Active</value>
   </data>
@@ -345,6 +348,9 @@
   </data>
   <data name="InicioForm_Datos_FiltroArchivos" xml:space="preserve">
     <value>DataBase Backup files (*.bak)|*.bak</value>
+  </data>
+  <data name="InicioForm_InicializandoDatos" xml:space="preserve">
+    <value>Some data is still loading for the first time. This can cause that some screens doesn't contain all the required information to work correctly. A notification will be shown when the data initialization finishes</value>
   </data>
   <data name="InicioForm_Menu_Administrar_Clientes" xml:space="preserve">
     <value>Clients</value>
