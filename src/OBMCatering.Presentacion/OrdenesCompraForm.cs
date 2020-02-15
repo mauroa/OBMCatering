@@ -31,10 +31,18 @@ namespace OBMCatering.Presentacion
             lblEstadoTitulo.Text = Resources.OrdenesCompraForm_Datos_Estado;
             lblProveedorTitulo.Text = Resources.OrdenesCompraForm_Datos_Proveedor;
             lblItems.Text = Resources.OrdenesCompraForm_Datos_Items;
+
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            HelpButton = true;
+            HelpRequested += OrdenesCompraForm_HelpRequested;
         }
 
         void OrdenesCompra_Load(object sender, EventArgs e)
         {
+            AcceptButton = btnGuardar;
+
             contexto = ContextoPresentacion.Instancia;
             localidadesBL = new LocalidadesBL(contexto.Negocio);
             clientesBL = new ClientesBL(contexto.Negocio, localidadesBL);
@@ -54,6 +62,11 @@ namespace OBMCatering.Presentacion
             LimpiarFormulario();
 
             contexto.RegistrarEvento(Resources.OrdenesCompraForm_Ingreso);
+        }
+
+        void OrdenesCompraForm_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            MessageBox.Show(Resources.OrdenesCompraForm_Help_Mensaje, Resources.Form_Help_Titulo, MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
 
         void BtnGuardar_Click(object sender, EventArgs e)

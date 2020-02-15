@@ -106,6 +106,15 @@ namespace OBMCatering.Presentacion.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Esta pantalla permite consultar todos los eventos y actividades del sistema y filtrarlos por fecha, tipo y usuario. Los tipos de eventos pueden ser: Informacion, Alerta, Error..
+        /// </summary>
+        internal static string BitacoraForm_Help_Mensaje {
+            get {
+                return ResourceManager.GetString("BitacoraForm_Help_Mensaje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ingreso a la pantalla de bitacora.
         /// </summary>
         internal static string BitacoraForm_Ingreso {
@@ -250,6 +259,15 @@ namespace OBMCatering.Presentacion.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Esta pantalla permite administrar a los clientes, desde su creacion hasta su modificacion. Ademas de cargar la informacion basica, se puede tambien controlar si los mismos estan activos o inactivos para el sistema. Que esten inactivos significa que no apareceran en el listado de clientes de ninguna otra pantalla..
+        /// </summary>
+        internal static string ClientesForm_Help_Mensaje {
+            get {
+                return ResourceManager.GetString("ClientesForm_Help_Mensaje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ingreso a la pantalla de clientes.
         /// </summary>
         internal static string ClientesForm_Ingreso {
@@ -264,6 +282,51 @@ namespace OBMCatering.Presentacion.Properties {
         internal static string ClientesForm_Titulo {
             get {
                 return ResourceManager.GetString("ClientesForm_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alerta.
+        /// </summary>
+        internal static string ContextoPresentacion_Alerta {
+            get {
+                return ResourceManager.GetString("ContextoPresentacion_Alerta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0}. Detalle: {1}.
+        /// </summary>
+        internal static string ContextoPresentacion_Error_Detalle {
+            get {
+                return ResourceManager.GetString("ContextoPresentacion_Error_Detalle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ocurrio un error inesperado.
+        /// </summary>
+        internal static string ContextoPresentacion_Error_Mensaje {
+            get {
+                return ResourceManager.GetString("ContextoPresentacion_Error_Mensaje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error.
+        /// </summary>
+        internal static string ContextoPresentacion_Error_Titulo {
+            get {
+                return ResourceManager.GetString("ContextoPresentacion_Error_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Informacion.
+        /// </summary>
+        internal static string ContextoPresentacion_Informacion {
+            get {
+                return ResourceManager.GetString("ContextoPresentacion_Informacion", resourceCulture);
             }
         }
         
@@ -403,6 +466,15 @@ namespace OBMCatering.Presentacion.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Esta pantalla permite administrar a los empleados de la empresa, desde su creacion hasta su modificacion. Ademas de cargar la informacion basica, se puede tambien controlar si los mismos estan activos o inactivos para el sistema. Que esten inactivos significa que no apareceran en el listado de empleados de ninguna otra pantalla..
+        /// </summary>
+        internal static string EmpleadosForm_Help_Mensaje {
+            get {
+                return ResourceManager.GetString("EmpleadosForm_Help_Mensaje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ingreso a la pantalla de empleados.
         /// </summary>
         internal static string EmpleadosForm_Ingreso {
@@ -502,6 +574,15 @@ namespace OBMCatering.Presentacion.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Esta pantalla permite consultar la facturacion de todos los pedidos de la empresa y actualizar su estado una vez que las facturas son cobradas. La facturacion es generada automaticamente por el sistema una vez confirmados los pedidos, con lo cual apareceran en esta pantalla solo si los pedidos fueron confirmados y estan listas para cobrarse..
+        /// </summary>
+        internal static string FacturasForm_Help_Mensaje {
+            get {
+                return ResourceManager.GetString("FacturasForm_Help_Mensaje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ingreso a la pantalla de facturas.
         /// </summary>
         internal static string FacturasForm_Ingreso {
@@ -516,6 +597,45 @@ namespace OBMCatering.Presentacion.Properties {
         internal static string FacturasForm_Titulo {
             get {
                 return ResourceManager.GetString("FacturasForm_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ayuda.
+        /// </summary>
+        internal static string Form_Help_Titulo {
+            get {
+                return ResourceManager.GetString("Form_Help_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon Icon {
+            get {
+                object obj = ResourceManager.GetObject("Icon", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_32px {
+            get {
+                object obj = ResourceManager.GetObject("Icon_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_96px {
+            get {
+                object obj = ResourceManager.GetObject("Icon-96px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -556,6 +676,15 @@ namespace OBMCatering.Presentacion.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Esta pantalla permite administrar los ingredientes de las distintas recetas, especificando el nombre del ingrediente, la cantidad y la unidad de medida del mismo para la receta..
+        /// </summary>
+        internal static string IngredientesForm_Help_Mensaje {
+            get {
+                return ResourceManager.GetString("IngredientesForm_Help_Mensaje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ingreso a la pantalla de ingredientes.
         /// </summary>
         internal static string IngredientesForm_Ingreso {
@@ -579,6 +708,42 @@ namespace OBMCatering.Presentacion.Properties {
         internal static string IngredientesForm_Titulo {
             get {
                 return ResourceManager.GetString("IngredientesForm_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ocurrio un problema al realizar el backup. Intentar de nuevo.
+        /// </summary>
+        internal static string InicioForm_Backup_Error {
+            get {
+                return ResourceManager.GetString("InicioForm_Backup_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Backup realizado correctamente en &apos;{0}&apos;.
+        /// </summary>
+        internal static string InicioForm_Backup_Realizado {
+            get {
+                return ResourceManager.GetString("InicioForm_Backup_Realizado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Crear Backup de Base de Datos.
+        /// </summary>
+        internal static string InicioForm_Backup_Titulo {
+            get {
+                return ResourceManager.GetString("InicioForm_Backup_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Archivos de Backup (*.bak)|*.bak.
+        /// </summary>
+        internal static string InicioForm_Datos_FiltroArchivos {
+            get {
+                return ResourceManager.GetString("InicioForm_Datos_FiltroArchivos", resourceCulture);
             }
         }
         
@@ -709,6 +874,33 @@ namespace OBMCatering.Presentacion.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Backup.
+        /// </summary>
+        internal static string InicioForm_Menu_Opciones_Datos_Backup {
+            get {
+                return ResourceManager.GetString("InicioForm_Menu_Opciones_Datos_Backup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restaurar.
+        /// </summary>
+        internal static string InicioForm_Menu_Opciones_Datos_Restaurar {
+            get {
+                return ResourceManager.GetString("InicioForm_Menu_Opciones_Datos_Restaurar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Datos.
+        /// </summary>
+        internal static string InicioForm_Menu_Opciones_Datos_Titulo {
+            get {
+                return ResourceManager.GetString("InicioForm_Menu_Opciones_Datos_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Español.
         /// </summary>
         internal static string InicioForm_Menu_Opciones_Espaniol {
@@ -777,6 +969,24 @@ namespace OBMCatering.Presentacion.Properties {
         internal static string InicioForm_Menu_Ventas_Titulo {
             get {
                 return ResourceManager.GetString("InicioForm_Menu_Ventas_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ocurrio un problema al realizar la restauracion. Intentar de nuevo.
+        /// </summary>
+        internal static string InicioForm_Restaurar_Error {
+            get {
+                return ResourceManager.GetString("InicioForm_Restaurar_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restaurar Base de Datos.
+        /// </summary>
+        internal static string InicioForm_Restaurar_Titulo {
+            get {
+                return ResourceManager.GetString("InicioForm_Restaurar_Titulo", resourceCulture);
             }
         }
         
@@ -961,6 +1171,17 @@ namespace OBMCatering.Presentacion.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Esta pantalla permite consultar y administrar las ordenes de compra del sistema. Por cada orden de compra se puede ver tambien el detalle de los items a comprar, junto con sus cantidades.
+        ///Las ordenes de compra son auto generadas por el sistema en base a los pedidos realizados y aprobados. Cada orden de compra corresponde a un pedido, con lo cual esta asignada a una empresa y contiene los ingredientes necesarios para preparar las recetas incluidas en ese pedido para la cantidad de personas del mismo.
+        ///En es [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string OrdenesCompraForm_Help_Mensaje {
+            get {
+                return ResourceManager.GetString("OrdenesCompraForm_Help_Mensaje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ingreso a la pantalla de ordenes de compra.
         /// </summary>
         internal static string OrdenesCompraForm_Ingreso {
@@ -1038,6 +1259,17 @@ namespace OBMCatering.Presentacion.Properties {
         internal static string OrdenesPagoForm_Datos_Proveedor {
             get {
                 return ResourceManager.GetString("OrdenesPagoForm_Datos_Proveedor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Esta pantalla permite consultar y administrar las ordenes de pago del sistema. Por cada orden de pago se puede ver tambien el detalle de los items que han sido comprados, junto con sus cantidades.
+        ///Las ordenes de pago son auto generadas por el sistema en base a las ordenes de compra realizadas. Cada orden de pago corresponde a una orden de compra, con lo cual esta asignada a una empresa y contiene los ingredientes que han sido comprados.
+        ///Cada orden de pago puede marcarse como pagada una vez que se le ha re [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string OrdenesPagoForm_Help_Mensaje {
+            get {
+                return ResourceManager.GetString("OrdenesPagoForm_Help_Mensaje", resourceCulture);
             }
         }
         
@@ -1159,6 +1391,16 @@ namespace OBMCatering.Presentacion.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Esta pantalla permite crear y modificar los pedidos de los clientes. Se deberan seleccionar las recetas, la cantidad de comensales, el cliente y el rango de fechas que abarca el pedido. Tambien se permite consultar el precio total de la orden, basado en los ingredientes que requieren cada receta y las cantidades de los mismos segun las personas.
+        ///Una vez creada la orden puede editarse y cambiarse hasta el momento de aprobarla. Una vez aprobada no podra volver a modificarse. Aprobar una orden de venta dispar [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string OrdenesVentaForm_Help_Mensaje {
+            get {
+                return ResourceManager.GetString("OrdenesVentaForm_Help_Mensaje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ingreso a la pantalla de ordenes de venta.
         /// </summary>
         internal static string OrdenesVentaForm_Ingreso {
@@ -1249,6 +1491,15 @@ namespace OBMCatering.Presentacion.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Esta pantalla permite consultar todos los pedidos aprobados y filtrarlos por fecha y cliente. Ademas se puede acceder a la pantalla de recetas, para crearlas y administrarlas..
+        /// </summary>
+        internal static string PedidosForm_Help_Mensaje {
+            get {
+                return ResourceManager.GetString("PedidosForm_Help_Mensaje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ingreso a la pantalla de consulta de pedidos.
         /// </summary>
         internal static string PedidosForm_Ingreso {
@@ -1308,6 +1559,15 @@ namespace OBMCatering.Presentacion.Properties {
         internal static string PreciosForm_Datos_Unidad {
             get {
                 return ResourceManager.GetString("PreciosForm_Datos_Unidad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Esta pantalla permite administrar la lista de precios del sistema. Esta lista es generada automaticamente con los ingredientes de las recetas que se van creando en el sistema, sin embargo los precios por cantidad y unidad deben ser actualizados de manera manual. Los precios de las recetas se calcularan en base a esta lista, segun los ingredientes que contengan y las cantidades..
+        /// </summary>
+        internal static string PreciosForm_Help_Mensaje {
+            get {
+                return ResourceManager.GetString("PreciosForm_Help_Mensaje", resourceCulture);
             }
         }
         
@@ -1447,6 +1707,15 @@ namespace OBMCatering.Presentacion.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Esta pantalla permite administrar a los distintos proveedores, desde su creacion hasta su modificacion. Ademas de cargar la informacion basica, se puede tambien controlar si los mismos estan activos o inactivos para el sistema. Que esten inactivos significa que no apareceran en el listado de proveedores de ninguna otra pantalla..
+        /// </summary>
+        internal static string ProveedoresForm_Help_Mensaje {
+            get {
+                return ResourceManager.GetString("ProveedoresForm_Help_Mensaje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ingreso a la pantalla de proveedores.
         /// </summary>
         internal static string ProveedoresForm_Ingreso {
@@ -1524,6 +1793,15 @@ namespace OBMCatering.Presentacion.Properties {
         internal static string RecetasForm_Datos_VerDetalle {
             get {
                 return ResourceManager.GetString("RecetasForm_Datos_VerDetalle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Esta pantalla permite crear y modificar las distintas recetas que componen al sistema, desde su informacion hasta sus ingredientes. Ademas pueden marcarse como no disponibles en caso de querer que no puedan incluirse en los pedidos a realizar. Por defecto, si alguno de los ingredientes de las recetas no contiene un precio asignado, la receta se marcara como no disponible automaticamente hasta que el precio sea actualizado. Esto significa que solo las recetas a las que se pueda calcular el precio total podra [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string RecetasForm_Help_Mensaje {
+            get {
+                return ResourceManager.GetString("RecetasForm_Help_Mensaje", resourceCulture);
             }
         }
         
@@ -1632,6 +1910,15 @@ namespace OBMCatering.Presentacion.Properties {
         internal static string UsuariosForm_Datos_Usuario {
             get {
                 return ResourceManager.GetString("UsuariosForm_Datos_Usuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Esta pantalla permite administrar los distintos usuarios del sistema, sus perfiles, crear nuevos y resetear los password de los mismos. Al resetear el password de un usuario, la proxima vez que ese usuario se loguee se le pedira cambiar el password para poder ingresar. Esa es la unica manera de poder cambiar el password, no podra hacerlo el usuario por su cuenta asi como tampoco crear nuevos usuarios desde la pantalla de login..
+        /// </summary>
+        internal static string UsuariosForm_Help_Mensaje {
+            get {
+                return ResourceManager.GetString("UsuariosForm_Help_Mensaje", resourceCulture);
             }
         }
         

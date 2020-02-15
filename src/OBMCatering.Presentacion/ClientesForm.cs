@@ -30,10 +30,18 @@ namespace OBMCatering.Presentacion
             lblTipo.Text = Resources.ClientesForm_Datos_Tipo;
             chkActivo.Text = Resources.ClientesForm_Datos_Activo;
             btnGuardar.Text = Resources.ClientesForm_Datos_Guardar;
+
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            HelpButton = true;
+            HelpRequested += ClientesForm_HelpRequested;
         }
 
         void ClientesForm_Load(object sender, EventArgs e)
         {
+            AcceptButton = btnGuardar;
+
             contexto = ContextoPresentacion.Instancia;
             localidadesBL = new LocalidadesBL(contexto.Negocio);
             clientesBL = new ClientesBL(contexto.Negocio, localidadesBL);
@@ -48,6 +56,11 @@ namespace OBMCatering.Presentacion
             LimpiarFormulario();
 
             contexto.RegistrarEvento(Resources.ClientesForm_Ingreso);
+        }
+
+        void ClientesForm_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            MessageBox.Show(Resources.ClientesForm_Help_Mensaje, Resources.Form_Help_Titulo, MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
 
         void BtnGuardar_Click(object sender, EventArgs e)

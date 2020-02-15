@@ -31,10 +31,18 @@ namespace OBMCatering.Presentacion
             lblRecetasTitulo.Text = Resources.FacturasForm_Datos_Recetas;
             lblPrecio.Text = Resources.FacturasForm_Datos_Precio;
             btnCobrada.Text = Resources.FacturasForm_Cobrada;
+
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            HelpButton = true;
+            HelpRequested += FacturasForm_HelpRequested;
         }
 
         void FacturasForm_Load(object sender, EventArgs e)
         {
+            AcceptButton = btnCobrada;
+
             contexto = ContextoPresentacion.Instancia;
             localidadesBL = new LocalidadesBL(contexto.Negocio);
             clientesBL = new ClientesBL(contexto.Negocio, localidadesBL);
@@ -50,6 +58,11 @@ namespace OBMCatering.Presentacion
             LimpiarFormulario();
 
             contexto.RegistrarEvento(Resources.FacturasForm_Ingreso);
+        }
+
+        void FacturasForm_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            MessageBox.Show(Resources.FacturasForm_Help_Mensaje, Resources.Form_Help_Titulo, MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
 
         void BtnCobrada_Click(object sender, EventArgs e)

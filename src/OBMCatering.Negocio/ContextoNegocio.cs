@@ -1,4 +1,6 @@
 ﻿using OBMCatering.Datos;
+using OBMCatering.Negocio.Properties;
+using System.IO;
 
 namespace OBMCatering.Negocio
 {
@@ -32,6 +34,23 @@ namespace OBMCatering.Negocio
         public OBMCateringDAL ObtenerDatos()
         {
             return dal;
+        }
+
+        public bool Backup (string nombreArchivo)
+        {
+            dal.Backup(nombreArchivo);
+
+            return File.Exists(nombreArchivo);
+        }
+
+        public void Restaurar(string nombreArchivo)
+        {
+            if(!File.Exists(nombreArchivo))
+            {
+                throw new FileNotFoundException(string.Format(Resources.ContextoNegocio_Restaurar_BDNoExiste, nombreArchivo));
+            }
+
+            dal.Restaurar(nombreArchivo);
         }
 
         public void AsignarUsuarioAutenticado(Usuario usuario)

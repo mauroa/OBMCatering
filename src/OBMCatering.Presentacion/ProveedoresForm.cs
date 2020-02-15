@@ -30,10 +30,18 @@ namespace OBMCatering.Presentacion
             lblFechaBaja.Text = Resources.ProveedoresForm_Datos_FechaBaja;
             chkActivo.Text = Resources.ProveedoresForm_Datos_Activo;
             btnGuardar.Text = Resources.ProveedoresForm_Datos_Guardar;
+
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            HelpButton = true;
+            HelpRequested += ProveedoresForm_HelpRequested;
         }
 
         void ProveedoresForm_Load(object sender, EventArgs e)
         {
+            AcceptButton = btnGuardar;
+
             contexto = ContextoPresentacion.Instancia;
             localidadesBL = new LocalidadesBL(contexto.Negocio);
             proveedoresBL = new ProveedoresBL(contexto.Negocio, localidadesBL);
@@ -47,6 +55,11 @@ namespace OBMCatering.Presentacion
             LimpiarFormulario();
 
             contexto.RegistrarEvento(Resources.ProveedoresForm_Ingreso);
+        }
+
+        void ProveedoresForm_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            MessageBox.Show(Resources.ProveedoresForm_Help_Mensaje, Resources.Form_Help_Titulo, MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
 
         void BtnGuardar_Click(object sender, EventArgs e)

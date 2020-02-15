@@ -24,10 +24,18 @@ namespace OBMCatering.Presentacion
             lblCantidad.Text = Resources.PreciosForm_Datos_Cantidad;
             lblUnidad.Text = Resources.PreciosForm_Datos_Unidad;
             btnGuardar.Text = Resources.PreciosForm_Datos_Guardar;
+
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            HelpButton = true;
+            HelpRequested += PreciosForm_HelpRequested;
         }
 
         void PreciosForm_Load(object sender, EventArgs e)
         {
+            AcceptButton = btnGuardar;
+
             contexto = ContextoPresentacion.Instancia;
             ingredientesBL = new IngredientesBL(contexto.Negocio);
             preciosIngredientesBL = new PreciosIngredientesBL(contexto.Negocio);
@@ -41,6 +49,11 @@ namespace OBMCatering.Presentacion
             LimpiarFormulario();
 
             contexto.RegistrarEvento(Resources.PreciosForm_Ingreso);
+        }
+
+        void PreciosForm_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            MessageBox.Show(Resources.PreciosForm_Help_Mensaje, Resources.Form_Help_Titulo, MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
 
         void BtnGuardar_Click(object sender, EventArgs e)

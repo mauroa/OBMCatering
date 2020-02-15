@@ -31,10 +31,18 @@ namespace OBMCatering.Presentacion
             lblFechaBaja.Text = Resources.EmpleadosForm_Datos_FechaBaja;
             chkActivo.Text = Resources.EmpleadosForm_Datos_Activo;
             btnGuardar.Text = Resources.EmpleadosForm_Datos_Guardar;
+
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            HelpButton = true;
+            HelpRequested += EmpleadosForm_HelpRequested;
         }
 
         void EmpleadosForm_Load(object sender, EventArgs e)
         {
+            AcceptButton = btnGuardar;
+
             contexto = ContextoPresentacion.Instancia;
             localidadesBL = new LocalidadesBL(contexto.Negocio);
             empleadosBL = new EmpleadosBL(contexto.Negocio, localidadesBL);
@@ -48,6 +56,11 @@ namespace OBMCatering.Presentacion
             LimpiarFormulario();
 
             contexto.RegistrarEvento(Resources.EmpleadosForm_Ingreso);
+        }
+
+        void EmpleadosForm_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            MessageBox.Show(Resources.EmpleadosForm_Help_Mensaje, Resources.Form_Help_Titulo, MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
 
         void BtnGuardar_Click(object sender, EventArgs e)

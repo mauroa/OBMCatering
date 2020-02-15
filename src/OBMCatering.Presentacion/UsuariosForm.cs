@@ -24,10 +24,18 @@ namespace OBMCatering.Presentacion
             lblPerfil.Text = Resources.UsuariosForm_Datos_Perfil;
             chkResetear.Text = Resources.UsuariosForm_Datos_Resetear;
             btnGuardar.Text = Resources.UsuariosForm_Datos_Guardar;
+
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            HelpButton = true;
+            HelpRequested += UsuariosForm_HelpRequested;
         }
 
         void UsuariosForm_Load(object sender, EventArgs e)
         {
+            AcceptButton = btnGuardar;
+
             contexto = ContextoPresentacion.Instancia;
             usuariosBL = new UsuariosBL(contexto.Negocio);
 
@@ -39,6 +47,11 @@ namespace OBMCatering.Presentacion
             LimpiarFormulario();
 
             contexto.RegistrarEvento(Resources.UsuariosForm_Ingreso);
+        }
+
+        void UsuariosForm_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            MessageBox.Show(Resources.UsuariosForm_Help_Mensaje, Resources.Form_Help_Titulo, MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
 
         void BtnGuardar_Click(object sender, EventArgs e)

@@ -1,4 +1,5 @@
 ﻿using OBMCatering.Negocio;
+using OBMCatering.Presentacion.Properties;
 using System;
 using System.Globalization;
 using System.Windows.Forms;
@@ -49,7 +50,7 @@ namespace OBMCatering.Presentacion
         public void MostrarEvento(string informacion, params string[] argumentos)
         {
             RegistrarEvento(informacion, argumentos);
-            MessageBox.Show(string.Format(informacion, argumentos), "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(string.Format(informacion, argumentos), Resources.ContextoPresentacion_Informacion, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public void RegistrarEvento(string informacion, params string[] argumentos)
@@ -62,7 +63,7 @@ namespace OBMCatering.Presentacion
             string mensaje = string.Format(alerta, argumentos);
 
             Negocio.Bitacora.Registrar(mensaje, TipoMensajeBitacora.Alerta);
-            MessageBox.Show(mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            MessageBox.Show(mensaje, Resources.ContextoPresentacion_Alerta, MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         public void RegistrarError(Exception excepcion)
@@ -89,14 +90,14 @@ namespace OBMCatering.Presentacion
             {
                 if (string.IsNullOrEmpty(mensaje))
                 {
-                    error = "Ocurrio un error inesperado";
+                    error = Resources.ContextoPresentacion_Error_Mensaje;
                 }
                 else
                 {
                     error = mensaje;
                 }
 
-                error = string.Format("{0}. Detalle: {1}", error, excepcion.Message);
+                error = string.Format(Resources.ContextoPresentacion_Error_Detalle, error, excepcion.Message);
             }
 
             RegistrarError(error);
@@ -107,7 +108,7 @@ namespace OBMCatering.Presentacion
             string mensaje = string.Format(error, argumentos);
 
             Negocio.Bitacora.Registrar(mensaje, TipoMensajeBitacora.Error);
-            MessageBox.Show(mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(mensaje, Resources.ContextoPresentacion_Error_Titulo, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

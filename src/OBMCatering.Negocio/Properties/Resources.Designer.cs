@@ -349,6 +349,15 @@ namespace OBMCatering.Negocio.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No se puede restaurar la Base de Datos porque el archivo &apos;{0}&apos; no existe.
+        /// </summary>
+        internal static string ContextoNegocio_Restaurar_BDNoExiste {
+            get {
+                return ResourceManager.GetString("ContextoNegocio_Restaurar_BDNoExiste", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to El empleado con CUIT &apos;{0}&apos; no existe.
         /// </summary>
         internal static string EmpleadosBL_Validaciones_CUITInvalido {

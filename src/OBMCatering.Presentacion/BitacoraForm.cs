@@ -24,10 +24,18 @@ namespace OBMCatering.Presentacion
             lblTipo.Text = Resources.BitacoraForm_Filtros_Tipo;
             lblUsuario.Text = Resources.BitacoraForm_Filtros_Usuario;
             btnFiltrar.Text = Resources.BitacoraForm_Filtrar;
+
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            HelpButton = true;
+            HelpRequested += BitacoraForm_HelpRequested;
         }
 
         void BitacoraForm_Load(object sender, EventArgs e)
         {
+            AcceptButton = btnFiltrar;
+
             contexto = ContextoPresentacion.Instancia;
             usuariosBL = new UsuariosBL(ContextoNegocio.Instancia);
             bitacoraBL = new BitacoraBL(ContextoNegocio.Instancia, usuariosBL);
@@ -39,6 +47,11 @@ namespace OBMCatering.Presentacion
             LimpiarFormulario();
 
             contexto.RegistrarEvento(Resources.BitacoraForm_Ingreso);
+        }
+
+        void BitacoraForm_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            MessageBox.Show(Resources.BitacoraForm_Help_Mensaje, Resources.Form_Help_Titulo, MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
 
         void BtnFiltrar_Click(object sender, EventArgs e)

@@ -31,10 +31,18 @@ namespace OBMCatering.Presentacion
             chkPagada.Text = Resources.OrdenesPagoForm_Datos_Pagada;
             lblItems.Text = Resources.OrdenesPagoForm_Datos_Items;
             btnGuardar.Text = Resources.OrdenesPagoForm_Datos_Guardar;
+
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            HelpButton = true;
+            HelpRequested += OrdenesPagoForm_HelpRequested;
         }
 
         void OrdenesPago_Load(object sender, EventArgs e)
         {
+            AcceptButton = btnGuardar;
+
             contexto = ContextoPresentacion.Instancia;
             localidadesBL = new LocalidadesBL(contexto.Negocio);
             clientesBL = new ClientesBL(contexto.Negocio, localidadesBL);
@@ -53,6 +61,11 @@ namespace OBMCatering.Presentacion
             LimpiarFormulario();
 
             contexto.RegistrarEvento(Resources.OrdenesPagoForm_Ingreso);
+        }
+
+        void OrdenesPagoForm_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            MessageBox.Show(Resources.OrdenesPagoForm_Help_Mensaje, Resources.Form_Help_Titulo, MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
 
         void BtnGuardar_Click(object sender, EventArgs e)

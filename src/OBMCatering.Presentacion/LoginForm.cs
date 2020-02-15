@@ -26,6 +26,8 @@ namespace OBMCatering.Presentacion
 
         void LoginForm_Load(object sender, EventArgs e)
         {
+            AcceptButton = btnIngresar;
+
             contexto = ContextoPresentacion.Instancia;
             usuariosBL = new UsuariosBL(contexto.Negocio);
 

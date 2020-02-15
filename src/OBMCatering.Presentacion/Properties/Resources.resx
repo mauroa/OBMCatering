@@ -132,6 +132,9 @@
   <data name="BitacoraForm_Filtros_Usuario" xml:space="preserve">
     <value>Usuario</value>
   </data>
+  <data name="BitacoraForm_Help_Mensaje" xml:space="preserve">
+    <value>Esta pantalla permite consultar todos los eventos y actividades del sistema y filtrarlos por fecha, tipo y usuario. Los tipos de eventos pueden ser: Informacion, Alerta, Error.</value>
+  </data>
   <data name="BitacoraForm_Ingreso" xml:space="preserve">
     <value>Ingreso a la pantalla de bitacora</value>
   </data>
@@ -180,11 +183,29 @@
   <data name="ClientesForm_Datos_Tipo" xml:space="preserve">
     <value>Tipo</value>
   </data>
+  <data name="ClientesForm_Help_Mensaje" xml:space="preserve">
+    <value>Esta pantalla permite administrar a los clientes, desde su creacion hasta su modificacion. Ademas de cargar la informacion basica, se puede tambien controlar si los mismos estan activos o inactivos para el sistema. Que esten inactivos significa que no apareceran en el listado de clientes de ninguna otra pantalla.</value>
+  </data>
   <data name="ClientesForm_Ingreso" xml:space="preserve">
     <value>Ingreso a la pantalla de clientes</value>
   </data>
   <data name="ClientesForm_Titulo" xml:space="preserve">
     <value>Administracion de Clientes</value>
+  </data>
+  <data name="ContextoPresentacion_Alerta" xml:space="preserve">
+    <value>Alerta</value>
+  </data>
+  <data name="ContextoPresentacion_Error_Detalle" xml:space="preserve">
+    <value>{0}. Detalle: {1}</value>
+  </data>
+  <data name="ContextoPresentacion_Error_Mensaje" xml:space="preserve">
+    <value>Ocurrio un error inesperado</value>
+  </data>
+  <data name="ContextoPresentacion_Error_Titulo" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="ContextoPresentacion_Informacion" xml:space="preserve">
+    <value>Informacion</value>
   </data>
   <data name="EmpleadosForm_Datos_Activo" xml:space="preserve">
     <value>Activo</value>
@@ -231,6 +252,9 @@
   <data name="EmpleadosForm_EmpleadoCreado" xml:space="preserve">
     <value>El empleado {0} ha sido creado</value>
   </data>
+  <data name="EmpleadosForm_Help_Mensaje" xml:space="preserve">
+    <value>Esta pantalla permite administrar a los empleados de la empresa, desde su creacion hasta su modificacion. Ademas de cargar la informacion basica, se puede tambien controlar si los mismos estan activos o inactivos para el sistema. Que esten inactivos significa que no apareceran en el listado de empleados de ninguna otra pantalla.</value>
+  </data>
   <data name="EmpleadosForm_Ingreso" xml:space="preserve">
     <value>Ingreso a la pantalla de empleados</value>
   </data>
@@ -264,11 +288,27 @@
   <data name="FacturasForm_FacturaCobrada" xml:space="preserve">
     <value>La factura para {0} ha sido marcada como cobrada</value>
   </data>
+  <data name="FacturasForm_Help_Mensaje" xml:space="preserve">
+    <value>Esta pantalla permite consultar la facturacion de todos los pedidos de la empresa y actualizar su estado una vez que las facturas son cobradas. La facturacion es generada automaticamente por el sistema una vez confirmados los pedidos, con lo cual apareceran en esta pantalla solo si los pedidos fueron confirmados y estan listas para cobrarse.</value>
+  </data>
   <data name="FacturasForm_Ingreso" xml:space="preserve">
     <value>Ingreso a la pantalla de facturas</value>
   </data>
   <data name="FacturasForm_Titulo" xml:space="preserve">
     <value>Facturas</value>
+  </data>
+  <data name="Form_Help_Titulo" xml:space="preserve">
+    <value>Ayuda</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icon-96px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon-96px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icon_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon-32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="IngredientesForm_Datos_Cantidad" xml:space="preserve">
     <value>Cantidad</value>
@@ -282,6 +322,9 @@
   <data name="IngredientesForm_Datos_Unidad" xml:space="preserve">
     <value>Unidad</value>
   </data>
+  <data name="IngredientesForm_Help_Mensaje" xml:space="preserve">
+    <value>Esta pantalla permite administrar los ingredientes de las distintas recetas, especificando el nombre del ingrediente, la cantidad y la unidad de medida del mismo para la receta.</value>
+  </data>
   <data name="IngredientesForm_Ingreso" xml:space="preserve">
     <value>Ingreso a la pantalla de ingredientes</value>
   </data>
@@ -290,6 +333,18 @@
   </data>
   <data name="IngredientesForm_Titulo" xml:space="preserve">
     <value>Ingredientes</value>
+  </data>
+  <data name="InicioForm_Backup_Error" xml:space="preserve">
+    <value>Ocurrio un problema al realizar el backup. Intentar de nuevo</value>
+  </data>
+  <data name="InicioForm_Backup_Realizado" xml:space="preserve">
+    <value>Backup realizado correctamente en '{0}'</value>
+  </data>
+  <data name="InicioForm_Backup_Titulo" xml:space="preserve">
+    <value>Crear Backup de Base de Datos</value>
+  </data>
+  <data name="InicioForm_Datos_FiltroArchivos" xml:space="preserve">
+    <value>Archivos de Backup (*.bak)|*.bak</value>
   </data>
   <data name="InicioForm_Menu_Administrar_Clientes" xml:space="preserve">
     <value>Clientes</value>
@@ -333,6 +388,15 @@
   <data name="InicioForm_Menu_Opciones_Bitacora" xml:space="preserve">
     <value>Bitacora</value>
   </data>
+  <data name="InicioForm_Menu_Opciones_Datos_Backup" xml:space="preserve">
+    <value>Backup</value>
+  </data>
+  <data name="InicioForm_Menu_Opciones_Datos_Restaurar" xml:space="preserve">
+    <value>Restaurar</value>
+  </data>
+  <data name="InicioForm_Menu_Opciones_Datos_Titulo" xml:space="preserve">
+    <value>Datos</value>
+  </data>
   <data name="InicioForm_Menu_Opciones_Espaniol" xml:space="preserve">
     <value>Español</value>
   </data>
@@ -356,6 +420,12 @@
   </data>
   <data name="InicioForm_Menu_Ventas_Titulo" xml:space="preserve">
     <value>Ventas</value>
+  </data>
+  <data name="InicioForm_Restaurar_Error" xml:space="preserve">
+    <value>Ocurrio un problema al realizar la restauracion. Intentar de nuevo</value>
+  </data>
+  <data name="InicioForm_Restaurar_Titulo" xml:space="preserve">
+    <value>Restaurar Base de Datos</value>
   </data>
   <data name="InicioForm_Titulo" xml:space="preserve">
     <value>OBM Catering</value>
@@ -417,6 +487,11 @@
   <data name="OrdenesCompraForm_Datos_Proveedor" xml:space="preserve">
     <value>Proveedor</value>
   </data>
+  <data name="OrdenesCompraForm_Help_Mensaje" xml:space="preserve">
+    <value>Esta pantalla permite consultar y administrar las ordenes de compra del sistema. Por cada orden de compra se puede ver tambien el detalle de los items a comprar, junto con sus cantidades.
+Las ordenes de compra son auto generadas por el sistema en base a los pedidos realizados y aprobados. Cada orden de compra corresponde a un pedido, con lo cual esta asignada a una empresa y contiene los ingredientes necesarios para preparar las recetas incluidas en ese pedido para la cantidad de personas del mismo.
+En esta pantalla tambien se puede cambiar el estado de las ordenes, tanto aprobarlas como marcarlas como "Realizadas". La aprobacion indica que las ordenes estan listas para ser enviadas al proveedor. La realizacion indica que las compras fueron hechas y esto dispara la generacion de las ordenes de pago para el proveedor al que se le realizo la compra.</value>
+  </data>
   <data name="OrdenesCompraForm_Ingreso" xml:space="preserve">
     <value>Ingreso a la pantalla de ordenes de compra</value>
   </data>
@@ -443,6 +518,11 @@
   </data>
   <data name="OrdenesPagoForm_Datos_Proveedor" xml:space="preserve">
     <value>Proveedor</value>
+  </data>
+  <data name="OrdenesPagoForm_Help_Mensaje" xml:space="preserve">
+    <value>Esta pantalla permite consultar y administrar las ordenes de pago del sistema. Por cada orden de pago se puede ver tambien el detalle de los items que han sido comprados, junto con sus cantidades.
+Las ordenes de pago son auto generadas por el sistema en base a las ordenes de compra realizadas. Cada orden de pago corresponde a una orden de compra, con lo cual esta asignada a una empresa y contiene los ingredientes que han sido comprados.
+Cada orden de pago puede marcarse como pagada una vez que se le ha realizado el pago correspondiente al proveedor. Una vez marcada como pagada una orden, no se puede volver a editar.</value>
   </data>
   <data name="OrdenesPagoForm_Ingreso" xml:space="preserve">
     <value>Ingreso a la pantalla de ordenes de pago</value>
@@ -483,6 +563,10 @@
   <data name="OrdenesVentaForm_FacturaCreada" xml:space="preserve">
     <value>La factura para el cliente {0} ha sido creada</value>
   </data>
+  <data name="OrdenesVentaForm_Help_Mensaje" xml:space="preserve">
+    <value>Esta pantalla permite crear y modificar los pedidos de los clientes. Se deberan seleccionar las recetas, la cantidad de comensales, el cliente y el rango de fechas que abarca el pedido. Tambien se permite consultar el precio total de la orden, basado en los ingredientes que requieren cada receta y las cantidades de los mismos segun las personas.
+Una vez creada la orden puede editarse y cambiarse hasta el momento de aprobarla. Una vez aprobada no podra volver a modificarse. Aprobar una orden de venta dispara la auto generacion de la factura correspondiente y de la orden de compra de los ingredientes y las cantidades necesarias para preparar las recetas para las personas que incluye el pedido.</value>
+  </data>
   <data name="OrdenesVentaForm_Ingreso" xml:space="preserve">
     <value>Ingreso a la pantalla de ordenes de venta</value>
   </data>
@@ -513,6 +597,9 @@
   <data name="PedidosForm_Datos_Recetas" xml:space="preserve">
     <value>Recetas</value>
   </data>
+  <data name="PedidosForm_Help_Mensaje" xml:space="preserve">
+    <value>Esta pantalla permite consultar todos los pedidos aprobados y filtrarlos por fecha y cliente. Ademas se puede acceder a la pantalla de recetas, para crearlas y administrarlas.</value>
+  </data>
   <data name="PedidosForm_Ingreso" xml:space="preserve">
     <value>Ingreso a la pantalla de consulta de pedidos</value>
   </data>
@@ -533,6 +620,9 @@
   </data>
   <data name="PreciosForm_Datos_Unidad" xml:space="preserve">
     <value>Unidad</value>
+  </data>
+  <data name="PreciosForm_Help_Mensaje" xml:space="preserve">
+    <value>Esta pantalla permite administrar la lista de precios del sistema. Esta lista es generada automaticamente con los ingredientes de las recetas que se van creando en el sistema, sin embargo los precios por cantidad y unidad deben ser actualizados de manera manual. Los precios de las recetas se calcularan en base a esta lista, segun los ingredientes que contengan y las cantidades.</value>
   </data>
   <data name="PreciosForm_Ingreso" xml:space="preserve">
     <value>Ingreso a la pantalla de listado de precios</value>
@@ -579,6 +669,9 @@
   <data name="ProveedoresForm_Datos_Telefono" xml:space="preserve">
     <value>Telefono</value>
   </data>
+  <data name="ProveedoresForm_Help_Mensaje" xml:space="preserve">
+    <value>Esta pantalla permite administrar a los distintos proveedores, desde su creacion hasta su modificacion. Ademas de cargar la informacion basica, se puede tambien controlar si los mismos estan activos o inactivos para el sistema. Que esten inactivos significa que no apareceran en el listado de proveedores de ninguna otra pantalla.</value>
+  </data>
   <data name="ProveedoresForm_Ingreso" xml:space="preserve">
     <value>Ingreso a la pantalla de proveedores</value>
   </data>
@@ -605,6 +698,9 @@
   </data>
   <data name="RecetasForm_Datos_VerDetalle" xml:space="preserve">
     <value>Ver Detalle</value>
+  </data>
+  <data name="RecetasForm_Help_Mensaje" xml:space="preserve">
+    <value>Esta pantalla permite crear y modificar las distintas recetas que componen al sistema, desde su informacion hasta sus ingredientes. Ademas pueden marcarse como no disponibles en caso de querer que no puedan incluirse en los pedidos a realizar. Por defecto, si alguno de los ingredientes de las recetas no contiene un precio asignado, la receta se marcara como no disponible automaticamente hasta que el precio sea actualizado. Esto significa que solo las recetas a las que se pueda calcular el precio total podran ser preparadas y utilizadas en las ordenes.</value>
   </data>
   <data name="RecetasForm_Ingredientes_Ver" xml:space="preserve">
     <value>Ingredientes {0}</value>
@@ -641,6 +737,9 @@
   </data>
   <data name="UsuariosForm_Datos_Usuario" xml:space="preserve">
     <value>Usuario</value>
+  </data>
+  <data name="UsuariosForm_Help_Mensaje" xml:space="preserve">
+    <value>Esta pantalla permite administrar los distintos usuarios del sistema, sus perfiles, crear nuevos y resetear los password de los mismos. Al resetear el password de un usuario, la proxima vez que ese usuario se loguee se le pedira cambiar el password para poder ingresar. Esa es la unica manera de poder cambiar el password, no podra hacerlo el usuario por su cuenta asi como tampoco crear nuevos usuarios desde la pantalla de login.</value>
   </data>
   <data name="UsuariosForm_Ingreso" xml:space="preserve">
     <value>Ingreso a la pantalla de usuarios</value>

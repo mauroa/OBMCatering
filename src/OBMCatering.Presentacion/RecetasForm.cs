@@ -23,10 +23,18 @@ namespace OBMCatering.Presentacion
             lblDetalle.Text = Resources.RecetasForm_Datos_Detalle;
             btnVer.Text = Resources.RecetasForm_Datos_VerDetalle;
             btnGuardar.Text = Resources.RecetasForm_Datos_Guardar;
+
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            HelpButton = true;
+            HelpRequested += RecetasForm_HelpRequested;
         }
 
         void RecetasForm_Load(object sender, EventArgs e)
         {
+            AcceptButton = btnVer;
+
             contexto = ContextoPresentacion.Instancia;
             preciosIngredientesBL = new PreciosIngredientesBL(contexto.Negocio);
             recetasBL = new RecetasBL(contexto.Negocio, preciosIngredientesBL);
@@ -39,6 +47,11 @@ namespace OBMCatering.Presentacion
             LimpiarFormulario();
 
             contexto.RegistrarEvento(Resources.RecetasForm_Ingreso);
+        }
+
+        void RecetasForm_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            MessageBox.Show(Resources.RecetasForm_Help_Mensaje, Resources.Form_Help_Titulo, MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
 
         void BtnGuardar_Click(object sender, EventArgs e)

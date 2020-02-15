@@ -49,7 +49,10 @@
             this.tsiLenguaje = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiEspaniol = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiIngles = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsiDatos = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsiBackup = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiSalir = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsiRestaurar = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,7 +68,7 @@
             this.tsOpciones});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1286, 40);
+            this.menuStrip1.Size = new System.Drawing.Size(1286, 42);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -77,7 +80,7 @@
             this.tsiEmpleados,
             this.tsiUsuarios});
             this.tsAdministrar.Name = "tsAdministrar";
-            this.tsAdministrar.Size = new System.Drawing.Size(157, 36);
+            this.tsAdministrar.Size = new System.Drawing.Size(157, 38);
             this.tsAdministrar.Text = "Administrar";
             // 
             // tsiClientes
@@ -111,7 +114,7 @@
             this.tsiRecetas,
             this.tsiPrecios});
             this.tsCocina.Name = "tsCocina";
-            this.tsCocina.Size = new System.Drawing.Size(107, 36);
+            this.tsCocina.Size = new System.Drawing.Size(107, 38);
             this.tsCocina.Text = "Cocina";
             // 
             // tsiPedidosCocina
@@ -138,7 +141,7 @@
             this.tsiPedidos,
             this.tsiFacturas});
             this.tsVentas.Name = "tsVentas";
-            this.tsVentas.Size = new System.Drawing.Size(105, 36);
+            this.tsVentas.Size = new System.Drawing.Size(105, 38);
             this.tsVentas.Text = "Ventas";
             // 
             // tsiPedidos
@@ -159,7 +162,7 @@
             this.tsiOrdenesCompra,
             this.tsiOrdenesPago});
             this.tsCompras.Name = "tsCompras";
-            this.tsCompras.Size = new System.Drawing.Size(129, 36);
+            this.tsCompras.Size = new System.Drawing.Size(129, 38);
             this.tsCompras.Text = "Compras";
             // 
             // tsiOrdenesCompra
@@ -179,15 +182,16 @@
             this.tsOpciones.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsiBitacora,
             this.tsiLenguaje,
+            this.tsiDatos,
             this.tsiSalir});
             this.tsOpciones.Name = "tsOpciones";
-            this.tsOpciones.Size = new System.Drawing.Size(135, 36);
+            this.tsOpciones.Size = new System.Drawing.Size(135, 38);
             this.tsOpciones.Text = "Opciones";
             // 
             // tsiBitacora
             // 
             this.tsiBitacora.Name = "tsiBitacora";
-            this.tsiBitacora.Size = new System.Drawing.Size(246, 44);
+            this.tsiBitacora.Size = new System.Drawing.Size(359, 44);
             this.tsiBitacora.Text = "Bitacora";
             // 
             // tsiLenguaje
@@ -196,7 +200,7 @@
             this.tsiEspaniol,
             this.tsiIngles});
             this.tsiLenguaje.Name = "tsiLenguaje";
-            this.tsiLenguaje.Size = new System.Drawing.Size(246, 44);
+            this.tsiLenguaje.Size = new System.Drawing.Size(359, 44);
             this.tsiLenguaje.Text = "Lenguaje";
             // 
             // tsiEspaniol
@@ -211,11 +215,32 @@
             this.tsiIngles.Size = new System.Drawing.Size(231, 44);
             this.tsiIngles.Text = "Ingles";
             // 
+            // tsiDatos
+            // 
+            this.tsiDatos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsiBackup,
+            this.tsiRestaurar});
+            this.tsiDatos.Name = "tsiDatos";
+            this.tsiDatos.Size = new System.Drawing.Size(359, 44);
+            this.tsiDatos.Text = "Datos";
+            // 
+            // tsiBackup
+            // 
+            this.tsiBackup.Name = "tsiBackup";
+            this.tsiBackup.Size = new System.Drawing.Size(359, 44);
+            this.tsiBackup.Text = "Backup";
+            // 
             // tsiSalir
             // 
             this.tsiSalir.Name = "tsiSalir";
-            this.tsiSalir.Size = new System.Drawing.Size(246, 44);
+            this.tsiSalir.Size = new System.Drawing.Size(359, 44);
             this.tsiSalir.Text = "Salir";
+            // 
+            // tsiRestaurar
+            // 
+            this.tsiRestaurar.Name = "tsiRestaurar";
+            this.tsiRestaurar.Size = new System.Drawing.Size(359, 44);
+            this.tsiRestaurar.Text = "Restaurar";
             // 
             // InicioForm
             // 
@@ -257,5 +282,8 @@
         private System.Windows.Forms.ToolStripMenuItem tsiEspaniol;
         private System.Windows.Forms.ToolStripMenuItem tsiIngles;
         private System.Windows.Forms.ToolStripMenuItem tsiSalir;
+        private System.Windows.Forms.ToolStripMenuItem tsiDatos;
+        private System.Windows.Forms.ToolStripMenuItem tsiBackup;
+        private System.Windows.Forms.ToolStripMenuItem tsiRestaurar;
     }
 }

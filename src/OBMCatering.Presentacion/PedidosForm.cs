@@ -27,10 +27,18 @@ namespace OBMCatering.Presentacion
             lblCliente.Text = Resources.PedidosForm_Datos_Cliente;
             btnFiltrar.Text = Resources.PedidosForm_Datos_Filtrar;
             btnRecetas.Text = Resources.PedidosForm_Datos_Recetas;
+
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            HelpButton = true;
+            HelpRequested += PedidosForm_HelpRequested;
         }
 
         void PedidosForm_Load(object sender, EventArgs e)
         {
+            AcceptButton = btnFiltrar;
+
             contexto = ContextoPresentacion.Instancia;
             localidadesBL = new LocalidadesBL(contexto.Negocio);
             clientesBL = new ClientesBL(contexto.Negocio, localidadesBL);
@@ -46,6 +54,11 @@ namespace OBMCatering.Presentacion
             LimpiarFormulario();
 
             contexto.RegistrarEvento(Resources.PedidosForm_Ingreso);
+        }
+
+        void PedidosForm_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            MessageBox.Show(Resources.PedidosForm_Help_Mensaje, Resources.Form_Help_Titulo, MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
 
         void BtnFiltrar_Click(object sender, EventArgs e)

@@ -1,4 +1,4 @@
-﻿using OBMCatering.Negocio;
+﻿ using OBMCatering.Negocio;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -35,10 +35,18 @@ namespace OBMCatering.Presentacion
             lblPrecio.Text = Resources.OrdenesVentaForm_Datos_Precio;
             btnCalcularPrecio.Text = Resources.OrdenesVentaForm_Datos_Calcular;
             btnGuardar.Text = Resources.OrdenesVentaForm_Datos_Guardar;
+
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            HelpButton = true;
+            HelpRequested += OrdenesVentaForm_HelpRequested;
         }
 
         void OrdenesVentaForm_Load(object sender, EventArgs e)
         {
+            AcceptButton = btnGuardar;
+
             contexto = ContextoPresentacion.Instancia;
             localidadesBL = new LocalidadesBL(contexto.Negocio);
             clientesBL = new ClientesBL(contexto.Negocio, localidadesBL);
@@ -59,6 +67,11 @@ namespace OBMCatering.Presentacion
             LimpiarFormulario();
 
             contexto.RegistrarEvento(Resources.OrdenesVentaForm_Ingreso);
+        }
+
+        void OrdenesVentaForm_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            MessageBox.Show(Resources.OrdenesVentaForm_Help_Mensaje, Resources.Form_Help_Titulo, MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
 
         void BtnGuardar_Click(object sender, EventArgs e)

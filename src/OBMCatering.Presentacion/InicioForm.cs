@@ -43,6 +43,9 @@ namespace OBMCatering.Presentacion
             tsiLenguaje.Text = Resources.InicioForm_Menu_Opciones_Lenguaje;
             tsiEspaniol.Text = Resources.InicioForm_Menu_Opciones_Espaniol;
             tsiIngles.Text = Resources.InicioForm_Menu_Opciones_Ingles;
+            tsiDatos.Text = Resources.InicioForm_Menu_Opciones_Datos_Titulo;
+            tsiBackup.Text = Resources.InicioForm_Menu_Opciones_Datos_Backup;
+            tsiRestaurar.Text = Resources.InicioForm_Menu_Opciones_Datos_Restaurar;
             tsiSalir.Text = Resources.InicioForm_Menu_Opciones_Salir;
 
             tsiClientes.Click += TsiClientes_Click;
@@ -59,6 +62,8 @@ namespace OBMCatering.Presentacion
             tsiBitacora.Click += TsiBitacora_Click;
             tsiEspaniol.Click += TsiEspaniol_Click;
             tsiIngles.Click += TsiIngles_Click;
+            tsiBackup.Click += TsiBackup_Click;
+            tsiRestaurar.Click += TsiRestaurar_Click;
             tsiSalir.Click += TsSalir_Click;
         }
 
@@ -74,6 +79,7 @@ namespace OBMCatering.Presentacion
                     tsCompras.Visible = true;
                     tsVentas.Visible = true;
                     tsiBitacora.Visible = true;
+                    tsiDatos.Visible = true;
                     break;
                 case PerfilUsuario.Cocina:
                     tsCocina.Visible = true;
@@ -81,6 +87,7 @@ namespace OBMCatering.Presentacion
                     tsCompras.Visible = false;
                     tsVentas.Visible = false;
                     tsiBitacora.Visible = false;
+                    tsiDatos.Visible = false;
                     break;
                 case PerfilUsuario.Compras:
                     tsCompras.Visible = true;
@@ -92,6 +99,7 @@ namespace OBMCatering.Presentacion
                     tsCocina.Visible = false;
                     tsVentas.Visible = false;
                     tsiBitacora.Visible = false;
+                    tsiDatos.Visible = false;
                     break;
                 case PerfilUsuario.Ventas:
                     tsVentas.Visible = true;
@@ -103,6 +111,7 @@ namespace OBMCatering.Presentacion
                     tsCocina.Visible = false;
                     tsCompras.Visible = false;
                     tsiBitacora.Visible = false;
+                    tsiDatos.Visible = false;
                     break;
             }
         }
@@ -201,6 +210,62 @@ namespace OBMCatering.Presentacion
         {
             contexto.DefinirLenguaje(cultura: "en-US");
             ActualizarLenguaje();
+        }
+
+        void TsiBackup_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dialogo = new SaveFileDialog
+            {
+                Filter = Resources.InicioForm_Datos_FiltroArchivos,
+                Title = Resources.InicioForm_Backup_Titulo
+            };
+
+            dialogo.ShowDialog();
+
+            if(!string.IsNullOrEmpty(dialogo.FileName))
+            {
+                try
+                {
+                    if (contexto.Negocio.Backup(dialogo.FileName))
+                    {
+                        contexto.MostrarEvento(Resources.InicioForm_Backup_Realizado, dialogo.FileName);
+                    }
+                    else
+                    {
+                        contexto.RegistrarError(Resources.InicioForm_Backup_Error);
+                    }
+                }
+                catch(Exception ex)
+                {
+                    contexto.RegistrarError(ex, Resources.InicioForm_Backup_Error);
+                }
+            }
+        }
+
+        void TsiRestaurar_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Filter = Resources.InicioForm_Datos_FiltroArchivos,
+                Title = Resources.InicioForm_Restaurar_Titulo
+            };
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string nombreArchivoBackup = openFileDialog.FileName;
+
+                if (!string.IsNullOrEmpty(nombreArchivoBackup))
+                {
+                    try
+                    {
+                        contexto.Negocio.Restaurar(nombreArchivoBackup);
+                    }
+                    catch(Exception ex)
+                    {
+                        contexto.RegistrarError(ex, Resources.InicioForm_Restaurar_Error);
+                    }
+                }
+            }
         }
 
         void ActualizarLenguaje()

@@ -1,4 +1,6 @@
-﻿namespace OBMCatering.Datos
+﻿using System.Data.Entity;
+
+namespace OBMCatering.Datos
 {
     public class OBMCateringDAL
     {
@@ -105,6 +107,24 @@
         public BitacoraDAL ObtenerBitacoraDAL()
         {
             return bitacora;
+        }
+
+        public void Restaurar(string nombreArchivo)
+        {
+            string nombreBD = modelo.Database.Connection.Database;
+            string script = @"RESTORE DATABASE [{0}] FROM DISK = N'{1}'";
+
+            script = string.Format(script, nombreBD, nombreArchivo);
+            modelo.Database.ExecuteSqlCommand(TransactionalBehavior.DoNotEnsureTransaction, script);
+        }
+
+        public void Backup(string nombreArchivo)
+        {
+            string nombreBD = modelo.Database.Connection.Database;
+            string script = @"BACKUP DATABASE [{0}] TO DISK = N'{1}'";
+
+            script = string.Format(script, nombreBD, nombreArchivo);
+            modelo.Database.ExecuteSqlCommand(TransactionalBehavior.DoNotEnsureTransaction, script);
         }
 
         public void Guardar()

@@ -213,6 +213,9 @@
   <data name="ClientesBL_Validaciones_TipoInvalido" xml:space="preserve">
     <value>El tipo '{0}' es incorrecto o no es valido en el sistema</value>
   </data>
+  <data name="ContextoNegocio_Restaurar_BDNoExiste" xml:space="preserve">
+    <value>No se puede restaurar la Base de Datos porque el archivo '{0}' no existe</value>
+  </data>
   <data name="EmpleadosBL_Validaciones_CUITInvalido" xml:space="preserve">
     <value>El empleado con CUIT '{0}' no existe</value>
   </data>
