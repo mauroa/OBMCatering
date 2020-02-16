@@ -23741,6 +23741,17 @@
             "Property" = "8:ProgramMenuFolder"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_445600CBD66E48EF9D6FE47745003EA7"
+                    {
+                    "Name" = "8:OBM Catering"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_CF9E497FB148468C809864C3202D1A91"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_CB15C94A31AE4C6BA8774B89744ADA68"
@@ -23752,6 +23763,17 @@
             "Property" = "8:DesktopFolder"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_A6F30C3AFE0D462D80CCA9782B4A2EAB"
+                    {
+                    "Name" = "8:OBM Catering"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_60A47A79275F4BF3BA1E52341A42052C"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_E6DE373CEF2143C786FFEDB32E0F4799"
@@ -23860,7 +23882,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:OBMCatering"
         "ProductCode" = "8:{0B4BE6ED-7A98-46B7-8202-9ECD22E402FD}"
-        "PackageCode" = "8:{9B9D82D3-4B93-4CB2-B387-5F3D08B8884A}"
+        "PackageCode" = "8:{BF98E580-73F6-4AE3-A56F-F35B7BD7F497}"
         "UpgradeCode" = "8:{36CCC14F-C9D7-496E-B2DD-41644950C01D}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -23989,9 +24011,23 @@
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
             "Target" = "8:_D53B985AC8554684AA20F5E5A7935806"
-            "Folder" = "8:_CB15C94A31AE4C6BA8774B89744ADA68"
+            "Folder" = "8:_A6F30C3AFE0D462D80CCA9782B4A2EAB"
             "WorkingFolder" = "8:_E6DE373CEF2143C786FFEDB32E0F4799"
             "Icon" = "8:_15064FFB2B80452FABD1AC4FC5904040"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_AF6A6A4EC593400C8B6FAEAEAF8B01AE"
+            {
+            "Name" = "8:Documentacion.html"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_0EBAE81CCC474A5285485DDB656B7DF0"
+            "Folder" = "8:_445600CBD66E48EF9D6FE47745003EA7"
+            "WorkingFolder" = "8:_1A274C14A6594928B827A6ED300F726E"
+            "Icon" = "8:"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_B1A1756EF3BA47BEA64F6E85CD773B10"
@@ -24003,9 +24039,23 @@
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
             "Target" = "8:_D53B985AC8554684AA20F5E5A7935806"
-            "Folder" = "8:_749C8B323D0B4E8D8737B64E96B7518E"
+            "Folder" = "8:_445600CBD66E48EF9D6FE47745003EA7"
             "WorkingFolder" = "8:_E6DE373CEF2143C786FFEDB32E0F4799"
             "Icon" = "8:_15064FFB2B80452FABD1AC4FC5904040"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_CB69F4DAE18F403382B9F20C945AD2E4"
+            {
+            "Name" = "8:Documentacion.html"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_0EBAE81CCC474A5285485DDB656B7DF0"
+            "Folder" = "8:_A6F30C3AFE0D462D80CCA9782B4A2EAB"
+            "WorkingFolder" = "8:_1A274C14A6594928B827A6ED300F726E"
+            "Icon" = "8:"
             "Feature" = "8:"
             }
         }
