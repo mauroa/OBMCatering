@@ -88,14 +88,14 @@
             this.panel1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1439, 376);
+            this.panel1.Size = new System.Drawing.Size(1007, 376);
             this.panel1.TabIndex = 0;
             // 
             // btnGuardar
             // 
             this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGuardar.ForeColor = System.Drawing.Color.Black;
-            this.btnGuardar.Location = new System.Drawing.Point(1278, 312);
+            this.btnGuardar.Location = new System.Drawing.Point(832, 300);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(148, 50);
             this.btnGuardar.TabIndex = 11;
@@ -106,7 +106,7 @@
             // 
             this.chkActivo.AutoSize = true;
             this.chkActivo.ForeColor = System.Drawing.Color.Black;
-            this.chkActivo.Location = new System.Drawing.Point(1074, 248);
+            this.chkActivo.Location = new System.Drawing.Point(25, 312);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(103, 29);
             this.chkActivo.TabIndex = 10;
@@ -125,16 +125,16 @@
             // cboTipos
             // 
             this.cboTipos.FormattingEnabled = true;
-            this.cboTipos.Location = new System.Drawing.Point(824, 248);
+            this.cboTipos.Location = new System.Drawing.Point(768, 248);
             this.cboTipos.Name = "cboTipos";
-            this.cboTipos.Size = new System.Drawing.Size(201, 33);
+            this.cboTipos.Size = new System.Drawing.Size(212, 33);
             this.cboTipos.TabIndex = 9;
             // 
             // lblTipo
             // 
             this.lblTipo.AutoSize = true;
             this.lblTipo.ForeColor = System.Drawing.Color.Black;
-            this.lblTipo.Location = new System.Drawing.Point(819, 207);
+            this.lblTipo.Location = new System.Drawing.Point(763, 207);
             this.lblTipo.Name = "lblTipo";
             this.lblTipo.Size = new System.Drawing.Size(54, 25);
             this.lblTipo.TabIndex = 18;
@@ -144,7 +144,7 @@
             // 
             this.txtEmail.Location = new System.Drawing.Point(459, 248);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(339, 31);
+            this.txtEmail.Size = new System.Drawing.Size(288, 31);
             this.txtEmail.TabIndex = 8;
             // 
             // lblEmail
@@ -213,16 +213,16 @@
             // cboLocalidades
             // 
             this.cboLocalidades.FormattingEnabled = true;
-            this.cboLocalidades.Location = new System.Drawing.Point(824, 144);
+            this.cboLocalidades.Location = new System.Drawing.Point(686, 144);
             this.cboLocalidades.Name = "cboLocalidades";
-            this.cboLocalidades.Size = new System.Drawing.Size(384, 33);
+            this.cboLocalidades.Size = new System.Drawing.Size(294, 33);
             this.cboLocalidades.TabIndex = 5;
             // 
             // lblLocalidad
             // 
             this.lblLocalidad.AutoSize = true;
             this.lblLocalidad.ForeColor = System.Drawing.Color.Black;
-            this.lblLocalidad.Location = new System.Drawing.Point(819, 105);
+            this.lblLocalidad.Location = new System.Drawing.Point(681, 105);
             this.lblLocalidad.Name = "lblLocalidad";
             this.lblLocalidad.Size = new System.Drawing.Size(105, 25);
             this.lblLocalidad.TabIndex = 8;
@@ -231,16 +231,16 @@
             // cboProvincias
             // 
             this.cboProvincias.FormattingEnabled = true;
-            this.cboProvincias.Location = new System.Drawing.Point(405, 144);
+            this.cboProvincias.Location = new System.Drawing.Point(346, 144);
             this.cboProvincias.Name = "cboProvincias";
-            this.cboProvincias.Size = new System.Drawing.Size(384, 33);
+            this.cboProvincias.Size = new System.Drawing.Size(313, 33);
             this.cboProvincias.TabIndex = 4;
             // 
             // lblProvincia
             // 
             this.lblProvincia.AutoSize = true;
             this.lblProvincia.ForeColor = System.Drawing.Color.Black;
-            this.lblProvincia.Location = new System.Drawing.Point(400, 105);
+            this.lblProvincia.Location = new System.Drawing.Point(341, 105);
             this.lblProvincia.Name = "lblProvincia";
             this.lblProvincia.Size = new System.Drawing.Size(101, 25);
             this.lblProvincia.TabIndex = 6;
@@ -250,7 +250,7 @@
             // 
             this.txtDomicilio.Location = new System.Drawing.Point(25, 144);
             this.txtDomicilio.Name = "txtDomicilio";
-            this.txtDomicilio.Size = new System.Drawing.Size(350, 31);
+            this.txtDomicilio.Size = new System.Drawing.Size(295, 31);
             this.txtDomicilio.TabIndex = 3;
             // 
             // lblDomicilio
@@ -310,14 +310,14 @@
             this.grvClientes.ReadOnly = true;
             this.grvClientes.RowHeadersWidth = 82;
             this.grvClientes.RowTemplate.Height = 33;
-            this.grvClientes.Size = new System.Drawing.Size(1439, 480);
+            this.grvClientes.Size = new System.Drawing.Size(1007, 480);
             this.grvClientes.TabIndex = 1;
             // 
             // ClientesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1439, 856);
+            this.ClientSize = new System.Drawing.Size(1007, 856);
             this.Controls.Add(this.grvClientes);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

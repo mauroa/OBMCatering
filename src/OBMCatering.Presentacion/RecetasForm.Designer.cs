@@ -64,7 +64,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1421, 431);
+            this.panel1.Size = new System.Drawing.Size(923, 381);
             this.panel1.TabIndex = 1;
             // 
             // btnVer
@@ -72,7 +72,7 @@
             this.btnVer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnVer.Enabled = false;
             this.btnVer.ForeColor = System.Drawing.Color.Black;
-            this.btnVer.Location = new System.Drawing.Point(1106, 366);
+            this.btnVer.Location = new System.Drawing.Point(582, 308);
             this.btnVer.Name = "btnVer";
             this.btnVer.Size = new System.Drawing.Size(148, 50);
             this.btnVer.TabIndex = 3;
@@ -94,7 +94,7 @@
             // 
             this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGuardar.ForeColor = System.Drawing.Color.Black;
-            this.btnGuardar.Location = new System.Drawing.Point(1260, 366);
+            this.btnGuardar.Location = new System.Drawing.Point(736, 308);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(148, 50);
             this.btnGuardar.TabIndex = 4;
@@ -104,7 +104,7 @@
             // lblDetalle
             // 
             this.lblDetalle.AutoSize = true;
-            this.lblDetalle.Location = new System.Drawing.Point(25, 112);
+            this.lblDetalle.Location = new System.Drawing.Point(25, 107);
             this.lblDetalle.Name = "lblDetalle";
             this.lblDetalle.Size = new System.Drawing.Size(79, 25);
             this.lblDetalle.TabIndex = 5;
@@ -114,10 +114,10 @@
             // 
             this.txtDetalle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDetalle.Location = new System.Drawing.Point(30, 149);
+            this.txtDetalle.Location = new System.Drawing.Point(30, 147);
             this.txtDetalle.Multiline = true;
             this.txtDetalle.Name = "txtDetalle";
-            this.txtDetalle.Size = new System.Drawing.Size(1378, 188);
+            this.txtDetalle.Size = new System.Drawing.Size(854, 144);
             this.txtDetalle.TabIndex = 2;
             // 
             // txtNombre
@@ -134,20 +134,20 @@
             this.grvRecetas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grvRecetas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grvRecetas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grvRecetas.Location = new System.Drawing.Point(0, 431);
+            this.grvRecetas.Location = new System.Drawing.Point(0, 381);
             this.grvRecetas.MultiSelect = false;
             this.grvRecetas.Name = "grvRecetas";
             this.grvRecetas.ReadOnly = true;
             this.grvRecetas.RowHeadersWidth = 82;
             this.grvRecetas.RowTemplate.Height = 33;
-            this.grvRecetas.Size = new System.Drawing.Size(1421, 533);
+            this.grvRecetas.Size = new System.Drawing.Size(923, 349);
             this.grvRecetas.TabIndex = 24;
             // 
             // RecetasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1421, 964);
+            this.ClientSize = new System.Drawing.Size(923, 730);
             this.Controls.Add(this.grvRecetas);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

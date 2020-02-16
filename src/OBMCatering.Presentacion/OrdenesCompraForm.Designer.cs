@@ -66,7 +66,7 @@
             this.grvOrdenesCompra.ReadOnly = true;
             this.grvOrdenesCompra.RowHeadersWidth = 82;
             this.grvOrdenesCompra.RowTemplate.Height = 33;
-            this.grvOrdenesCompra.Size = new System.Drawing.Size(1459, 319);
+            this.grvOrdenesCompra.Size = new System.Drawing.Size(966, 196);
             this.grvOrdenesCompra.TabIndex = 27;
             // 
             // panel1
@@ -74,9 +74,9 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.grvIngredientes);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 569);
+            this.panel1.Location = new System.Drawing.Point(0, 448);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1459, 384);
+            this.panel1.Size = new System.Drawing.Size(966, 249);
             this.panel1.TabIndex = 28;
             // 
             // grvIngredientes
@@ -92,7 +92,7 @@
             this.grvIngredientes.ReadOnly = true;
             this.grvIngredientes.RowHeadersWidth = 82;
             this.grvIngredientes.RowTemplate.Height = 33;
-            this.grvIngredientes.Size = new System.Drawing.Size(1457, 382);
+            this.grvIngredientes.Size = new System.Drawing.Size(964, 247);
             this.grvIngredientes.TabIndex = 29;
             // 
             // panel2
@@ -110,7 +110,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1459, 250);
+            this.panel2.Size = new System.Drawing.Size(966, 252);
             this.panel2.TabIndex = 42;
             // 
             // lblFechaTitulo
@@ -125,7 +125,7 @@
             // lblProveedorTitulo
             // 
             this.lblProveedorTitulo.AutoSize = true;
-            this.lblProveedorTitulo.Location = new System.Drawing.Point(781, 21);
+            this.lblProveedorTitulo.Location = new System.Drawing.Point(753, 21);
             this.lblProveedorTitulo.Name = "lblProveedorTitulo";
             this.lblProveedorTitulo.Size = new System.Drawing.Size(111, 25);
             this.lblProveedorTitulo.TabIndex = 41;
@@ -135,7 +135,7 @@
             // 
             this.lblItems.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblItems.AutoSize = true;
-            this.lblItems.Location = new System.Drawing.Point(17, 212);
+            this.lblItems.Location = new System.Drawing.Point(17, 214);
             this.lblItems.Name = "lblItems";
             this.lblItems.Size = new System.Drawing.Size(63, 25);
             this.lblItems.TabIndex = 24;
@@ -145,7 +145,7 @@
             // 
             this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGuardar.ForeColor = System.Drawing.Color.Black;
-            this.btnGuardar.Location = new System.Drawing.Point(1229, 187);
+            this.btnGuardar.Location = new System.Drawing.Point(730, 189);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(219, 50);
             this.btnGuardar.TabIndex = 1;
@@ -163,9 +163,9 @@
             // cboProveedor
             // 
             this.cboProveedor.FormattingEnabled = true;
-            this.cboProveedor.Location = new System.Drawing.Point(898, 21);
+            this.cboProveedor.Location = new System.Drawing.Point(758, 62);
             this.cboProveedor.Name = "cboProveedor";
-            this.cboProveedor.Size = new System.Drawing.Size(219, 33);
+            this.cboProveedor.Size = new System.Drawing.Size(191, 33);
             this.cboProveedor.TabIndex = 0;
             // 
             // lblCliente
@@ -210,23 +210,23 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1459, 319);
+            this.panel3.Size = new System.Drawing.Size(966, 196);
             this.panel3.TabIndex = 42;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.panel2);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 319);
+            this.panel4.Location = new System.Drawing.Point(0, 196);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1459, 250);
+            this.panel4.Size = new System.Drawing.Size(966, 252);
             this.panel4.TabIndex = 43;
             // 
             // OrdenesCompraForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1459, 953);
+            this.ClientSize = new System.Drawing.Size(966, 697);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);

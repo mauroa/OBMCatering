@@ -92,7 +92,7 @@
             this.panel1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1439, 376);
+            this.panel1.Size = new System.Drawing.Size(1080, 376);
             this.panel1.TabIndex = 0;
             // 
             // chkActivo
@@ -100,7 +100,7 @@
             this.chkActivo.AutoSize = true;
             this.chkActivo.Enabled = false;
             this.chkActivo.ForeColor = System.Drawing.Color.Black;
-            this.chkActivo.Location = new System.Drawing.Point(1238, 250);
+            this.chkActivo.Location = new System.Drawing.Point(25, 312);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(103, 29);
             this.chkActivo.TabIndex = 11;
@@ -110,7 +110,7 @@
             // dtpFechaBaja
             // 
             this.dtpFechaBaja.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaBaja.Location = new System.Drawing.Point(1029, 248);
+            this.dtpFechaBaja.Location = new System.Drawing.Point(875, 250);
             this.dtpFechaBaja.Name = "dtpFechaBaja";
             this.dtpFechaBaja.Size = new System.Drawing.Size(179, 31);
             this.dtpFechaBaja.TabIndex = 10;
@@ -120,7 +120,7 @@
             // 
             this.lblFechaBaja.AutoSize = true;
             this.lblFechaBaja.ForeColor = System.Drawing.Color.Black;
-            this.lblFechaBaja.Location = new System.Drawing.Point(1024, 207);
+            this.lblFechaBaja.Location = new System.Drawing.Point(870, 207);
             this.lblFechaBaja.Name = "lblFechaBaja";
             this.lblFechaBaja.Size = new System.Drawing.Size(121, 25);
             this.lblFechaBaja.TabIndex = 24;
@@ -129,7 +129,7 @@
             // dtpFechaAlta
             // 
             this.dtpFechaAlta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaAlta.Location = new System.Drawing.Point(824, 248);
+            this.dtpFechaAlta.Location = new System.Drawing.Point(669, 250);
             this.dtpFechaAlta.Name = "dtpFechaAlta";
             this.dtpFechaAlta.Size = new System.Drawing.Size(179, 31);
             this.dtpFechaAlta.TabIndex = 9;
@@ -139,7 +139,7 @@
             // 
             this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGuardar.ForeColor = System.Drawing.Color.Black;
-            this.btnGuardar.Location = new System.Drawing.Point(1278, 312);
+            this.btnGuardar.Location = new System.Drawing.Point(906, 300);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(148, 50);
             this.btnGuardar.TabIndex = 12;
@@ -159,7 +159,7 @@
             // 
             this.lblFechaAlta.AutoSize = true;
             this.lblFechaAlta.ForeColor = System.Drawing.Color.Black;
-            this.lblFechaAlta.Location = new System.Drawing.Point(819, 207);
+            this.lblFechaAlta.Location = new System.Drawing.Point(664, 207);
             this.lblFechaAlta.Name = "lblFechaAlta";
             this.lblFechaAlta.Size = new System.Drawing.Size(115, 25);
             this.lblFechaAlta.TabIndex = 18;
@@ -167,7 +167,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(459, 248);
+            this.txtEmail.Location = new System.Drawing.Point(293, 250);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(339, 31);
             this.txtEmail.TabIndex = 8;
@@ -176,7 +176,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.ForeColor = System.Drawing.Color.Black;
-            this.lblEmail.Location = new System.Drawing.Point(454, 207);
+            this.lblEmail.Location = new System.Drawing.Point(288, 207);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(65, 25);
             this.lblEmail.TabIndex = 16;
@@ -184,7 +184,7 @@
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(194, 248);
+            this.txtTelefono.Location = new System.Drawing.Point(25, 250);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(238, 31);
             this.txtTelefono.TabIndex = 7;
@@ -193,7 +193,7 @@
             // 
             this.lblTelefono.AutoSize = true;
             this.lblTelefono.ForeColor = System.Drawing.Color.Black;
-            this.lblTelefono.Location = new System.Drawing.Point(189, 207);
+            this.lblTelefono.Location = new System.Drawing.Point(23, 207);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(96, 25);
             this.lblTelefono.TabIndex = 14;
@@ -201,7 +201,7 @@
             // 
             // txtCP
             // 
-            this.txtCP.Location = new System.Drawing.Point(25, 248);
+            this.txtCP.Location = new System.Drawing.Point(850, 146);
             this.txtCP.Name = "txtCP";
             this.txtCP.Size = new System.Drawing.Size(141, 31);
             this.txtCP.TabIndex = 6;
@@ -210,7 +210,7 @@
             // 
             this.lblCP.AutoSize = true;
             this.lblCP.ForeColor = System.Drawing.Color.Black;
-            this.lblCP.Location = new System.Drawing.Point(20, 207);
+            this.lblCP.Location = new System.Drawing.Point(845, 105);
             this.lblCP.Name = "lblCP";
             this.lblCP.Size = new System.Drawing.Size(146, 25);
             this.lblCP.TabIndex = 12;
@@ -238,16 +238,16 @@
             // cboLocalidades
             // 
             this.cboLocalidades.FormattingEnabled = true;
-            this.cboLocalidades.Location = new System.Drawing.Point(824, 144);
+            this.cboLocalidades.Location = new System.Drawing.Point(580, 144);
             this.cboLocalidades.Name = "cboLocalidades";
-            this.cboLocalidades.Size = new System.Drawing.Size(384, 33);
+            this.cboLocalidades.Size = new System.Drawing.Size(250, 33);
             this.cboLocalidades.TabIndex = 5;
             // 
             // lblLocalidad
             // 
             this.lblLocalidad.AutoSize = true;
             this.lblLocalidad.ForeColor = System.Drawing.Color.Black;
-            this.lblLocalidad.Location = new System.Drawing.Point(819, 105);
+            this.lblLocalidad.Location = new System.Drawing.Point(575, 105);
             this.lblLocalidad.Name = "lblLocalidad";
             this.lblLocalidad.Size = new System.Drawing.Size(105, 25);
             this.lblLocalidad.TabIndex = 8;
@@ -256,16 +256,16 @@
             // cboProvincias
             // 
             this.cboProvincias.FormattingEnabled = true;
-            this.cboProvincias.Location = new System.Drawing.Point(405, 144);
+            this.cboProvincias.Location = new System.Drawing.Point(304, 144);
             this.cboProvincias.Name = "cboProvincias";
-            this.cboProvincias.Size = new System.Drawing.Size(384, 33);
+            this.cboProvincias.Size = new System.Drawing.Size(259, 33);
             this.cboProvincias.TabIndex = 4;
             // 
             // lblProvincia
             // 
             this.lblProvincia.AutoSize = true;
             this.lblProvincia.ForeColor = System.Drawing.Color.Black;
-            this.lblProvincia.Location = new System.Drawing.Point(400, 105);
+            this.lblProvincia.Location = new System.Drawing.Point(311, 105);
             this.lblProvincia.Name = "lblProvincia";
             this.lblProvincia.Size = new System.Drawing.Size(101, 25);
             this.lblProvincia.TabIndex = 6;
@@ -275,7 +275,7 @@
             // 
             this.txtDomicilio.Location = new System.Drawing.Point(25, 144);
             this.txtDomicilio.Name = "txtDomicilio";
-            this.txtDomicilio.Size = new System.Drawing.Size(350, 31);
+            this.txtDomicilio.Size = new System.Drawing.Size(260, 31);
             this.txtDomicilio.TabIndex = 3;
             // 
             // lblDomicilio
@@ -335,14 +335,14 @@
             this.grvEmpleados.ReadOnly = true;
             this.grvEmpleados.RowHeadersWidth = 82;
             this.grvEmpleados.RowTemplate.Height = 33;
-            this.grvEmpleados.Size = new System.Drawing.Size(1439, 582);
+            this.grvEmpleados.Size = new System.Drawing.Size(1080, 385);
             this.grvEmpleados.TabIndex = 1;
             // 
             // EmpleadosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1439, 958);
+            this.ClientSize = new System.Drawing.Size(1080, 761);
             this.Controls.Add(this.grvEmpleados);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

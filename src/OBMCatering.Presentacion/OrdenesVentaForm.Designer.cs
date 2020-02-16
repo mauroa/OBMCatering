@@ -73,7 +73,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1486, 437);
+            this.panel1.Size = new System.Drawing.Size(927, 437);
             this.panel1.TabIndex = 0;
             // 
             // lblPesos
@@ -90,9 +90,9 @@
             // 
             this.btnCalcularPrecio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCalcularPrecio.ForeColor = System.Drawing.Color.Black;
-            this.btnCalcularPrecio.Location = new System.Drawing.Point(1107, 366);
+            this.btnCalcularPrecio.Location = new System.Drawing.Point(546, 367);
             this.btnCalcularPrecio.Name = "btnCalcularPrecio";
-            this.btnCalcularPrecio.Size = new System.Drawing.Size(201, 50);
+            this.btnCalcularPrecio.Size = new System.Drawing.Size(193, 50);
             this.btnCalcularPrecio.TabIndex = 6;
             this.btnCalcularPrecio.Text = "Calcular Precio";
             this.btnCalcularPrecio.UseVisualStyleBackColor = true;
@@ -119,9 +119,9 @@
             // 
             this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGuardar.ForeColor = System.Drawing.Color.Black;
-            this.btnGuardar.Location = new System.Drawing.Point(1314, 366);
+            this.btnGuardar.Location = new System.Drawing.Point(753, 366);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(148, 50);
+            this.btnGuardar.Size = new System.Drawing.Size(148, 51);
             this.btnGuardar.TabIndex = 7;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
@@ -129,7 +129,7 @@
             // lblRecetas
             // 
             this.lblRecetas.AutoSize = true;
-            this.lblRecetas.Location = new System.Drawing.Point(19, 109);
+            this.lblRecetas.Location = new System.Drawing.Point(19, 157);
             this.lblRecetas.Name = "lblRecetas";
             this.lblRecetas.Size = new System.Drawing.Size(91, 25);
             this.lblRecetas.TabIndex = 24;
@@ -142,18 +142,18 @@
             this.lstRecetas.ColumnWidth = 100;
             this.lstRecetas.FormattingEnabled = true;
             this.lstRecetas.ItemHeight = 25;
-            this.lstRecetas.Location = new System.Drawing.Point(24, 146);
+            this.lstRecetas.Location = new System.Drawing.Point(24, 196);
             this.lstRecetas.MultiColumn = true;
             this.lstRecetas.Name = "lstRecetas";
             this.lstRecetas.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.lstRecetas.Size = new System.Drawing.Size(1438, 204);
+            this.lstRecetas.Size = new System.Drawing.Size(877, 154);
             this.lstRecetas.TabIndex = 5;
             // 
             // chkAprobada
             // 
             this.chkAprobada.AutoSize = true;
             this.chkAprobada.ForeColor = System.Drawing.Color.Black;
-            this.chkAprobada.Location = new System.Drawing.Point(1060, 52);
+            this.chkAprobada.Location = new System.Drawing.Point(24, 106);
             this.chkAprobada.Name = "chkAprobada";
             this.chkAprobada.Size = new System.Drawing.Size(137, 29);
             this.chkAprobada.TabIndex = 4;
@@ -162,7 +162,7 @@
             // 
             // txtComensales
             // 
-            this.txtComensales.Location = new System.Drawing.Point(884, 52);
+            this.txtComensales.Location = new System.Drawing.Point(758, 52);
             this.txtComensales.Name = "txtComensales";
             this.txtComensales.Size = new System.Drawing.Size(143, 31);
             this.txtComensales.TabIndex = 3;
@@ -170,7 +170,7 @@
             // lblComensales
             // 
             this.lblComensales.AutoSize = true;
-            this.lblComensales.Location = new System.Drawing.Point(879, 19);
+            this.lblComensales.Location = new System.Drawing.Point(753, 19);
             this.lblComensales.Name = "lblComensales";
             this.lblComensales.Size = new System.Drawing.Size(131, 25);
             this.lblComensales.TabIndex = 15;
@@ -179,7 +179,7 @@
             // lblFechaFin
             // 
             this.lblFechaFin.AutoSize = true;
-            this.lblFechaFin.Location = new System.Drawing.Point(649, 19);
+            this.lblFechaFin.Location = new System.Drawing.Point(523, 19);
             this.lblFechaFin.Name = "lblFechaFin";
             this.lblFechaFin.Size = new System.Drawing.Size(68, 25);
             this.lblFechaFin.TabIndex = 14;
@@ -188,7 +188,7 @@
             // dtpFechaFin
             // 
             this.dtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaFin.Location = new System.Drawing.Point(654, 52);
+            this.dtpFechaFin.Location = new System.Drawing.Point(528, 52);
             this.dtpFechaFin.Name = "dtpFechaFin";
             this.dtpFechaFin.Size = new System.Drawing.Size(211, 31);
             this.dtpFechaFin.TabIndex = 2;
@@ -197,7 +197,7 @@
             // dtpFechaInicio
             // 
             this.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaInicio.Location = new System.Drawing.Point(423, 52);
+            this.dtpFechaInicio.Location = new System.Drawing.Point(296, 52);
             this.dtpFechaInicio.Name = "dtpFechaInicio";
             this.dtpFechaInicio.Size = new System.Drawing.Size(211, 31);
             this.dtpFechaInicio.TabIndex = 1;
@@ -206,7 +206,7 @@
             // lblFechaInicio
             // 
             this.lblFechaInicio.AutoSize = true;
-            this.lblFechaInicio.Location = new System.Drawing.Point(418, 19);
+            this.lblFechaInicio.Location = new System.Drawing.Point(291, 19);
             this.lblFechaInicio.Name = "lblFechaInicio";
             this.lblFechaInicio.Size = new System.Drawing.Size(74, 25);
             this.lblFechaInicio.TabIndex = 2;
@@ -217,7 +217,7 @@
             this.cboClientes.FormattingEnabled = true;
             this.cboClientes.Location = new System.Drawing.Point(24, 50);
             this.cboClientes.Name = "cboClientes";
-            this.cboClientes.Size = new System.Drawing.Size(381, 33);
+            this.cboClientes.Size = new System.Drawing.Size(252, 33);
             this.cboClientes.TabIndex = 0;
             // 
             // lblCliente
@@ -242,14 +242,14 @@
             this.grvPedidos.ReadOnly = true;
             this.grvPedidos.RowHeadersWidth = 82;
             this.grvPedidos.RowTemplate.Height = 33;
-            this.grvPedidos.Size = new System.Drawing.Size(1486, 543);
+            this.grvPedidos.Size = new System.Drawing.Size(927, 392);
             this.grvPedidos.TabIndex = 2;
             // 
             // OrdenesVentaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1486, 980);
+            this.ClientSize = new System.Drawing.Size(927, 829);
             this.Controls.Add(this.grvPedidos);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

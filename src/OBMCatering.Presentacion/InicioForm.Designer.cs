@@ -123,19 +123,19 @@
             // tsiPedidosCocina
             // 
             this.tsiPedidosCocina.Name = "tsiPedidosCocina";
-            this.tsiPedidosCocina.Size = new System.Drawing.Size(359, 44);
+            this.tsiPedidosCocina.Size = new System.Drawing.Size(232, 44);
             this.tsiPedidosCocina.Text = "Pedidos";
             // 
             // tsiRecetas
             // 
             this.tsiRecetas.Name = "tsiRecetas";
-            this.tsiRecetas.Size = new System.Drawing.Size(359, 44);
+            this.tsiRecetas.Size = new System.Drawing.Size(232, 44);
             this.tsiRecetas.Text = "Recetas";
             // 
             // tsiPrecios
             // 
             this.tsiPrecios.Name = "tsiPrecios";
-            this.tsiPrecios.Size = new System.Drawing.Size(359, 44);
+            this.tsiPrecios.Size = new System.Drawing.Size(232, 44);
             this.tsiPrecios.Text = "Precios";
             // 
             // tsVentas
@@ -150,13 +150,13 @@
             // tsiPedidos
             // 
             this.tsiPedidos.Name = "tsiPedidos";
-            this.tsiPedidos.Size = new System.Drawing.Size(359, 44);
+            this.tsiPedidos.Size = new System.Drawing.Size(235, 44);
             this.tsiPedidos.Text = "Pedidos";
             // 
             // tsiFacturas
             // 
             this.tsiFacturas.Name = "tsiFacturas";
-            this.tsiFacturas.Size = new System.Drawing.Size(359, 44);
+            this.tsiFacturas.Size = new System.Drawing.Size(235, 44);
             this.tsiFacturas.Text = "Facturas";
             // 
             // tsCompras
@@ -194,7 +194,7 @@
             // tsiBitacora
             // 
             this.tsiBitacora.Name = "tsiBitacora";
-            this.tsiBitacora.Size = new System.Drawing.Size(246, 44);
+            this.tsiBitacora.Size = new System.Drawing.Size(359, 44);
             this.tsiBitacora.Text = "Bitacora";
             // 
             // tsiLenguaje
@@ -203,7 +203,7 @@
             this.tsiEspaniol,
             this.tsiIngles});
             this.tsiLenguaje.Name = "tsiLenguaje";
-            this.tsiLenguaje.Size = new System.Drawing.Size(246, 44);
+            this.tsiLenguaje.Size = new System.Drawing.Size(359, 44);
             this.tsiLenguaje.Text = "Lenguaje";
             // 
             // tsiEspaniol
@@ -224,7 +224,7 @@
             this.tsiBackup,
             this.tsiRestaurar});
             this.tsiDatos.Name = "tsiDatos";
-            this.tsiDatos.Size = new System.Drawing.Size(246, 44);
+            this.tsiDatos.Size = new System.Drawing.Size(359, 44);
             this.tsiDatos.Text = "Datos";
             // 
             // tsiBackup
@@ -242,7 +242,7 @@
             // tsiSalir
             // 
             this.tsiSalir.Name = "tsiSalir";
-            this.tsiSalir.Size = new System.Drawing.Size(246, 44);
+            this.tsiSalir.Size = new System.Drawing.Size(359, 44);
             this.tsiSalir.Text = "Salir";
             // 
             // picPrincipal

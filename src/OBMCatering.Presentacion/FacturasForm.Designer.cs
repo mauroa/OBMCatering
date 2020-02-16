@@ -64,7 +64,7 @@
             this.grvFacturas.ReadOnly = true;
             this.grvFacturas.RowHeadersWidth = 82;
             this.grvFacturas.RowTemplate.Height = 33;
-            this.grvFacturas.Size = new System.Drawing.Size(1469, 485);
+            this.grvFacturas.Size = new System.Drawing.Size(1289, 369);
             this.grvFacturas.TabIndex = 24;
             // 
             // lblClienteTitulo
@@ -125,7 +125,7 @@
             // 
             this.btnCobrada.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCobrada.ForeColor = System.Drawing.Color.Black;
-            this.btnCobrada.Location = new System.Drawing.Point(1308, 279);
+            this.btnCobrada.Location = new System.Drawing.Point(1115, 249);
             this.btnCobrada.Name = "btnCobrada";
             this.btnCobrada.Size = new System.Drawing.Size(148, 50);
             this.btnCobrada.TabIndex = 0;
@@ -215,9 +215,9 @@
             this.panel1.Controls.Add(this.lblFechaInicioTitulo);
             this.panel1.Controls.Add(this.lblClienteTitulo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 485);
+            this.panel1.Location = new System.Drawing.Point(0, 369);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1469, 342);
+            this.panel1.Size = new System.Drawing.Size(1289, 324);
             this.panel1.TabIndex = 26;
             // 
             // lblPesos
@@ -243,7 +243,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1469, 827);
+            this.ClientSize = new System.Drawing.Size(1289, 693);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.grvFacturas);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

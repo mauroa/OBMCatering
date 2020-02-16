@@ -88,7 +88,7 @@
             this.panel1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1439, 376);
+            this.panel1.Size = new System.Drawing.Size(1071, 400);
             this.panel1.TabIndex = 0;
             // 
             // chkActivo
@@ -96,7 +96,7 @@
             this.chkActivo.AutoSize = true;
             this.chkActivo.Enabled = false;
             this.chkActivo.ForeColor = System.Drawing.Color.Black;
-            this.chkActivo.Location = new System.Drawing.Point(1238, 250);
+            this.chkActivo.Location = new System.Drawing.Point(25, 311);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(103, 29);
             this.chkActivo.TabIndex = 10;
@@ -106,7 +106,7 @@
             // dtpFechaBaja
             // 
             this.dtpFechaBaja.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaBaja.Location = new System.Drawing.Point(1029, 248);
+            this.dtpFechaBaja.Location = new System.Drawing.Point(767, 246);
             this.dtpFechaBaja.Name = "dtpFechaBaja";
             this.dtpFechaBaja.Size = new System.Drawing.Size(179, 31);
             this.dtpFechaBaja.TabIndex = 9;
@@ -116,7 +116,7 @@
             // 
             this.lblFechaBaja.AutoSize = true;
             this.lblFechaBaja.ForeColor = System.Drawing.Color.Black;
-            this.lblFechaBaja.Location = new System.Drawing.Point(1024, 207);
+            this.lblFechaBaja.Location = new System.Drawing.Point(762, 207);
             this.lblFechaBaja.Name = "lblFechaBaja";
             this.lblFechaBaja.Size = new System.Drawing.Size(121, 25);
             this.lblFechaBaja.TabIndex = 24;
@@ -125,9 +125,9 @@
             // dtpFechaAlta
             // 
             this.dtpFechaAlta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaAlta.Location = new System.Drawing.Point(824, 248);
+            this.dtpFechaAlta.Location = new System.Drawing.Point(559, 248);
             this.dtpFechaAlta.Name = "dtpFechaAlta";
-            this.dtpFechaAlta.Size = new System.Drawing.Size(179, 31);
+            this.dtpFechaAlta.Size = new System.Drawing.Size(182, 31);
             this.dtpFechaAlta.TabIndex = 8;
             this.dtpFechaAlta.Value = new System.DateTime(2019, 12, 4, 10, 31, 39, 0);
             // 
@@ -135,7 +135,7 @@
             // 
             this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGuardar.ForeColor = System.Drawing.Color.Black;
-            this.btnGuardar.Location = new System.Drawing.Point(1278, 311);
+            this.btnGuardar.Location = new System.Drawing.Point(895, 311);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(148, 50);
             this.btnGuardar.TabIndex = 11;
@@ -155,7 +155,7 @@
             // 
             this.lblFechaAlta.AutoSize = true;
             this.lblFechaAlta.ForeColor = System.Drawing.Color.Black;
-            this.lblFechaAlta.Location = new System.Drawing.Point(819, 207);
+            this.lblFechaAlta.Location = new System.Drawing.Point(554, 207);
             this.lblFechaAlta.Name = "lblFechaAlta";
             this.lblFechaAlta.Size = new System.Drawing.Size(115, 25);
             this.lblFechaAlta.TabIndex = 18;
@@ -163,16 +163,16 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(459, 248);
+            this.txtEmail.Location = new System.Drawing.Point(245, 248);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(339, 31);
+            this.txtEmail.Size = new System.Drawing.Size(285, 31);
             this.txtEmail.TabIndex = 7;
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.ForeColor = System.Drawing.Color.Black;
-            this.lblEmail.Location = new System.Drawing.Point(454, 207);
+            this.lblEmail.Location = new System.Drawing.Point(240, 207);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(65, 25);
             this.lblEmail.TabIndex = 16;
@@ -180,16 +180,16 @@
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(194, 248);
+            this.txtTelefono.Location = new System.Drawing.Point(25, 248);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(238, 31);
+            this.txtTelefono.Size = new System.Drawing.Size(191, 31);
             this.txtTelefono.TabIndex = 6;
             // 
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
             this.lblTelefono.ForeColor = System.Drawing.Color.Black;
-            this.lblTelefono.Location = new System.Drawing.Point(189, 207);
+            this.lblTelefono.Location = new System.Drawing.Point(23, 207);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(96, 25);
             this.lblTelefono.TabIndex = 14;
@@ -197,7 +197,7 @@
             // 
             // txtCP
             // 
-            this.txtCP.Location = new System.Drawing.Point(25, 248);
+            this.txtCP.Location = new System.Drawing.Point(902, 144);
             this.txtCP.Name = "txtCP";
             this.txtCP.Size = new System.Drawing.Size(141, 31);
             this.txtCP.TabIndex = 5;
@@ -206,7 +206,7 @@
             // 
             this.lblCP.AutoSize = true;
             this.lblCP.ForeColor = System.Drawing.Color.Black;
-            this.lblCP.Location = new System.Drawing.Point(20, 207);
+            this.lblCP.Location = new System.Drawing.Point(897, 105);
             this.lblCP.Name = "lblCP";
             this.lblCP.Size = new System.Drawing.Size(146, 25);
             this.lblCP.TabIndex = 12;
@@ -215,16 +215,16 @@
             // cboLocalidades
             // 
             this.cboLocalidades.FormattingEnabled = true;
-            this.cboLocalidades.Location = new System.Drawing.Point(824, 144);
+            this.cboLocalidades.Location = new System.Drawing.Point(612, 144);
             this.cboLocalidades.Name = "cboLocalidades";
-            this.cboLocalidades.Size = new System.Drawing.Size(384, 33);
+            this.cboLocalidades.Size = new System.Drawing.Size(267, 33);
             this.cboLocalidades.TabIndex = 4;
             // 
             // lblLocalidad
             // 
             this.lblLocalidad.AutoSize = true;
             this.lblLocalidad.ForeColor = System.Drawing.Color.Black;
-            this.lblLocalidad.Location = new System.Drawing.Point(819, 105);
+            this.lblLocalidad.Location = new System.Drawing.Point(607, 105);
             this.lblLocalidad.Name = "lblLocalidad";
             this.lblLocalidad.Size = new System.Drawing.Size(105, 25);
             this.lblLocalidad.TabIndex = 8;
@@ -233,16 +233,16 @@
             // cboProvincias
             // 
             this.cboProvincias.FormattingEnabled = true;
-            this.cboProvincias.Location = new System.Drawing.Point(405, 144);
+            this.cboProvincias.Location = new System.Drawing.Point(320, 144);
             this.cboProvincias.Name = "cboProvincias";
-            this.cboProvincias.Size = new System.Drawing.Size(384, 33);
+            this.cboProvincias.Size = new System.Drawing.Size(270, 33);
             this.cboProvincias.TabIndex = 3;
             // 
             // lblProvincia
             // 
             this.lblProvincia.AutoSize = true;
             this.lblProvincia.ForeColor = System.Drawing.Color.Black;
-            this.lblProvincia.Location = new System.Drawing.Point(400, 105);
+            this.lblProvincia.Location = new System.Drawing.Point(315, 105);
             this.lblProvincia.Name = "lblProvincia";
             this.lblProvincia.Size = new System.Drawing.Size(101, 25);
             this.lblProvincia.TabIndex = 6;
@@ -252,7 +252,7 @@
             // 
             this.txtDomicilio.Location = new System.Drawing.Point(25, 144);
             this.txtDomicilio.Name = "txtDomicilio";
-            this.txtDomicilio.Size = new System.Drawing.Size(350, 31);
+            this.txtDomicilio.Size = new System.Drawing.Size(268, 31);
             this.txtDomicilio.TabIndex = 2;
             // 
             // lblDomicilio
@@ -306,20 +306,20 @@
             this.grvProveedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grvProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grvProveedores.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grvProveedores.Location = new System.Drawing.Point(0, 376);
+            this.grvProveedores.Location = new System.Drawing.Point(0, 400);
             this.grvProveedores.MultiSelect = false;
             this.grvProveedores.Name = "grvProveedores";
             this.grvProveedores.ReadOnly = true;
             this.grvProveedores.RowHeadersWidth = 82;
             this.grvProveedores.RowTemplate.Height = 33;
-            this.grvProveedores.Size = new System.Drawing.Size(1439, 582);
+            this.grvProveedores.Size = new System.Drawing.Size(1071, 371);
             this.grvProveedores.TabIndex = 1;
             // 
             // ProveedoresForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1439, 958);
+            this.ClientSize = new System.Drawing.Size(1071, 771);
             this.Controls.Add(this.grvProveedores);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
