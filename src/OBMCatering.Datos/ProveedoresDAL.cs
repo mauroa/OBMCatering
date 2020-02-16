@@ -4,6 +4,9 @@ using System.Linq;
 
 namespace OBMCatering.Datos
 {
+    /// <summary>
+    /// Responsable de manejar los proveedores dentro de la capa de acceso a datos del sistema
+    /// </summary>
     public class ProveedoresDAL
     {
         OBMCateringEntities modelo;

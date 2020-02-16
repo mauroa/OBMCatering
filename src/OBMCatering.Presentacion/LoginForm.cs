@@ -5,12 +5,18 @@ using System.Windows.Forms;
 
 namespace OBMCatering.Presentacion
 {
+    /// <summary>
+    /// Representa el formulario de login del sistema
+    /// </summary>
     public partial class LoginForm : Form
     {
         ContextoPresentacion contexto;
         UsuariosBL usuariosBL;
         bool modoReset;
 
+        /// <summary>
+        /// Crea una nueva instancia de la clase <see cref="LoginForm"/>
+        /// </summary>
         public LoginForm()
         {
             this.CargarLenguaje();

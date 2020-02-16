@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BitacoraForm));
             this.grvBitacora = new System.Windows.Forms.DataGridView();
             this.dtpHasta = new System.Windows.Forms.DateTimePicker();
             this.dtpDesde = new System.Windows.Forms.DateTimePicker();
@@ -39,8 +40,10 @@
             this.cboUsuarios = new System.Windows.Forms.ComboBox();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.grvBitacora)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // grvBitacora
@@ -55,7 +58,7 @@
             this.grvBitacora.ReadOnly = true;
             this.grvBitacora.RowHeadersWidth = 82;
             this.grvBitacora.RowTemplate.Height = 33;
-            this.grvBitacora.Size = new System.Drawing.Size(1486, 794);
+            this.grvBitacora.Size = new System.Drawing.Size(1486, 680);
             this.grvBitacora.TabIndex = 0;
             // 
             // dtpHasta
@@ -156,19 +159,31 @@
             this.panel1.Size = new System.Drawing.Size(1486, 114);
             this.panel1.TabIndex = 40;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.grvBitacora);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 114);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1486, 680);
+            this.panel2.TabIndex = 41;
+            // 
             // BitacoraForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1486, 794);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.grvBitacora);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BitacoraForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bitacora del Sistema";
             this.Load += new System.EventHandler(this.BitacoraForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grvBitacora)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -186,5 +201,6 @@
         private System.Windows.Forms.ComboBox cboUsuarios;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

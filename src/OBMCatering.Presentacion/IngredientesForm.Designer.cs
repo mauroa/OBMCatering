@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IngredientesForm));
             this.lblIngrediente = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cboUnidad = new System.Windows.Forms.ComboBox();
@@ -142,7 +143,9 @@
             this.ClientSize = new System.Drawing.Size(1116, 792);
             this.Controls.Add(this.grvIngredientes);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "IngredientesForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administracion de Ingredientes";
             this.Load += new System.EventHandler(this.IngredientesForm_Load);
             this.panel1.ResumeLayout(false);

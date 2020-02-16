@@ -3,15 +3,26 @@ using System.Collections.Generic;
 
 namespace OBMCatering.Negocio
 {
+    /// <summary>
+    /// Reponsable de manejar las localidades y provincias del sistema dentro de la capa de negocio del mismo
+    /// </summary>
     public class LocalidadesBL
     {
         Datos.OBMCateringDAL dal;
 
+        /// <summary>
+        /// Crea una nueva instancia de <see cref="LocalidadesBL"/>
+        /// </summary>
+        /// <param name="contexto">Contexto de negocio</param>
         public LocalidadesBL(ContextoNegocio contexto)
         {
             dal = contexto.ObtenerDatos();
         }
 
+        /// <summary>
+        /// Obtiene el listado completo de provincias del sistema
+        /// </summary>
+        /// <returns>Listado de provincias</returns>
         public IEnumerable<Provincia> ObtenerProvincias()
         {
             Datos.ProvinciasDAL dalProvincias = dal.ObtenerProvinciasDAL();
@@ -30,6 +41,11 @@ namespace OBMCatering.Negocio
             return provincias;
         }
 
+        /// <summary>
+        /// Obtiene una provincia determinada segun su identificador
+        /// </summary>
+        /// <param name="id">Identificador de la provincia a buscar</param>
+        /// <returns>Provincia encontrada</returns>
         public Provincia ObtenerProvincia(int id)
         {
             Datos.ProvinciasDAL dalProvincias = dal.ObtenerProvinciasDAL();
@@ -38,6 +54,11 @@ namespace OBMCatering.Negocio
             return ObtenerProvincia(provinciaDAL);
         }
 
+        /// <summary>
+        /// Obtiene una provincia determinada segun su nombre
+        /// </summary>
+        /// <param name="nombre">Nombre de la provincia a buscar</param>
+        /// <returns>Provincia encontrada</returns>
         public Provincia ObtenerProvincia(string nombre)
         {
             if (string.IsNullOrEmpty(nombre))
@@ -51,6 +72,12 @@ namespace OBMCatering.Negocio
             return ObtenerProvincia(provinciaDAL);
 
         }
+
+        /// <summary>
+        /// Obtiene el listado de localidades de una provincia determinada
+        /// </summary>
+        /// <param name="provincia">Provincia para obtener sus localidades</param>
+        /// <returns>Listado de localidades</returns>
         public IEnumerable<Localidad> ObtenerLocalidades(Provincia provincia)
         {
             if(provincia == null)
@@ -83,6 +110,11 @@ namespace OBMCatering.Negocio
             return localidades;
         }
 
+        /// <summary>
+        /// Obtiene una localidad determinada segun su identificador
+        /// </summary>
+        /// <param name="id">Identificador de la localidad a buscar</param>
+        /// <returns>Localidad encontrada</returns>
         public Localidad ObtenerLocalidad(int id)
         {
             Datos.LocalidadesDAL dalLocalidades = dal.ObtenerLocalidadesDAL();
@@ -91,6 +123,11 @@ namespace OBMCatering.Negocio
             return ObtenerLocalidad(localidadDAL);
         }
 
+        /// <summary>
+        /// Obtiene una localidad determinada segun su nombre
+        /// </summary>
+        /// <param name="nombre">Nombre de la localidad a buscar</param>
+        /// <returns>Localidad encontrada</returns>
         public Localidad ObtenerLocalidad(string nombre)
         {
             if (string.IsNullOrEmpty(nombre))

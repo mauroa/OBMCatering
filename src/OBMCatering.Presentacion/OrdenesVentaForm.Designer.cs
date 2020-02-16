@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrdenesVentaForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblPesos = new System.Windows.Forms.Label();
             this.btnCalcularPrecio = new System.Windows.Forms.Button();
@@ -251,7 +252,9 @@
             this.ClientSize = new System.Drawing.Size(1486, 980);
             this.Controls.Add(this.grvPedidos);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "OrdenesVentaForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ordenes de Venta";
             this.Load += new System.EventHandler(this.OrdenesVentaForm_Load);
             this.panel1.ResumeLayout(false);

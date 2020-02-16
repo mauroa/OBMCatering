@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProveedoresForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.chkActivo = new System.Windows.Forms.CheckBox();
             this.dtpFechaBaja = new System.Windows.Forms.DateTimePicker();
@@ -321,7 +322,9 @@
             this.ClientSize = new System.Drawing.Size(1439, 958);
             this.Controls.Add(this.grvProveedores);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ProveedoresForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administracion de Proveedores";
             this.Load += new System.EventHandler(this.ProveedoresForm_Load);
             this.panel1.ResumeLayout(false);

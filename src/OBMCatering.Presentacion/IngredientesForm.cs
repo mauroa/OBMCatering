@@ -6,12 +6,19 @@ using System.Windows.Forms;
 
 namespace OBMCatering.Presentacion
 {
+    /// <summary>
+    /// Representa el formulario de administracion de ingredientes del sistema
+    /// </summary>
     public partial class IngredientesForm : Form
     {
         ContextoPresentacion contexto;
         PreciosIngredientesBL preciosIngredientesBL;
         RecetasBL recetasBL;
+        IngredientesBL ingredientesBL;
 
+        /// <summary>
+        /// Crea una nueva instancia de la clase <see cref="IngredientesForm"/>
+        /// </summary>
         public IngredientesForm()
         {
             this.CargarLenguaje();
@@ -30,6 +37,9 @@ namespace OBMCatering.Presentacion
             HelpRequested += IngredientesForm_HelpRequested;
         }
 
+        /// <summary>
+        /// Representa la receta seleccionada para la cual se muestra el formulario de ingredientes
+        /// </summary>
         public RecetaPresentacion Receta { get; set; }
 
         void IngredientesForm_Load(object sender, EventArgs e)
@@ -39,12 +49,14 @@ namespace OBMCatering.Presentacion
             contexto = ContextoPresentacion.Instancia;
             preciosIngredientesBL = new PreciosIngredientesBL(contexto.Negocio);
             recetasBL = new RecetasBL(contexto.Negocio, preciosIngredientesBL);
+            ingredientesBL = new IngredientesBL(contexto.Negocio);
 
             btnGuardar.Click += BtnGuardar_Click;
             grvIngredientes.SelectionChanged += GrvIngredientes_SelectionChanged; ;
             grvIngredientes.CellEnter += GrvIngredientes_CellEnter;
             CargarUnidades();
             CargarIngredientes();
+            CargarListadoIngredientesSugeridos();
             LimpiarFormulario();
 
             contexto.RegistrarEvento(Resources.IngredientesForm_Ingreso);
@@ -52,7 +64,12 @@ namespace OBMCatering.Presentacion
 
         void IngredientesForm_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
-            MessageBox.Show(Resources.IngredientesForm_Help_Mensaje, Resources.Form_Help_Titulo, MessageBoxButtons.OK, MessageBoxIcon.Question);
+            Form ayudaForm = new AyudaForm()
+            {
+                MensajeAyuda = Resources.IngredientesForm_Help_Mensaje
+            };
+
+            ayudaForm.ShowDialog();
         }
 
         void BtnGuardar_Click(object sender, EventArgs e)
@@ -137,6 +154,21 @@ namespace OBMCatering.Presentacion
             {
                 contexto.RegistrarError(ex);
             }
+        }
+
+        void CargarListadoIngredientesSugeridos()
+        {
+            AutoCompleteStringCollection ingredientesSugeridos = new AutoCompleteStringCollection();
+            IEnumerable<Ingrediente> ingredientes = ingredientesBL.Obtener();
+
+            foreach (Ingrediente ingrediente in ingredientes)
+            {
+                ingredientesSugeridos.Add(ingrediente.Nombre);
+            }
+
+            txtIngrediente.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            txtIngrediente.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            txtIngrediente.AutoCompleteCustomSource = ingredientesSugeridos;
         }
 
         IEnumerable<IngredientePresentacion> ObtenerIngredientesPresentacion(Receta receta)

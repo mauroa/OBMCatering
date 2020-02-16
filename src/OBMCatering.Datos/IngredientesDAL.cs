@@ -3,6 +3,9 @@ using System.Linq;
 
 namespace OBMCatering.Datos
 {
+    /// <summary>
+    /// Responsable de manejar los ingredientes dentro de la capa de acceso a datos del sistema
+    /// </summary>
     public class IngredientesDAL
     {
         OBMCateringEntities modelo;

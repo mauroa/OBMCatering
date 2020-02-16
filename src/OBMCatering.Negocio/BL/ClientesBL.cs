@@ -4,17 +4,29 @@ using System.Collections.Generic;
 
 namespace OBMCatering.Negocio
 {
+    /// <summary>
+    /// Reponsable de manejar los clientes del sistema dentro de la capa de negocio del mismo
+    /// </summary>
     public class ClientesBL
     {
         Datos.OBMCateringDAL dal;
         LocalidadesBL localidadesBL;
 
+        /// <summary>
+        /// Crea una nueva instancia de <see cref="ClientesBL"/>
+        /// </summary>
+        /// <param name="contexto">Contexto de negocio</param>
+        /// <param name="localidadesBL">Capa de negocio de localidades</param>
         public ClientesBL(ContextoNegocio contexto, LocalidadesBL localidadesBL)
         {
             dal = contexto.ObtenerDatos();
             this.localidadesBL = localidadesBL;
         }
 
+        /// <summary>
+        /// Crea un nuevo cliente en el sistema
+        /// </summary>
+        /// <param name="cliente">Cliente a crear</param>
         public void Crear(Cliente cliente)
         {
             ValidarCliente(cliente);
@@ -53,6 +65,10 @@ namespace OBMCatering.Negocio
             dal.Guardar();
         }
 
+        /// <summary>
+        /// Actualiza los datos de un determinado cliente del sistema
+        /// </summary>
+        /// <param name="cliente">Cliente a actualizar</param>
         public void Actualizar(Cliente cliente)
         {
             ValidarCliente(cliente);
@@ -84,22 +100,10 @@ namespace OBMCatering.Negocio
             dal.Guardar();
         }
 
-        public void Eliminar(Cliente cliente)
-        {
-            ValidarCliente(cliente);
-
-            Datos.ClientesDAL dalClientes = dal.ObtenerClientesDAL();
-            Datos.Cliente clienteDAL = dalClientes.Obtener(cliente.CUIT);
-
-            if (clienteDAL == null)
-            {
-                throw new OBMCateringException(string.Format(Resources.BL_Validaciones_ClienteInvalido, cliente.CUIT));
-            }
-
-            dalClientes.Eliminar(clienteDAL);
-            dal.Guardar();
-        }
-
+        /// <summary>
+        /// Obtiene la lista completa de clientes del sistema
+        /// </summary>
+        /// <returns>Listado de clientes</returns>
         public IEnumerable<Cliente> Obtener()
         {
             Datos.ClientesDAL dalClientes = dal.ObtenerClientesDAL();
@@ -108,6 +112,11 @@ namespace OBMCatering.Negocio
             return Obtener(clientesDAL);
         }
 
+        /// <summary>
+        /// Obtiene la lista de clientes segun tipo de cliente dado
+        /// </summary>
+        /// <param name="tipo">Tipo de cliente a obtener</param>
+        /// <returns>Listado de clientes</returns>
         public IEnumerable<Cliente> Obtener(TipoCliente tipo)
         {
             Datos.ClientesDAL dalClientes = dal.ObtenerClientesDAL();
@@ -123,6 +132,10 @@ namespace OBMCatering.Negocio
             return Obtener(clientesDAL);
         }
 
+        /// <summary>
+        /// Obtiene la lista de clientes activos en el sistema
+        /// </summary>
+        /// <returns>Listado de clientes</returns>
         public IEnumerable<Cliente> ObtenerActivos()
         {
             Datos.ClientesDAL dalClientes = dal.ObtenerClientesDAL();
@@ -131,6 +144,11 @@ namespace OBMCatering.Negocio
             return Obtener(clientesDAL);
         }
 
+        /// <summary>
+        /// Verifica si un cliente existe, segun su numero CUIT
+        /// </summary>
+        /// <param name="cuit">CUIT del cliente a consultar</param>
+        /// <returns>Valor que determina si el cliente existe o no</returns>
         public bool Existe(string cuit)
         {
             if (string.IsNullOrEmpty(cuit))
@@ -144,6 +162,11 @@ namespace OBMCatering.Negocio
             return clienteDAL != null;
         }
 
+        /// <summary>
+        /// Obtiene un cliente especifico segun su numero de CUIT
+        /// </summary>
+        /// <param name="cuit">CUIT del cliente a consultar</param>
+        /// <returns>Cliente encontrado</returns>
         public Cliente ObtenerPorCUIT(string cuit)
         {
             if (string.IsNullOrEmpty(cuit))
@@ -157,6 +180,11 @@ namespace OBMCatering.Negocio
             return Obtener(clienteDAL);
         }
 
+        /// <summary>
+        /// Obtiene un cliente especifico segun su nombre
+        /// </summary>
+        /// <param name="nombre">Nombre del cliente a consultar</param>
+        /// <returns>Cliente encontrado</returns>
         public Cliente ObtenerPorNombre(string nombre)
         {
             if (string.IsNullOrEmpty(nombre))

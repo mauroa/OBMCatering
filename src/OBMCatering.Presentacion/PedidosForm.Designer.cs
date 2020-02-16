@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PedidosForm));
             this.lblDesde = new System.Windows.Forms.Label();
             this.lblHasta = new System.Windows.Forms.Label();
             this.lblCliente = new System.Windows.Forms.Label();
@@ -155,7 +156,9 @@
             this.ClientSize = new System.Drawing.Size(1412, 784);
             this.Controls.Add(this.grvPedidos);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PedidosForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado de Pedidos";
             this.Load += new System.EventHandler(this.PedidosForm_Load);
             this.panel1.ResumeLayout(false);

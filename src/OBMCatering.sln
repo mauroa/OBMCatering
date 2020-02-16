@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OBMCatering.Datos", "OBMCat
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "OBMCatering.Instalador", "OBMCatering.Instalador\OBMCatering.Instalador.vdproj", "{455C292C-BB72-4578-AAEB-A8CBC9F6CF95}"
 EndProject
+Project("{7CF6DF6D-3B04-46F8-A40B-537D21BCA0B4}") = "OBMCatering.Documentacion", "OBMCatering.Documentacion\OBMCatering.Documentacion.shfbproj", "{4B5E043C-BED6-4B0E-80F7-0975517CD1FC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{5F92B3FB-CDBA-431A-8093-EBE86DC873F1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{455C292C-BB72-4578-AAEB-A8CBC9F6CF95}.Debug|Any CPU.ActiveCfg = Debug
 		{455C292C-BB72-4578-AAEB-A8CBC9F6CF95}.Release|Any CPU.ActiveCfg = Release
+		{4B5E043C-BED6-4B0E-80F7-0975517CD1FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B5E043C-BED6-4B0E-80F7-0975517CD1FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B5E043C-BED6-4B0E-80F7-0975517CD1FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B5E043C-BED6-4B0E-80F7-0975517CD1FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

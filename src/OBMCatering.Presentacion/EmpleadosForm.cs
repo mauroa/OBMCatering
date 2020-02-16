@@ -6,12 +6,18 @@ using System.Windows.Forms;
 
 namespace OBMCatering.Presentacion
 {
+    /// <summary>
+    /// Representa el formulario de administracion de empleados del sistema
+    /// </summary>
     public partial class EmpleadosForm : Form
     {
         ContextoPresentacion contexto;
         LocalidadesBL localidadesBL;
         EmpleadosBL empleadosBL;
 
+        /// <summary>
+        /// Crea una nueva instancia de la clase <see cref="EmpleadosForm"/>
+        /// </summary>
         public EmpleadosForm()
         {
             this.CargarLenguaje();
@@ -60,7 +66,12 @@ namespace OBMCatering.Presentacion
 
         void EmpleadosForm_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
-            MessageBox.Show(Resources.EmpleadosForm_Help_Mensaje, Resources.Form_Help_Titulo, MessageBoxButtons.OK, MessageBoxIcon.Question);
+            Form ayudaForm = new AyudaForm()
+            {
+                MensajeAyuda = Resources.EmpleadosForm_Help_Mensaje
+            };
+
+            ayudaForm.ShowDialog();
         }
 
         void BtnGuardar_Click(object sender, EventArgs e)

@@ -5,6 +5,9 @@ using System.Linq;
 
 namespace OBMCatering.Datos
 {
+    /// <summary>
+    /// Responsable de manejar las recetas dentro de la capa de acceso a datos del sistema
+    /// </summary>
     public class RecetasDAL
     {
         OBMCateringEntities modelo;

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<topic id="0d93b73f-cc18-45d4-a7fe-c763f5d6aace" revisionNumber="1">
+	<developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<introduction>
+			<para>OBM Catering es un sistema de administracion de pedidos de catering tanto empresarial como personal</para>
+		</introduction>
+
+		<section>
+			<title>Caracteristicas</title>
+			<content>
+				<para>Dentro de las caracteristicas y funcionalidades mas importantes de este sistema, se encuentran:</para>
+
+				<list class="bullet">
+          <listItem>
+            <para>Administrar a los clientes del sistema, es decir quienes realizaran los pedidos de catering</para>
+          </listItem>
+          
+					<listItem>
+						<para>Gestionar los pedidos de catering de los distintos clientes del sistema, pudiendo determinar 
+el rango de fechas del mismo, la cantidad de comensales, los platos que van a prepararse cada dia, etc.
+           </para>
+					</listItem>
+
+					<listItem>
+						<para>Administrar las recetas con las que el sistema contara para poder ofrecer e incluir en los pedidos. Estas 
+recetas son las que se usaran para preparar los platos que formaran parte de cada catering a realizar</para>
+					</listItem>
+
+					<listItem>
+						<para>Controlar y actualizar el listado de precios de los ingredientes necesarios para preparar las recetas 
+registradas y activas en el sistema</para>
+					</listItem>
+
+					<listItem>
+						<para>Administrar la facturacion a los clientes por los pedidos realizados</para>
+					</listItem>
+
+          <listItem>
+            <para>Administrar las ordenes de compra de los ingredientes necesarios para cumplir con los pedidos activos</para>
+          </listItem>
+
+          <listItem>
+            <para>Administrar las ordenes de pago a proveedores por las compras de ingredientes realizadas</para>
+          </listItem>
+
+          <listItem>
+            <para>Administrar a los proveedores del sistema, es decir aquellas empresas a las que se les podra comprar los ingredientes o materia prima</para>
+          </listItem>
+
+          <listItem>
+            <para>Administrar a los usuarios y empleados del sistema</para>
+          </listItem>
+				</list>
+        
+			</content>
+		</section>
+
+		<relatedTopics>
+			<link xlink:href="555181ac-4ffe-42b9-a539-4f07f6c0f521" />
+		</relatedTopics>
+	</developerConceptualDocument>
+</topic>

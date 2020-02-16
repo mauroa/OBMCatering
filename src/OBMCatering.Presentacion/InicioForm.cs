@@ -5,10 +5,16 @@ using System.Windows.Forms;
 
 namespace OBMCatering.Presentacion
 {
+    /// <summary>
+    /// Representa la pantalla inicial del sistema desde donde se puede acceder a todas sus opciones
+    /// </summary>
     public partial class InicioForm : Form
     {
         ContextoPresentacion contexto;
 
+        /// <summary>
+        /// Crea una nueva instancia de la clase <see cref="InicioForm"/>
+        /// </summary>
         public InicioForm()
         {
             Inicializar();

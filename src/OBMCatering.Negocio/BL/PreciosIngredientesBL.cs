@@ -4,15 +4,28 @@ using System.Collections.Generic;
 
 namespace OBMCatering.Negocio
 {
+    /// <summary>
+    /// Reponsable de manejar el listado de precios de los ingredientes del sistema dentro de la capa de negocio del mismo
+    /// </summary>
     public class PreciosIngredientesBL
     {
         Datos.OBMCateringDAL dal;
 
+        /// <summary>
+        /// Crea una nueva instancia de <see cref="PreciosIngredientesBL"/>
+        /// </summary>
+        /// <param name="contexto">Contexto de negocio</param>
         public PreciosIngredientesBL(ContextoNegocio contexto)
         {
             dal = contexto.ObtenerDatos();
         }
 
+        /// <summary>
+        /// Determina si dentro de una receta hay ingredientes a los que le falta asignar el precio
+        /// Esto indica si una receta esta apta para utilizarse o debe quedar inactiva
+        /// </summary>
+        /// <param name="receta">Receta a consultar</param>
+        /// <returns>Valor que indica si hay ingredientes con faltante de precio</returns>
         public bool HayFaltantes(Receta receta)
         {
             if (receta == null)
@@ -47,6 +60,12 @@ namespace OBMCatering.Negocio
             return faltantes;
         }
 
+        /// <summary>
+        /// Crea entradas en el listado de precios para los ingredientes que aun no figuren en el mismo,
+        /// es decir para nuevos ingredientes de una receta.
+        /// Las entradas se crearan con el precio como faltante, ya que solo los usuarios autorizados podran asignar precios a los ingredientes
+        /// </summary>
+        /// <param name="receta">Receta para analizar sus ingredientes y crear precios faltantes si es necesario</param>
         public void CrearFaltantes(Receta receta)
         {
             if (receta == null)
@@ -85,6 +104,11 @@ namespace OBMCatering.Negocio
             dal.Guardar();
         }
 
+        /// <summary>
+        /// Actualiza la informacion de una entrada en el listado de precios
+        /// Pueden actualizarse el precio del ingrediente, su cantidad o su unidad
+        /// </summary>
+        /// <param name="precioIngrediente">Unidad dentro la lista de precios a actualizar</param>
         public void Actualizar(PrecioIngrediente precioIngrediente)
         {
             ValidarPrecioIngrediente(precioIngrediente);
@@ -113,6 +137,10 @@ namespace OBMCatering.Negocio
             dal.Guardar();
         }
 
+        /// <summary>
+        /// Obtiene el listado completo de precios de los ingredientes del sistema
+        /// </summary>
+        /// <returns>Listado de precios de los ingredientes</returns>
         public IEnumerable<PrecioIngrediente> Obtener()
         {
             Datos.PreciosIngredientesDAL dalPreciosIngredientes = dal.ObtenerPreciosIngredientesDAL();
@@ -129,6 +157,11 @@ namespace OBMCatering.Negocio
             return preciosIngredientes;
         }
 
+        /// <summary>
+        /// Obtiene un precio en particular para un ingrediente dado
+        /// </summary>
+        /// <param name="ingrediente">Ingrediente para obtener su precio y caracteristicas</param>
+        /// <returns>Entrada en el listado de precios para ese ingrediente</returns>
         public PrecioIngrediente Obtener(Ingrediente ingrediente)
         {
             if (ingrediente == null)

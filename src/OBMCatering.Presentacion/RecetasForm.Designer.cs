@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RecetasForm));
             this.lblNombre = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnVer = new System.Windows.Forms.Button();
@@ -149,7 +150,9 @@
             this.ClientSize = new System.Drawing.Size(1421, 964);
             this.Controls.Add(this.grvRecetas);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RecetasForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administracion de Recetas";
             this.Load += new System.EventHandler(this.RecetasForm_Load);
             this.panel1.ResumeLayout(false);

@@ -3,12 +3,21 @@ using System.Collections.Generic;
 
 namespace OBMCatering.Negocio
 {
+    /// <summary>
+    /// Reponsable de manejar las ordenes de pago del sistema dentro de la capa de negocio del mismo
+    /// </summary>
     public class OrdenesPagoBL
     {
         Datos.OBMCateringDAL dal;
         ProveedoresBL proveedoresBL;
         OrdenesCompraBL ordenesCompraBL;
 
+        /// <summary>
+        /// Crea una nueva instancia de <see cref="OrdenesPagoBL"/>
+        /// </summary>
+        /// <param name="contexto">Contexto de negocio</param>
+        /// <param name="proveedoresBL">Capa de negocio de proveedores</param>
+        /// <param name="ordenesCompraBL">Capa de negocio de ordenes de compra</param>
         public OrdenesPagoBL(ContextoNegocio contexto, ProveedoresBL proveedoresBL, OrdenesCompraBL ordenesCompraBL)
         {
             dal = contexto.ObtenerDatos();
@@ -16,6 +25,10 @@ namespace OBMCatering.Negocio
             this.ordenesCompraBL = ordenesCompraBL;
         }
 
+        /// <summary>
+        /// Crea una nueva orden de pago en el sistema, lo que implica que una determinada orden de compra ha sido finalizada
+        /// </summary>
+        /// <param name="ordenPago">Orden de pago a crear</param>
         public void Crear(OrdenPago ordenPago)
         {
             ValidarOrdenPago(ordenPago);
@@ -63,6 +76,11 @@ namespace OBMCatering.Negocio
             dal.Guardar();
         }
 
+        /// <summary>
+        /// Actualiza los datos de una determinada orden de pago en el sistema
+        /// Los datos que se permiten actualizar son los precios de los items y el estado de la orden, es decir si esta pagada o no
+        /// </summary>
+        /// <param name="ordenPago">Orden de pago a actualizar</param>
         public void Actualizar(OrdenPago ordenPago)
         {
             ValidarOrdenPago(ordenPago);
@@ -100,6 +118,10 @@ namespace OBMCatering.Negocio
             dal.Guardar();
         }
 
+        /// <summary>
+        /// Obtiene el listado completo de ordenes de pago del sistema
+        /// </summary>
+        /// <returns>Listado de ordenes de pago</returns>
         public IEnumerable<OrdenPago> Obtener()
         {
             Datos.OrdenesPagoDAL dalOrdenesPago = dal.ObtenerOrdenesPagoDAL();
@@ -108,6 +130,11 @@ namespace OBMCatering.Negocio
             return Obtener(ordenesPagoDAL);
         }
 
+        /// <summary>
+        /// Obtiene el listado de ordenes de pago segun si ya fueron pagadas o no
+        /// </summary>
+        /// <param name="pagadas">Determina si se quiere consultar las ordenes de pago pagas o impagas</param>
+        /// <returns>Listado de ordenes de pago</returns>
         public IEnumerable<OrdenPago> Obtener(bool pagadas)
         {
             Datos.OrdenesPagoDAL dalOrdenesPago = dal.ObtenerOrdenesPagoDAL();
@@ -116,6 +143,11 @@ namespace OBMCatering.Negocio
             return Obtener(ordenesPagoDAL);
         }
 
+        /// <summary>
+        /// Obtiene el listado de ordenes de pago por proveedor
+        /// </summary>
+        /// <param name="proveedor">Proveedor del cual se quiere consultar sus ordenes de pago</param>
+        /// <returns>Listado de ordenes de pago del proveedor</returns>
         public IEnumerable<OrdenPago> Obtener(Proveedor proveedor)
         {
             if (proveedor == null)
@@ -137,6 +169,11 @@ namespace OBMCatering.Negocio
             return Obtener(ordenesPagoDAL);
         }
 
+        /// <summary>
+        /// Obtiene una determinada orden de pago segun su identificador
+        /// </summary>
+        /// <param name="id">Identificador de la orden de pago</param>
+        /// <returns>Orden de pago encontrada</returns>
         public OrdenPago Obtener(int id)
         {
             Datos.OrdenesPagoDAL dalOrdenesPago = dal.ObtenerOrdenesPagoDAL();

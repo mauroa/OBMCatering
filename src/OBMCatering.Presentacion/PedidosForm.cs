@@ -7,6 +7,9 @@ using OBMCatering.Presentacion.Properties;
 
 namespace OBMCatering.Presentacion
 {
+    /// <summary>
+    /// Representa el formulario de pedidos para la cocina, en el sistema
+    /// </summary>
     public partial class PedidosForm : Form
     {
         ContextoPresentacion contexto;
@@ -16,6 +19,9 @@ namespace OBMCatering.Presentacion
         RecetasBL recetasBL;
         OrdenesVentaBL ordenesVentaBL;
 
+        /// <summary>
+        /// Crea una nueva instancia de la clase <see cref="PedidosForm"/>
+        /// </summary>
         public PedidosForm()
         {
             this.CargarLenguaje();
@@ -58,7 +64,12 @@ namespace OBMCatering.Presentacion
 
         void PedidosForm_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
-            MessageBox.Show(Resources.PedidosForm_Help_Mensaje, Resources.Form_Help_Titulo, MessageBoxButtons.OK, MessageBoxIcon.Question);
+            Form ayudaForm = new AyudaForm()
+            {
+                MensajeAyuda = Resources.PedidosForm_Help_Mensaje
+            };
+
+            ayudaForm.ShowDialog();
         }
 
         void BtnFiltrar_Click(object sender, EventArgs e)

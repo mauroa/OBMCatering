@@ -6,12 +6,18 @@ using System.Windows.Forms;
 
 namespace OBMCatering.Presentacion
 {
+    /// <summary>
+    /// Representa el formulario de administracion de clientes del sistema
+    /// </summary>
     public partial class ClientesForm : Form
     {
         ContextoPresentacion contexto;
         LocalidadesBL localidadesBL;
         ClientesBL clientesBL;
 
+        /// <summary>
+        /// Crea una nueva instancia de la clase <see cref="ClientesForm"/>
+        /// </summary>
         public ClientesForm()
         {
             this.CargarLenguaje();
@@ -60,7 +66,12 @@ namespace OBMCatering.Presentacion
 
         void ClientesForm_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
-            MessageBox.Show(Resources.ClientesForm_Help_Mensaje, Resources.Form_Help_Titulo, MessageBoxButtons.OK, MessageBoxIcon.Question);
+            Form ayudaForm = new AyudaForm() 
+            { 
+                MensajeAyuda = Resources.ClientesForm_Help_Mensaje 
+            };
+
+            ayudaForm.ShowDialog();
         }
 
         void BtnGuardar_Click(object sender, EventArgs e)

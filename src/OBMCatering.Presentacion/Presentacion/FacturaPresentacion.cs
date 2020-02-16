@@ -3,12 +3,21 @@ using System;
 
 namespace OBMCatering.Presentacion
 {
+    /// <summary>
+    /// Representacion de la clase <see cref="Factura"/> en la capa de presentacion
+    /// La idea es aplanar los datos y sus tipos, de manera de poder consultarlos mejor 
+    /// y tambien mostrarlos de manera mas simple en una grilla 
+    /// </summary>
     public class FacturaPresentacion
     {
         Factura factura;
         int id;
         OrdenVentaPresentacion ordenVenta;
 
+        /// <summary>
+        /// Crea una nueva instancia de la clase <see cref="FacturaPresentacion"/>
+        /// </summary>
+        /// <param name="factura">Factura del sistema</param>
         public FacturaPresentacion(Factura factura)
         {
             this.factura = factura;
@@ -19,10 +28,19 @@ namespace OBMCatering.Presentacion
             Cobrada = factura.Cobrada;
         }
 
+        /// <summary>
+        /// Fecha de facturacion
+        /// </summary>
         public DateTime Fecha { get; set; }
 
+        /// <summary>
+        /// Indica si la factura fue cobrada o no
+        /// </summary>
         public bool Cobrada { get; set; }
 
+        /// <summary>
+        /// Cliente asociado a la factura
+        /// </summary>
         public string Cliente
         {
             get
@@ -31,6 +49,9 @@ namespace OBMCatering.Presentacion
             }
         }
 
+        /// <summary>
+        /// Fecha de inicio del pedido asociado a la factura
+        /// </summary>
         public DateTime FechaInicio
         {
             get
@@ -39,6 +60,9 @@ namespace OBMCatering.Presentacion
             }
         }
 
+        /// <summary>
+        /// Fecha de finalizacion del pedido asociado a la factura
+        /// </summary>
         public DateTime FechaFin
         {
             get
@@ -47,6 +71,9 @@ namespace OBMCatering.Presentacion
             }
         }
 
+        /// <summary>
+        /// Cantidad de comensales del pedido asociado a la factura
+        /// </summary>
         public string Comensales
         {
             get
@@ -55,6 +82,9 @@ namespace OBMCatering.Presentacion
             }
         }
 
+        /// <summary>
+        /// Precio total del pedido asociado a la factura
+        /// </summary>
         public string Precio
         {
             get
@@ -63,6 +93,9 @@ namespace OBMCatering.Presentacion
             }
         }
 
+        /// <summary>
+        /// Listado de recetas separadas por coma, del pedido asociado a la factura
+        /// </summary>
         public string Recetas
         {
             get
@@ -71,11 +104,19 @@ namespace OBMCatering.Presentacion
             }
         }
 
+        /// <summary>
+        /// Obtiene el identificador de la factura
+        /// </summary>
+        /// <returns></returns>
         public int ObtenerId()
         {
             return id;
         }
 
+        /// <summary>
+        /// Obtiene la instancia de <see cref="Factura"/> de la capa de negocio asociada
+        /// </summary>
+        /// <returns>Factura asociada</returns>
         public Factura ObtenerFactura()
         {
             return factura;

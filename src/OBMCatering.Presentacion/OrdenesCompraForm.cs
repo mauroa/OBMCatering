@@ -6,6 +6,9 @@ using System.Windows.Forms;
 
 namespace OBMCatering.Presentacion
 {
+    /// <summary>
+    /// Representa el formulario de ordenes de compra del sistema
+    /// </summary>
     public partial class OrdenesCompraForm : Form
     {
         ContextoPresentacion contexto;
@@ -20,6 +23,9 @@ namespace OBMCatering.Presentacion
         OrdenesPagoBL ordenesPagoBL;
         OrdenCompraPresentacion ordenCompraSeleccionada;
 
+        /// <summary>
+        /// Crea una nueva instancia de la clase <see cref="OrdenesCompraForm"/>
+        /// </summary>
         public OrdenesCompraForm()
         {
             this.CargarLenguaje();
@@ -66,7 +72,12 @@ namespace OBMCatering.Presentacion
 
         void OrdenesCompraForm_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
-            MessageBox.Show(Resources.OrdenesCompraForm_Help_Mensaje, Resources.Form_Help_Titulo, MessageBoxButtons.OK, MessageBoxIcon.Question);
+            Form ayudaForm = new AyudaForm()
+            {
+                MensajeAyuda = Resources.OrdenesCompraForm_Help_Mensaje
+            };
+
+            ayudaForm.ShowDialog();
         }
 
         void BtnGuardar_Click(object sender, EventArgs e)
@@ -155,10 +166,11 @@ namespace OBMCatering.Presentacion
 
             foreach (ItemOrdenCompraPresentacion itemOrdenCompra in ordenCompraSeleccionada.ObtenerItems())
             {
-                ItemOrdenPago itemOrdenPago = new ItemOrdenPago();
-
-                itemOrdenPago.ItemOrdenCompra = itemOrdenCompra.ObtenerItemOrdenCompra();
-                itemOrdenPago.Precio = 0m;
+                ItemOrdenPago itemOrdenPago = new ItemOrdenPago
+                {
+                    ItemOrdenCompra = itemOrdenCompra.ObtenerItemOrdenCompra(),
+                    Precio = 0m
+                };
 
                 ordenPago.Items.Add(itemOrdenPago);
             }

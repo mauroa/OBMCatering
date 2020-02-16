@@ -3,6 +3,9 @@ using System.Linq;
 
 namespace OBMCatering.Datos
 {
+    /// <summary>
+    /// Responsable de manejar las localidades dentro de la capa de acceso a datos del sistema
+    /// </summary>
     public class LocalidadesDAL
     {
         OBMCateringEntities modelo;

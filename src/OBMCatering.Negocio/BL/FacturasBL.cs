@@ -3,17 +3,30 @@ using System.Collections.Generic;
 
 namespace OBMCatering.Negocio
 {
+    /// <summary>
+    /// Reponsable de manejar las facturas del sistema dentro de la capa de negocio del mismo
+    /// </summary>
     public class FacturasBL
     {
         Datos.OBMCateringDAL dal;
         OrdenesVentaBL ordenesVentaBL;
 
+        /// <summary>
+        /// Crea una nueva instancia de <see cref="FacturasBL"/>
+        /// </summary>
+        /// <param name="contexto">Contexto de negocio</param>
+        /// <param name="ordenesVentaBL">Capa de negocio de ordenes de venta</param>
         public FacturasBL(ContextoNegocio contexto, OrdenesVentaBL ordenesVentaBL)
         {
             dal = contexto.ObtenerDatos();
             this.ordenesVentaBL = ordenesVentaBL;
         }
 
+        /// <summary>
+        /// Crea una nueva factura en el sistema, lo que implica que una determinada orden de venta ha sido aprobada
+        /// Por cada orden de venta o pedido debera crearse una factura que la respalde
+        /// </summary>
+        /// <param name="factura">Factura a crear</param>
         public void Crear(Factura factura)
         {
             ValidarFactura(factura);
@@ -39,6 +52,11 @@ namespace OBMCatering.Negocio
             dal.Guardar();
         }
 
+        /// <summary>
+        /// Actualiza los datos de una determinada factura
+        /// Solo se permite actualizar el estado de la factura, es decir si fue cobrada o no
+        /// </summary>
+        /// <param name="factura">Factura a actualizar</param>
         public void Actualizar(Factura factura)
         {
             ValidarFactura(factura);
@@ -57,6 +75,10 @@ namespace OBMCatering.Negocio
             dal.Guardar();
         }
 
+        /// <summary>
+        /// Obtiene el listado completo de facturas del sistema
+        /// </summary>
+        /// <returns>Listado de facturas</returns>
         public IEnumerable<Factura> Obtener()
         {
             Datos.FacturasDAL dalFacturas = dal.ObtenerFacturasDAL();
@@ -65,6 +87,11 @@ namespace OBMCatering.Negocio
             return Obtener(facturasDAL);
         }
 
+        /// <summary>
+        /// Obtiene el listado de facturas segun si fueron cobradas o no
+        /// </summary>
+        /// <param name="cobradas">Indica si se quiere obtener las facturas pagas o impagas</param>
+        /// <returns>Listado de facturas</returns>
         public IEnumerable<Factura> Obtener(bool cobradas)
         {
             Datos.FacturasDAL dalFacturas = dal.ObtenerFacturasDAL();
@@ -73,6 +100,11 @@ namespace OBMCatering.Negocio
             return Obtener(facturasDAL);
         }
 
+        /// <summary>
+        /// Obtiene el listado de facturas de determinado cliente
+        /// </summary>
+        /// <param name="cliente">Cliente para consultar sus facturas</param>
+        /// <returns>Listado de facturas del cliente</returns>
         public IEnumerable<Factura> Obtener(Cliente cliente)
         {
             if (cliente == null)
@@ -94,6 +126,11 @@ namespace OBMCatering.Negocio
             return Obtener(facturasDAL);
         }
 
+        /// <summary>
+        /// Obtiene una factura determinada segun su identificador
+        /// </summary>
+        /// <param name="id">Identificador de la factura</param>
+        /// <returns>Factura encontrada</returns>
         public Factura Obtener(int id)
         {
             Datos.FacturasDAL dalFacturas = dal.ObtenerFacturasDAL();
@@ -102,6 +139,11 @@ namespace OBMCatering.Negocio
             return Obtener(facturaDAL);
         }
 
+        /// <summary>
+        /// Obtiene la factura asociada a determinado pedido u orden de venta
+        /// </summary>
+        /// <param name="ordenVenta">Orden de venta para buscar su factura</param>
+        /// <returns>Factura encontrada</returns>
         public Factura Obtener(OrdenVenta ordenVenta)
         {
             if (ordenVenta == null)

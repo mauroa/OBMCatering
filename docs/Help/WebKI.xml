@@ -1,0 +1,1225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpKI>
+  <HelpKINode Title="Activa enumeration member" Url="html/e6e3865c-9b68-6a34-486f-f5bcd5c7bb8e.htm" />
+  <HelpKINode Title="Activo property">
+    <HelpKINode Title="Cliente.Activo (Propiedad )" Url="html/19f18d7e-6ced-85bc-119d-5a7c9db3c880.htm" />
+    <HelpKINode Title="ClientePresentacion.Activo (Propiedad )" Url="html/4dc696dd-28bc-40be-5de0-57538e032592.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Actualizar method">
+    <HelpKINode Title="ClientesBL.Actualizar (M&#233;todo )" Url="html/1b3e8dd6-e975-a0af-35e2-e8bcf550fc47.htm" />
+    <HelpKINode Title="EmpleadosBL.Actualizar (M&#233;todo )" Url="html/5b47f959-1f2f-db93-f039-2efedeba6654.htm" />
+    <HelpKINode Title="FacturasBL.Actualizar (M&#233;todo )" Url="html/e86dc4bb-b025-6d7f-0cf5-e280f99e62b2.htm" />
+    <HelpKINode Title="OrdenesCompraBL.Actualizar (M&#233;todo )" Url="html/bb5268b8-884c-4804-542e-3e96fc794bc5.htm" />
+    <HelpKINode Title="OrdenesPagoBL.Actualizar (M&#233;todo )" Url="html/2108f01e-26de-b126-a99e-ba5824ede02c.htm" />
+    <HelpKINode Title="OrdenesVentaBL.Actualizar (M&#233;todo )" Url="html/a6c67df8-992a-4fae-b9b8-fd652ec383d4.htm" />
+    <HelpKINode Title="PreciosIngredientesBL.Actualizar (M&#233;todo )" Url="html/48eda708-af87-473f-bf25-273c8286d61e.htm" />
+    <HelpKINode Title="ProveedoresBL.Actualizar (M&#233;todo )" Url="html/c6ac667c-cb6d-c063-cbe2-c2e29699cedb.htm" />
+    <HelpKINode Title="RecetasBL.Actualizar (M&#233;todo )" Url="html/bb9798be-546c-8396-fbd2-a89a730d43c6.htm" />
+    <HelpKINode Title="UsuariosBL.Actualizar (M&#233;todo )" Url="html/6d127fd3-19ae-4972-6c69-9036b3b3429a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ActualizarRecetasSinPrecio method" Url="html/5e3ed037-e47f-728e-293f-3c77aab7fe87.htm" />
+  <HelpKINode Title="Admin enumeration member" Url="html/cbf8ec3e-285b-9483-d801-9dcb952191a4.htm" />
+  <HelpKINode Title="Alerta enumeration member" Url="html/b1fc206b-72a2-2349-d2a9-e0e983fc6763.htm" />
+  <HelpKINode Title="Aprobada enumeration member" Url="html/d45221ae-7d2c-9d2d-604b-8529bcb0b224.htm" />
+  <HelpKINode Title="Aprobada property">
+    <HelpKINode Title="OrdenVenta.Aprobada (Propiedad )" Url="html/73650574-0f2b-3b7e-32d7-6f8723876de5.htm" />
+    <HelpKINode Title="OrdenVentaPresentacion.Aprobada (Propiedad )" Url="html/2e896379-2fd2-9f64-dea2-5c2a313d9e5c.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AsignarUsuarioAutenticado method" Url="html/3ce6e8f4-e9d7-e23f-4c88-fffca8debf4e.htm" />
+  <HelpKINode Title="Autenticar method" Url="html/34876cb7-138b-e59f-cc66-c2315b6884ac.htm" />
+  <HelpKINode Title="AyudaForm class">
+    <HelpKINode Title="AyudaForm (Clase)" Url="html/5aae9482-922f-6e6d-7930-0048d6709ae1.htm" />
+    <HelpKINode Title="constructor" Url="html/a2213980-4417-fc20-0b31-03756748b2f9.htm" />
+    <HelpKINode Title="events" Url="html/31f4f2a0-c875-40fe-3909-51cab5a03e0b.htm" />
+    <HelpKINode Title="methods" Url="html/2777f72c-c5a5-ca0a-090b-e5dc4f27751f.htm" />
+    <HelpKINode Title="properties" Url="html/ca8beda8-0bbe-09d7-7141-2d312e7617cc.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AyudaForm.AyudaForm constructor" Url="html/a2213980-4417-fc20-0b31-03756748b2f9.htm" />
+  <HelpKINode Title="AyudaForm.Dispose method" Url="html/b1e48eba-bc1a-09e6-6c8a-9479fbd872c8.htm" />
+  <HelpKINode Title="AyudaForm.MensajeAyuda property" Url="html/351cd18a-c247-82d8-f6ee-10dfda15a32e.htm" />
+  <HelpKINode Title="Backup method" Url="html/6fc2f471-9562-ed61-80c7-c3a087dddd08.htm" />
+  <HelpKINode Title="BienvenidaForm class">
+    <HelpKINode Title="BienvenidaForm (Clase)" Url="html/7b04f39a-0d92-9aea-9952-eb8a59f879a1.htm" />
+    <HelpKINode Title="constructor" Url="html/475af6e6-0969-7069-d3be-a2a08adabb0e.htm" />
+    <HelpKINode Title="events" Url="html/bb14b5f6-bb2e-24e8-93df-dc3e72a2d710.htm" />
+    <HelpKINode Title="methods" Url="html/a612539e-e751-f368-1f25-a1896e73cbbb.htm" />
+    <HelpKINode Title="properties" Url="html/348e48bf-f5a0-4045-683c-43df99c87c70.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BienvenidaForm.BienvenidaForm constructor" Url="html/475af6e6-0969-7069-d3be-a2a08adabb0e.htm" />
+  <HelpKINode Title="BienvenidaForm.Dispose method" Url="html/658c00d3-ae1a-0bbd-f92a-0aad0299b694.htm" />
+  <HelpKINode Title="Bitacora class">
+    <HelpKINode Title="Bitacora (Clase)" Url="html/9b2b4d1b-6861-8da5-1f35-a84b6fdf6507.htm" />
+    <HelpKINode Title="constructor" Url="html/e60e97d1-8ecf-4c8a-ac0c-5144fed40916.htm" />
+    <HelpKINode Title="methods" Url="html/8fd73821-f2c3-060a-3ff9-0c25af627276.htm" />
+    <HelpKINode Title="properties" Url="html/4926cca0-6df1-e1f1-1c2b-93ca09f22a2a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Bitacora property" Url="html/3823599a-ecee-926e-8a65-f782ad2144fe.htm" />
+  <HelpKINode Title="Bitacora.Bitacora constructor" Url="html/e60e97d1-8ecf-4c8a-ac0c-5144fed40916.htm" />
+  <HelpKINode Title="Bitacora.Fecha property" Url="html/55f36c65-3146-ce6b-4597-23ccd6790bdc.htm" />
+  <HelpKINode Title="Bitacora.Id property" Url="html/b01fcaa0-a8ae-b12b-d027-7e083071f821.htm" />
+  <HelpKINode Title="Bitacora.Mensaje property" Url="html/3921c88c-de5e-c040-b5bb-fcd8ad3dc090.htm" />
+  <HelpKINode Title="Bitacora.Tipo property" Url="html/19a6ff8e-0132-062a-4baa-b74d6d997261.htm" />
+  <HelpKINode Title="Bitacora.Usuario property" Url="html/ed3b1785-cc26-413f-6c47-5eb04d5be734.htm" />
+  <HelpKINode Title="BitacoraBL class">
+    <HelpKINode Title="BitacoraBL (Clase)" Url="html/9994e5dc-b5c5-7d70-6f7a-e1d9674dbdda.htm" />
+    <HelpKINode Title="constructor" Url="html/1614f7d2-e214-b728-5773-bc601eccf4a5.htm" />
+    <HelpKINode Title="methods" Url="html/a1c768d4-f414-db62-e37e-7abdfc2159e9.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BitacoraBL.BitacoraBL constructor" Url="html/1614f7d2-e214-b728-5773-bc601eccf4a5.htm" />
+  <HelpKINode Title="BitacoraBL.Obtener method" Url="html/5cb5fa77-729e-a3dd-e764-e3aecda12a3d.htm" />
+  <HelpKINode Title="BitacoraBL.Registrar method" Url="html/1369d5b7-65b1-48e2-12b7-dff86f892d63.htm" />
+  <HelpKINode Title="BitacoraForm class">
+    <HelpKINode Title="BitacoraForm (Clase)" Url="html/c0a089b4-d19a-f05f-6bf7-71d69564cb12.htm" />
+    <HelpKINode Title="constructor" Url="html/e4eaca36-abae-df7f-b9fc-efb7ebf73ff0.htm" />
+    <HelpKINode Title="events" Url="html/714a37ce-3a5b-1bdb-9125-d947ffb8302b.htm" />
+    <HelpKINode Title="methods" Url="html/1d74f8bf-de09-de35-e6dc-51fcf8b8cf3a.htm" />
+    <HelpKINode Title="properties" Url="html/b723b8d0-f3ac-e464-4e21-92ae4affbead.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BitacoraForm.BitacoraForm constructor" Url="html/e4eaca36-abae-df7f-b9fc-efb7ebf73ff0.htm" />
+  <HelpKINode Title="BitacoraForm.Dispose method" Url="html/84c009cd-1c71-e4b6-666f-a1b483fed026.htm" />
+  <HelpKINode Title="BitacoraPresentacion class">
+    <HelpKINode Title="BitacoraPresentacion (Clase)" Url="html/e6501fae-36b9-7648-8474-8486fda9a8b5.htm" />
+    <HelpKINode Title="constructor" Url="html/3c4501ce-e95d-4409-516a-ea4184ef8c2d.htm" />
+    <HelpKINode Title="methods" Url="html/96f5caf9-cf60-9885-47e8-712d5266f0e5.htm" />
+    <HelpKINode Title="properties" Url="html/ccd0c647-dbe3-d086-f97a-a4460d8b58fc.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BitacoraPresentacion.BitacoraPresentacion constructor" Url="html/3c4501ce-e95d-4409-516a-ea4184ef8c2d.htm" />
+  <HelpKINode Title="BitacoraPresentacion.Fecha property" Url="html/6cab770f-5158-cc99-872c-795bcd1ea1ef.htm" />
+  <HelpKINode Title="BitacoraPresentacion.Mensaje property" Url="html/a22e5234-c554-32b5-8d29-e36334b2b89d.htm" />
+  <HelpKINode Title="BitacoraPresentacion.Perfil property" Url="html/502dd405-ea20-0a8b-8785-8f4b6dc3f5d1.htm" />
+  <HelpKINode Title="BitacoraPresentacion.Tipo property" Url="html/d1aa4113-e064-1ec0-94b0-4282d31cd21f.htm" />
+  <HelpKINode Title="BitacoraPresentacion.Usuario property" Url="html/a5ba80e3-5185-09d6-cc23-de6e4ae1c56c.htm" />
+  <HelpKINode Title="CalcularPrecio method" Url="html/44677f9e-207d-76f1-31ad-0accc3d88ec9.htm" />
+  <HelpKINode Title="CalularPrecio method" Url="html/230df66b-b135-4ccb-908f-f885a316f27f.htm" />
+  <HelpKINode Title="CambiarPassword property" Url="html/99dd582f-0c2b-a439-5e1b-d2b75788d3f6.htm" />
+  <HelpKINode Title="Cantidad property">
+    <HelpKINode Title="IngredientePresentacion.Cantidad (Propiedad )" Url="html/efe5c4ad-8f26-ddec-30e9-fbbfb4d9fc33.htm" />
+    <HelpKINode Title="IngredienteReceta.Cantidad (Propiedad )" Url="html/3a2dde17-98c0-9323-23e2-a4820844dc64.htm" />
+    <HelpKINode Title="ItemOrdenCompra.Cantidad (Propiedad )" Url="html/940de78f-8b1c-5b36-8870-abd954df695a.htm" />
+    <HelpKINode Title="ItemOrdenCompraPresentacion.Cantidad (Propiedad )" Url="html/e114c5a7-b8e3-d6e5-3b84-634dec5a8bf7.htm" />
+    <HelpKINode Title="ItemOrdenPagoPresentacion.Cantidad (Propiedad )" Url="html/f0dc5980-be28-55f3-32bb-d6357eb8da02.htm" />
+    <HelpKINode Title="PrecioIngrediente.Cantidad (Propiedad )" Url="html/9ad84b17-5a09-9a5a-bfbb-df1402c076ca.htm" />
+    <HelpKINode Title="PrecioIngredientePresentacion.Cantidad (Propiedad )" Url="html/07383b7a-a498-aa09-cf28-3b1a93797add.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CargarLenguaje method" Url="html/5cc9eb05-1518-dfc3-a57c-51b17e336794.htm" />
+  <HelpKINode Title="Cliente class">
+    <HelpKINode Title="Cliente (Clase)" Url="html/fb267d68-b96c-ed33-43b1-81893489a3ff.htm" />
+    <HelpKINode Title="constructor" Url="html/b8342194-6003-4d2b-3778-7030f7771298.htm" />
+    <HelpKINode Title="methods" Url="html/70a8cc67-945b-bdeb-33b3-59fe84f9dfeb.htm" />
+    <HelpKINode Title="properties" Url="html/4c597d5a-0ffc-3a77-9dc6-902f1c8b5c2e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Cliente property">
+    <HelpKINode Title="FacturaPresentacion.Cliente (Propiedad )" Url="html/3233de22-1e0a-2821-c978-76b62c2e5824.htm" />
+    <HelpKINode Title="OrdenCompraPresentacion.Cliente (Propiedad )" Url="html/bf692fb3-72dd-278f-5d60-7c00cdc8ef5a.htm" />
+    <HelpKINode Title="OrdenVenta.Cliente (Propiedad )" Url="html/8f6ea7df-bdb8-d932-f3da-c6fa77fdae18.htm" />
+    <HelpKINode Title="OrdenVentaPresentacion.Cliente (Propiedad )" Url="html/d6e3a55f-e955-5e71-218e-73ac339c2471.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Cliente.Activo property" Url="html/19f18d7e-6ced-85bc-119d-5a7c9db3c880.htm" />
+  <HelpKINode Title="Cliente.Cliente constructor" Url="html/b8342194-6003-4d2b-3778-7030f7771298.htm" />
+  <HelpKINode Title="Cliente.CodigoPostal property" Url="html/8372506d-1793-7003-9fc9-c172db7d4061.htm" />
+  <HelpKINode Title="Cliente.CUIT property" Url="html/7b906960-46a7-6be5-ef74-aed1076fba19.htm" />
+  <HelpKINode Title="Cliente.Domicilio property" Url="html/9032315b-d413-8881-1eed-be6dfc3997b1.htm" />
+  <HelpKINode Title="Cliente.Email property" Url="html/0e6be6af-7d94-cbbf-b1b9-7dde51ed0b28.htm" />
+  <HelpKINode Title="Cliente.FechaAlta property" Url="html/649d4d87-e0f8-7b1e-d309-3318cabf7911.htm" />
+  <HelpKINode Title="Cliente.Localidad property" Url="html/dd0dffe7-0087-36c5-ce28-caeaca692781.htm" />
+  <HelpKINode Title="Cliente.Nombre property" Url="html/b304043c-941d-b20f-19b6-2cb293cd747f.htm" />
+  <HelpKINode Title="Cliente.Telefono property" Url="html/0cfabef8-962d-731c-3b12-c9f8cd6aec53.htm" />
+  <HelpKINode Title="Cliente.Tipo property" Url="html/e796bb1b-2af7-7620-dc73-44d9228c516e.htm" />
+  <HelpKINode Title="ClientePresentacion class">
+    <HelpKINode Title="ClientePresentacion (Clase)" Url="html/6de44d82-171f-e043-57dd-dc8f55a69369.htm" />
+    <HelpKINode Title="constructor" Url="html/ce6291eb-375d-720e-0444-3129b4ef9f29.htm" />
+    <HelpKINode Title="methods" Url="html/fe56b14c-232e-1b7f-f3ba-eca1dd221336.htm" />
+    <HelpKINode Title="properties" Url="html/13d43888-ae0e-b450-0a5f-787a3e16b278.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ClientePresentacion.Activo property" Url="html/4dc696dd-28bc-40be-5de0-57538e032592.htm" />
+  <HelpKINode Title="ClientePresentacion.ClientePresentacion constructor" Url="html/ce6291eb-375d-720e-0444-3129b4ef9f29.htm" />
+  <HelpKINode Title="ClientePresentacion.CodigoPostal property" Url="html/bd0ea43c-ef6e-9e42-de5b-c991ecd7a99c.htm" />
+  <HelpKINode Title="ClientePresentacion.CUIT property" Url="html/a7f7b99a-8176-a939-82d4-68f9aa2ccd3f.htm" />
+  <HelpKINode Title="ClientePresentacion.Domicilio property" Url="html/f8c31d69-9edb-2477-790c-0da500c7f65d.htm" />
+  <HelpKINode Title="ClientePresentacion.Email property" Url="html/bd86c8f3-dfa9-7122-d762-283cdf476ab9.htm" />
+  <HelpKINode Title="ClientePresentacion.FechaAlta property" Url="html/b3835e6c-88aa-7945-9eb4-1cfe7b9747d6.htm" />
+  <HelpKINode Title="ClientePresentacion.Localidad property" Url="html/292b4b30-c49a-9a3a-cfbf-e2f168736df6.htm" />
+  <HelpKINode Title="ClientePresentacion.Nombre property" Url="html/9fab9559-a229-8860-8b36-ac675b9eb71b.htm" />
+  <HelpKINode Title="ClientePresentacion.ObtenerCliente method" Url="html/ec529564-a8e7-e205-c1f4-c28098c7fc05.htm" />
+  <HelpKINode Title="ClientePresentacion.Provincia property" Url="html/8d9135d4-5d9c-a101-8cb2-0c2c4c5b89cf.htm" />
+  <HelpKINode Title="ClientePresentacion.Telefono property" Url="html/aa623753-3fc1-60f9-9d23-ec75bce84a31.htm" />
+  <HelpKINode Title="ClientePresentacion.Tipo property" Url="html/780fcdfb-7bc7-51f5-bf7c-7d2cafe15ace.htm" />
+  <HelpKINode Title="ClientesBL class">
+    <HelpKINode Title="ClientesBL (Clase)" Url="html/90200b97-1c5f-2697-c771-9e242dc3338d.htm" />
+    <HelpKINode Title="constructor" Url="html/6c17e3f6-1d36-1c09-1637-f91fe1840f6b.htm" />
+    <HelpKINode Title="methods" Url="html/3aea569d-1efc-62cb-2807-9c379dd04dd9.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ClientesBL.Actualizar method" Url="html/1b3e8dd6-e975-a0af-35e2-e8bcf550fc47.htm" />
+  <HelpKINode Title="ClientesBL.ClientesBL constructor" Url="html/6c17e3f6-1d36-1c09-1637-f91fe1840f6b.htm" />
+  <HelpKINode Title="ClientesBL.Crear method" Url="html/1cf07aea-a7b1-1335-b103-56fc24b9e973.htm" />
+  <HelpKINode Title="ClientesBL.Existe method" Url="html/60fd8cd0-5a20-6a47-c8c5-a1d256b0fa45.htm" />
+  <HelpKINode Title="ClientesBL.Obtener method" Url="html/b05d1393-fd9f-ca3c-fe10-a9da0df97a36.htm" />
+  <HelpKINode Title="ClientesBL.ObtenerActivos method" Url="html/26c61417-d505-18ff-53b4-4ed8dde52328.htm" />
+  <HelpKINode Title="ClientesBL.ObtenerPorCUIT method" Url="html/3a24eb82-34ce-f54d-64df-6e00093e6fa5.htm" />
+  <HelpKINode Title="ClientesBL.ObtenerPorNombre method" Url="html/cc9411d1-552e-efee-5979-7a1428725f72.htm" />
+  <HelpKINode Title="ClientesForm class">
+    <HelpKINode Title="ClientesForm (Clase)" Url="html/c77258e3-963e-17a9-f08d-712183c79727.htm" />
+    <HelpKINode Title="constructor" Url="html/db2ac2ad-35a0-67fc-cf5d-2a69b4c65a3f.htm" />
+    <HelpKINode Title="events" Url="html/4f2cb16c-f9a0-4ab6-dbd3-e2d85220800f.htm" />
+    <HelpKINode Title="methods" Url="html/8189ae47-097f-b7dd-b5b1-82e348fa73f1.htm" />
+    <HelpKINode Title="properties" Url="html/e671933a-a55c-40bd-7340-154febd62324.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ClientesForm.ClientesForm constructor" Url="html/db2ac2ad-35a0-67fc-cf5d-2a69b4c65a3f.htm" />
+  <HelpKINode Title="ClientesForm.Dispose method" Url="html/0809bd23-e9f8-79e8-e50c-ccc07d8da349.htm" />
+  <HelpKINode Title="Cobrada property">
+    <HelpKINode Title="Factura.Cobrada (Propiedad )" Url="html/cca0f276-667a-ae45-21ae-968957d74c68.htm" />
+    <HelpKINode Title="FacturaPresentacion.Cobrada (Propiedad )" Url="html/199fe25a-d0f8-6081-15ed-403b6b1004f3.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Cocina enumeration member" Url="html/cbf8ec3e-285b-9483-d801-9dcb952191a4.htm" />
+  <HelpKINode Title="CodigoPostal property">
+    <HelpKINode Title="Cliente.CodigoPostal (Propiedad )" Url="html/8372506d-1793-7003-9fc9-c172db7d4061.htm" />
+    <HelpKINode Title="ClientePresentacion.CodigoPostal (Propiedad )" Url="html/bd0ea43c-ef6e-9e42-de5b-c991ecd7a99c.htm" />
+    <HelpKINode Title="Empleado.CodigoPostal (Propiedad )" Url="html/05367c95-f645-6d55-d6ff-d8c8984896eb.htm" />
+    <HelpKINode Title="EmpleadoPresentacion.CodigoPostal (Propiedad )" Url="html/b1267292-d6b1-89b1-9ed3-e246ab9b1d78.htm" />
+    <HelpKINode Title="Proveedor.CodigoPostal (Propiedad )" Url="html/14363443-5746-e233-ea96-07adbe27505b.htm" />
+    <HelpKINode Title="ProveedorPresentacion.CodigoPostal (Propiedad )" Url="html/ede30565-b45b-ebfd-3ca3-f8fed8012861.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Comensales property">
+    <HelpKINode Title="FacturaPresentacion.Comensales (Propiedad )" Url="html/6421bba5-db3b-1eb0-178a-997c2cd24eed.htm" />
+    <HelpKINode Title="OrdenVenta.Comensales (Propiedad )" Url="html/9c85a490-94de-e166-5ec8-869c7e0f0e0d.htm" />
+    <HelpKINode Title="OrdenVentaPresentacion.Comensales (Propiedad )" Url="html/f1e2b767-f8cb-920f-43a4-49511ff0e54a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Compras enumeration member" Url="html/cbf8ec3e-285b-9483-d801-9dcb952191a4.htm" />
+  <HelpKINode Title="ContextoNegocio class">
+    <HelpKINode Title="ContextoNegocio (Clase)" Url="html/87175580-9299-b809-8d10-3406bc9a995e.htm" />
+    <HelpKINode Title="events" Url="html/e288b68a-2f8a-9aa3-99ce-9d466ec7ec9a.htm" />
+    <HelpKINode Title="methods" Url="html/4762926b-e9e2-7563-ab3e-b6729f977bd7.htm" />
+    <HelpKINode Title="properties" Url="html/c18f76bc-5dfa-4683-d929-36899da7f768.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ContextoNegocio.AsignarUsuarioAutenticado method" Url="html/3ce6e8f4-e9d7-e23f-4c88-fffca8debf4e.htm" />
+  <HelpKINode Title="ContextoNegocio.Backup method" Url="html/6fc2f471-9562-ed61-80c7-c3a087dddd08.htm" />
+  <HelpKINode Title="ContextoNegocio.Bitacora property" Url="html/3823599a-ecee-926e-8a65-f782ad2144fe.htm" />
+  <HelpKINode Title="ContextoNegocio.DatosInicializados event" Url="html/488482dc-4048-dcd4-07b2-5fde23ddb00e.htm" />
+  <HelpKINode Title="ContextoNegocio.EstaInicializando property" Url="html/f1dd54a3-11e2-7807-7559-d552ef5da478.htm" />
+  <HelpKINode Title="ContextoNegocio.Instancia property" Url="html/76f78dc1-2570-31e7-ea49-56e83b6e3373.htm" />
+  <HelpKINode Title="ContextoNegocio.ObtenerUsuarioAutenticado method" Url="html/72b211f3-5cac-e552-30fc-2e7df67f6eda.htm" />
+  <HelpKINode Title="ContextoNegocio.Restaurar method" Url="html/78f40bfa-c181-76c1-26f9-31d7fa8c052b.htm" />
+  <HelpKINode Title="ContextoPresentacion class">
+    <HelpKINode Title="ContextoPresentacion (Clase)" Url="html/5624c397-595f-aaaf-5c4c-66268c829d87.htm" />
+    <HelpKINode Title="methods" Url="html/b9bb61e3-c4a9-7b36-e75b-e75978fc31cc.htm" />
+    <HelpKINode Title="properties" Url="html/f9ad1338-2685-24cc-94be-19a4d9b65002.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ContextoPresentacion.DefinirLenguaje method" Url="html/bde60395-81c3-d7ff-02eb-03e6f39d2fae.htm" />
+  <HelpKINode Title="ContextoPresentacion.Instancia property" Url="html/b73eb45f-245c-4e83-a7de-dddd340ad425.htm" />
+  <HelpKINode Title="ContextoPresentacion.Lenguaje property" Url="html/21e818bf-388d-379d-6a19-ed57383ff76a.htm" />
+  <HelpKINode Title="ContextoPresentacion.MostrarEvento method" Url="html/a347a60b-0847-2376-1a7a-7b9b3f8ac64e.htm" />
+  <HelpKINode Title="ContextoPresentacion.Negocio property" Url="html/bcde7140-fff3-7d7f-9b5e-bc76b581f842.htm" />
+  <HelpKINode Title="ContextoPresentacion.RegistrarAlerta method" Url="html/d88e4b73-4c4f-40ae-133e-0b23cbcfc58d.htm" />
+  <HelpKINode Title="ContextoPresentacion.RegistrarError method" Url="html/3e5c6fde-7e31-f60e-7d02-140495b104a1.htm" />
+  <HelpKINode Title="ContextoPresentacion.RegistrarEvento method" Url="html/80779b02-98ec-ed42-1c61-63d827f145b7.htm" />
+  <HelpKINode Title="Crear method">
+    <HelpKINode Title="ClientesBL.Crear (M&#233;todo )" Url="html/1cf07aea-a7b1-1335-b103-56fc24b9e973.htm" />
+    <HelpKINode Title="EmpleadosBL.Crear (M&#233;todo )" Url="html/ec14a752-b70f-d490-dec2-270e5bb018c8.htm" />
+    <HelpKINode Title="FacturasBL.Crear (M&#233;todo )" Url="html/9be32f1f-de5a-2461-1e47-c3e0f75b1a39.htm" />
+    <HelpKINode Title="OrdenesCompraBL.Crear (M&#233;todo )" Url="html/d52faa03-88fa-864f-3ba2-84c4fcd33d48.htm" />
+    <HelpKINode Title="OrdenesPagoBL.Crear (M&#233;todo )" Url="html/0a2af608-3ebe-df47-7ff2-76bddf47018e.htm" />
+    <HelpKINode Title="OrdenesVentaBL.Crear (M&#233;todo )" Url="html/f65b41ac-bb5e-e5d8-9939-6051173f9831.htm" />
+    <HelpKINode Title="ProveedoresBL.Crear (M&#233;todo )" Url="html/a90b61bd-3a40-dd58-e42c-7bb0ee3f6d19.htm" />
+    <HelpKINode Title="RecetasBL.Crear (M&#233;todo )" Url="html/a4df625d-e6d2-c60e-0f47-aeb704002bfd.htm" />
+    <HelpKINode Title="UsuariosBL.Crear (M&#233;todo )" Url="html/5221082c-5adc-8343-cb1e-d73a60ee60b7.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CrearFaltantes method" Url="html/251743cc-0f40-6309-a6f6-8cf10da52ffb.htm" />
+  <HelpKINode Title="CrearPasswordHash method" Url="html/2c98204f-35e9-7247-65e2-6be7088c1976.htm" />
+  <HelpKINode Title="CUIT property">
+    <HelpKINode Title="Cliente.CUIT (Propiedad )" Url="html/7b906960-46a7-6be5-ef74-aed1076fba19.htm" />
+    <HelpKINode Title="ClientePresentacion.CUIT (Propiedad )" Url="html/a7f7b99a-8176-a939-82d4-68f9aa2ccd3f.htm" />
+    <HelpKINode Title="Empleado.CUIT (Propiedad )" Url="html/257067ed-fc25-d447-9b1d-8f3fb5f778ba.htm" />
+    <HelpKINode Title="EmpleadoPresentacion.CUIT (Propiedad )" Url="html/2843d478-5d77-0541-c194-79c164357470.htm" />
+    <HelpKINode Title="Proveedor.CUIT (Propiedad )" Url="html/78be49e6-053c-408c-fd58-f43f54a5bcdc.htm" />
+    <HelpKINode Title="ProveedorPresentacion.CUIT (Propiedad )" Url="html/2578ec3e-8d8a-3259-6032-3eaf30de8358.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DatosInicializados event" Url="html/488482dc-4048-dcd4-07b2-5fde23ddb00e.htm" />
+  <HelpKINode Title="DefinirLenguaje method" Url="html/bde60395-81c3-d7ff-02eb-03e6f39d2fae.htm" />
+  <HelpKINode Title="Descripcion property" Url="html/6dfa9ec6-b4b9-0aa8-928c-22a091489f10.htm" />
+  <HelpKINode Title="Detalle property">
+    <HelpKINode Title="Receta.Detalle (Propiedad )" Url="html/1c3f9c2b-132e-fc31-f54a-cbca3dd2c80b.htm" />
+    <HelpKINode Title="RecetaPresentacion.Detalle (Propiedad )" Url="html/3450d6a3-37ed-fe6a-2fc1-abc66d85020c.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Dispose method">
+    <HelpKINode Title="AyudaForm.Dispose (M&#233;todo )" Url="html/b1e48eba-bc1a-09e6-6c8a-9479fbd872c8.htm" />
+    <HelpKINode Title="BienvenidaForm.Dispose (M&#233;todo )" Url="html/658c00d3-ae1a-0bbd-f92a-0aad0299b694.htm" />
+    <HelpKINode Title="BitacoraForm.Dispose (M&#233;todo )" Url="html/84c009cd-1c71-e4b6-666f-a1b483fed026.htm" />
+    <HelpKINode Title="ClientesForm.Dispose (M&#233;todo )" Url="html/0809bd23-e9f8-79e8-e50c-ccc07d8da349.htm" />
+    <HelpKINode Title="EmpleadosForm.Dispose (M&#233;todo )" Url="html/1ef1d0d1-88bf-a097-47c7-7916d89cced0.htm" />
+    <HelpKINode Title="FacturasForm.Dispose (M&#233;todo )" Url="html/bdf09f64-561f-7a0e-1a13-9b9ea4da41a6.htm" />
+    <HelpKINode Title="IngredientesForm.Dispose (M&#233;todo )" Url="html/c618789b-54f3-c052-659b-be49e5f29ad0.htm" />
+    <HelpKINode Title="InicioForm.Dispose (M&#233;todo )" Url="html/ca273a76-9f7b-a7fa-8dda-fab8c7ed0777.htm" />
+    <HelpKINode Title="LoginForm.Dispose (M&#233;todo )" Url="html/714f3978-99cf-4fa7-96ab-ea2b58f2545d.htm" />
+    <HelpKINode Title="OrdenesCompraForm.Dispose (M&#233;todo )" Url="html/b6046dd6-fb4a-099f-3f1f-f2aefeed7b5a.htm" />
+    <HelpKINode Title="OrdenesPagoForm.Dispose (M&#233;todo )" Url="html/6da9abb6-1e0e-46fb-b7e7-840a520ea2be.htm" />
+    <HelpKINode Title="OrdenesVentaForm.Dispose (M&#233;todo )" Url="html/08b7535c-25e0-5824-66ab-7bb51fdc7639.htm" />
+    <HelpKINode Title="PedidosForm.Dispose (M&#233;todo )" Url="html/2b09931b-8db5-875d-38b2-2462adc955eb.htm" />
+    <HelpKINode Title="PreciosForm.Dispose (M&#233;todo )" Url="html/d64dca72-8f7f-37ed-ac3f-2241a7df1763.htm" />
+    <HelpKINode Title="ProveedoresForm.Dispose (M&#233;todo )" Url="html/3df20047-026b-6283-38c5-6fdbe5a4c8ef.htm" />
+    <HelpKINode Title="RecetasForm.Dispose (M&#233;todo )" Url="html/6841e52d-d6de-d46c-c2f8-28b6f2f72062.htm" />
+    <HelpKINode Title="UsuariosForm.Dispose (M&#233;todo )" Url="html/625e4091-5937-6562-51bb-05fd31e1a4ce.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Domicilio property">
+    <HelpKINode Title="Cliente.Domicilio (Propiedad )" Url="html/9032315b-d413-8881-1eed-be6dfc3997b1.htm" />
+    <HelpKINode Title="ClientePresentacion.Domicilio (Propiedad )" Url="html/f8c31d69-9edb-2477-790c-0da500c7f65d.htm" />
+    <HelpKINode Title="Empleado.Domicilio (Propiedad )" Url="html/de36252b-6272-fcd3-c3eb-ce7e23f9e9cb.htm" />
+    <HelpKINode Title="EmpleadoPresentacion.Domicilio (Propiedad )" Url="html/58109f25-c995-000b-4d48-fbccea640805.htm" />
+    <HelpKINode Title="Proveedor.Domicilio (Propiedad )" Url="html/8f384aba-14a9-00a9-8f7a-17aec63484fc.htm" />
+    <HelpKINode Title="ProveedorPresentacion.Domicilio (Propiedad )" Url="html/d6e9c69c-5e86-5dc3-8902-8b0507c66742.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Email property">
+    <HelpKINode Title="Cliente.Email (Propiedad )" Url="html/0e6be6af-7d94-cbbf-b1b9-7dde51ed0b28.htm" />
+    <HelpKINode Title="ClientePresentacion.Email (Propiedad )" Url="html/bd86c8f3-dfa9-7122-d762-283cdf476ab9.htm" />
+    <HelpKINode Title="Empleado.Email (Propiedad )" Url="html/52c07cce-09ed-ca92-4084-77cadb6262c6.htm" />
+    <HelpKINode Title="EmpleadoPresentacion.Email (Propiedad )" Url="html/ab256032-a1c1-3714-66a2-377a0c17a637.htm" />
+    <HelpKINode Title="Proveedor.Email (Propiedad )" Url="html/9f291c41-4cce-375e-b122-39bf4d60f76b.htm" />
+    <HelpKINode Title="ProveedorPresentacion.Email (Propiedad )" Url="html/8a414e3f-22d7-a200-f1b1-2d6f64a9514c.htm" />
+    <HelpKINode Title="Usuario.Email (Propiedad )" Url="html/cb90bd09-c552-dc36-6446-23ba50cb471f.htm" />
+    <HelpKINode Title="UsuarioPresentacion.Email (Propiedad )" Url="html/41cda183-7faa-6f0c-e458-abc135e58461.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Empleado class">
+    <HelpKINode Title="Empleado (Clase)" Url="html/73d158f7-df00-ecea-885a-a9f759efc623.htm" />
+    <HelpKINode Title="constructor" Url="html/3d799ebd-b8cb-d996-d21a-fdda42480392.htm" />
+    <HelpKINode Title="methods" Url="html/6022dd1e-8b26-cabb-b7c2-77559b4c32e5.htm" />
+    <HelpKINode Title="properties" Url="html/815a5d67-0ae8-ca2e-3118-83871dbcc31e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Empleado.CodigoPostal property" Url="html/05367c95-f645-6d55-d6ff-d8c8984896eb.htm" />
+  <HelpKINode Title="Empleado.CUIT property" Url="html/257067ed-fc25-d447-9b1d-8f3fb5f778ba.htm" />
+  <HelpKINode Title="Empleado.Domicilio property" Url="html/de36252b-6272-fcd3-c3eb-ce7e23f9e9cb.htm" />
+  <HelpKINode Title="Empleado.Email property" Url="html/52c07cce-09ed-ca92-4084-77cadb6262c6.htm" />
+  <HelpKINode Title="Empleado.Empleado constructor" Url="html/3d799ebd-b8cb-d996-d21a-fdda42480392.htm" />
+  <HelpKINode Title="Empleado.FechaAlta property" Url="html/af5bb14f-b8ab-8b7b-9586-04ce9665f120.htm" />
+  <HelpKINode Title="Empleado.FechaBaja property" Url="html/fe46111b-5f2e-5eae-0dcf-92cd2ad9440a.htm" />
+  <HelpKINode Title="Empleado.FechaNacimiento property" Url="html/36d8fc14-efcd-1f37-e25f-92c0c8fbdd73.htm" />
+  <HelpKINode Title="Empleado.Localidad property" Url="html/3117b99a-7d9f-4352-bda3-ccf789142292.htm" />
+  <HelpKINode Title="Empleado.Nombre property" Url="html/03c138a5-c01d-3483-5b0d-168433af4925.htm" />
+  <HelpKINode Title="Empleado.Telefono property" Url="html/bd4d5856-169e-c9e8-6e6d-a579769269d9.htm" />
+  <HelpKINode Title="EmpleadoPresentacion class">
+    <HelpKINode Title="EmpleadoPresentacion (Clase)" Url="html/f96da19b-7951-ea99-9721-3b056b26e116.htm" />
+    <HelpKINode Title="constructor" Url="html/68b91675-73a6-1dee-4e45-db63d56b07b0.htm" />
+    <HelpKINode Title="methods" Url="html/b380d9e2-2bdb-5127-47a5-fe4ee8b73968.htm" />
+    <HelpKINode Title="properties" Url="html/190f64eb-3e1c-ed64-12f5-9f5ead736b74.htm" />
+  </HelpKINode>
+  <HelpKINode Title="EmpleadoPresentacion.CodigoPostal property" Url="html/b1267292-d6b1-89b1-9ed3-e246ab9b1d78.htm" />
+  <HelpKINode Title="EmpleadoPresentacion.CUIT property" Url="html/2843d478-5d77-0541-c194-79c164357470.htm" />
+  <HelpKINode Title="EmpleadoPresentacion.Domicilio property" Url="html/58109f25-c995-000b-4d48-fbccea640805.htm" />
+  <HelpKINode Title="EmpleadoPresentacion.Email property" Url="html/ab256032-a1c1-3714-66a2-377a0c17a637.htm" />
+  <HelpKINode Title="EmpleadoPresentacion.EmpleadoPresentacion constructor" Url="html/68b91675-73a6-1dee-4e45-db63d56b07b0.htm" />
+  <HelpKINode Title="EmpleadoPresentacion.FechaAlta property" Url="html/43ca0d7f-5b6d-6dac-6905-6294c03eb739.htm" />
+  <HelpKINode Title="EmpleadoPresentacion.FechaBaja property" Url="html/15b15b5d-feff-5fc5-0878-0c87bf482fda.htm" />
+  <HelpKINode Title="EmpleadoPresentacion.FechaNacimiento property" Url="html/a7e7cff6-9ede-3733-1aeb-08bef80f22f0.htm" />
+  <HelpKINode Title="EmpleadoPresentacion.Localidad property" Url="html/482e078c-e690-9666-e751-0d2261f9c740.htm" />
+  <HelpKINode Title="EmpleadoPresentacion.Nombre property" Url="html/1f07c2fb-0617-8a52-1d00-3919fc803b20.htm" />
+  <HelpKINode Title="EmpleadoPresentacion.ObtenerEmpleado method" Url="html/a1d9373b-6846-9045-3282-12a67d298957.htm" />
+  <HelpKINode Title="EmpleadoPresentacion.Provincia property" Url="html/7194ea31-d418-bb2d-3697-9fc165eacd25.htm" />
+  <HelpKINode Title="EmpleadoPresentacion.Telefono property" Url="html/d88552f7-abd2-4143-53a6-1e9783d330c7.htm" />
+  <HelpKINode Title="EmpleadosBL class">
+    <HelpKINode Title="EmpleadosBL (Clase)" Url="html/4358fd58-13fe-268c-85a4-4f5c9e26af04.htm" />
+    <HelpKINode Title="constructor" Url="html/8186ffc2-a97f-00cf-c4e8-792035bd40ba.htm" />
+    <HelpKINode Title="methods" Url="html/ce5c9f9b-0d8b-7f87-9877-fbffc6e07482.htm" />
+  </HelpKINode>
+  <HelpKINode Title="EmpleadosBL.Actualizar method" Url="html/5b47f959-1f2f-db93-f039-2efedeba6654.htm" />
+  <HelpKINode Title="EmpleadosBL.Crear method" Url="html/ec14a752-b70f-d490-dec2-270e5bb018c8.htm" />
+  <HelpKINode Title="EmpleadosBL.EmpleadosBL constructor" Url="html/8186ffc2-a97f-00cf-c4e8-792035bd40ba.htm" />
+  <HelpKINode Title="EmpleadosBL.Existe method" Url="html/dfdea2c9-125a-5d19-93e3-f8001b1f3cff.htm" />
+  <HelpKINode Title="EmpleadosBL.Obtener method" Url="html/ceec1680-283d-8285-6ce8-509ab49ad7ea.htm" />
+  <HelpKINode Title="EmpleadosBL.ObtenerActivos method" Url="html/8abe3ba9-fba8-1815-090a-f7bf63ef1a96.htm" />
+  <HelpKINode Title="EmpleadosForm class">
+    <HelpKINode Title="EmpleadosForm (Clase)" Url="html/59c07720-5a87-eb6c-9243-0da317cf2a5c.htm" />
+    <HelpKINode Title="constructor" Url="html/a13e1def-1b9c-abb3-7e53-d98d6b4384aa.htm" />
+    <HelpKINode Title="events" Url="html/3263c10b-64c5-edf3-e796-e0be18f1bd06.htm" />
+    <HelpKINode Title="methods" Url="html/c22a7820-f70d-d92d-722b-2042a4d331b9.htm" />
+    <HelpKINode Title="properties" Url="html/3b4b10f4-e55f-cd4b-f4e7-1d538f0a0c72.htm" />
+  </HelpKINode>
+  <HelpKINode Title="EmpleadosForm.Dispose method" Url="html/1ef1d0d1-88bf-a097-47c7-7916d89cced0.htm" />
+  <HelpKINode Title="EmpleadosForm.EmpleadosForm constructor" Url="html/a13e1def-1b9c-abb3-7e53-d98d6b4384aa.htm" />
+  <HelpKINode Title="Empresa enumeration member" Url="html/31c6c007-f75e-c766-298e-d0402bf76dad.htm" />
+  <HelpKINode Title="Error enumeration member" Url="html/b1fc206b-72a2-2349-d2a9-e0e983fc6763.htm" />
+  <HelpKINode Title="Estado property">
+    <HelpKINode Title="OrdenCompra.Estado (Propiedad )" Url="html/1d7d7872-96a3-7c17-4044-3550a32604cd.htm" />
+    <HelpKINode Title="OrdenCompraPresentacion.Estado (Propiedad )" Url="html/252d2040-43af-0dc7-feb8-8e524406e656.htm" />
+    <HelpKINode Title="Receta.Estado (Propiedad )" Url="html/c27a8b3f-0e78-0319-5d7c-a9181ff2c597.htm" />
+    <HelpKINode Title="RecetaPresentacion.Estado (Propiedad )" Url="html/c0fca0b3-3734-d337-2d4c-a85095efd897.htm" />
+  </HelpKINode>
+  <HelpKINode Title="EstadoOrdenCompra enumeration" Url="html/d45221ae-7d2c-9d2d-604b-8529bcb0b224.htm" />
+  <HelpKINode Title="EstadoReceta enumeration" Url="html/e6e3865c-9b68-6a34-486f-f5bcd5c7bb8e.htm" />
+  <HelpKINode Title="EstaInicializando property" Url="html/f1dd54a3-11e2-7807-7559-d552ef5da478.htm" />
+  <HelpKINode Title="Existe method">
+    <HelpKINode Title="ClientesBL.Existe (M&#233;todo )" Url="html/60fd8cd0-5a20-6a47-c8c5-a1d256b0fa45.htm" />
+    <HelpKINode Title="EmpleadosBL.Existe (M&#233;todo )" Url="html/dfdea2c9-125a-5d19-93e3-f8001b1f3cff.htm" />
+    <HelpKINode Title="OrdenesVentaBL.Existe (M&#233;todo )" Url="html/2e2744a6-cd6a-8aee-d619-7d20abb780ba.htm" />
+    <HelpKINode Title="ProveedoresBL.Existe (M&#233;todo )" Url="html/8886cbba-3c2f-f25a-bf55-664eff11bfa8.htm" />
+    <HelpKINode Title="RecetasBL.Existe (M&#233;todo )" Url="html/b3f5ad25-0500-afb4-68f6-ff2cf43f7eb4.htm" />
+    <HelpKINode Title="UsuariosBL.Existe (M&#233;todo )" Url="html/7c070631-41c6-c4ad-a306-59fbf01140b0.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Extensiones class">
+    <HelpKINode Title="Extensiones (Clase)" Url="html/d6eb07b7-499d-f6e5-8a21-095587b065a7.htm" />
+    <HelpKINode Title="methods" Url="html/1f2a856c-3584-aa02-5fcd-2bb2b431674d.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Extensiones.CargarLenguaje method" Url="html/5cc9eb05-1518-dfc3-a57c-51b17e336794.htm" />
+  <HelpKINode Title="Factura class">
+    <HelpKINode Title="Factura (Clase)" Url="html/b4312590-86a8-1444-edb0-f82f100ef29e.htm" />
+    <HelpKINode Title="constructor" Url="html/5611dc09-661e-0d30-0d5f-efe1722a01b7.htm" />
+    <HelpKINode Title="methods" Url="html/d711a69d-cd4d-04ff-1d2e-ca6f2fe81801.htm" />
+    <HelpKINode Title="properties" Url="html/f5a805c7-6953-c3f5-3f3e-29acf752cec8.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Factura.Cobrada property" Url="html/cca0f276-667a-ae45-21ae-968957d74c68.htm" />
+  <HelpKINode Title="Factura.Factura constructor" Url="html/5611dc09-661e-0d30-0d5f-efe1722a01b7.htm" />
+  <HelpKINode Title="Factura.Fecha property" Url="html/e759c779-1d2a-9e74-cd87-5f7b8d8aa416.htm" />
+  <HelpKINode Title="Factura.Id property" Url="html/e1b6ebae-5114-1b03-67ef-6c83f5c8898f.htm" />
+  <HelpKINode Title="Factura.OrdenVenta property" Url="html/27bbd799-5c7d-0c38-37c7-5faf802b878e.htm" />
+  <HelpKINode Title="FacturaPresentacion class">
+    <HelpKINode Title="FacturaPresentacion (Clase)" Url="html/cfc79b06-2e33-285b-096d-4671d30f8d29.htm" />
+    <HelpKINode Title="constructor" Url="html/c860aa8b-69f5-9cc8-aa86-9c1ba6247a9f.htm" />
+    <HelpKINode Title="methods" Url="html/afdf4cc4-fe11-0217-dae8-0270eac7f66c.htm" />
+    <HelpKINode Title="properties" Url="html/b727f6ca-3be7-b961-dff3-a513077501f8.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FacturaPresentacion.Cliente property" Url="html/3233de22-1e0a-2821-c978-76b62c2e5824.htm" />
+  <HelpKINode Title="FacturaPresentacion.Cobrada property" Url="html/199fe25a-d0f8-6081-15ed-403b6b1004f3.htm" />
+  <HelpKINode Title="FacturaPresentacion.Comensales property" Url="html/6421bba5-db3b-1eb0-178a-997c2cd24eed.htm" />
+  <HelpKINode Title="FacturaPresentacion.FacturaPresentacion constructor" Url="html/c860aa8b-69f5-9cc8-aa86-9c1ba6247a9f.htm" />
+  <HelpKINode Title="FacturaPresentacion.Fecha property" Url="html/405b5e44-3b5d-6be9-f5d9-521a1eb4aba0.htm" />
+  <HelpKINode Title="FacturaPresentacion.FechaFin property" Url="html/2ffba717-cc86-9331-55d3-30edb782fa58.htm" />
+  <HelpKINode Title="FacturaPresentacion.FechaInicio property" Url="html/d42359fb-b6a8-7959-9b46-40d7206aed05.htm" />
+  <HelpKINode Title="FacturaPresentacion.ObtenerFactura method" Url="html/eb5dd965-9a52-be20-2caf-1f7342589f24.htm" />
+  <HelpKINode Title="FacturaPresentacion.ObtenerId method" Url="html/8bb71d1f-2291-88d9-43e1-b1e0b9e9396a.htm" />
+  <HelpKINode Title="FacturaPresentacion.Precio property" Url="html/e9f168d3-fcbf-007c-b278-375fb44593f8.htm" />
+  <HelpKINode Title="FacturaPresentacion.Recetas property" Url="html/be69aeb7-7276-5f0b-a615-14c471511c25.htm" />
+  <HelpKINode Title="FacturasBL class">
+    <HelpKINode Title="FacturasBL (Clase)" Url="html/53d443ab-a559-b949-e766-83549d86ad65.htm" />
+    <HelpKINode Title="constructor" Url="html/d0f0fcc5-02c0-dd3d-b879-38b0e72e2fba.htm" />
+    <HelpKINode Title="methods" Url="html/b3ed7383-8225-6628-449d-dbea69a88eed.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FacturasBL.Actualizar method" Url="html/e86dc4bb-b025-6d7f-0cf5-e280f99e62b2.htm" />
+  <HelpKINode Title="FacturasBL.Crear method" Url="html/9be32f1f-de5a-2461-1e47-c3e0f75b1a39.htm" />
+  <HelpKINode Title="FacturasBL.FacturasBL constructor" Url="html/d0f0fcc5-02c0-dd3d-b879-38b0e72e2fba.htm" />
+  <HelpKINode Title="FacturasBL.Obtener method" Url="html/2e2ebea8-0b42-bbbf-d8d9-7ddf814feaa8.htm" />
+  <HelpKINode Title="FacturasForm class">
+    <HelpKINode Title="FacturasForm (Clase)" Url="html/8da1fa96-b221-b4e1-f2d1-3f5db7be8348.htm" />
+    <HelpKINode Title="constructor" Url="html/10a74c06-4154-9e04-2dd3-51a667878aec.htm" />
+    <HelpKINode Title="events" Url="html/a351e90d-1e20-8b8c-5e9b-a4b1a47be929.htm" />
+    <HelpKINode Title="methods" Url="html/9c23c76f-4b73-0b00-66be-04c06f82b443.htm" />
+    <HelpKINode Title="properties" Url="html/b3872d38-0bbf-4f88-dfec-001c9f34fb2e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FacturasForm.Dispose method" Url="html/bdf09f64-561f-7a0e-1a13-9b9ea4da41a6.htm" />
+  <HelpKINode Title="FacturasForm.FacturasForm constructor" Url="html/10a74c06-4154-9e04-2dd3-51a667878aec.htm" />
+  <HelpKINode Title="Fecha property">
+    <HelpKINode Title="Bitacora.Fecha (Propiedad )" Url="html/55f36c65-3146-ce6b-4597-23ccd6790bdc.htm" />
+    <HelpKINode Title="BitacoraPresentacion.Fecha (Propiedad )" Url="html/6cab770f-5158-cc99-872c-795bcd1ea1ef.htm" />
+    <HelpKINode Title="Factura.Fecha (Propiedad )" Url="html/e759c779-1d2a-9e74-cd87-5f7b8d8aa416.htm" />
+    <HelpKINode Title="FacturaPresentacion.Fecha (Propiedad )" Url="html/405b5e44-3b5d-6be9-f5d9-521a1eb4aba0.htm" />
+    <HelpKINode Title="OrdenCompra.Fecha (Propiedad )" Url="html/e873958e-724d-07fa-016b-444fbd922732.htm" />
+    <HelpKINode Title="OrdenCompraPresentacion.Fecha (Propiedad )" Url="html/366ea70d-6288-6bcb-0ca7-b42e7aebabd2.htm" />
+    <HelpKINode Title="OrdenPago.Fecha (Propiedad )" Url="html/8a7e069a-d446-e3c6-32a7-27942e669958.htm" />
+    <HelpKINode Title="OrdenPagoPresentacion.Fecha (Propiedad )" Url="html/e0f22bdd-d26e-3557-8baf-a16450767755.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FechaAlta property">
+    <HelpKINode Title="Cliente.FechaAlta (Propiedad )" Url="html/649d4d87-e0f8-7b1e-d309-3318cabf7911.htm" />
+    <HelpKINode Title="ClientePresentacion.FechaAlta (Propiedad )" Url="html/b3835e6c-88aa-7945-9eb4-1cfe7b9747d6.htm" />
+    <HelpKINode Title="Empleado.FechaAlta (Propiedad )" Url="html/af5bb14f-b8ab-8b7b-9586-04ce9665f120.htm" />
+    <HelpKINode Title="EmpleadoPresentacion.FechaAlta (Propiedad )" Url="html/43ca0d7f-5b6d-6dac-6905-6294c03eb739.htm" />
+    <HelpKINode Title="Proveedor.FechaAlta (Propiedad )" Url="html/10678ac9-7518-2c2f-d416-cbfa4bc29291.htm" />
+    <HelpKINode Title="ProveedorPresentacion.FechaAlta (Propiedad )" Url="html/f4e35eea-950b-4130-d08a-3916b71538e3.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FechaBaja property">
+    <HelpKINode Title="Empleado.FechaBaja (Propiedad )" Url="html/fe46111b-5f2e-5eae-0dcf-92cd2ad9440a.htm" />
+    <HelpKINode Title="EmpleadoPresentacion.FechaBaja (Propiedad )" Url="html/15b15b5d-feff-5fc5-0878-0c87bf482fda.htm" />
+    <HelpKINode Title="Proveedor.FechaBaja (Propiedad )" Url="html/aecc6e36-338c-d579-ca7b-dce7d9b96e86.htm" />
+    <HelpKINode Title="ProveedorPresentacion.FechaBaja (Propiedad )" Url="html/f1e19fb1-ec42-09ae-6b41-4bdcb9ffd80e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FechaFin property">
+    <HelpKINode Title="FacturaPresentacion.FechaFin (Propiedad )" Url="html/2ffba717-cc86-9331-55d3-30edb782fa58.htm" />
+    <HelpKINode Title="OrdenVenta.FechaFin (Propiedad )" Url="html/96a86766-91e8-b505-5f2e-e316a086518e.htm" />
+    <HelpKINode Title="OrdenVentaPresentacion.FechaFin (Propiedad )" Url="html/8927c9aa-b173-d279-291d-c1e8acb60ca4.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FechaInicio property">
+    <HelpKINode Title="FacturaPresentacion.FechaInicio (Propiedad )" Url="html/d42359fb-b6a8-7959-9b46-40d7206aed05.htm" />
+    <HelpKINode Title="OrdenVenta.FechaInicio (Propiedad )" Url="html/ce9809e3-c418-7f4a-5456-00daf5fe1a69.htm" />
+    <HelpKINode Title="OrdenVentaPresentacion.FechaInicio (Propiedad )" Url="html/4b9cef6f-f0bc-e9b1-5483-607e8659a0a3.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FechaNacimiento property">
+    <HelpKINode Title="Empleado.FechaNacimiento (Propiedad )" Url="html/36d8fc14-efcd-1f37-e25f-92c0c8fbdd73.htm" />
+    <HelpKINode Title="EmpleadoPresentacion.FechaNacimiento (Propiedad )" Url="html/a7e7cff6-9ede-3733-1aeb-08bef80f22f0.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Generada enumeration member" Url="html/d45221ae-7d2c-9d2d-604b-8529bcb0b224.htm" />
+  <HelpKINode Title="gr enumeration member" Url="html/958e3020-6ce7-2dbe-d69e-388d73e837f2.htm" />
+  <HelpKINode Title="HayFaltantes method" Url="html/930ffa5a-4ea1-9199-f491-2d086626e22c.htm" />
+  <HelpKINode Title="Id property">
+    <HelpKINode Title="Bitacora.Id (Propiedad )" Url="html/b01fcaa0-a8ae-b12b-d027-7e083071f821.htm" />
+    <HelpKINode Title="Factura.Id (Propiedad )" Url="html/e1b6ebae-5114-1b03-67ef-6c83f5c8898f.htm" />
+    <HelpKINode Title="Ingrediente.Id (Propiedad )" Url="html/d820fb33-e33b-3a18-947b-c6c1b3984b02.htm" />
+    <HelpKINode Title="ItemOrdenCompra.Id (Propiedad )" Url="html/2c0da7b4-069b-315c-7da8-e57ea51c1540.htm" />
+    <HelpKINode Title="ItemOrdenPago.Id (Propiedad )" Url="html/e9e50e20-e373-bd24-4190-c1d4752a4884.htm" />
+    <HelpKINode Title="Localidad.Id (Propiedad )" Url="html/ca2734fb-b011-c2d3-8aaa-4735bfcb1869.htm" />
+    <HelpKINode Title="OrdenCompra.Id (Propiedad )" Url="html/e89acc44-1655-8574-22eb-068ebc76ab66.htm" />
+    <HelpKINode Title="OrdenPago.Id (Propiedad )" Url="html/e25ac155-7a6c-3163-d8d8-e324981791b8.htm" />
+    <HelpKINode Title="OrdenVenta.Id (Propiedad )" Url="html/5838cb08-a94e-be23-9865-cffad1862616.htm" />
+    <HelpKINode Title="PrecioIngrediente.Id (Propiedad )" Url="html/97196cb6-9a7d-890a-9ce9-5479b38552ec.htm" />
+    <HelpKINode Title="Provincia.Id (Propiedad )" Url="html/edd59166-3f5d-f332-dcb3-80db6ecc7904.htm" />
+    <HelpKINode Title="Receta.Id (Propiedad )" Url="html/48e84197-2cee-a317-c3b1-539b317481a2.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Inactiva enumeration member" Url="html/e6e3865c-9b68-6a34-486f-f5bcd5c7bb8e.htm" />
+  <HelpKINode Title="Informacion enumeration member" Url="html/b1fc206b-72a2-2349-d2a9-e0e983fc6763.htm" />
+  <HelpKINode Title="Ingrediente class">
+    <HelpKINode Title="Ingrediente (Clase)" Url="html/2e2d8697-faa6-98d8-8214-8d12e3ce4e66.htm" />
+    <HelpKINode Title="constructor" Url="html/c6d64c77-0958-6555-aeb5-ac3f6959ff66.htm" />
+    <HelpKINode Title="methods" Url="html/184b578e-9ed1-bfae-399c-356d62845061.htm" />
+    <HelpKINode Title="properties" Url="html/777e84c0-652d-6338-7b39-e846c5c7ca58.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Ingrediente property">
+    <HelpKINode Title="IngredienteReceta.Ingrediente (Propiedad )" Url="html/f559645b-8698-32b7-e0f9-74544554bc79.htm" />
+    <HelpKINode Title="ItemOrdenCompra.Ingrediente (Propiedad )" Url="html/6ada9798-027c-4fa3-355d-ebaae2b6c148.htm" />
+    <HelpKINode Title="ItemOrdenCompraPresentacion.Ingrediente (Propiedad )" Url="html/696a2ec3-14d5-a3ac-dd04-37a90fdd9e06.htm" />
+    <HelpKINode Title="ItemOrdenPagoPresentacion.Ingrediente (Propiedad )" Url="html/ab71008b-7d38-45a6-5091-e470de7aefab.htm" />
+    <HelpKINode Title="PrecioIngrediente.Ingrediente (Propiedad )" Url="html/44f6f905-0c64-e185-1241-528567a416cb.htm" />
+    <HelpKINode Title="PrecioIngredientePresentacion.Ingrediente (Propiedad )" Url="html/fd617031-f50f-edce-1a94-5fc068524991.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Ingrediente.Descripcion property" Url="html/6dfa9ec6-b4b9-0aa8-928c-22a091489f10.htm" />
+  <HelpKINode Title="Ingrediente.Id property" Url="html/d820fb33-e33b-3a18-947b-c6c1b3984b02.htm" />
+  <HelpKINode Title="Ingrediente.Ingrediente constructor" Url="html/c6d64c77-0958-6555-aeb5-ac3f6959ff66.htm" />
+  <HelpKINode Title="Ingrediente.Nombre property" Url="html/f4d4a595-afc3-66c4-0a29-9e2f7d493122.htm" />
+  <HelpKINode Title="IngredientePresentacion class">
+    <HelpKINode Title="IngredientePresentacion (Clase)" Url="html/a6ba1586-c0fe-4a8c-bfd8-1e5a2f070397.htm" />
+    <HelpKINode Title="constructor" Url="html/13a9a9f0-0dab-9f89-3eef-95819292e842.htm" />
+    <HelpKINode Title="methods" Url="html/f8f43445-9db9-26bb-8089-4c8d3d3f1c4c.htm" />
+    <HelpKINode Title="properties" Url="html/0ef6b4bd-96c8-0185-867c-f7c4d20680c6.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IngredientePresentacion.Cantidad property" Url="html/efe5c4ad-8f26-ddec-30e9-fbbfb4d9fc33.htm" />
+  <HelpKINode Title="IngredientePresentacion.IngredientePresentacion constructor" Url="html/13a9a9f0-0dab-9f89-3eef-95819292e842.htm" />
+  <HelpKINode Title="IngredientePresentacion.Nombre property" Url="html/9857becb-5222-ee74-b15d-88291ee8a865.htm" />
+  <HelpKINode Title="IngredientePresentacion.ObtenerIngrediente method" Url="html/574727b1-53bb-58a8-0c85-8fde58004329.htm" />
+  <HelpKINode Title="IngredientePresentacion.Unidad property" Url="html/1b12465d-ee5a-b33d-a5e8-7d7e2797b0d8.htm" />
+  <HelpKINode Title="IngredienteReceta class">
+    <HelpKINode Title="IngredienteReceta (Clase)" Url="html/ee6bd7ad-8334-d0fa-a3db-b3e9b2ae19fd.htm" />
+    <HelpKINode Title="constructor" Url="html/e98ae524-64b8-53f9-c25d-7486751a17bf.htm" />
+    <HelpKINode Title="methods" Url="html/2deca29c-77db-63f7-6304-956986d5f775.htm" />
+    <HelpKINode Title="properties" Url="html/708574df-a036-b86a-ec79-034b2a176b7e.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IngredienteReceta.Cantidad property" Url="html/3a2dde17-98c0-9323-23e2-a4820844dc64.htm" />
+  <HelpKINode Title="IngredienteReceta.Ingrediente property" Url="html/f559645b-8698-32b7-e0f9-74544554bc79.htm" />
+  <HelpKINode Title="IngredienteReceta.IngredienteReceta constructor" Url="html/e98ae524-64b8-53f9-c25d-7486751a17bf.htm" />
+  <HelpKINode Title="IngredienteReceta.Unidad property" Url="html/f619e7f9-433e-1f5b-3a91-ded0c99a2e52.htm" />
+  <HelpKINode Title="Ingredientes property" Url="html/dcc628a6-a2de-d4ce-c02e-1ebb6db289fe.htm" />
+  <HelpKINode Title="IngredientesBL class">
+    <HelpKINode Title="IngredientesBL (Clase)" Url="html/9a826db2-3e25-3e83-1d2d-310b59133d74.htm" />
+    <HelpKINode Title="constructor" Url="html/a9cc51f5-1ddb-2111-3e4e-78ae70a23ca0.htm" />
+    <HelpKINode Title="methods" Url="html/22440b52-df55-143e-6ecd-f96a27d8d5fc.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IngredientesBL.IngredientesBL constructor" Url="html/a9cc51f5-1ddb-2111-3e4e-78ae70a23ca0.htm" />
+  <HelpKINode Title="IngredientesBL.Obtener method" Url="html/14dc0c43-9189-a8dd-4fef-937386058e66.htm" />
+  <HelpKINode Title="IngredientesForm class">
+    <HelpKINode Title="IngredientesForm (Clase)" Url="html/b06275f1-d4b2-4c88-abe1-05757323f986.htm" />
+    <HelpKINode Title="constructor" Url="html/5b81c9dd-2cd8-0cf4-ec8f-2b04907a79cc.htm" />
+    <HelpKINode Title="events" Url="html/2cad73a8-dbe3-18b4-9783-5de6baf06a10.htm" />
+    <HelpKINode Title="methods" Url="html/5d97b96b-d856-74b4-5509-e0e7b90c8abc.htm" />
+    <HelpKINode Title="properties" Url="html/342ed826-c7d8-9e86-0813-dfcc66715d08.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IngredientesForm.Dispose method" Url="html/c618789b-54f3-c052-659b-be49e5f29ad0.htm" />
+  <HelpKINode Title="IngredientesForm.IngredientesForm constructor" Url="html/5b81c9dd-2cd8-0cf4-ec8f-2b04907a79cc.htm" />
+  <HelpKINode Title="IngredientesForm.Receta property" Url="html/b5f72998-aa1b-081c-4e01-01c54c2c4dd7.htm" />
+  <HelpKINode Title="InicioForm class">
+    <HelpKINode Title="InicioForm (Clase)" Url="html/71ec2ae3-6e59-ff04-f24e-e539c5f7e04f.htm" />
+    <HelpKINode Title="constructor" Url="html/eaf12ed2-147e-281d-c9f2-c853b1608a3a.htm" />
+    <HelpKINode Title="events" Url="html/f5895304-2075-7c61-d8a7-fd08aecf2287.htm" />
+    <HelpKINode Title="methods" Url="html/167a9c6a-0712-8160-0665-1debf937e47c.htm" />
+    <HelpKINode Title="properties" Url="html/a603ca64-ac1f-0980-373a-e28fa3021df0.htm" />
+  </HelpKINode>
+  <HelpKINode Title="InicioForm.Dispose method" Url="html/ca273a76-9f7b-a7fa-8dda-fab8c7ed0777.htm" />
+  <HelpKINode Title="InicioForm.InicioForm constructor" Url="html/eaf12ed2-147e-281d-c9f2-c853b1608a3a.htm" />
+  <HelpKINode Title="Instancia property">
+    <HelpKINode Title="ContextoNegocio.Instancia (Propiedad )" Url="html/76f78dc1-2570-31e7-ea49-56e83b6e3373.htm" />
+    <HelpKINode Title="ContextoPresentacion.Instancia (Propiedad )" Url="html/b73eb45f-245c-4e83-a7de-dddd340ad425.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ItemOrdenCompra class">
+    <HelpKINode Title="ItemOrdenCompra (Clase)" Url="html/b37663bf-2a50-0eed-d8b5-6aa8f51c74bc.htm" />
+    <HelpKINode Title="constructor" Url="html/79c89390-515e-32b3-b328-ec4431a78970.htm" />
+    <HelpKINode Title="methods" Url="html/4e42e9ca-01c1-5ea1-862a-00df419ac609.htm" />
+    <HelpKINode Title="properties" Url="html/b6353c4b-3289-fa55-706e-fabb7d9b7960.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ItemOrdenCompra property" Url="html/32915cd0-c5f1-811f-2a97-0508cd9b9b6f.htm" />
+  <HelpKINode Title="ItemOrdenCompra.Cantidad property" Url="html/940de78f-8b1c-5b36-8870-abd954df695a.htm" />
+  <HelpKINode Title="ItemOrdenCompra.Id property" Url="html/2c0da7b4-069b-315c-7da8-e57ea51c1540.htm" />
+  <HelpKINode Title="ItemOrdenCompra.Ingrediente property" Url="html/6ada9798-027c-4fa3-355d-ebaae2b6c148.htm" />
+  <HelpKINode Title="ItemOrdenCompra.ItemOrdenCompra constructor" Url="html/79c89390-515e-32b3-b328-ec4431a78970.htm" />
+  <HelpKINode Title="ItemOrdenCompra.Unidad property" Url="html/4e77de93-66f7-c8f4-68c0-4ff8d9ae3064.htm" />
+  <HelpKINode Title="ItemOrdenCompraPresentacion class">
+    <HelpKINode Title="ItemOrdenCompraPresentacion (Clase)" Url="html/c3a4f5bc-45ab-e5b7-9e4a-cfce299c6b10.htm" />
+    <HelpKINode Title="constructor" Url="html/2c8c7d96-0f87-9966-938c-b259e9a19f97.htm" />
+    <HelpKINode Title="methods" Url="html/3bc7f712-6c8d-5cb3-d771-a2ee6b17f2b9.htm" />
+    <HelpKINode Title="properties" Url="html/e2f7553f-478d-65e0-4c2c-155511264f78.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ItemOrdenCompraPresentacion.Cantidad property" Url="html/e114c5a7-b8e3-d6e5-3b84-634dec5a8bf7.htm" />
+  <HelpKINode Title="ItemOrdenCompraPresentacion.Ingrediente property" Url="html/696a2ec3-14d5-a3ac-dd04-37a90fdd9e06.htm" />
+  <HelpKINode Title="ItemOrdenCompraPresentacion.ItemOrdenCompraPresentacion constructor" Url="html/2c8c7d96-0f87-9966-938c-b259e9a19f97.htm" />
+  <HelpKINode Title="ItemOrdenCompraPresentacion.ObtenerId method" Url="html/063e618b-3fe1-fc1b-c64a-db92b428df43.htm" />
+  <HelpKINode Title="ItemOrdenCompraPresentacion.ObtenerItemOrdenCompra method" Url="html/60caf0a0-b4ff-4a5b-47dc-8086865e191c.htm" />
+  <HelpKINode Title="ItemOrdenCompraPresentacion.Unidad property" Url="html/1ce580c3-2fd2-eac0-7457-76735ded7e79.htm" />
+  <HelpKINode Title="ItemOrdenPago class">
+    <HelpKINode Title="ItemOrdenPago (Clase)" Url="html/fe38d347-8d20-50bc-e4b1-12648865cd25.htm" />
+    <HelpKINode Title="constructor" Url="html/1e14a570-92db-b783-bf34-ae977ff8b1f6.htm" />
+    <HelpKINode Title="methods" Url="html/64d497de-1025-71e9-8931-7d7bd2e99f9a.htm" />
+    <HelpKINode Title="properties" Url="html/583c7b02-2216-9cd0-269c-6cb17ddf8a47.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ItemOrdenPago.Id property" Url="html/e9e50e20-e373-bd24-4190-c1d4752a4884.htm" />
+  <HelpKINode Title="ItemOrdenPago.ItemOrdenCompra property" Url="html/32915cd0-c5f1-811f-2a97-0508cd9b9b6f.htm" />
+  <HelpKINode Title="ItemOrdenPago.ItemOrdenPago constructor" Url="html/1e14a570-92db-b783-bf34-ae977ff8b1f6.htm" />
+  <HelpKINode Title="ItemOrdenPago.Precio property" Url="html/062dd0b7-ce6c-1ff2-4e86-1fcdbe43f48a.htm" />
+  <HelpKINode Title="ItemOrdenPagoPresentacion class">
+    <HelpKINode Title="ItemOrdenPagoPresentacion (Clase)" Url="html/4318e10a-90d9-0f60-5773-d53146167d93.htm" />
+    <HelpKINode Title="constructor" Url="html/0ed74c91-8267-6931-68a4-a41c84011e35.htm" />
+    <HelpKINode Title="methods" Url="html/dd9bbbfa-cf6d-f255-cb0f-2fb935cd8ad5.htm" />
+    <HelpKINode Title="properties" Url="html/aaefca7e-0041-d2d8-17ae-8d1089796134.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ItemOrdenPagoPresentacion.Cantidad property" Url="html/f0dc5980-be28-55f3-32bb-d6357eb8da02.htm" />
+  <HelpKINode Title="ItemOrdenPagoPresentacion.Ingrediente property" Url="html/ab71008b-7d38-45a6-5091-e470de7aefab.htm" />
+  <HelpKINode Title="ItemOrdenPagoPresentacion.ItemOrdenPagoPresentacion constructor" Url="html/0ed74c91-8267-6931-68a4-a41c84011e35.htm" />
+  <HelpKINode Title="ItemOrdenPagoPresentacion.ObtenerId method" Url="html/0956564b-5468-49c5-f23e-7bd1f89383f4.htm" />
+  <HelpKINode Title="ItemOrdenPagoPresentacion.ObtenerItemOrdenPago method" Url="html/efd8b5a9-7b60-40af-223a-ad6cd58dae88.htm" />
+  <HelpKINode Title="ItemOrdenPagoPresentacion.Precio property" Url="html/a3327c2c-a7ee-bcfd-a933-c036497d6c42.htm" />
+  <HelpKINode Title="ItemOrdenPagoPresentacion.Unidad property" Url="html/e0d33b76-76f0-062e-1a7e-038d12bed182.htm" />
+  <HelpKINode Title="Items property">
+    <HelpKINode Title="OrdenCompra.Items (Propiedad )" Url="html/985f7c17-30f2-46d0-daae-ad225f938797.htm" />
+    <HelpKINode Title="OrdenPago.Items (Propiedad )" Url="html/56824cf3-4d1e-d2a8-cd69-f7f8c95eff13.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Lenguaje property" Url="html/21e818bf-388d-379d-6a19-ed57383ff76a.htm" />
+  <HelpKINode Title="Localidad class">
+    <HelpKINode Title="Localidad (Clase)" Url="html/0b5fa531-40cc-7ae0-d74d-3f88c130a8d6.htm" />
+    <HelpKINode Title="constructor" Url="html/21fd2cb2-1006-fb71-ce78-0dd138748691.htm" />
+    <HelpKINode Title="methods" Url="html/763266cd-0968-91f2-ae88-83017fc59036.htm" />
+    <HelpKINode Title="properties" Url="html/8781e86e-85aa-182e-15bc-0e9299250d36.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Localidad property">
+    <HelpKINode Title="Cliente.Localidad (Propiedad )" Url="html/dd0dffe7-0087-36c5-ce28-caeaca692781.htm" />
+    <HelpKINode Title="ClientePresentacion.Localidad (Propiedad )" Url="html/292b4b30-c49a-9a3a-cfbf-e2f168736df6.htm" />
+    <HelpKINode Title="Empleado.Localidad (Propiedad )" Url="html/3117b99a-7d9f-4352-bda3-ccf789142292.htm" />
+    <HelpKINode Title="EmpleadoPresentacion.Localidad (Propiedad )" Url="html/482e078c-e690-9666-e751-0d2261f9c740.htm" />
+    <HelpKINode Title="Proveedor.Localidad (Propiedad )" Url="html/c199edb0-c528-410e-32dc-9daf852f0fbc.htm" />
+    <HelpKINode Title="ProveedorPresentacion.Localidad (Propiedad )" Url="html/53d09dda-4075-15e7-e696-e5da2f8d4ad0.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Localidad.Id property" Url="html/ca2734fb-b011-c2d3-8aaa-4735bfcb1869.htm" />
+  <HelpKINode Title="Localidad.Localidad constructor" Url="html/21fd2cb2-1006-fb71-ce78-0dd138748691.htm" />
+  <HelpKINode Title="Localidad.Nombre property" Url="html/b2f543c1-b602-c3f9-6305-d45f4f4ee24f.htm" />
+  <HelpKINode Title="Localidad.Provincia property" Url="html/8b4281c2-3122-c182-fe17-c27358f4c310.htm" />
+  <HelpKINode Title="LocalidadesBL class">
+    <HelpKINode Title="LocalidadesBL (Clase)" Url="html/fc93ce9b-6d95-efb8-fca7-5f5024d1b2a6.htm" />
+    <HelpKINode Title="constructor" Url="html/5851fa3c-d99b-570e-517d-8f6598ceafda.htm" />
+    <HelpKINode Title="methods" Url="html/c3ef8b59-9fe7-3a3f-62a2-58b6b958a311.htm" />
+  </HelpKINode>
+  <HelpKINode Title="LocalidadesBL.LocalidadesBL constructor" Url="html/5851fa3c-d99b-570e-517d-8f6598ceafda.htm" />
+  <HelpKINode Title="LocalidadesBL.ObtenerLocalidad method" Url="html/61241f8e-d6d6-9834-e517-1b74673d32aa.htm" />
+  <HelpKINode Title="LocalidadesBL.ObtenerLocalidades method" Url="html/cebabd47-33c2-acff-9a3d-474accf97f6a.htm" />
+  <HelpKINode Title="LocalidadesBL.ObtenerProvincia method" Url="html/e5f258b3-28f5-d75f-f764-371586d68c2d.htm" />
+  <HelpKINode Title="LocalidadesBL.ObtenerProvincias method" Url="html/fee0cbd5-2f43-5338-7ff3-42030430d874.htm" />
+  <HelpKINode Title="LoginForm class">
+    <HelpKINode Title="LoginForm (Clase)" Url="html/5d012366-55cd-9002-9b53-8744fe8cee6e.htm" />
+    <HelpKINode Title="constructor" Url="html/1ce664ed-988c-37f2-a98f-821177c8fcdb.htm" />
+    <HelpKINode Title="events" Url="html/77a45537-4ad9-464e-3473-170ea1a03631.htm" />
+    <HelpKINode Title="methods" Url="html/bf23e1f0-3ec9-7cf1-4db0-9c43ff0e91dc.htm" />
+    <HelpKINode Title="properties" Url="html/1f4784c3-1457-fbdf-aaee-d63e684dac18.htm" />
+  </HelpKINode>
+  <HelpKINode Title="LoginForm.Dispose method" Url="html/714f3978-99cf-4fa7-96ab-ea2b58f2545d.htm" />
+  <HelpKINode Title="LoginForm.LoginForm constructor" Url="html/1ce664ed-988c-37f2-a98f-821177c8fcdb.htm" />
+  <HelpKINode Title="Mensaje property">
+    <HelpKINode Title="Bitacora.Mensaje (Propiedad )" Url="html/3921c88c-de5e-c040-b5bb-fcd8ad3dc090.htm" />
+    <HelpKINode Title="BitacoraPresentacion.Mensaje (Propiedad )" Url="html/a22e5234-c554-32b5-8d29-e36334b2b89d.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MensajeAyuda property" Url="html/351cd18a-c247-82d8-f6ee-10dfda15a32e.htm" />
+  <HelpKINode Title="ml enumeration member" Url="html/958e3020-6ce7-2dbe-d69e-388d73e837f2.htm" />
+  <HelpKINode Title="MostrarEvento method" Url="html/a347a60b-0847-2376-1a7a-7b9b3f8ac64e.htm" />
+  <HelpKINode Title="Negocio property" Url="html/bcde7140-fff3-7d7f-9b5e-bc76b581f842.htm" />
+  <HelpKINode Title="Nick property">
+    <HelpKINode Title="Usuario.Nick (Propiedad )" Url="html/2e66cbbb-dd31-6586-974b-a1b897768d45.htm" />
+    <HelpKINode Title="UsuarioPresentacion.Nick (Propiedad )" Url="html/8756bc40-9b37-8e86-6ec5-20ac39e84afd.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Nombre property">
+    <HelpKINode Title="Cliente.Nombre (Propiedad )" Url="html/b304043c-941d-b20f-19b6-2cb293cd747f.htm" />
+    <HelpKINode Title="ClientePresentacion.Nombre (Propiedad )" Url="html/9fab9559-a229-8860-8b36-ac675b9eb71b.htm" />
+    <HelpKINode Title="Empleado.Nombre (Propiedad )" Url="html/03c138a5-c01d-3483-5b0d-168433af4925.htm" />
+    <HelpKINode Title="EmpleadoPresentacion.Nombre (Propiedad )" Url="html/1f07c2fb-0617-8a52-1d00-3919fc803b20.htm" />
+    <HelpKINode Title="Ingrediente.Nombre (Propiedad )" Url="html/f4d4a595-afc3-66c4-0a29-9e2f7d493122.htm" />
+    <HelpKINode Title="IngredientePresentacion.Nombre (Propiedad )" Url="html/9857becb-5222-ee74-b15d-88291ee8a865.htm" />
+    <HelpKINode Title="Localidad.Nombre (Propiedad )" Url="html/b2f543c1-b602-c3f9-6305-d45f4f4ee24f.htm" />
+    <HelpKINode Title="Proveedor.Nombre (Propiedad )" Url="html/8f584207-4270-1a89-1d67-6690e9964227.htm" />
+    <HelpKINode Title="ProveedorPresentacion.Nombre (Propiedad )" Url="html/e65cf5f0-ca2f-2d97-12cd-1fa256a71240.htm" />
+    <HelpKINode Title="Provincia.Nombre (Propiedad )" Url="html/66c7cba8-6747-e9f6-0ea8-89d8694a22bd.htm" />
+    <HelpKINode Title="Receta.Nombre (Propiedad )" Url="html/387f0fda-570f-8f8c-1744-31ee0e466e7e.htm" />
+    <HelpKINode Title="RecetaPresentacion.Nombre (Propiedad )" Url="html/029789bb-84cf-4fe4-f78c-ae0c7d5de78e.htm" />
+    <HelpKINode Title="Usuario.Nombre (Propiedad )" Url="html/079addec-f98a-1b88-fd69-9910a2c7153f.htm" />
+    <HelpKINode Title="UsuarioPresentacion.Nombre (Propiedad )" Url="html/13380b0e-e2a3-84e8-8627-81bd3525e97f.htm" />
+  </HelpKINode>
+  <HelpKINode Title="OBMCatering.Negocio namespace" Url="html/3d097af4-5b6c-4ed0-4fad-28b734a56c83.htm" />
+  <HelpKINode Title="OBMCatering.Negocio.Bitacora class" Url="html/9b2b4d1b-6861-8da5-1f35-a84b6fdf6507.htm" />
+  <HelpKINode Title="OBMCatering.Negocio.BitacoraBL class" Url="html/9994e5dc-b5c5-7d70-6f7a-e1d9674dbdda.htm" />
+  <HelpKINode Title="OBMCatering.Negocio.Cliente class" Url="html/fb267d68-b96c-ed33-43b1-81893489a3ff.htm" />
+  <HelpKINode Title="OBMCatering.Negocio.ClientesBL class" Url="html/90200b97-1c5f-2697-c771-9e242dc3338d.htm" />
+  <HelpKINode Title="OBMCatering.Negocio.ContextoNegocio class" Url="html/87175580-9299-b809-8d10-3406bc9a995e.htm" />
+  <HelpKINode Title="OBMCatering.Negocio.Empleado class" Url="html/73d158f7-df00-ecea-885a-a9f759efc623.htm" />
+  <HelpKINode Title="OBMCatering.Negocio.EmpleadosBL class" Url="html/4358fd58-13fe-268c-85a4-4f5c9e26af04.htm" />
+  <HelpKINode Title="OBMCatering.Negocio.EstadoOrdenCompra enumeration" Url="html/d45221ae-7d2c-9d2d-604b-8529bcb0b224.htm" />
+  <HelpKINode Title="OBMCatering.Negocio.EstadoReceta enumeration" Url="html/e6e3865c-9b68-6a34-486f-f5bcd5c7bb8e.htm" />
+  <HelpKINode Title="OBMCatering.Negocio.Factura class" Url="html/b4312590-86a8-1444-edb0-f82f100ef29e.htm" />
+  <HelpKINode Title="OBMCatering.Negocio.FacturasBL class" Url="html/53d443ab-a559-b949-e766-83549d86ad65.htm" />
+  <HelpKINode Title="OBMCatering.Negocio.Ingrediente class" Url="html/2e2d8697-faa6-98d8-8214-8d12e3ce4e66.htm" />
+  <HelpKINode Title="OBMCatering.Negocio.IngredienteReceta class" Url="html/ee6bd7ad-8334-d0fa-a3db-b3e9b2ae19fd.htm" />
+  <HelpKINode Title="OBMCatering.Negocio.IngredientesBL class" Url="html/9a826db2-3e25-3e83-1d2d-310b59133d74.htm" />
+  <HelpKINode Title="OBMCatering.Negocio.ItemOrdenCompra class" Url="html/b37663bf-2a50-0eed-d8b5-6aa8f51c74bc.htm" />
+  <HelpKINode Title="OBMCatering.Negocio.ItemOrdenPago class" Url="html/fe38d347-8d20-50bc-e4b1-12648865cd25.htm" />
+  <HelpKINode Title="OBMCatering.Negocio.Localidad class" Url="html/0b5fa531-40cc-7ae0-d74d-3f88c130a8d6.htm" />
+  <HelpKINode Title="OBMCatering.Negocio.LocalidadesBL class" Url="html/fc93ce9b-6d95-efb8-fca7-5f5024d1b2a6.htm" />
+  <HelpKINode Title="OBMCatering.Negocio.OBMCateringException class" Url="html/fd6ebf28-0bfc-7e75-bd2a-d76b53d8a4e5.htm" />
+  <HelpKINode Title="OBMCatering.Negocio.OrdenCompra class" Url="html/25956019-1a77-f64e-9e57-281400c17ef7.htm" />
+  <HelpKINode Title="OBMCatering.Negocio.OrdenesCompraBL class" Url="html/9388574a-99a3-df0b-ce04-c0d5106a0800.htm" />
+  <HelpKINode Title="OBMCatering.Negocio.OrdenesPagoBL class" Url="html/f1d53200-4916-17a3-59b5-8bb2f5a4eecc.htm" />
+  <HelpKINode Title="OBMCatering.Negocio.OrdenesVentaBL class" Url="html/d1b6c153-a24a-3037-2d70-2a7dbe5f4cba.htm" />
+  <HelpKINode Title="OBMCatering.Negocio.OrdenPago class" Url="html/f5e15b46-0ea8-9cab-1979-74a47b8062fb.htm" />
+  <HelpKINode Title="OBMCatering.Negocio.OrdenVenta class" Url="html/adb9d952-6fbc-13fa-9793-1d35e631ae45.htm" />
+  <HelpKINode Title="OBMCatering.Negocio.PerfilUsuario enumeration" Url="html/cbf8ec3e-285b-9483-d801-9dcb952191a4.htm" />
+  <HelpKINode Title="OBMCatering.Negocio.PrecioIngrediente class" Url="html/d6bab1c1-228b-00e6-afdb-d630e39868b4.htm" />
+  <HelpKINode Title="OBMCatering.Negocio.PreciosIngredientesBL class" Url="html/29775068-d216-0c72-1afc-a591d9481467.htm" />
+  <HelpKINode Title="OBMCatering.Negocio.Proveedor class" Url="html/e37a516e-7a60-2239-73e5-bb42c0754031.htm" />
+  <HelpKINode Title="OBMCatering.Negocio.ProveedoresBL class" Url="html/ab5ce8d8-1d44-4d2a-f8ec-32a7d2fafba4.htm" />
+  <HelpKINode Title="OBMCatering.Negocio.Provincia class" Url="html/11bc679f-72be-912d-a334-967de427ab78.htm" />
+  <HelpKINode Title="OBMCatering.Negocio.Receta class" Url="html/a54afefa-f64f-08e8-af2a-a1006f5b3bd1.htm" />
+  <HelpKINode Title="OBMCatering.Negocio.RecetasBL class" Url="html/fc4fa196-5d40-80c9-94d2-5ed4a3843a1b.htm" />
+  <HelpKINode Title="OBMCatering.Negocio.TipoCliente enumeration" Url="html/31c6c007-f75e-c766-298e-d0402bf76dad.htm" />
+  <HelpKINode Title="OBMCatering.Negocio.TipoMensajeBitacora enumeration" Url="html/b1fc206b-72a2-2349-d2a9-e0e983fc6763.htm" />
+  <HelpKINode Title="OBMCatering.Negocio.UnidadMedida enumeration" Url="html/958e3020-6ce7-2dbe-d69e-388d73e837f2.htm" />
+  <HelpKINode Title="OBMCatering.Negocio.Usuario class" Url="html/e86ab0ca-dbb9-9171-46f5-6263372c85d1.htm" />
+  <HelpKINode Title="OBMCatering.Negocio.UsuariosBL class" Url="html/295c5c73-baed-ac74-c83e-84ed44c6fbdd.htm" />
+  <HelpKINode Title="OBMCatering.Presentacion namespace" Url="html/27abd670-d38a-dc68-7cc1-66e22444251e.htm" />
+  <HelpKINode Title="OBMCatering.Presentacion.AyudaForm class" Url="html/5aae9482-922f-6e6d-7930-0048d6709ae1.htm" />
+  <HelpKINode Title="OBMCatering.Presentacion.BienvenidaForm class" Url="html/7b04f39a-0d92-9aea-9952-eb8a59f879a1.htm" />
+  <HelpKINode Title="OBMCatering.Presentacion.BitacoraForm class" Url="html/c0a089b4-d19a-f05f-6bf7-71d69564cb12.htm" />
+  <HelpKINode Title="OBMCatering.Presentacion.BitacoraPresentacion class" Url="html/e6501fae-36b9-7648-8474-8486fda9a8b5.htm" />
+  <HelpKINode Title="OBMCatering.Presentacion.ClientePresentacion class" Url="html/6de44d82-171f-e043-57dd-dc8f55a69369.htm" />
+  <HelpKINode Title="OBMCatering.Presentacion.ClientesForm class" Url="html/c77258e3-963e-17a9-f08d-712183c79727.htm" />
+  <HelpKINode Title="OBMCatering.Presentacion.ContextoPresentacion class" Url="html/5624c397-595f-aaaf-5c4c-66268c829d87.htm" />
+  <HelpKINode Title="OBMCatering.Presentacion.EmpleadoPresentacion class" Url="html/f96da19b-7951-ea99-9721-3b056b26e116.htm" />
+  <HelpKINode Title="OBMCatering.Presentacion.EmpleadosForm class" Url="html/59c07720-5a87-eb6c-9243-0da317cf2a5c.htm" />
+  <HelpKINode Title="OBMCatering.Presentacion.FacturaPresentacion class" Url="html/cfc79b06-2e33-285b-096d-4671d30f8d29.htm" />
+  <HelpKINode Title="OBMCatering.Presentacion.FacturasForm class" Url="html/8da1fa96-b221-b4e1-f2d1-3f5db7be8348.htm" />
+  <HelpKINode Title="OBMCatering.Presentacion.IngredientePresentacion class" Url="html/a6ba1586-c0fe-4a8c-bfd8-1e5a2f070397.htm" />
+  <HelpKINode Title="OBMCatering.Presentacion.IngredientesForm class" Url="html/b06275f1-d4b2-4c88-abe1-05757323f986.htm" />
+  <HelpKINode Title="OBMCatering.Presentacion.InicioForm class" Url="html/71ec2ae3-6e59-ff04-f24e-e539c5f7e04f.htm" />
+  <HelpKINode Title="OBMCatering.Presentacion.ItemOrdenCompraPresentacion class" Url="html/c3a4f5bc-45ab-e5b7-9e4a-cfce299c6b10.htm" />
+  <HelpKINode Title="OBMCatering.Presentacion.ItemOrdenPagoPresentacion class" Url="html/4318e10a-90d9-0f60-5773-d53146167d93.htm" />
+  <HelpKINode Title="OBMCatering.Presentacion.LoginForm class" Url="html/5d012366-55cd-9002-9b53-8744fe8cee6e.htm" />
+  <HelpKINode Title="OBMCatering.Presentacion.OrdenCompraPresentacion class" Url="html/f6a486f0-123d-3270-3499-4550b46be6d1.htm" />
+  <HelpKINode Title="OBMCatering.Presentacion.OrdenesCompraForm class" Url="html/b6552eb0-f344-6fe2-b7d2-20e0413c5eef.htm" />
+  <HelpKINode Title="OBMCatering.Presentacion.OrdenesPagoForm class" Url="html/7af7f147-ecc1-3ad1-340d-ea0e407268ca.htm" />
+  <HelpKINode Title="OBMCatering.Presentacion.OrdenesVentaForm class" Url="html/d6915e02-6a00-13ab-7e3d-034a22d47437.htm" />
+  <HelpKINode Title="OBMCatering.Presentacion.OrdenPagoPresentacion class" Url="html/f9b8f956-5bec-1a22-5c44-5f608e62d813.htm" />
+  <HelpKINode Title="OBMCatering.Presentacion.OrdenVentaPresentacion class" Url="html/42852374-8bf4-c0bc-cbc6-e551feec8654.htm" />
+  <HelpKINode Title="OBMCatering.Presentacion.PedidosForm class" Url="html/3ea5ed06-8e00-8e5c-3495-e16c7d869467.htm" />
+  <HelpKINode Title="OBMCatering.Presentacion.PrecioIngredientePresentacion class" Url="html/bf0ef189-53e1-c439-48ee-779be8e0e898.htm" />
+  <HelpKINode Title="OBMCatering.Presentacion.PreciosForm class" Url="html/9a12bd56-69e1-2d3c-d011-8b117c12a4b1.htm" />
+  <HelpKINode Title="OBMCatering.Presentacion.ProveedoresForm class" Url="html/fbe40eb6-a0b8-01c7-9bb9-cb1a064800fd.htm" />
+  <HelpKINode Title="OBMCatering.Presentacion.ProveedorPresentacion class" Url="html/7be007ff-feed-1f53-345c-4c785677a815.htm" />
+  <HelpKINode Title="OBMCatering.Presentacion.RecetaPresentacion class" Url="html/e1d5579c-5689-34fe-460b-f2089c70f6e1.htm" />
+  <HelpKINode Title="OBMCatering.Presentacion.RecetasForm class" Url="html/8132da83-d57b-91a0-3cf4-b7d452a2b405.htm" />
+  <HelpKINode Title="OBMCatering.Presentacion.UsuarioPresentacion class" Url="html/56601f05-aa3c-6715-1ee5-74d42fda10c4.htm" />
+  <HelpKINode Title="OBMCatering.Presentacion.UsuariosForm class" Url="html/e1d3b2c8-5efe-8ded-f210-0cf30d26211f.htm" />
+  <HelpKINode Title="OBMCateringException class">
+    <HelpKINode Title="OBMCateringException (Clase)" Url="html/fd6ebf28-0bfc-7e75-bd2a-d76b53d8a4e5.htm" />
+    <HelpKINode Title="constructor" Url="html/e848d220-7f4d-8c80-1eb9-26ee5d0b19c5.htm" />
+    <HelpKINode Title="events" Url="html/13f21fb1-10db-35a2-ea84-6ef6a5e0cc13.htm" />
+    <HelpKINode Title="methods" Url="html/d8114a5a-db19-1960-6013-0c07322a29a6.htm" />
+    <HelpKINode Title="properties" Url="html/e0108f12-a3fe-742e-d96f-3b755c5396fe.htm" />
+  </HelpKINode>
+  <HelpKINode Title="OBMCateringException.OBMCateringException constructor" Url="html/e848d220-7f4d-8c80-1eb9-26ee5d0b19c5.htm" />
+  <HelpKINode Title="Obtener method">
+    <HelpKINode Title="BitacoraBL.Obtener (M&#233;todo )" Url="html/5cb5fa77-729e-a3dd-e764-e3aecda12a3d.htm" />
+    <HelpKINode Title="ClientesBL.Obtener (M&#233;todo )" Url="html/b05d1393-fd9f-ca3c-fe10-a9da0df97a36.htm" />
+    <HelpKINode Title="EmpleadosBL.Obtener (M&#233;todo )" Url="html/ceec1680-283d-8285-6ce8-509ab49ad7ea.htm" />
+    <HelpKINode Title="FacturasBL.Obtener (M&#233;todo )" Url="html/2e2ebea8-0b42-bbbf-d8d9-7ddf814feaa8.htm" />
+    <HelpKINode Title="IngredientesBL.Obtener (M&#233;todo )" Url="html/14dc0c43-9189-a8dd-4fef-937386058e66.htm" />
+    <HelpKINode Title="OrdenesCompraBL.Obtener (M&#233;todo )" Url="html/540decc3-660a-eba4-6198-16a70bac72fb.htm" />
+    <HelpKINode Title="OrdenesPagoBL.Obtener (M&#233;todo )" Url="html/b61fbcdb-9671-1fd5-7ba6-bfc50900281f.htm" />
+    <HelpKINode Title="OrdenesVentaBL.Obtener (M&#233;todo )" Url="html/fc8644d8-09e0-98be-48da-c31e8f1e08a2.htm" />
+    <HelpKINode Title="PreciosIngredientesBL.Obtener (M&#233;todo )" Url="html/c3a2577f-56c8-253c-68e2-79dd45fb24b2.htm" />
+    <HelpKINode Title="ProveedoresBL.Obtener (M&#233;todo )" Url="html/575649de-89ea-3485-6c2c-8aaf48e8499d.htm" />
+    <HelpKINode Title="RecetasBL.Obtener (M&#233;todo )" Url="html/c525a239-86b4-0ccc-b2be-bc651f126b0b.htm" />
+    <HelpKINode Title="UsuariosBL.Obtener (M&#233;todo )" Url="html/bdbdea7d-a4ae-966e-c4d1-1f4ece26938a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ObtenerActivos method">
+    <HelpKINode Title="ClientesBL.ObtenerActivos (M&#233;todo )" Url="html/26c61417-d505-18ff-53b4-4ed8dde52328.htm" />
+    <HelpKINode Title="EmpleadosBL.ObtenerActivos (M&#233;todo )" Url="html/8abe3ba9-fba8-1815-090a-f7bf63ef1a96.htm" />
+    <HelpKINode Title="ProveedoresBL.ObtenerActivos (M&#233;todo )" Url="html/74dbf771-8fc8-3ca4-9e39-4d5f11c72376.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ObtenerCliente method" Url="html/ec529564-a8e7-e205-c1f4-c28098c7fc05.htm" />
+  <HelpKINode Title="ObtenerEmpleado method" Url="html/a1d9373b-6846-9045-3282-12a67d298957.htm" />
+  <HelpKINode Title="ObtenerFactura method" Url="html/eb5dd965-9a52-be20-2caf-1f7342589f24.htm" />
+  <HelpKINode Title="ObtenerId method">
+    <HelpKINode Title="FacturaPresentacion.ObtenerId (M&#233;todo )" Url="html/8bb71d1f-2291-88d9-43e1-b1e0b9e9396a.htm" />
+    <HelpKINode Title="ItemOrdenCompraPresentacion.ObtenerId (M&#233;todo )" Url="html/063e618b-3fe1-fc1b-c64a-db92b428df43.htm" />
+    <HelpKINode Title="ItemOrdenPagoPresentacion.ObtenerId (M&#233;todo )" Url="html/0956564b-5468-49c5-f23e-7bd1f89383f4.htm" />
+    <HelpKINode Title="OrdenCompraPresentacion.ObtenerId (M&#233;todo )" Url="html/a75b3e77-9d2f-105d-f740-68f1eb92a34c.htm" />
+    <HelpKINode Title="OrdenPagoPresentacion.ObtenerId (M&#233;todo )" Url="html/e5d71907-1bf7-b27b-fe24-e2e8cd62115e.htm" />
+    <HelpKINode Title="OrdenVentaPresentacion.ObtenerId (M&#233;todo )" Url="html/7026f2cd-4eac-df18-32e7-03f64990e1bc.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ObtenerIngrediente method" Url="html/574727b1-53bb-58a8-0c85-8fde58004329.htm" />
+  <HelpKINode Title="ObtenerItemOrdenCompra method" Url="html/60caf0a0-b4ff-4a5b-47dc-8086865e191c.htm" />
+  <HelpKINode Title="ObtenerItemOrdenPago method" Url="html/efd8b5a9-7b60-40af-223a-ad6cd58dae88.htm" />
+  <HelpKINode Title="ObtenerItems method">
+    <HelpKINode Title="OrdenCompraPresentacion.ObtenerItems (M&#233;todo )" Url="html/f629b8c1-56c7-7fc3-df3e-fecf11e25e4a.htm" />
+    <HelpKINode Title="OrdenPagoPresentacion.ObtenerItems (M&#233;todo )" Url="html/ee41f9ba-30b5-b1d3-4f4e-fdd2035d63b1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ObtenerLocalidad method" Url="html/61241f8e-d6d6-9834-e517-1b74673d32aa.htm" />
+  <HelpKINode Title="ObtenerLocalidades method" Url="html/cebabd47-33c2-acff-9a3d-474accf97f6a.htm" />
+  <HelpKINode Title="ObtenerOrdenCompra method" Url="html/f4275f96-75a5-fddb-d18c-dfbb0bd02388.htm" />
+  <HelpKINode Title="ObtenerOrdenPago method" Url="html/238285b0-4c1a-5a99-a82d-42b1f9fda7ef.htm" />
+  <HelpKINode Title="ObtenerOrdenVenta method" Url="html/45cb731a-f2ed-f0f7-b1ad-977e586a3b0d.htm" />
+  <HelpKINode Title="ObtenerPorCUIT method">
+    <HelpKINode Title="ClientesBL.ObtenerPorCUIT (M&#233;todo )" Url="html/3a24eb82-34ce-f54d-64df-6e00093e6fa5.htm" />
+    <HelpKINode Title="ProveedoresBL.ObtenerPorCUIT (M&#233;todo )" Url="html/ffdf3e94-0545-b68e-7037-f282a7ba4cf7.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ObtenerPorNombre method">
+    <HelpKINode Title="ClientesBL.ObtenerPorNombre (M&#233;todo )" Url="html/cc9411d1-552e-efee-5979-7a1428725f72.htm" />
+    <HelpKINode Title="ProveedoresBL.ObtenerPorNombre (M&#233;todo )" Url="html/97355275-1a49-fd18-69d5-17f0d33d6d1c.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ObtenerPrecioIngrediente method" Url="html/717c5e62-ffe0-53e1-c138-271ed3ee8a0f.htm" />
+  <HelpKINode Title="ObtenerProveedor method" Url="html/6565d76b-32a9-852c-3381-cf38721c1750.htm" />
+  <HelpKINode Title="ObtenerProvincia method" Url="html/e5f258b3-28f5-d75f-f764-371586d68c2d.htm" />
+  <HelpKINode Title="ObtenerProvincias method" Url="html/fee0cbd5-2f43-5338-7ff3-42030430d874.htm" />
+  <HelpKINode Title="ObtenerReceta method" Url="html/030c91eb-620a-3462-f7b3-56710a4be4b8.htm" />
+  <HelpKINode Title="ObtenerRecetas method" Url="html/1adcc4d3-f15d-1ad8-042f-17a1fa9c34bc.htm" />
+  <HelpKINode Title="ObtenerUsuarioAutenticado method" Url="html/72b211f3-5cac-e552-30fc-2e7df67f6eda.htm" />
+  <HelpKINode Title="OrdenCompra class">
+    <HelpKINode Title="OrdenCompra (Clase)" Url="html/25956019-1a77-f64e-9e57-281400c17ef7.htm" />
+    <HelpKINode Title="constructor" Url="html/283f8ed3-5942-8b75-8ced-ec113f086e9e.htm" />
+    <HelpKINode Title="methods" Url="html/f1b47724-ae39-0dec-f8f5-63355e03dc75.htm" />
+    <HelpKINode Title="properties" Url="html/046a27fc-89f3-d042-4cd1-b50589848e7f.htm" />
+  </HelpKINode>
+  <HelpKINode Title="OrdenCompra.Estado property" Url="html/1d7d7872-96a3-7c17-4044-3550a32604cd.htm" />
+  <HelpKINode Title="OrdenCompra.Fecha property" Url="html/e873958e-724d-07fa-016b-444fbd922732.htm" />
+  <HelpKINode Title="OrdenCompra.Id property" Url="html/e89acc44-1655-8574-22eb-068ebc76ab66.htm" />
+  <HelpKINode Title="OrdenCompra.Items property" Url="html/985f7c17-30f2-46d0-daae-ad225f938797.htm" />
+  <HelpKINode Title="OrdenCompra.OrdenCompra constructor" Url="html/283f8ed3-5942-8b75-8ced-ec113f086e9e.htm" />
+  <HelpKINode Title="OrdenCompra.OrdenVenta property" Url="html/b9e3ce76-197f-161f-e605-0c49cb38cf62.htm" />
+  <HelpKINode Title="OrdenCompraPresentacion class">
+    <HelpKINode Title="OrdenCompraPresentacion (Clase)" Url="html/f6a486f0-123d-3270-3499-4550b46be6d1.htm" />
+    <HelpKINode Title="constructor" Url="html/ee441151-4509-0b27-1a77-bc4e8437c079.htm" />
+    <HelpKINode Title="methods" Url="html/8fc1d884-54f8-de1a-7960-761d3a5dd1b5.htm" />
+    <HelpKINode Title="properties" Url="html/2d59408a-69d7-a3db-1ead-d14d71452f78.htm" />
+  </HelpKINode>
+  <HelpKINode Title="OrdenCompraPresentacion.Cliente property" Url="html/bf692fb3-72dd-278f-5d60-7c00cdc8ef5a.htm" />
+  <HelpKINode Title="OrdenCompraPresentacion.Estado property" Url="html/252d2040-43af-0dc7-feb8-8e524406e656.htm" />
+  <HelpKINode Title="OrdenCompraPresentacion.Fecha property" Url="html/366ea70d-6288-6bcb-0ca7-b42e7aebabd2.htm" />
+  <HelpKINode Title="OrdenCompraPresentacion.ObtenerId method" Url="html/a75b3e77-9d2f-105d-f740-68f1eb92a34c.htm" />
+  <HelpKINode Title="OrdenCompraPresentacion.ObtenerItems method" Url="html/f629b8c1-56c7-7fc3-df3e-fecf11e25e4a.htm" />
+  <HelpKINode Title="OrdenCompraPresentacion.ObtenerOrdenCompra method" Url="html/f4275f96-75a5-fddb-d18c-dfbb0bd02388.htm" />
+  <HelpKINode Title="OrdenCompraPresentacion.OrdenCompraPresentacion constructor" Url="html/ee441151-4509-0b27-1a77-bc4e8437c079.htm" />
+  <HelpKINode Title="OrdenesCompraBL class">
+    <HelpKINode Title="OrdenesCompraBL (Clase)" Url="html/9388574a-99a3-df0b-ce04-c0d5106a0800.htm" />
+    <HelpKINode Title="constructor" Url="html/7a65699e-3694-adf5-a955-c3cd4f617856.htm" />
+    <HelpKINode Title="methods" Url="html/c77bac11-f750-55a2-eda3-6c827c8c5e16.htm" />
+  </HelpKINode>
+  <HelpKINode Title="OrdenesCompraBL.Actualizar method" Url="html/bb5268b8-884c-4804-542e-3e96fc794bc5.htm" />
+  <HelpKINode Title="OrdenesCompraBL.Crear method" Url="html/d52faa03-88fa-864f-3ba2-84c4fcd33d48.htm" />
+  <HelpKINode Title="OrdenesCompraBL.Obtener method" Url="html/540decc3-660a-eba4-6198-16a70bac72fb.htm" />
+  <HelpKINode Title="OrdenesCompraBL.OrdenesCompraBL constructor" Url="html/7a65699e-3694-adf5-a955-c3cd4f617856.htm" />
+  <HelpKINode Title="OrdenesCompraForm class">
+    <HelpKINode Title="OrdenesCompraForm (Clase)" Url="html/b6552eb0-f344-6fe2-b7d2-20e0413c5eef.htm" />
+    <HelpKINode Title="constructor" Url="html/7a5ee0ed-0329-e7c1-2b9c-553089e931ae.htm" />
+    <HelpKINode Title="events" Url="html/aca2bbee-db23-11ee-8e46-f6693572f5de.htm" />
+    <HelpKINode Title="methods" Url="html/75e491e9-89c2-db47-18d2-5ac47eafdf77.htm" />
+    <HelpKINode Title="properties" Url="html/3fd38a03-28c6-619c-f2d2-242a49dddd16.htm" />
+  </HelpKINode>
+  <HelpKINode Title="OrdenesCompraForm.Dispose method" Url="html/b6046dd6-fb4a-099f-3f1f-f2aefeed7b5a.htm" />
+  <HelpKINode Title="OrdenesCompraForm.OrdenesCompraForm constructor" Url="html/7a5ee0ed-0329-e7c1-2b9c-553089e931ae.htm" />
+  <HelpKINode Title="OrdenesPagoBL class">
+    <HelpKINode Title="OrdenesPagoBL (Clase)" Url="html/f1d53200-4916-17a3-59b5-8bb2f5a4eecc.htm" />
+    <HelpKINode Title="constructor" Url="html/c7d41470-1f67-0838-96b8-de53cb22d784.htm" />
+    <HelpKINode Title="methods" Url="html/51cb8c8b-d335-5ae9-d5ec-a3f4c307a5e0.htm" />
+  </HelpKINode>
+  <HelpKINode Title="OrdenesPagoBL.Actualizar method" Url="html/2108f01e-26de-b126-a99e-ba5824ede02c.htm" />
+  <HelpKINode Title="OrdenesPagoBL.Crear method" Url="html/0a2af608-3ebe-df47-7ff2-76bddf47018e.htm" />
+  <HelpKINode Title="OrdenesPagoBL.Obtener method" Url="html/b61fbcdb-9671-1fd5-7ba6-bfc50900281f.htm" />
+  <HelpKINode Title="OrdenesPagoBL.OrdenesPagoBL constructor" Url="html/c7d41470-1f67-0838-96b8-de53cb22d784.htm" />
+  <HelpKINode Title="OrdenesPagoForm class">
+    <HelpKINode Title="OrdenesPagoForm (Clase)" Url="html/7af7f147-ecc1-3ad1-340d-ea0e407268ca.htm" />
+    <HelpKINode Title="constructor" Url="html/48143131-44ac-a53b-5f26-a020f9845621.htm" />
+    <HelpKINode Title="events" Url="html/76aeaeb1-7c48-13b1-567f-e850c897f558.htm" />
+    <HelpKINode Title="methods" Url="html/1b8842a0-6e29-175d-6a1d-bc421350a13c.htm" />
+    <HelpKINode Title="properties" Url="html/6a19a2f5-5354-0bf5-ca76-704432ff25ff.htm" />
+  </HelpKINode>
+  <HelpKINode Title="OrdenesPagoForm.Dispose method" Url="html/6da9abb6-1e0e-46fb-b7e7-840a520ea2be.htm" />
+  <HelpKINode Title="OrdenesPagoForm.OrdenesPagoForm constructor" Url="html/48143131-44ac-a53b-5f26-a020f9845621.htm" />
+  <HelpKINode Title="OrdenesVentaBL class">
+    <HelpKINode Title="OrdenesVentaBL (Clase)" Url="html/d1b6c153-a24a-3037-2d70-2a7dbe5f4cba.htm" />
+    <HelpKINode Title="constructor" Url="html/d4758575-ee9e-29af-9311-8810cccac2c6.htm" />
+    <HelpKINode Title="methods" Url="html/9cc50489-5e89-3646-ec22-f9dc8eb7a063.htm" />
+  </HelpKINode>
+  <HelpKINode Title="OrdenesVentaBL.Actualizar method" Url="html/a6c67df8-992a-4fae-b9b8-fd652ec383d4.htm" />
+  <HelpKINode Title="OrdenesVentaBL.CalcularPrecio method" Url="html/44677f9e-207d-76f1-31ad-0accc3d88ec9.htm" />
+  <HelpKINode Title="OrdenesVentaBL.Crear method" Url="html/f65b41ac-bb5e-e5d8-9939-6051173f9831.htm" />
+  <HelpKINode Title="OrdenesVentaBL.Existe method" Url="html/2e2744a6-cd6a-8aee-d619-7d20abb780ba.htm" />
+  <HelpKINode Title="OrdenesVentaBL.Obtener method" Url="html/fc8644d8-09e0-98be-48da-c31e8f1e08a2.htm" />
+  <HelpKINode Title="OrdenesVentaBL.OrdenesVentaBL constructor" Url="html/d4758575-ee9e-29af-9311-8810cccac2c6.htm" />
+  <HelpKINode Title="OrdenesVentaForm class">
+    <HelpKINode Title="OrdenesVentaForm (Clase)" Url="html/d6915e02-6a00-13ab-7e3d-034a22d47437.htm" />
+    <HelpKINode Title="constructor" Url="html/0b8a59cf-70d3-7513-4bb5-f5520336877f.htm" />
+    <HelpKINode Title="events" Url="html/ce1a661a-39ba-e889-b138-13efb7afbab9.htm" />
+    <HelpKINode Title="methods" Url="html/acdbc679-3ba4-1c14-0f8c-606658edab2b.htm" />
+    <HelpKINode Title="properties" Url="html/83c5e829-b118-d701-19c5-04693fef47b7.htm" />
+  </HelpKINode>
+  <HelpKINode Title="OrdenesVentaForm.Dispose method" Url="html/08b7535c-25e0-5824-66ab-7bb51fdc7639.htm" />
+  <HelpKINode Title="OrdenesVentaForm.OrdenesVentaForm constructor" Url="html/0b8a59cf-70d3-7513-4bb5-f5520336877f.htm" />
+  <HelpKINode Title="OrdenPago class">
+    <HelpKINode Title="OrdenPago (Clase)" Url="html/f5e15b46-0ea8-9cab-1979-74a47b8062fb.htm" />
+    <HelpKINode Title="constructor" Url="html/4de4f466-8729-274b-6069-a4fb948249f6.htm" />
+    <HelpKINode Title="methods" Url="html/b4fc850e-5b1e-db8a-c751-4ee1c6aa9e48.htm" />
+    <HelpKINode Title="properties" Url="html/5a40302e-2b4a-96fc-80bc-bf805352433b.htm" />
+  </HelpKINode>
+  <HelpKINode Title="OrdenPago.Fecha property" Url="html/8a7e069a-d446-e3c6-32a7-27942e669958.htm" />
+  <HelpKINode Title="OrdenPago.Id property" Url="html/e25ac155-7a6c-3163-d8d8-e324981791b8.htm" />
+  <HelpKINode Title="OrdenPago.Items property" Url="html/56824cf3-4d1e-d2a8-cd69-f7f8c95eff13.htm" />
+  <HelpKINode Title="OrdenPago.OrdenPago constructor" Url="html/4de4f466-8729-274b-6069-a4fb948249f6.htm" />
+  <HelpKINode Title="OrdenPago.Pagada property" Url="html/17274ada-9bb6-d556-80ac-c14f0ee93e30.htm" />
+  <HelpKINode Title="OrdenPago.Proveedor property" Url="html/f35bfb30-5790-6672-06d3-9c03f51dc125.htm" />
+  <HelpKINode Title="OrdenPagoPresentacion class">
+    <HelpKINode Title="OrdenPagoPresentacion (Clase)" Url="html/f9b8f956-5bec-1a22-5c44-5f608e62d813.htm" />
+    <HelpKINode Title="constructor" Url="html/9958a3b4-8ab8-419e-0a67-20b51509f6bf.htm" />
+    <HelpKINode Title="methods" Url="html/f1ee6511-d0b4-ce26-8888-f124f543b796.htm" />
+    <HelpKINode Title="properties" Url="html/58a2651a-3a4c-3f7c-4d59-72dcde40d768.htm" />
+  </HelpKINode>
+  <HelpKINode Title="OrdenPagoPresentacion.Fecha property" Url="html/e0f22bdd-d26e-3557-8baf-a16450767755.htm" />
+  <HelpKINode Title="OrdenPagoPresentacion.ObtenerId method" Url="html/e5d71907-1bf7-b27b-fe24-e2e8cd62115e.htm" />
+  <HelpKINode Title="OrdenPagoPresentacion.ObtenerItems method" Url="html/ee41f9ba-30b5-b1d3-4f4e-fdd2035d63b1.htm" />
+  <HelpKINode Title="OrdenPagoPresentacion.ObtenerOrdenPago method" Url="html/238285b0-4c1a-5a99-a82d-42b1f9fda7ef.htm" />
+  <HelpKINode Title="OrdenPagoPresentacion.OrdenPagoPresentacion constructor" Url="html/9958a3b4-8ab8-419e-0a67-20b51509f6bf.htm" />
+  <HelpKINode Title="OrdenPagoPresentacion.Pagada property" Url="html/411cfc9a-8105-1d1e-82f0-3771f0b4e5e2.htm" />
+  <HelpKINode Title="OrdenPagoPresentacion.Proveedor property" Url="html/3e3b9367-f45c-6a1e-bea4-209acee0d236.htm" />
+  <HelpKINode Title="OrdenVenta class">
+    <HelpKINode Title="OrdenVenta (Clase)" Url="html/adb9d952-6fbc-13fa-9793-1d35e631ae45.htm" />
+    <HelpKINode Title="constructor" Url="html/4dee4e46-8a42-612e-7504-41c2844b5af1.htm" />
+    <HelpKINode Title="methods" Url="html/567c472c-81cf-24d5-191f-bc70658f9e76.htm" />
+    <HelpKINode Title="properties" Url="html/2c0b3a09-d805-4f55-c84a-46329d8acdad.htm" />
+  </HelpKINode>
+  <HelpKINode Title="OrdenVenta property">
+    <HelpKINode Title="Factura.OrdenVenta (Propiedad )" Url="html/27bbd799-5c7d-0c38-37c7-5faf802b878e.htm" />
+    <HelpKINode Title="OrdenCompra.OrdenVenta (Propiedad )" Url="html/b9e3ce76-197f-161f-e605-0c49cb38cf62.htm" />
+  </HelpKINode>
+  <HelpKINode Title="OrdenVenta.Aprobada property" Url="html/73650574-0f2b-3b7e-32d7-6f8723876de5.htm" />
+  <HelpKINode Title="OrdenVenta.Cliente property" Url="html/8f6ea7df-bdb8-d932-f3da-c6fa77fdae18.htm" />
+  <HelpKINode Title="OrdenVenta.Comensales property" Url="html/9c85a490-94de-e166-5ec8-869c7e0f0e0d.htm" />
+  <HelpKINode Title="OrdenVenta.FechaFin property" Url="html/96a86766-91e8-b505-5f2e-e316a086518e.htm" />
+  <HelpKINode Title="OrdenVenta.FechaInicio property" Url="html/ce9809e3-c418-7f4a-5456-00daf5fe1a69.htm" />
+  <HelpKINode Title="OrdenVenta.Id property" Url="html/5838cb08-a94e-be23-9865-cffad1862616.htm" />
+  <HelpKINode Title="OrdenVenta.OrdenVenta constructor" Url="html/4dee4e46-8a42-612e-7504-41c2844b5af1.htm" />
+  <HelpKINode Title="OrdenVenta.Precio property" Url="html/fc0684f7-0d22-d742-fc45-927efa97dfe9.htm" />
+  <HelpKINode Title="OrdenVenta.Recetas property" Url="html/e57f36e9-ff10-9cb3-5694-4c3acc2ca00e.htm" />
+  <HelpKINode Title="OrdenVentaPresentacion class">
+    <HelpKINode Title="OrdenVentaPresentacion (Clase)" Url="html/42852374-8bf4-c0bc-cbc6-e551feec8654.htm" />
+    <HelpKINode Title="constructor" Url="html/9b9437a3-8baf-6c06-ecfc-3a855b3217f9.htm" />
+    <HelpKINode Title="methods" Url="html/1f20f908-73ff-ddb8-30d6-fee9f45e9cf5.htm" />
+    <HelpKINode Title="properties" Url="html/80602dcf-b862-6613-a7e0-1863fe35890a.htm" />
+  </HelpKINode>
+  <HelpKINode Title="OrdenVentaPresentacion.Aprobada property" Url="html/2e896379-2fd2-9f64-dea2-5c2a313d9e5c.htm" />
+  <HelpKINode Title="OrdenVentaPresentacion.Cliente property" Url="html/d6e3a55f-e955-5e71-218e-73ac339c2471.htm" />
+  <HelpKINode Title="OrdenVentaPresentacion.Comensales property" Url="html/f1e2b767-f8cb-920f-43a4-49511ff0e54a.htm" />
+  <HelpKINode Title="OrdenVentaPresentacion.FechaFin property" Url="html/8927c9aa-b173-d279-291d-c1e8acb60ca4.htm" />
+  <HelpKINode Title="OrdenVentaPresentacion.FechaInicio property" Url="html/4b9cef6f-f0bc-e9b1-5483-607e8659a0a3.htm" />
+  <HelpKINode Title="OrdenVentaPresentacion.ObtenerId method" Url="html/7026f2cd-4eac-df18-32e7-03f64990e1bc.htm" />
+  <HelpKINode Title="OrdenVentaPresentacion.ObtenerOrdenVenta method" Url="html/45cb731a-f2ed-f0f7-b1ad-977e586a3b0d.htm" />
+  <HelpKINode Title="OrdenVentaPresentacion.ObtenerRecetas method" Url="html/1adcc4d3-f15d-1ad8-042f-17a1fa9c34bc.htm" />
+  <HelpKINode Title="OrdenVentaPresentacion.OrdenVentaPresentacion constructor" Url="html/9b9437a3-8baf-6c06-ecfc-3a855b3217f9.htm" />
+  <HelpKINode Title="OrdenVentaPresentacion.Precio property" Url="html/db9c525c-3923-44dd-63af-4556580d6911.htm" />
+  <HelpKINode Title="OrdenVentaPresentacion.Recetas property" Url="html/0dea78de-c648-888e-b228-10c25ef9cdca.htm" />
+  <HelpKINode Title="Pagada property">
+    <HelpKINode Title="OrdenPago.Pagada (Propiedad )" Url="html/17274ada-9bb6-d556-80ac-c14f0ee93e30.htm" />
+    <HelpKINode Title="OrdenPagoPresentacion.Pagada (Propiedad )" Url="html/411cfc9a-8105-1d1e-82f0-3771f0b4e5e2.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Password property">
+    <HelpKINode Title="Usuario.Password (Propiedad )" Url="html/0a3cbe14-47f1-ae33-62ec-41a5ec61c4e0.htm" />
+    <HelpKINode Title="UsuarioPresentacion.Password (Propiedad )" Url="html/cb0f084a-6f6c-f34b-117f-3e3e924860cf.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PedidosForm class">
+    <HelpKINode Title="PedidosForm (Clase)" Url="html/3ea5ed06-8e00-8e5c-3495-e16c7d869467.htm" />
+    <HelpKINode Title="constructor" Url="html/7534334a-28db-91d0-8290-1c56c3e9b7ef.htm" />
+    <HelpKINode Title="events" Url="html/858470d0-8170-0013-64e6-2eb89506b4ec.htm" />
+    <HelpKINode Title="methods" Url="html/2689bdea-f875-cc61-076b-963626e002f6.htm" />
+    <HelpKINode Title="properties" Url="html/b44e8935-b7b2-3aaa-5960-4b18587e6b98.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PedidosForm.Dispose method" Url="html/2b09931b-8db5-875d-38b2-2462adc955eb.htm" />
+  <HelpKINode Title="PedidosForm.PedidosForm constructor" Url="html/7534334a-28db-91d0-8290-1c56c3e9b7ef.htm" />
+  <HelpKINode Title="Perfil property">
+    <HelpKINode Title="BitacoraPresentacion.Perfil (Propiedad )" Url="html/502dd405-ea20-0a8b-8785-8f4b6dc3f5d1.htm" />
+    <HelpKINode Title="Usuario.Perfil (Propiedad )" Url="html/34f2e5b3-dd28-1078-606d-5f7c9b3570c8.htm" />
+    <HelpKINode Title="UsuarioPresentacion.Perfil (Propiedad )" Url="html/1fcdc0d4-3e5f-0cd6-9161-649d913f033f.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PerfilUsuario enumeration" Url="html/cbf8ec3e-285b-9483-d801-9dcb952191a4.htm" />
+  <HelpKINode Title="Persona enumeration member" Url="html/31c6c007-f75e-c766-298e-d0402bf76dad.htm" />
+  <HelpKINode Title="Precio property">
+    <HelpKINode Title="FacturaPresentacion.Precio (Propiedad )" Url="html/e9f168d3-fcbf-007c-b278-375fb44593f8.htm" />
+    <HelpKINode Title="ItemOrdenPago.Precio (Propiedad )" Url="html/062dd0b7-ce6c-1ff2-4e86-1fcdbe43f48a.htm" />
+    <HelpKINode Title="ItemOrdenPagoPresentacion.Precio (Propiedad )" Url="html/a3327c2c-a7ee-bcfd-a933-c036497d6c42.htm" />
+    <HelpKINode Title="OrdenVenta.Precio (Propiedad )" Url="html/fc0684f7-0d22-d742-fc45-927efa97dfe9.htm" />
+    <HelpKINode Title="OrdenVentaPresentacion.Precio (Propiedad )" Url="html/db9c525c-3923-44dd-63af-4556580d6911.htm" />
+    <HelpKINode Title="PrecioIngrediente.Precio (Propiedad )" Url="html/610db3ff-8599-5334-5cbf-97e2803a4f05.htm" />
+    <HelpKINode Title="PrecioIngredientePresentacion.Precio (Propiedad )" Url="html/0aec807f-7cc0-b414-7cdd-9edd20f44113.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PrecioIngrediente class">
+    <HelpKINode Title="PrecioIngrediente (Clase)" Url="html/d6bab1c1-228b-00e6-afdb-d630e39868b4.htm" />
+    <HelpKINode Title="constructor" Url="html/88c0c81a-b7e5-c069-eb17-733171946d18.htm" />
+    <HelpKINode Title="methods" Url="html/0ee0b53f-dfaf-e884-3c7d-90e403a31d87.htm" />
+    <HelpKINode Title="properties" Url="html/b41edfcc-cf2c-1e0c-a8cf-b98c49d63905.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PrecioIngrediente.Cantidad property" Url="html/9ad84b17-5a09-9a5a-bfbb-df1402c076ca.htm" />
+  <HelpKINode Title="PrecioIngrediente.Id property" Url="html/97196cb6-9a7d-890a-9ce9-5479b38552ec.htm" />
+  <HelpKINode Title="PrecioIngrediente.Ingrediente property" Url="html/44f6f905-0c64-e185-1241-528567a416cb.htm" />
+  <HelpKINode Title="PrecioIngrediente.Precio property" Url="html/610db3ff-8599-5334-5cbf-97e2803a4f05.htm" />
+  <HelpKINode Title="PrecioIngrediente.PrecioIngrediente constructor" Url="html/88c0c81a-b7e5-c069-eb17-733171946d18.htm" />
+  <HelpKINode Title="PrecioIngrediente.Unidad property" Url="html/d1aae157-a1d1-4e3c-52d0-be98df713eae.htm" />
+  <HelpKINode Title="PrecioIngredientePresentacion class">
+    <HelpKINode Title="PrecioIngredientePresentacion (Clase)" Url="html/bf0ef189-53e1-c439-48ee-779be8e0e898.htm" />
+    <HelpKINode Title="constructor" Url="html/7330018e-a87d-6fcc-bfc8-609f53d6d854.htm" />
+    <HelpKINode Title="methods" Url="html/d6652795-cd2d-9cfc-c3b8-031f7e1bf0b9.htm" />
+    <HelpKINode Title="properties" Url="html/d0c95fef-36a2-7214-3274-9520b1d4d38c.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PrecioIngredientePresentacion.Cantidad property" Url="html/07383b7a-a498-aa09-cf28-3b1a93797add.htm" />
+  <HelpKINode Title="PrecioIngredientePresentacion.Ingrediente property" Url="html/fd617031-f50f-edce-1a94-5fc068524991.htm" />
+  <HelpKINode Title="PrecioIngredientePresentacion.ObtenerPrecioIngrediente method" Url="html/717c5e62-ffe0-53e1-c138-271ed3ee8a0f.htm" />
+  <HelpKINode Title="PrecioIngredientePresentacion.Precio property" Url="html/0aec807f-7cc0-b414-7cdd-9edd20f44113.htm" />
+  <HelpKINode Title="PrecioIngredientePresentacion.PrecioIngredientePresentacion constructor" Url="html/7330018e-a87d-6fcc-bfc8-609f53d6d854.htm" />
+  <HelpKINode Title="PrecioIngredientePresentacion.Unidad property" Url="html/c7eeb803-00af-5ac8-d336-87905952f749.htm" />
+  <HelpKINode Title="PreciosForm class">
+    <HelpKINode Title="PreciosForm (Clase)" Url="html/9a12bd56-69e1-2d3c-d011-8b117c12a4b1.htm" />
+    <HelpKINode Title="constructor" Url="html/9fec7509-d937-d707-1495-45a71646f19d.htm" />
+    <HelpKINode Title="events" Url="html/a7f4ea0a-cc3d-769d-04a5-8c030e58cde8.htm" />
+    <HelpKINode Title="methods" Url="html/6919cb67-6269-4b20-d973-f0c40c147310.htm" />
+    <HelpKINode Title="properties" Url="html/f8d4b060-b290-70a3-dc8d-7ca5b359ac76.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PreciosForm.Dispose method" Url="html/d64dca72-8f7f-37ed-ac3f-2241a7df1763.htm" />
+  <HelpKINode Title="PreciosForm.PreciosForm constructor" Url="html/9fec7509-d937-d707-1495-45a71646f19d.htm" />
+  <HelpKINode Title="PreciosIngredientesBL class">
+    <HelpKINode Title="PreciosIngredientesBL (Clase)" Url="html/29775068-d216-0c72-1afc-a591d9481467.htm" />
+    <HelpKINode Title="constructor" Url="html/c8c86993-2035-cf45-abf0-6a945978c273.htm" />
+    <HelpKINode Title="methods" Url="html/a249db0e-14fd-73da-c900-ef01f57995a9.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PreciosIngredientesBL.Actualizar method" Url="html/48eda708-af87-473f-bf25-273c8286d61e.htm" />
+  <HelpKINode Title="PreciosIngredientesBL.CrearFaltantes method" Url="html/251743cc-0f40-6309-a6f6-8cf10da52ffb.htm" />
+  <HelpKINode Title="PreciosIngredientesBL.HayFaltantes method" Url="html/930ffa5a-4ea1-9199-f491-2d086626e22c.htm" />
+  <HelpKINode Title="PreciosIngredientesBL.Obtener method" Url="html/c3a2577f-56c8-253c-68e2-79dd45fb24b2.htm" />
+  <HelpKINode Title="PreciosIngredientesBL.PreciosIngredientesBL constructor" Url="html/c8c86993-2035-cf45-abf0-6a945978c273.htm" />
+  <HelpKINode Title="Proveedor class">
+    <HelpKINode Title="Proveedor (Clase)" Url="html/e37a516e-7a60-2239-73e5-bb42c0754031.htm" />
+    <HelpKINode Title="constructor" Url="html/d608124a-433f-9e7a-60eb-a910f5598559.htm" />
+    <HelpKINode Title="methods" Url="html/5d4eed48-303d-58cb-56b1-9b831607b21c.htm" />
+    <HelpKINode Title="properties" Url="html/927f3592-1d70-7169-6ebb-b274f5504876.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Proveedor property">
+    <HelpKINode Title="OrdenPago.Proveedor (Propiedad )" Url="html/f35bfb30-5790-6672-06d3-9c03f51dc125.htm" />
+    <HelpKINode Title="OrdenPagoPresentacion.Proveedor (Propiedad )" Url="html/3e3b9367-f45c-6a1e-bea4-209acee0d236.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Proveedor.CodigoPostal property" Url="html/14363443-5746-e233-ea96-07adbe27505b.htm" />
+  <HelpKINode Title="Proveedor.CUIT property" Url="html/78be49e6-053c-408c-fd58-f43f54a5bcdc.htm" />
+  <HelpKINode Title="Proveedor.Domicilio property" Url="html/8f384aba-14a9-00a9-8f7a-17aec63484fc.htm" />
+  <HelpKINode Title="Proveedor.Email property" Url="html/9f291c41-4cce-375e-b122-39bf4d60f76b.htm" />
+  <HelpKINode Title="Proveedor.FechaAlta property" Url="html/10678ac9-7518-2c2f-d416-cbfa4bc29291.htm" />
+  <HelpKINode Title="Proveedor.FechaBaja property" Url="html/aecc6e36-338c-d579-ca7b-dce7d9b96e86.htm" />
+  <HelpKINode Title="Proveedor.Localidad property" Url="html/c199edb0-c528-410e-32dc-9daf852f0fbc.htm" />
+  <HelpKINode Title="Proveedor.Nombre property" Url="html/8f584207-4270-1a89-1d67-6690e9964227.htm" />
+  <HelpKINode Title="Proveedor.Proveedor constructor" Url="html/d608124a-433f-9e7a-60eb-a910f5598559.htm" />
+  <HelpKINode Title="Proveedor.Telefono property" Url="html/79ed5efe-3552-caf3-0871-9a84abc00dd5.htm" />
+  <HelpKINode Title="ProveedoresBL class">
+    <HelpKINode Title="ProveedoresBL (Clase)" Url="html/ab5ce8d8-1d44-4d2a-f8ec-32a7d2fafba4.htm" />
+    <HelpKINode Title="constructor" Url="html/19339d29-437c-43f5-b47a-c3007eff3afa.htm" />
+    <HelpKINode Title="methods" Url="html/1e786fe8-46c9-88d4-10e8-f489b7a586ae.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ProveedoresBL.Actualizar method" Url="html/c6ac667c-cb6d-c063-cbe2-c2e29699cedb.htm" />
+  <HelpKINode Title="ProveedoresBL.Crear method" Url="html/a90b61bd-3a40-dd58-e42c-7bb0ee3f6d19.htm" />
+  <HelpKINode Title="ProveedoresBL.Existe method" Url="html/8886cbba-3c2f-f25a-bf55-664eff11bfa8.htm" />
+  <HelpKINode Title="ProveedoresBL.Obtener method" Url="html/575649de-89ea-3485-6c2c-8aaf48e8499d.htm" />
+  <HelpKINode Title="ProveedoresBL.ObtenerActivos method" Url="html/74dbf771-8fc8-3ca4-9e39-4d5f11c72376.htm" />
+  <HelpKINode Title="ProveedoresBL.ObtenerPorCUIT method" Url="html/ffdf3e94-0545-b68e-7037-f282a7ba4cf7.htm" />
+  <HelpKINode Title="ProveedoresBL.ObtenerPorNombre method" Url="html/97355275-1a49-fd18-69d5-17f0d33d6d1c.htm" />
+  <HelpKINode Title="ProveedoresBL.ProveedoresBL constructor" Url="html/19339d29-437c-43f5-b47a-c3007eff3afa.htm" />
+  <HelpKINode Title="ProveedoresForm class">
+    <HelpKINode Title="ProveedoresForm (Clase)" Url="html/fbe40eb6-a0b8-01c7-9bb9-cb1a064800fd.htm" />
+    <HelpKINode Title="constructor" Url="html/c4435e47-b01c-eec5-22dc-b94be73d09bf.htm" />
+    <HelpKINode Title="events" Url="html/56431588-1291-8c74-531c-44ee0a3c8414.htm" />
+    <HelpKINode Title="methods" Url="html/56f041ce-b421-fa95-8f6f-3818ce69c99e.htm" />
+    <HelpKINode Title="properties" Url="html/ac5fd9c9-5528-1572-efc9-d9483896c5a4.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ProveedoresForm.Dispose method" Url="html/3df20047-026b-6283-38c5-6fdbe5a4c8ef.htm" />
+  <HelpKINode Title="ProveedoresForm.ProveedoresForm constructor" Url="html/c4435e47-b01c-eec5-22dc-b94be73d09bf.htm" />
+  <HelpKINode Title="ProveedorPresentacion class">
+    <HelpKINode Title="ProveedorPresentacion (Clase)" Url="html/7be007ff-feed-1f53-345c-4c785677a815.htm" />
+    <HelpKINode Title="constructor" Url="html/4c371232-0284-e0bf-034d-9994e6a8bf54.htm" />
+    <HelpKINode Title="methods" Url="html/6bd385d5-267e-b642-92a3-0248c1cc2057.htm" />
+    <HelpKINode Title="properties" Url="html/ff11915f-2b3d-2d77-f2b3-0bfd5fdd6caf.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ProveedorPresentacion.CodigoPostal property" Url="html/ede30565-b45b-ebfd-3ca3-f8fed8012861.htm" />
+  <HelpKINode Title="ProveedorPresentacion.CUIT property" Url="html/2578ec3e-8d8a-3259-6032-3eaf30de8358.htm" />
+  <HelpKINode Title="ProveedorPresentacion.Domicilio property" Url="html/d6e9c69c-5e86-5dc3-8902-8b0507c66742.htm" />
+  <HelpKINode Title="ProveedorPresentacion.Email property" Url="html/8a414e3f-22d7-a200-f1b1-2d6f64a9514c.htm" />
+  <HelpKINode Title="ProveedorPresentacion.FechaAlta property" Url="html/f4e35eea-950b-4130-d08a-3916b71538e3.htm" />
+  <HelpKINode Title="ProveedorPresentacion.FechaBaja property" Url="html/f1e19fb1-ec42-09ae-6b41-4bdcb9ffd80e.htm" />
+  <HelpKINode Title="ProveedorPresentacion.Localidad property" Url="html/53d09dda-4075-15e7-e696-e5da2f8d4ad0.htm" />
+  <HelpKINode Title="ProveedorPresentacion.Nombre property" Url="html/e65cf5f0-ca2f-2d97-12cd-1fa256a71240.htm" />
+  <HelpKINode Title="ProveedorPresentacion.ObtenerProveedor method" Url="html/6565d76b-32a9-852c-3381-cf38721c1750.htm" />
+  <HelpKINode Title="ProveedorPresentacion.ProveedorPresentacion constructor" Url="html/4c371232-0284-e0bf-034d-9994e6a8bf54.htm" />
+  <HelpKINode Title="ProveedorPresentacion.Provincia property" Url="html/c409ad0f-449c-437a-03bd-69144e5b10da.htm" />
+  <HelpKINode Title="ProveedorPresentacion.Telefono property" Url="html/d11d79ad-3631-1314-15d8-12786ed662d8.htm" />
+  <HelpKINode Title="Provincia class">
+    <HelpKINode Title="Provincia (Clase)" Url="html/11bc679f-72be-912d-a334-967de427ab78.htm" />
+    <HelpKINode Title="constructor" Url="html/acb1a5ee-888c-eb5f-a1f5-44d3a77d8109.htm" />
+    <HelpKINode Title="methods" Url="html/9115d0d8-7213-31fe-7e13-c815e81472b6.htm" />
+    <HelpKINode Title="properties" Url="html/78f5fe05-efa2-6840-9752-21ec662d3480.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Provincia property">
+    <HelpKINode Title="ClientePresentacion.Provincia (Propiedad )" Url="html/8d9135d4-5d9c-a101-8cb2-0c2c4c5b89cf.htm" />
+    <HelpKINode Title="EmpleadoPresentacion.Provincia (Propiedad )" Url="html/7194ea31-d418-bb2d-3697-9fc165eacd25.htm" />
+    <HelpKINode Title="Localidad.Provincia (Propiedad )" Url="html/8b4281c2-3122-c182-fe17-c27358f4c310.htm" />
+    <HelpKINode Title="ProveedorPresentacion.Provincia (Propiedad )" Url="html/c409ad0f-449c-437a-03bd-69144e5b10da.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Provincia.Id property" Url="html/edd59166-3f5d-f332-dcb3-80db6ecc7904.htm" />
+  <HelpKINode Title="Provincia.Nombre property" Url="html/66c7cba8-6747-e9f6-0ea8-89d8694a22bd.htm" />
+  <HelpKINode Title="Provincia.Provincia constructor" Url="html/acb1a5ee-888c-eb5f-a1f5-44d3a77d8109.htm" />
+  <HelpKINode Title="Realizada enumeration member" Url="html/d45221ae-7d2c-9d2d-604b-8529bcb0b224.htm" />
+  <HelpKINode Title="Receta class">
+    <HelpKINode Title="Receta (Clase)" Url="html/a54afefa-f64f-08e8-af2a-a1006f5b3bd1.htm" />
+    <HelpKINode Title="constructor" Url="html/fe8c0281-3fae-fad6-9c5a-23614cdd3929.htm" />
+    <HelpKINode Title="methods" Url="html/fb5d34f0-b4d7-e40e-ceaa-46e1267f773e.htm" />
+    <HelpKINode Title="properties" Url="html/4c297dee-97e3-bff1-d365-6de88849d8dd.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Receta property" Url="html/b5f72998-aa1b-081c-4e01-01c54c2c4dd7.htm" />
+  <HelpKINode Title="Receta.Detalle property" Url="html/1c3f9c2b-132e-fc31-f54a-cbca3dd2c80b.htm" />
+  <HelpKINode Title="Receta.Estado property" Url="html/c27a8b3f-0e78-0319-5d7c-a9181ff2c597.htm" />
+  <HelpKINode Title="Receta.Id property" Url="html/48e84197-2cee-a317-c3b1-539b317481a2.htm" />
+  <HelpKINode Title="Receta.Ingredientes property" Url="html/dcc628a6-a2de-d4ce-c02e-1ebb6db289fe.htm" />
+  <HelpKINode Title="Receta.Nombre property" Url="html/387f0fda-570f-8f8c-1744-31ee0e466e7e.htm" />
+  <HelpKINode Title="Receta.Receta constructor" Url="html/fe8c0281-3fae-fad6-9c5a-23614cdd3929.htm" />
+  <HelpKINode Title="RecetaPresentacion class">
+    <HelpKINode Title="RecetaPresentacion (Clase)" Url="html/e1d5579c-5689-34fe-460b-f2089c70f6e1.htm" />
+    <HelpKINode Title="constructor" Url="html/24e11e48-9150-6565-4597-2d1ee7ee4740.htm" />
+    <HelpKINode Title="methods" Url="html/d47086ba-d131-f945-3193-6b2740798eb1.htm" />
+    <HelpKINode Title="properties" Url="html/7801f268-2f7c-117d-c3be-60c0dd2d1a59.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RecetaPresentacion.Detalle property" Url="html/3450d6a3-37ed-fe6a-2fc1-abc66d85020c.htm" />
+  <HelpKINode Title="RecetaPresentacion.Estado property" Url="html/c0fca0b3-3734-d337-2d4c-a85095efd897.htm" />
+  <HelpKINode Title="RecetaPresentacion.Nombre property" Url="html/029789bb-84cf-4fe4-f78c-ae0c7d5de78e.htm" />
+  <HelpKINode Title="RecetaPresentacion.ObtenerReceta method" Url="html/030c91eb-620a-3462-f7b3-56710a4be4b8.htm" />
+  <HelpKINode Title="RecetaPresentacion.RecetaPresentacion constructor" Url="html/24e11e48-9150-6565-4597-2d1ee7ee4740.htm" />
+  <HelpKINode Title="Recetas property">
+    <HelpKINode Title="FacturaPresentacion.Recetas (Propiedad )" Url="html/be69aeb7-7276-5f0b-a615-14c471511c25.htm" />
+    <HelpKINode Title="OrdenVenta.Recetas (Propiedad )" Url="html/e57f36e9-ff10-9cb3-5694-4c3acc2ca00e.htm" />
+    <HelpKINode Title="OrdenVentaPresentacion.Recetas (Propiedad )" Url="html/0dea78de-c648-888e-b228-10c25ef9cdca.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RecetasBL class">
+    <HelpKINode Title="RecetasBL (Clase)" Url="html/fc4fa196-5d40-80c9-94d2-5ed4a3843a1b.htm" />
+    <HelpKINode Title="constructor" Url="html/3f01a315-870d-d488-c29a-2d0dd93ee56c.htm" />
+    <HelpKINode Title="methods" Url="html/aabf5823-1f9a-12e3-a7f7-230a9e8c61a9.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RecetasBL.Actualizar method" Url="html/bb9798be-546c-8396-fbd2-a89a730d43c6.htm" />
+  <HelpKINode Title="RecetasBL.ActualizarRecetasSinPrecio method" Url="html/5e3ed037-e47f-728e-293f-3c77aab7fe87.htm" />
+  <HelpKINode Title="RecetasBL.CalularPrecio method" Url="html/230df66b-b135-4ccb-908f-f885a316f27f.htm" />
+  <HelpKINode Title="RecetasBL.Crear method" Url="html/a4df625d-e6d2-c60e-0f47-aeb704002bfd.htm" />
+  <HelpKINode Title="RecetasBL.Existe method" Url="html/b3f5ad25-0500-afb4-68f6-ff2cf43f7eb4.htm" />
+  <HelpKINode Title="RecetasBL.Obtener method" Url="html/c525a239-86b4-0ccc-b2be-bc651f126b0b.htm" />
+  <HelpKINode Title="RecetasBL.RecetasBL constructor" Url="html/3f01a315-870d-d488-c29a-2d0dd93ee56c.htm" />
+  <HelpKINode Title="RecetasForm class">
+    <HelpKINode Title="RecetasForm (Clase)" Url="html/8132da83-d57b-91a0-3cf4-b7d452a2b405.htm" />
+    <HelpKINode Title="constructor" Url="html/e9a48258-b8a1-2c10-91b7-c37ee0042c0d.htm" />
+    <HelpKINode Title="events" Url="html/7aef8f9b-bc6f-1e14-7606-32b1315602d6.htm" />
+    <HelpKINode Title="methods" Url="html/e56d39a2-8fcb-17c2-4491-e2873ba67532.htm" />
+    <HelpKINode Title="properties" Url="html/1f7a3f1c-3d47-bce6-72eb-a4844c4122e0.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RecetasForm.Dispose method" Url="html/6841e52d-d6de-d46c-c2f8-28b6f2f72062.htm" />
+  <HelpKINode Title="RecetasForm.RecetasForm constructor" Url="html/e9a48258-b8a1-2c10-91b7-c37ee0042c0d.htm" />
+  <HelpKINode Title="Registrar method" Url="html/1369d5b7-65b1-48e2-12b7-dff86f892d63.htm" />
+  <HelpKINode Title="RegistrarAlerta method" Url="html/d88e4b73-4c4f-40ae-133e-0b23cbcfc58d.htm" />
+  <HelpKINode Title="RegistrarError method" Url="html/3e5c6fde-7e31-f60e-7d02-140495b104a1.htm" />
+  <HelpKINode Title="RegistrarEvento method" Url="html/80779b02-98ec-ed42-1c61-63d827f145b7.htm" />
+  <HelpKINode Title="Resetear property" Url="html/a79da550-9596-9517-117a-c3a4482767cd.htm" />
+  <HelpKINode Title="Restaurar method" Url="html/78f40bfa-c181-76c1-26f9-31d7fa8c052b.htm" />
+  <HelpKINode Title="SinIngredientes enumeration member" Url="html/e6e3865c-9b68-6a34-486f-f5bcd5c7bb8e.htm" />
+  <HelpKINode Title="SinPrecio enumeration member" Url="html/e6e3865c-9b68-6a34-486f-f5bcd5c7bb8e.htm" />
+  <HelpKINode Title="System.Windows.Forms namespace" Url="html/3ac86d7a-2052-dff5-5f58-e9d600294d2a.htm" />
+  <HelpKINode Title="System.Windows.Forms.Extensiones class" Url="html/d6eb07b7-499d-f6e5-8a21-095587b065a7.htm" />
+  <HelpKINode Title="Telefono property">
+    <HelpKINode Title="Cliente.Telefono (Propiedad )" Url="html/0cfabef8-962d-731c-3b12-c9f8cd6aec53.htm" />
+    <HelpKINode Title="ClientePresentacion.Telefono (Propiedad )" Url="html/aa623753-3fc1-60f9-9d23-ec75bce84a31.htm" />
+    <HelpKINode Title="Empleado.Telefono (Propiedad )" Url="html/bd4d5856-169e-c9e8-6e6d-a579769269d9.htm" />
+    <HelpKINode Title="EmpleadoPresentacion.Telefono (Propiedad )" Url="html/d88552f7-abd2-4143-53a6-1e9783d330c7.htm" />
+    <HelpKINode Title="Proveedor.Telefono (Propiedad )" Url="html/79ed5efe-3552-caf3-0871-9a84abc00dd5.htm" />
+    <HelpKINode Title="ProveedorPresentacion.Telefono (Propiedad )" Url="html/d11d79ad-3631-1314-15d8-12786ed662d8.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Tipo property">
+    <HelpKINode Title="Bitacora.Tipo (Propiedad )" Url="html/19a6ff8e-0132-062a-4baa-b74d6d997261.htm" />
+    <HelpKINode Title="BitacoraPresentacion.Tipo (Propiedad )" Url="html/d1aa4113-e064-1ec0-94b0-4282d31cd21f.htm" />
+    <HelpKINode Title="Cliente.Tipo (Propiedad )" Url="html/e796bb1b-2af7-7620-dc73-44d9228c516e.htm" />
+    <HelpKINode Title="ClientePresentacion.Tipo (Propiedad )" Url="html/780fcdfb-7bc7-51f5-bf7c-7d2cafe15ace.htm" />
+  </HelpKINode>
+  <HelpKINode Title="TipoCliente enumeration" Url="html/31c6c007-f75e-c766-298e-d0402bf76dad.htm" />
+  <HelpKINode Title="TipoMensajeBitacora enumeration" Url="html/b1fc206b-72a2-2349-d2a9-e0e983fc6763.htm" />
+  <HelpKINode Title="u enumeration member" Url="html/958e3020-6ce7-2dbe-d69e-388d73e837f2.htm" />
+  <HelpKINode Title="Unidad property">
+    <HelpKINode Title="IngredientePresentacion.Unidad (Propiedad )" Url="html/1b12465d-ee5a-b33d-a5e8-7d7e2797b0d8.htm" />
+    <HelpKINode Title="IngredienteReceta.Unidad (Propiedad )" Url="html/f619e7f9-433e-1f5b-3a91-ded0c99a2e52.htm" />
+    <HelpKINode Title="ItemOrdenCompra.Unidad (Propiedad )" Url="html/4e77de93-66f7-c8f4-68c0-4ff8d9ae3064.htm" />
+    <HelpKINode Title="ItemOrdenCompraPresentacion.Unidad (Propiedad )" Url="html/1ce580c3-2fd2-eac0-7457-76735ded7e79.htm" />
+    <HelpKINode Title="ItemOrdenPagoPresentacion.Unidad (Propiedad )" Url="html/e0d33b76-76f0-062e-1a7e-038d12bed182.htm" />
+    <HelpKINode Title="PrecioIngrediente.Unidad (Propiedad )" Url="html/d1aae157-a1d1-4e3c-52d0-be98df713eae.htm" />
+    <HelpKINode Title="PrecioIngredientePresentacion.Unidad (Propiedad )" Url="html/c7eeb803-00af-5ac8-d336-87905952f749.htm" />
+  </HelpKINode>
+  <HelpKINode Title="UnidadMedida enumeration" Url="html/958e3020-6ce7-2dbe-d69e-388d73e837f2.htm" />
+  <HelpKINode Title="Usuario class">
+    <HelpKINode Title="Usuario (Clase)" Url="html/e86ab0ca-dbb9-9171-46f5-6263372c85d1.htm" />
+    <HelpKINode Title="constructor" Url="html/01dc7cf7-83c7-b477-a212-7a545c227c93.htm" />
+    <HelpKINode Title="methods" Url="html/824b027f-84e1-6415-42ee-377d9fdce7a9.htm" />
+    <HelpKINode Title="properties" Url="html/3a0c774b-b780-eb17-7a05-665ed550c876.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Usuario property">
+    <HelpKINode Title="Bitacora.Usuario (Propiedad )" Url="html/ed3b1785-cc26-413f-6c47-5eb04d5be734.htm" />
+    <HelpKINode Title="BitacoraPresentacion.Usuario (Propiedad )" Url="html/a5ba80e3-5185-09d6-cc23-de6e4ae1c56c.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Usuario.CambiarPassword property" Url="html/99dd582f-0c2b-a439-5e1b-d2b75788d3f6.htm" />
+  <HelpKINode Title="Usuario.Email property" Url="html/cb90bd09-c552-dc36-6446-23ba50cb471f.htm" />
+  <HelpKINode Title="Usuario.Nick property" Url="html/2e66cbbb-dd31-6586-974b-a1b897768d45.htm" />
+  <HelpKINode Title="Usuario.Nombre property" Url="html/079addec-f98a-1b88-fd69-9910a2c7153f.htm" />
+  <HelpKINode Title="Usuario.Password property" Url="html/0a3cbe14-47f1-ae33-62ec-41a5ec61c4e0.htm" />
+  <HelpKINode Title="Usuario.Perfil property" Url="html/34f2e5b3-dd28-1078-606d-5f7c9b3570c8.htm" />
+  <HelpKINode Title="Usuario.Usuario constructor" Url="html/01dc7cf7-83c7-b477-a212-7a545c227c93.htm" />
+  <HelpKINode Title="UsuarioPresentacion class">
+    <HelpKINode Title="UsuarioPresentacion (Clase)" Url="html/56601f05-aa3c-6715-1ee5-74d42fda10c4.htm" />
+    <HelpKINode Title="constructor" Url="html/5ecb003a-da76-4a53-08ff-becbd37911a5.htm" />
+    <HelpKINode Title="methods" Url="html/458b0871-5b1f-1429-33a1-2774c4d1c5bf.htm" />
+    <HelpKINode Title="properties" Url="html/e9480560-1715-dc4e-dad2-fa0d95786826.htm" />
+  </HelpKINode>
+  <HelpKINode Title="UsuarioPresentacion.Email property" Url="html/41cda183-7faa-6f0c-e458-abc135e58461.htm" />
+  <HelpKINode Title="UsuarioPresentacion.Nick property" Url="html/8756bc40-9b37-8e86-6ec5-20ac39e84afd.htm" />
+  <HelpKINode Title="UsuarioPresentacion.Nombre property" Url="html/13380b0e-e2a3-84e8-8627-81bd3525e97f.htm" />
+  <HelpKINode Title="UsuarioPresentacion.Password property" Url="html/cb0f084a-6f6c-f34b-117f-3e3e924860cf.htm" />
+  <HelpKINode Title="UsuarioPresentacion.Perfil property" Url="html/1fcdc0d4-3e5f-0cd6-9161-649d913f033f.htm" />
+  <HelpKINode Title="UsuarioPresentacion.Resetear property" Url="html/a79da550-9596-9517-117a-c3a4482767cd.htm" />
+  <HelpKINode Title="UsuarioPresentacion.UsuarioPresentacion constructor" Url="html/5ecb003a-da76-4a53-08ff-becbd37911a5.htm" />
+  <HelpKINode Title="UsuariosBL class">
+    <HelpKINode Title="UsuariosBL (Clase)" Url="html/295c5c73-baed-ac74-c83e-84ed44c6fbdd.htm" />
+    <HelpKINode Title="constructor" Url="html/7fa269af-a20d-2277-86be-c14ce29153d5.htm" />
+    <HelpKINode Title="methods" Url="html/5fbf4f41-f612-7c48-5823-3bbeb5adeae9.htm" />
+  </HelpKINode>
+  <HelpKINode Title="UsuariosBL.Actualizar method" Url="html/6d127fd3-19ae-4972-6c69-9036b3b3429a.htm" />
+  <HelpKINode Title="UsuariosBL.Autenticar method" Url="html/34876cb7-138b-e59f-cc66-c2315b6884ac.htm" />
+  <HelpKINode Title="UsuariosBL.Crear method" Url="html/5221082c-5adc-8343-cb1e-d73a60ee60b7.htm" />
+  <HelpKINode Title="UsuariosBL.CrearPasswordHash method" Url="html/2c98204f-35e9-7247-65e2-6be7088c1976.htm" />
+  <HelpKINode Title="UsuariosBL.Existe method" Url="html/7c070631-41c6-c4ad-a306-59fbf01140b0.htm" />
+  <HelpKINode Title="UsuariosBL.Obtener method" Url="html/bdbdea7d-a4ae-966e-c4d1-1f4ece26938a.htm" />
+  <HelpKINode Title="UsuariosBL.UsuariosBL constructor" Url="html/7fa269af-a20d-2277-86be-c14ce29153d5.htm" />
+  <HelpKINode Title="UsuariosForm class">
+    <HelpKINode Title="UsuariosForm (Clase)" Url="html/e1d3b2c8-5efe-8ded-f210-0cf30d26211f.htm" />
+    <HelpKINode Title="constructor" Url="html/597f09f6-48cf-5fe4-a0dd-6b3ba5868cba.htm" />
+    <HelpKINode Title="events" Url="html/b5920386-b9da-721b-c947-7c03e246cb81.htm" />
+    <HelpKINode Title="methods" Url="html/d7ed2d85-fd19-44cf-7f8c-11023fc585cd.htm" />
+    <HelpKINode Title="properties" Url="html/574bf8ab-f3f8-7844-9722-3ab691c1c5d3.htm" />
+  </HelpKINode>
+  <HelpKINode Title="UsuariosForm.Dispose method" Url="html/625e4091-5937-6562-51bb-05fd31e1a4ce.htm" />
+  <HelpKINode Title="UsuariosForm.UsuariosForm constructor" Url="html/597f09f6-48cf-5fe4-a0dd-6b3ba5868cba.htm" />
+  <HelpKINode Title="Ventas enumeration member" Url="html/cbf8ec3e-285b-9483-d801-9dcb952191a4.htm" />
+  <HelpKINode Title="version">
+    <HelpKINode Title="1.0.0.0" Url="html/3fcd536e-5ca0-4b5d-ac22-200d31850efa.htm" />
+    <HelpKINode Title="history" Url="html/555181ac-4ffe-42b9-a539-4f07f6c0f521.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Welcome" Url="html/0d93b73f-cc18-45d4-a7fe-c763f5d6aace.htm" />
+</HelpKI>

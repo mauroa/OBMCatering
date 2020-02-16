@@ -7,12 +7,18 @@ using OBMCatering.Presentacion.Properties;
 
 namespace OBMCatering.Presentacion
 {
+    /// <summary>
+    /// Representa el formulario de eventos del sistema o bitacora del sistema
+    /// </summary>
     public partial class BitacoraForm : Form
     {
         ContextoPresentacion contexto;
         UsuariosBL usuariosBL;
         BitacoraBL bitacoraBL;
 
+        /// <summary>
+        /// Crea una nueva instancia de la clase <see cref="BitacoraForm"/>
+        /// </summary>
         public BitacoraForm()
         {
             this.CargarLenguaje();
@@ -51,7 +57,12 @@ namespace OBMCatering.Presentacion
 
         void BitacoraForm_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
-            MessageBox.Show(Resources.BitacoraForm_Help_Mensaje, Resources.Form_Help_Titulo, MessageBoxButtons.OK, MessageBoxIcon.Question);
+            Form ayudaForm = new AyudaForm()
+            {
+                MensajeAyuda = Resources.BitacoraForm_Help_Mensaje
+            };
+
+            ayudaForm.ShowDialog();
         }
 
         void BtnFiltrar_Click(object sender, EventArgs e)

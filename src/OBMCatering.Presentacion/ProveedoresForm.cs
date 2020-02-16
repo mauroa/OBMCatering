@@ -6,12 +6,18 @@ using System.Windows.Forms;
 
 namespace OBMCatering.Presentacion
 {
+    /// <summary>
+    /// Representa el formulario de proveedores del sistema
+    /// </summary>
     public partial class ProveedoresForm : Form
     {
         ContextoPresentacion contexto;
         LocalidadesBL localidadesBL;
         ProveedoresBL proveedoresBL;
 
+        /// <summary>
+        /// Crea una nueva instancia de la clase <see cref="ProveedoresForm"/>
+        /// </summary>
         public ProveedoresForm()
         {
             this.CargarLenguaje();
@@ -59,7 +65,12 @@ namespace OBMCatering.Presentacion
 
         void ProveedoresForm_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
-            MessageBox.Show(Resources.ProveedoresForm_Help_Mensaje, Resources.Form_Help_Titulo, MessageBoxButtons.OK, MessageBoxIcon.Question);
+            Form ayudaForm = new AyudaForm()
+            {
+                MensajeAyuda = Resources.ProveedoresForm_Help_Mensaje
+            };
+
+            ayudaForm.ShowDialog();
         }
 
         void BtnGuardar_Click(object sender, EventArgs e)

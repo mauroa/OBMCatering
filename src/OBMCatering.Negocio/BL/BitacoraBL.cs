@@ -4,12 +4,20 @@ using System.Collections.Generic;
 
 namespace OBMCatering.Negocio
 {
+    /// <summary>
+    /// Reponsable de manejar los eventos del sistema dentro de la capa de negocio del mismo
+    /// </summary>
     public class BitacoraBL
     {
         ContextoNegocio contexto;
         Datos.OBMCateringDAL dal;
         UsuariosBL usuariosBL;
 
+        /// <summary>
+        /// Crea una nueva instancia de <see cref="BitacoraBL"/>
+        /// </summary>
+        /// <param name="contexto">Contexto de negocio</param>
+        /// <param name="usuariosBL">Capa de negocio de usuarios</param>
         public BitacoraBL(ContextoNegocio contexto, UsuariosBL usuariosBL)
         {
             this.contexto = contexto;
@@ -17,6 +25,11 @@ namespace OBMCatering.Negocio
             this.usuariosBL = usuariosBL;
         }
 
+        /// <summary>
+        /// Registra un nuevo evento en el sistema
+        /// </summary>
+        /// <param name="mensaje">Mensaje del evento</param>
+        /// <param name="tipo">Tipo de evento</param>
         public void Registrar(string mensaje, TipoMensajeBitacora tipo)
         {
             if(string.IsNullOrEmpty(mensaje))
@@ -54,6 +67,10 @@ namespace OBMCatering.Negocio
             dal.Guardar();
         }
 
+        /// <summary>
+        /// Obtiene todos los eventos registrados en el sistema
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Bitacora> Obtener()
         {
             Datos.BitacoraDAL dalBitacoras = dal.ObtenerBitacoraDAL();
@@ -62,6 +79,11 @@ namespace OBMCatering.Negocio
             return Obtener(bitacorasDAL);
         }
 
+        /// <summary>
+        /// Obtiene los eventos registrados en el sistema para un usuario especifico
+        /// </summary>
+        /// <param name="usuario">Usuario para el cual se quieren obtener los eventos</param>
+        /// <returns>Eventos encontrados</returns>
         public IEnumerable<Bitacora> Obtener(Usuario usuario)
         {
             if(usuario == null)
@@ -83,6 +105,11 @@ namespace OBMCatering.Negocio
             return Obtener(bitacorasDAL);
         }
 
+        /// <summary>
+        /// Obtiene los eventos registrados en el sistema para un determinado tipo
+        /// </summary>
+        /// <param name="tipo">Tipo de evento para filtrar el resultado</param>
+        /// <returns>Eventos encontrados</returns>
         public IEnumerable<Bitacora> Obtener(TipoMensajeBitacora tipo)
         {
             Datos.BitacoraDAL dalBitacoras = dal.ObtenerBitacoraDAL();

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="555181ac-4ffe-42b9-a539-4f07f6c0f521" revisionNumber="1">
+	<developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+		<introduction>
+			<para>Esta seccion describe los cambios realizados al sistema OBM Catering a lo largo del tiempo</para>
+		</introduction>
+
+		<section>
+			<title>Historico de Versiones</title>
+			<content>
+				<para>Seleccionar una version para poder ver los cambios que la misma incluye</para>
+
+				<list class="bullet">
+					<listItem>
+						<para><link xlink:href="3fcd536e-5ca0-4b5d-ac22-200d31850efa" /></para>
+					</listItem>
+
+				</list>
+
+			</content>
+		</section>
+
+		<relatedTopics>
+			<link xlink:href="0d93b73f-cc18-45d4-a7fe-c763f5d6aace" />
+		</relatedTopics>
+
+	</developerConceptualDocument>
+</topic>

@@ -6,6 +6,9 @@ using System.Windows.Forms;
 
 namespace OBMCatering.Presentacion
 {
+    /// <summary>
+    /// Representa el formulario de ordenes de pago del sistema
+    /// </summary>
     public partial class OrdenesPagoForm : Form
     {
         ContextoPresentacion contexto;
@@ -20,6 +23,9 @@ namespace OBMCatering.Presentacion
         OrdenesPagoBL ordenesPagoBL;
         OrdenPagoPresentacion ordenPagoSeleccionada;
 
+        /// <summary>
+        /// Crea una nueva instancia de la clase <see cref="OrdenesPagoForm"/>
+        /// </summary>
         public OrdenesPagoForm()
         {
             this.CargarLenguaje();
@@ -65,7 +71,12 @@ namespace OBMCatering.Presentacion
 
         void OrdenesPagoForm_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
-            MessageBox.Show(Resources.OrdenesPagoForm_Help_Mensaje, Resources.Form_Help_Titulo, MessageBoxButtons.OK, MessageBoxIcon.Question);
+            Form ayudaForm = new AyudaForm()
+            {
+                MensajeAyuda = Resources.OrdenesPagoForm_Help_Mensaje
+            };
+
+            ayudaForm.ShowDialog();
         }
 
         void BtnGuardar_Click(object sender, EventArgs e)

@@ -3,6 +3,9 @@ using System.Linq;
 
 namespace OBMCatering.Datos
 {
+    /// <summary>
+    /// Responsable de manejar los eventos del sistema dentro de la capa de acceso a datos del mismo
+    /// </summary>
     public class BitacoraDAL
     {
         OBMCateringEntities modelo;

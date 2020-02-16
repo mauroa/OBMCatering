@@ -4,17 +4,29 @@ using System.Collections.Generic;
 
 namespace OBMCatering.Negocio
 {
+    /// <summary>
+    /// Reponsable de manejar las recetas del sistema dentro de la capa de negocio del mismo
+    /// </summary>
     public class RecetasBL
     {
         Datos.OBMCateringDAL dal;
         PreciosIngredientesBL preciosIngredientesBL;
 
+        /// <summary>
+        /// Crea una nueva instancia de <see cref="RecetasBL"/>
+        /// </summary>
+        /// <param name="contexto">Contexto de negocio</param>
+        /// <param name="preciosIngredientesBL">Capa de negocio de precios de ingredientes</param>
         public RecetasBL(ContextoNegocio contexto, PreciosIngredientesBL preciosIngredientesBL)
         {
             dal = contexto.ObtenerDatos();
             this.preciosIngredientesBL = preciosIngredientesBL;
         }
 
+        /// <summary>
+        /// Crea una nueva receta dentro del sistema
+        /// </summary>
+        /// <param name="receta">Receta a crear</param>
         public void Crear(Receta receta)
         {
             ValidarReceta(receta);
@@ -33,6 +45,11 @@ namespace OBMCatering.Negocio
             dal.Guardar();
         }
 
+        /// <summary>
+        /// Actualiza la informacion de una receta dentro del sistema
+        /// Los datos que podran actualizarse son su estado, sus detalles o informacion y sus ingredientes
+        /// </summary>
+        /// <param name="receta">Receta a actualizar</param>
         public void Actualizar(Receta receta)
         {
             ValidarReceta(receta);
@@ -114,6 +131,12 @@ namespace OBMCatering.Negocio
             }
         }
 
+        /// <summary>
+        /// Analiza todas las recetas cuyo estado es "Sin Precio",
+        /// y recorre nuevamente todos sus ingredientes para saber si ya fueron actualizados y si se les ha asignado un precio
+        /// A cada receta que ahora contenga un precio calculable, se le actualizara su estado a "Activa"
+        /// Mediante este metodo se activaran las recetas que se encontraban inactivas por falta de precio calculable
+        /// </summary>
         public void ActualizarRecetasSinPrecio()
         {
             Datos.RecetasDAL dalRecetas = dal.ObtenerRecetasDAL();
@@ -136,6 +159,10 @@ namespace OBMCatering.Negocio
             dal.Guardar();
         }
 
+        /// <summary>
+        /// Obtiene el listado completo de recetas del sistema
+        /// </summary>
+        /// <returns>Listado de recetas</returns>
         public IEnumerable<Receta> Obtener()
         {
             Datos.RecetasDAL dalRecetas = dal.ObtenerRecetasDAL();
@@ -144,6 +171,11 @@ namespace OBMCatering.Negocio
             return Obtener(recetasDAL);
         }
 
+        /// <summary>
+        /// Obtiene el listado de recetas segun su estado
+        /// </summary>
+        /// <param name="estado">Estado de las recetas a obtener</param>
+        /// <returns>Listado de recetas</returns>
         public IEnumerable<Receta> Obtener(EstadoReceta estado)
         {
             Datos.RecetasDAL dalRecetas = dal.ObtenerRecetasDAL();
@@ -152,6 +184,11 @@ namespace OBMCatering.Negocio
             return Obtener(recetasDAL);
         }
 
+        /// <summary>
+        /// Obtiene todas las recetas que contengan determinado ingrediente en su composicion
+        /// </summary>
+        /// <param name="ingrediente">Ingrediente a buscar dentro de las recetas</param>
+        /// <returns>Listado de recetas</returns>
         public IEnumerable<Receta> Obtener(Ingrediente ingrediente)
         {
             if (ingrediente == null)
@@ -173,6 +210,11 @@ namespace OBMCatering.Negocio
             return Obtener(recetasDAL);
         }
 
+        /// <summary>
+        /// Obtiene una receta determinada segun su nombre
+        /// </summary>
+        /// <param name="nombre">Nombre de la receta a obtener</param>
+        /// <returns>Receta encontrada</returns>
         public Receta Obtener(string nombre)
         {
             if (string.IsNullOrEmpty(nombre))
@@ -186,6 +228,11 @@ namespace OBMCatering.Negocio
             return Obtener(recetaDAL);
         }
 
+        /// <summary>
+        /// Determina si existe una receta segun su nombre
+        /// </summary>
+        /// <param name="nombre">Nombre de la receta a buscar</param>
+        /// <returns>Valor que determina si la receta fue encontrada o no</returns>
         public bool Existe(string nombre)
         {
             if (string.IsNullOrEmpty(nombre))
@@ -199,6 +246,14 @@ namespace OBMCatering.Negocio
             return recetaDAL != null;
         }
 
+        /// <summary>
+        /// Calcula el precio total de una receta, que consta de consultar cada ingrediente de la receta en el listado
+        /// de precios y calcular cuanto vale la cantidad que lleva ese ingrediente dentro de la receta
+        /// El precio del ingrediente en el listado de precios tiene asignada una cantidad y unidad, que
+        /// no necesariamente sera la misma que lleve la receta a preparar
+        /// </summary>
+        /// <param name="receta">Receta a calcular su precio</param>
+        /// <returns>Precio total de la receta</returns>
         public decimal CalularPrecio(Receta receta)
         {
             if (receta == null)

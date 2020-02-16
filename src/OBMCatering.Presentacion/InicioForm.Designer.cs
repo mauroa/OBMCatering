@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InicioForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tsAdministrar = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiClientes = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,9 +52,11 @@
             this.tsiIngles = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiDatos = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiBackup = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsiSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiRestaurar = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsiSalir = new System.Windows.Forms.ToolStripMenuItem();
+            this.picPrincipal = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picPrincipal)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -68,7 +71,7 @@
             this.tsOpciones});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1286, 42);
+            this.menuStrip1.Size = new System.Drawing.Size(951, 42);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -120,19 +123,19 @@
             // tsiPedidosCocina
             // 
             this.tsiPedidosCocina.Name = "tsiPedidosCocina";
-            this.tsiPedidosCocina.Size = new System.Drawing.Size(232, 44);
+            this.tsiPedidosCocina.Size = new System.Drawing.Size(359, 44);
             this.tsiPedidosCocina.Text = "Pedidos";
             // 
             // tsiRecetas
             // 
             this.tsiRecetas.Name = "tsiRecetas";
-            this.tsiRecetas.Size = new System.Drawing.Size(232, 44);
+            this.tsiRecetas.Size = new System.Drawing.Size(359, 44);
             this.tsiRecetas.Text = "Recetas";
             // 
             // tsiPrecios
             // 
             this.tsiPrecios.Name = "tsiPrecios";
-            this.tsiPrecios.Size = new System.Drawing.Size(232, 44);
+            this.tsiPrecios.Size = new System.Drawing.Size(359, 44);
             this.tsiPrecios.Text = "Precios";
             // 
             // tsVentas
@@ -147,13 +150,13 @@
             // tsiPedidos
             // 
             this.tsiPedidos.Name = "tsiPedidos";
-            this.tsiPedidos.Size = new System.Drawing.Size(235, 44);
+            this.tsiPedidos.Size = new System.Drawing.Size(359, 44);
             this.tsiPedidos.Text = "Pedidos";
             // 
             // tsiFacturas
             // 
             this.tsiFacturas.Name = "tsiFacturas";
-            this.tsiFacturas.Size = new System.Drawing.Size(235, 44);
+            this.tsiFacturas.Size = new System.Drawing.Size(359, 44);
             this.tsiFacturas.Text = "Facturas";
             // 
             // tsCompras
@@ -191,7 +194,7 @@
             // tsiBitacora
             // 
             this.tsiBitacora.Name = "tsiBitacora";
-            this.tsiBitacora.Size = new System.Drawing.Size(359, 44);
+            this.tsiBitacora.Size = new System.Drawing.Size(246, 44);
             this.tsiBitacora.Text = "Bitacora";
             // 
             // tsiLenguaje
@@ -200,7 +203,7 @@
             this.tsiEspaniol,
             this.tsiIngles});
             this.tsiLenguaje.Name = "tsiLenguaje";
-            this.tsiLenguaje.Size = new System.Drawing.Size(359, 44);
+            this.tsiLenguaje.Size = new System.Drawing.Size(246, 44);
             this.tsiLenguaje.Text = "Lenguaje";
             // 
             // tsiEspaniol
@@ -221,38 +224,54 @@
             this.tsiBackup,
             this.tsiRestaurar});
             this.tsiDatos.Name = "tsiDatos";
-            this.tsiDatos.Size = new System.Drawing.Size(359, 44);
+            this.tsiDatos.Size = new System.Drawing.Size(246, 44);
             this.tsiDatos.Text = "Datos";
             // 
             // tsiBackup
             // 
             this.tsiBackup.Name = "tsiBackup";
-            this.tsiBackup.Size = new System.Drawing.Size(359, 44);
+            this.tsiBackup.Size = new System.Drawing.Size(247, 44);
             this.tsiBackup.Text = "Backup";
-            // 
-            // tsiSalir
-            // 
-            this.tsiSalir.Name = "tsiSalir";
-            this.tsiSalir.Size = new System.Drawing.Size(359, 44);
-            this.tsiSalir.Text = "Salir";
             // 
             // tsiRestaurar
             // 
             this.tsiRestaurar.Name = "tsiRestaurar";
-            this.tsiRestaurar.Size = new System.Drawing.Size(359, 44);
+            this.tsiRestaurar.Size = new System.Drawing.Size(247, 44);
             this.tsiRestaurar.Text = "Restaurar";
+            // 
+            // tsiSalir
+            // 
+            this.tsiSalir.Name = "tsiSalir";
+            this.tsiSalir.Size = new System.Drawing.Size(246, 44);
+            this.tsiSalir.Text = "Salir";
+            // 
+            // picPrincipal
+            // 
+            this.picPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.picPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picPrincipal.Image = global::OBMCatering.Presentacion.Properties.Resources.Icon_96px;
+            this.picPrincipal.Location = new System.Drawing.Point(0, 42);
+            this.picPrincipal.Name = "picPrincipal";
+            this.picPrincipal.Size = new System.Drawing.Size(951, 486);
+            this.picPrincipal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picPrincipal.TabIndex = 2;
+            this.picPrincipal.TabStop = false;
             // 
             // InicioForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1286, 752);
+            this.ClientSize = new System.Drawing.Size(951, 528);
+            this.Controls.Add(this.picPrincipal);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "InicioForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OBM Catering";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picPrincipal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,5 +304,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsiDatos;
         private System.Windows.Forms.ToolStripMenuItem tsiBackup;
         private System.Windows.Forms.ToolStripMenuItem tsiRestaurar;
+        private System.Windows.Forms.PictureBox picPrincipal;
     }
 }

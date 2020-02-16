@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmpleadosForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.chkActivo = new System.Windows.Forms.CheckBox();
             this.dtpFechaBaja = new System.Windows.Forms.DateTimePicker();
@@ -344,7 +345,9 @@
             this.ClientSize = new System.Drawing.Size(1439, 958);
             this.Controls.Add(this.grvEmpleados);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EmpleadosForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administracion de Empleados";
             this.Load += new System.EventHandler(this.EmpleadosForm_Load);
             this.panel1.ResumeLayout(false);

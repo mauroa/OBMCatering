@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FacturasForm));
             this.grvFacturas = new System.Windows.Forms.DataGridView();
             this.lblClienteTitulo = new System.Windows.Forms.Label();
             this.lblFechaInicioTitulo = new System.Windows.Forms.Label();
@@ -245,7 +246,9 @@
             this.ClientSize = new System.Drawing.Size(1469, 827);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.grvFacturas);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FacturasForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Facturas";
             this.Load += new System.EventHandler(this.FacturasForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grvFacturas)).EndInit();

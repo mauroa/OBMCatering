@@ -6,6 +6,9 @@ using System.Windows.Forms;
 
 namespace OBMCatering.Presentacion
 {
+    /// <summary>
+    /// Representa el formulario del listado de precios del sistema
+    /// </summary>
     public partial class PreciosForm : Form
     {
         ContextoPresentacion contexto;
@@ -13,6 +16,9 @@ namespace OBMCatering.Presentacion
         PreciosIngredientesBL preciosIngredientesBL;
         RecetasBL recetasBL;
 
+        /// <summary>
+        /// Crea una nueva instancia de la clase <see cref="PreciosForm"/>
+        /// </summary>
         public PreciosForm()
         {
             this.CargarLenguaje();
@@ -53,7 +59,12 @@ namespace OBMCatering.Presentacion
 
         void PreciosForm_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
-            MessageBox.Show(Resources.PreciosForm_Help_Mensaje, Resources.Form_Help_Titulo, MessageBoxButtons.OK, MessageBoxIcon.Question);
+            Form ayudaForm = new AyudaForm()
+            {
+                MensajeAyuda = Resources.PreciosForm_Help_Mensaje
+            };
+
+            ayudaForm.ShowDialog();
         }
 
         void BtnGuardar_Click(object sender, EventArgs e)

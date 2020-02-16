@@ -6,6 +6,9 @@ using System.Windows.Forms;
 
 namespace OBMCatering.Presentacion
 {
+    /// <summary>
+    /// Representa el formulario de administracion de facturas del sistema
+    /// </summary>
     public partial class FacturasForm : Form
     {
         ContextoPresentacion contexto;
@@ -17,6 +20,9 @@ namespace OBMCatering.Presentacion
         FacturasBL facturasBL;
         FacturaPresentacion facturaSeleccionada;
 
+        /// <summary>
+        /// Crea una nueva instancia de la clase <see cref="FacturasForm"/>
+        /// </summary>
         public FacturasForm()
         {
             this.CargarLenguaje();
@@ -62,7 +68,12 @@ namespace OBMCatering.Presentacion
 
         void FacturasForm_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
-            MessageBox.Show(Resources.FacturasForm_Help_Mensaje, Resources.Form_Help_Titulo, MessageBoxButtons.OK, MessageBoxIcon.Question);
+            Form ayudaForm = new AyudaForm()
+            {
+                MensajeAyuda = Resources.FacturasForm_Help_Mensaje
+            };
+
+            ayudaForm.ShowDialog();
         }
 
         void BtnCobrada_Click(object sender, EventArgs e)

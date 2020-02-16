@@ -4,6 +4,9 @@ using System.Linq;
 
 namespace OBMCatering.Datos
 {
+    /// <summary>
+    /// Responsable de manejar los usuarios dentro de la capa de acceso a datos del sistema
+    /// </summary>
     public class UsuariosDAL
     {
         OBMCateringEntities modelo;

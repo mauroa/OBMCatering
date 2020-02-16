@@ -3,17 +3,29 @@ using System.Collections.Generic;
 
 namespace OBMCatering.Negocio
 {
+    /// <summary>
+    /// Reponsable de manejar los empleados del sistema dentro de la capa de negocio del mismo
+    /// </summary>
     public class EmpleadosBL
     {
         Datos.OBMCateringDAL dal;
         LocalidadesBL localidadesBL;
 
+        /// <summary>
+        /// Crea una nueva instancia de <see cref="EmpleadosBL"/>
+        /// </summary>
+        /// <param name="contexto">Contexto de negocio</param>
+        /// <param name="localidadesBL">Capa de negocio de localidades</param>
         public EmpleadosBL(ContextoNegocio contexto, LocalidadesBL localidadesBL)
         {
             dal = contexto.ObtenerDatos();
             this.localidadesBL = localidadesBL;
         }
 
+        /// <summary>
+        /// Crea un nuevo empleado en el sistema
+        /// </summary>
+        /// <param name="empleado">Empleado a crear</param>
         public void Crear(Empleado empleado)
         {
             ValidarEmpleado(empleado);
@@ -46,6 +58,10 @@ namespace OBMCatering.Negocio
             dal.Guardar();
         }
 
+        /// <summary>
+        /// Actualiza los datos de un determinado empleado del sistema
+        /// </summary>
+        /// <param name="empleado">Empleado a actualizar</param>
         public void Actualizar(Empleado empleado)
         {
             ValidarEmpleado(empleado);
@@ -77,22 +93,10 @@ namespace OBMCatering.Negocio
             dal.Guardar();
         }
 
-        public void Eliminar(Empleado empleado)
-        {
-            ValidarEmpleado(empleado);
-
-            Datos.EmpleadosDAL dalEmpleados = dal.ObtenerEmpleadosDAL();
-            Datos.Empleado empleadoDAL = dalEmpleados.Obtener(empleado.CUIT);
-
-            if (empleadoDAL == null)
-            {
-                throw new OBMCateringException(string.Format(Resources.EmpleadosBL_Validaciones_CUITInvalido, empleado.CUIT));
-            }
-
-            dalEmpleados.Eliminar(empleadoDAL);
-            dal.Guardar();
-        }
-
+        /// <summary>
+        /// Obtiene la lista completa de empleados del sistema
+        /// </summary>
+        /// <returns>Listado de empleados</returns>
         public IEnumerable<Empleado> Obtener()
         {
             Datos.EmpleadosDAL dalEmpleados = dal.ObtenerEmpleadosDAL();
@@ -101,6 +105,10 @@ namespace OBMCatering.Negocio
             return Obtener(empleadosDAL);
         }
 
+        /// <summary>
+        /// Obtiene la lista de empleados activos en el sistema
+        /// </summary>
+        /// <returns>Listado de empleados</returns>
         public IEnumerable<Empleado> ObtenerActivos()
         {
             Datos.EmpleadosDAL dalEmpleados = dal.ObtenerEmpleadosDAL();
@@ -109,6 +117,11 @@ namespace OBMCatering.Negocio
             return Obtener(empleadosDAL);
         }
 
+        /// <summary>
+        /// Verifica si un cliente empleado, segun su numero CUIT
+        /// </summary>
+        /// <param name="cuit">CUIT del empleado a consultar</param>
+        /// <returns>Valor que determina si el empleado existe o no</returns>
         public bool Existe(string cuit)
         {
             if (string.IsNullOrEmpty(cuit))
@@ -122,6 +135,11 @@ namespace OBMCatering.Negocio
             return empleadoDAL != null;
         }
 
+        /// <summary>
+        /// Obtiene un empleado especifico segun su numero de CUIT
+        /// </summary>
+        /// <param name="cuit">CUIT del empleado a consultar</param>
+        /// <returns>Empleado encontrado</returns>
         public Empleado Obtener(string cuit)
         {
             if (string.IsNullOrEmpty(cuit))

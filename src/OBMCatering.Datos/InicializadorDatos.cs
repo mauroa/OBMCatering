@@ -4,6 +4,11 @@ using System.Threading.Tasks;
 
 namespace OBMCatering.Datos
 {
+    /// <summary>
+    /// Responsable de crear los datos pre determinados y necesarios para que el sistema funcione
+    /// Estos datos son por ejemplo los distintos estados de las distintas entidades, el usuario administrador,
+    /// el listado de provincias y localidades, etc.
+    /// </summary>
     public class InicializadorDatos
     {
         OBMCateringEntities modelo;
@@ -13,20 +18,29 @@ namespace OBMCatering.Datos
             this.modelo = modelo;
         }
 
+        /// <summary>
+        /// Evento que sirve para notificar cuando la carga inicial de datos ha sido finalizada
+        /// </summary>
         public event EventHandler DatosInicializados;
 
+        /// <summary>
+        /// Valor que indica si el sistema esta inicializando sus datos por primera vez o no
+        /// </summary>
         public bool EstaInicializando { get; private set; }
 
+        /// <summary>
+        /// Se crea la base de datos si esta aun no existe y en ese caso se crean los datos iniciales necesarios en el sistema
+        /// </summary>
         public void Inicializar()
         {
-            EstaInicializando = true;
-
             bool necesitaDatosIniciales = !modelo.Database.Exists();
 
             modelo.Database.CreateIfNotExists();
 
             if(necesitaDatosIniciales)
             {
+                EstaInicializando = true;
+
                 modelo.EstadosOrdenesCompra.Add(new EstadoOrdenCompra { Estado = "Generada" });
                 modelo.EstadosOrdenesCompra.Add(new EstadoOrdenCompra { Estado = "Aprobada" });
                 modelo.EstadosOrdenesCompra.Add(new EstadoOrdenCompra { Estado = "Realizada" });
@@ -101,6 +115,7 @@ namespace OBMCatering.Datos
 
         void InicializarLocalidades(OBMCateringEntities modelo)
         {
+            //Se guardan las localidades cada lote de 20 para que vayan apareciendo en el sistema y se pueda ir usando
             int loteCargadas = 0;
 
             foreach (string linea in File.ReadAllLines(@"Resources\localidades.txt"))

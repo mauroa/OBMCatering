@@ -7,6 +7,9 @@ using OBMCatering.Presentacion.Properties;
 
 namespace OBMCatering.Presentacion
 {
+    /// <summary>
+    /// Representa el formulario de ordenes de venta del sistema
+    /// </summary>
     public partial class OrdenesVentaForm : Form
     {
         ContextoPresentacion contexto;
@@ -20,6 +23,9 @@ namespace OBMCatering.Presentacion
         OrdenesCompraBL ordenesCompraBL;
         OrdenVentaPresentacion ordenVentaSeleccionada;
 
+        /// <summary>
+        /// Crea una nueva instancia de la clase <see cref="OrdenesVentaForm"/>
+        /// </summary>
         public OrdenesVentaForm()
         {
             this.CargarLenguaje();
@@ -71,7 +77,12 @@ namespace OBMCatering.Presentacion
 
         void OrdenesVentaForm_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
-            MessageBox.Show(Resources.OrdenesVentaForm_Help_Mensaje, Resources.Form_Help_Titulo, MessageBoxButtons.OK, MessageBoxIcon.Question);
+            Form ayudaForm = new AyudaForm()
+            {
+                MensajeAyuda = Resources.OrdenesVentaForm_Help_Mensaje
+            };
+
+            ayudaForm.ShowDialog();
         }
 
         void BtnGuardar_Click(object sender, EventArgs e)
@@ -298,10 +309,11 @@ namespace OBMCatering.Presentacion
         void CrearFactura()
         {
             OrdenVenta ordenVenta = ordenesVentaBL.Obtener(ordenVentaSeleccionada.ObtenerId());
-            Factura factura = new Factura();
-
-            factura.OrdenVenta = ordenVenta;
-            factura.Fecha = DateTime.Now;
+            Factura factura = new Factura
+            {
+                OrdenVenta = ordenVenta,
+                Fecha = DateTime.Now
+            };
 
             facturasBL.Crear(factura);
             contexto.MostrarEvento(Resources.OrdenesVentaForm_FacturaCreada, ordenVenta.Cliente.Nombre);

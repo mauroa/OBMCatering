@@ -3,17 +3,29 @@ using System.Collections.Generic;
 
 namespace OBMCatering.Negocio
 {
+    /// <summary>
+    /// Reponsable de manejar los proveedores del sistema dentro de la capa de negocio del mismo
+    /// </summary>
     public class ProveedoresBL
     {
         Datos.OBMCateringDAL dal;
         LocalidadesBL localidadesBL;
 
+        /// <summary>
+        /// Crea una nueva instancia de <see cref="ProveedoresBL"/>
+        /// </summary>
+        /// <param name="contexto">Contexto de negocio</param>
+        /// <param name="localidadesBL">Capa de negocio de localidades</param>
         public ProveedoresBL(ContextoNegocio contexto, LocalidadesBL localidadesBL)
         {
             dal = contexto.ObtenerDatos();
             this.localidadesBL = localidadesBL;
         }
 
+        /// <summary>
+        /// Crea un nuevo proveedor en el sistema
+        /// </summary>
+        /// <param name="proveedor">Proveedor a crear</param>
         public void Crear(Proveedor proveedor)
         {
             ValidarProveedor(proveedor);
@@ -45,6 +57,10 @@ namespace OBMCatering.Negocio
             dal.Guardar();
         }
 
+        /// <summary>
+        /// Actualiza los datos de un determinado proveedor del sistema
+        /// </summary>
+        /// <param name="proveedor">Proveedor a actualizar</param>
         public void Actualizar(Proveedor proveedor)
         {
             ValidarProveedor(proveedor);
@@ -76,22 +92,10 @@ namespace OBMCatering.Negocio
             dal.Guardar();
         }
 
-        public void Eliminar(Proveedor proveedor)
-        {
-            ValidarProveedor(proveedor);
-
-            Datos.ProveedoresDAL dalProveedores = dal.ObtenerProveedoresDAL();
-            Datos.Proveedor proveedorDAL = dalProveedores.Obtener(proveedor.CUIT);
-
-            if (proveedorDAL == null)
-            {
-                throw new OBMCateringException(string.Format(Resources.BL_Validaciones_ProveedorInvalido, proveedor.CUIT));
-            }
-
-            dalProveedores.Eliminar(proveedorDAL);
-            dal.Guardar();
-        }
-
+        /// <summary>
+        /// Obtiene la lista completa de proveedores del sistema
+        /// </summary>
+        /// <returns>Listado de proveedores</returns>
         public IEnumerable<Proveedor> Obtener()
         {
             Datos.ProveedoresDAL dalProveedores = dal.ObtenerProveedoresDAL();
@@ -100,6 +104,11 @@ namespace OBMCatering.Negocio
             return Obtener(proveedoresDAL);
         }
 
+        /// <summary>
+        /// Determina si existe un proveedor registrado en el sistema segun su numero de CUIT
+        /// </summary>
+        /// <param name="cuit">Numero de CUIT del proveedor</param>
+        /// <returns>Un valor que indica si existe o no el proveedor</returns>
         public bool Existe(string cuit)
         {
             if (string.IsNullOrEmpty(cuit))
@@ -113,6 +122,11 @@ namespace OBMCatering.Negocio
             return proveedorDAL != null;
         }
 
+        /// <summary>
+        /// Obtiene el listado completo de proveedores activos en el sistema
+        /// Estos proveedores son los unicos con los cuales se puede contar para poder realizar las ordenes de compra
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Proveedor> ObtenerActivos()
         {
             Datos.ProveedoresDAL dalProveedores = dal.ObtenerProveedoresDAL();
@@ -121,6 +135,11 @@ namespace OBMCatering.Negocio
             return Obtener(proveedoresDAL);
         }
 
+        /// <summary>
+        /// Obtiene un determinado proveedor segun su numero de CUIT
+        /// </summary>
+        /// <param name="cuit">Numero de CUIT del proveedor</param>
+        /// <returns>Proveedor encontrado</returns>
         public Proveedor ObtenerPorCUIT(string cuit)
         {
             if (string.IsNullOrEmpty(cuit))
@@ -134,6 +153,11 @@ namespace OBMCatering.Negocio
             return Obtener(proveedorDAL);
         }
 
+        /// <summary>
+        /// Obtiene un determinado proveedor segun su nombre
+        /// </summary>
+        /// <param name="nombre">Nombre del proveedor</param>
+        /// <returns>Proveedor encontrado</returns>
         public Proveedor ObtenerPorNombre(string nombre)
         {
             if (string.IsNullOrEmpty(nombre))

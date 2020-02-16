@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Topics>
+  <Topic id="0d93b73f-cc18-45d4-a7fe-c763f5d6aace" visible="True" isDefault="true" title="Bienvenido a la documentacion de OBM Catering">
+    <HelpKeywords>
+      <HelpKeyword index="K" term="Welcome" />
+    </HelpKeywords>
+  </Topic>
+  <Topic id="555181ac-4ffe-42b9-a539-4f07f6c0f521" visible="True" isExpanded="true" isSelected="true" title="Historico de versiones">
+    <HelpKeywords>
+      <HelpKeyword index="K" term="version, history" />
+    </HelpKeywords>
+    <Topic id="3fcd536e-5ca0-4b5d-ac22-200d31850efa" visible="True" title="Version 1.0.0.0">
+      <HelpKeywords>
+        <HelpKeyword index="K" term="version, 1.0.0.0" />
+      </HelpKeywords>
+    </Topic>
+  </Topic>
+</Topics>

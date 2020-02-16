@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientesForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.chkActivo = new System.Windows.Forms.CheckBox();
@@ -319,7 +320,9 @@
             this.ClientSize = new System.Drawing.Size(1439, 856);
             this.Controls.Add(this.grvClientes);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ClientesForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administracion de Clientes";
             this.Load += new System.EventHandler(this.ClientesForm_Load);
             this.panel1.ResumeLayout(false);

@@ -78,6 +78,7 @@
             this.MinimizeBox = false;
             this.Name = "BienvenidaForm";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bienvenida";
             ((System.ComponentModel.ISupportInitialize)(this.picPrincipal)).EndInit();
             this.ResumeLayout(false);

@@ -4,12 +4,21 @@ using System.Collections.Generic;
 
 namespace OBMCatering.Negocio
 {
+    /// <summary>
+    /// Reponsable de manejar las ordenes de compra del sistema dentro de la capa de negocio del mismo
+    /// </summary>
     public class OrdenesCompraBL
     {
         Datos.OBMCateringDAL dal;
         OrdenesVentaBL ordenesVentaBL;
         IngredientesBL ingredientesBL;
 
+        /// <summary>
+        /// Crea una nueva instancia de <see cref="OrdenesCompraBL"/>
+        /// </summary>
+        /// <param name="contexto">Contexto de negocio</param>
+        /// <param name="ordenesVentaBL">Capa de negocio de ordenes de venta</param>
+        /// <param name="ingredientesBL">Capa de negocio de ingredientes</param>
         public OrdenesCompraBL(ContextoNegocio contexto, OrdenesVentaBL ordenesVentaBL, IngredientesBL ingredientesBL)
         {
             dal = contexto.ObtenerDatos();
@@ -17,6 +26,11 @@ namespace OBMCatering.Negocio
             this.ingredientesBL = ingredientesBL;
         }
 
+        /// <summary>
+        /// Crea una nueva orden de compra en el sistema, lo que implica que una determinada orden de venta ha sido aprobada
+        /// Por cada orden de venta o pedido debera crearse una orden de compra que la respalde
+        /// </summary>
+        /// <param name="ordenVenta">Orden de venta necesaria para poder crear la orden de compra</param>
         public void Crear(OrdenVenta ordenVenta)
         {
             if(ordenVenta == null)
@@ -104,6 +118,11 @@ namespace OBMCatering.Negocio
             dal.Guardar();
         }
 
+        /// <summary>
+        /// Actualiza los datos de una determinada orden de compra
+        /// Solo se permite actualizar el estado de la orden
+        /// </summary>
+        /// <param name="ordenCompra">Orden de compra a actualizar</param>
         public void Actualizar(OrdenCompra ordenCompra)
         {
             ValidarOrdenCompra(ordenCompra);
@@ -129,6 +148,10 @@ namespace OBMCatering.Negocio
             dal.Guardar();
         }
 
+        /// <summary>
+        /// Obtiene el listado completo de ordenes de compra del sistema
+        /// </summary>
+        /// <returns>Listado de ordenes de compra</returns>
         public IEnumerable<OrdenCompra> Obtener()
         {
             Datos.OrdenesCompraDAL dalOrdenesCompra = dal.ObtenerOrdenesCompraDAL();
@@ -137,6 +160,11 @@ namespace OBMCatering.Negocio
             return Obtener(ordenesCompraDAL);
         }
 
+        /// <summary>
+        /// Obtiene el listado de ordenes de compra del sistema segun su estado
+        /// </summary>
+        /// <param name="estado">Estado de las ordenes de compra a buscar</param>
+        /// <returns>Listado de ordenes de compra</returns>
         public IEnumerable<OrdenCompra> Obtener(EstadoOrdenCompra estado)
         {
             Datos.OrdenesCompraDAL dalOrdenesCompra = dal.ObtenerOrdenesCompraDAL();
@@ -152,6 +180,11 @@ namespace OBMCatering.Negocio
             return Obtener(ordenesCompraDAL);
         }
 
+        /// <summary>
+        /// Obtiene una determinada orden de compra por su identificador
+        /// </summary>
+        /// <param name="id">Identificador de la orden</param>
+        /// <returns>Orden de compra encontrada</returns>
         public OrdenCompra Obtener(int id)
         {
             Datos.OrdenesCompraDAL dalOrdenesCompra = dal.ObtenerOrdenesCompraDAL();
