@@ -128,7 +128,7 @@
             this.btnCobrada.Location = new System.Drawing.Point(1308, 279);
             this.btnCobrada.Name = "btnCobrada";
             this.btnCobrada.Size = new System.Drawing.Size(148, 50);
-            this.btnCobrada.TabIndex = 30;
+            this.btnCobrada.TabIndex = 0;
             this.btnCobrada.Text = "Cobrada";
             this.btnCobrada.UseVisualStyleBackColor = true;
             // 

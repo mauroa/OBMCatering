@@ -75,7 +75,7 @@
             this.btnVer.Location = new System.Drawing.Point(1106, 366);
             this.btnVer.Name = "btnVer";
             this.btnVer.Size = new System.Drawing.Size(148, 50);
-            this.btnVer.TabIndex = 25;
+            this.btnVer.TabIndex = 3;
             this.btnVer.Text = "Ver Detalle";
             this.btnVer.UseVisualStyleBackColor = true;
             // 
@@ -86,7 +86,7 @@
             this.chkNoDisponible.Location = new System.Drawing.Point(603, 59);
             this.chkNoDisponible.Name = "chkNoDisponible";
             this.chkNoDisponible.Size = new System.Drawing.Size(178, 29);
-            this.chkNoDisponible.TabIndex = 24;
+            this.chkNoDisponible.TabIndex = 1;
             this.chkNoDisponible.Text = "No Disponible";
             this.chkNoDisponible.UseVisualStyleBackColor = true;
             // 
@@ -97,7 +97,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(1260, 366);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(148, 50);
-            this.btnGuardar.TabIndex = 23;
+            this.btnGuardar.TabIndex = 4;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             // 
@@ -118,14 +118,14 @@
             this.txtDetalle.Multiline = true;
             this.txtDetalle.Name = "txtDetalle";
             this.txtDetalle.Size = new System.Drawing.Size(1378, 188);
-            this.txtDetalle.TabIndex = 4;
+            this.txtDetalle.TabIndex = 2;
             // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(30, 57);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(545, 31);
-            this.txtNombre.TabIndex = 1;
+            this.txtNombre.TabIndex = 0;
             // 
             // grvRecetas
             // 

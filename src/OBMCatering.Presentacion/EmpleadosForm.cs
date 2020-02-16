@@ -115,7 +115,7 @@ namespace OBMCatering.Presentacion
 
             if (filasSeleccionadas == 0 || filasSeleccionadas > 1) return;
 
-            DataGridViewRow filaSeleccionada = grvEmpleados.SelectedRows[0];
+            DataGridViewRow filaSeleccionada = grvEmpleados.CurrentRow;
             EmpleadoPresentacion empleadoSeleccionado = (EmpleadoPresentacion)filaSeleccionada.DataBoundItem;
 
             CargarEmpleadoSeleccionado(empleadoSeleccionado);

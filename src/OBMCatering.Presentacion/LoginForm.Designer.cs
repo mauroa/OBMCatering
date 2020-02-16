@@ -55,7 +55,7 @@
             this.txtUsuario.Location = new System.Drawing.Point(306, 107);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(524, 31);
-            this.txtUsuario.TabIndex = 1;
+            this.txtUsuario.TabIndex = 0;
             // 
             // lblMensaje
             // 
@@ -80,14 +80,14 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(524, 31);
-            this.txtPassword.TabIndex = 4;
+            this.txtPassword.TabIndex = 1;
             // 
             // btnIngresar
             // 
             this.btnIngresar.Location = new System.Drawing.Point(450, 302);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(187, 49);
-            this.btnIngresar.TabIndex = 5;
+            this.btnIngresar.TabIndex = 3;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
             // 
@@ -96,7 +96,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(643, 302);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(187, 49);
-            this.btnCancelar.TabIndex = 6;
+            this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
@@ -106,7 +106,7 @@
             this.txtNuevoPassword.Name = "txtNuevoPassword";
             this.txtNuevoPassword.PasswordChar = '*';
             this.txtNuevoPassword.Size = new System.Drawing.Size(524, 31);
-            this.txtNuevoPassword.TabIndex = 7;
+            this.txtNuevoPassword.TabIndex = 2;
             // 
             // lblNuevoPassword
             // 

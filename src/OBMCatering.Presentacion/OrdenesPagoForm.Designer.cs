@@ -99,7 +99,7 @@
             this.chkPagada.Location = new System.Drawing.Point(957, 18);
             this.chkPagada.Name = "chkPagada";
             this.chkPagada.Size = new System.Drawing.Size(118, 29);
-            this.chkPagada.TabIndex = 38;
+            this.chkPagada.TabIndex = 0;
             this.chkPagada.Text = "Pagada";
             this.chkPagada.UseVisualStyleBackColor = true;
             // 
@@ -120,7 +120,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(1149, 127);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(148, 50);
-            this.btnGuardar.TabIndex = 30;
+            this.btnGuardar.TabIndex = 1;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             // 

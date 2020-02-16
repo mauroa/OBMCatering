@@ -149,7 +149,7 @@ namespace OBMCatering.Presentacion
 
             if (filasSeleccionadas == 0 || filasSeleccionadas > 1) return;
 
-            DataGridViewRow filaSeleccionada = grvPedidos.SelectedRows[0];
+            DataGridViewRow filaSeleccionada = grvPedidos.CurrentRow;
             OrdenVentaPresentacion ordenVentaSeleccionada = (OrdenVentaPresentacion)filaSeleccionada.DataBoundItem;
 
             CargarOrdenVentaSeleccionada(ordenVentaSeleccionada);
@@ -231,8 +231,8 @@ namespace OBMCatering.Presentacion
             Cliente cliente = clientesBL.ObtenerPorNombre(cboClientes.SelectedItem.ToString());
             OrdenVenta ordenVenta = new OrdenVenta();
 
-            SetearOrdenVenta(ordenVenta);
             ordenVenta.Cliente = cliente;
+            SetearOrdenVenta(ordenVenta);
 
             return ordenVenta;
         }
@@ -242,12 +242,6 @@ namespace OBMCatering.Presentacion
             ordenVenta.FechaInicio = dtpFechaInicio.Value;
             ordenVenta.FechaFin = dtpFechaFin.Value;
             ordenVenta.Comensales = int.Parse(txtComensales.Text);
-
-            if (!string.IsNullOrEmpty(lblPrecioCalculado.Text))
-            {
-                ordenVenta.Precio = decimal.Parse(lblPrecioCalculado.Text);
-            }
-
             ordenVenta.Aprobada = chkAprobada.Checked;
 
             foreach (Receta receta in ordenVenta.Recetas.ToList())
@@ -277,6 +271,17 @@ namespace OBMCatering.Presentacion
 
                     ordenVenta.Recetas.Add(receta);
                 }
+            }
+
+            if (string.IsNullOrEmpty(lblPrecioCalculado.Text))
+            {
+                decimal precio = ordenesVentaBL.CalcularPrecio(ordenVenta);
+
+                ordenVenta.Precio = precio;
+            }
+            else
+            {
+                ordenVenta.Precio = decimal.Parse(lblPrecioCalculado.Text);
             }
         }
 

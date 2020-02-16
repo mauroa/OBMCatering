@@ -76,7 +76,7 @@
             this.cboClientes.Location = new System.Drawing.Point(503, 62);
             this.cboClientes.Name = "cboClientes";
             this.cboClientes.Size = new System.Drawing.Size(272, 33);
-            this.cboClientes.TabIndex = 25;
+            this.cboClientes.TabIndex = 2;
             // 
             // btnFiltrar
             // 
@@ -84,7 +84,7 @@
             this.btnFiltrar.Location = new System.Drawing.Point(1032, 53);
             this.btnFiltrar.Name = "btnFiltrar";
             this.btnFiltrar.Size = new System.Drawing.Size(180, 53);
-            this.btnFiltrar.TabIndex = 26;
+            this.btnFiltrar.TabIndex = 3;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = true;
             // 
@@ -94,7 +94,7 @@
             this.btnRecetas.Location = new System.Drawing.Point(1218, 53);
             this.btnRecetas.Name = "btnRecetas";
             this.btnRecetas.Size = new System.Drawing.Size(180, 53);
-            this.btnRecetas.TabIndex = 27;
+            this.btnRecetas.TabIndex = 4;
             this.btnRecetas.Text = "Recetas";
             this.btnRecetas.UseVisualStyleBackColor = true;
             // 
@@ -104,7 +104,7 @@
             this.dtpDesde.Location = new System.Drawing.Point(20, 64);
             this.dtpDesde.Name = "dtpDesde";
             this.dtpDesde.Size = new System.Drawing.Size(211, 31);
-            this.dtpDesde.TabIndex = 28;
+            this.dtpDesde.TabIndex = 0;
             this.dtpDesde.Value = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             // 
             // dtpHasta
@@ -113,7 +113,7 @@
             this.dtpHasta.Location = new System.Drawing.Point(262, 64);
             this.dtpHasta.Name = "dtpHasta";
             this.dtpHasta.Size = new System.Drawing.Size(211, 31);
-            this.dtpHasta.TabIndex = 29;
+            this.dtpHasta.TabIndex = 1;
             this.dtpHasta.Value = new System.DateTime(2019, 12, 4, 10, 31, 39, 0);
             // 
             // panel1

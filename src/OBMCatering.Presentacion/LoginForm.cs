@@ -58,6 +58,7 @@ namespace OBMCatering.Presentacion
                 {
                     lblNuevoPassword.Visible = true;
                     txtNuevoPassword.Visible = true;
+                    txtNuevoPassword.Focus();
                     lblMensaje.Text = Resources.LoginForm_CambiarPassword;
                     modoReset = true;
 

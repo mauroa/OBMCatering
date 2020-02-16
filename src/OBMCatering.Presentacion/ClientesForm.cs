@@ -115,7 +115,7 @@ namespace OBMCatering.Presentacion
 
             if (filasSeleccionadas == 0 || filasSeleccionadas > 1) return;
 
-            DataGridViewRow filaSeleccionada = grvClientes.SelectedRows[0];
+            DataGridViewRow filaSeleccionada = grvClientes.CurrentRow;
             ClientePresentacion clienteSeleccionado = (ClientePresentacion)filaSeleccionada.DataBoundItem;
 
             CargarClienteSeleccionado(clienteSeleccionado);

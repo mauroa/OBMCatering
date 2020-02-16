@@ -103,7 +103,7 @@ namespace OBMCatering.Presentacion
         void BtnVer_Click(object sender, EventArgs e)
         {
             IngredientesForm form = new IngredientesForm();
-            DataGridViewRow filaSeleccionada = grvRecetas.SelectedRows[0];
+            DataGridViewRow filaSeleccionada = grvRecetas.CurrentRow;
             RecetaPresentacion recetaSeleccionada = (RecetaPresentacion)filaSeleccionada.DataBoundItem;
 
             form.Receta = recetaSeleccionada;
@@ -117,7 +117,7 @@ namespace OBMCatering.Presentacion
 
             if (filasSeleccionadas == 0 || filasSeleccionadas > 1) return;
 
-            DataGridViewRow filaSeleccionada = grvRecetas.SelectedRows[0];
+            DataGridViewRow filaSeleccionada = grvRecetas.CurrentRow;
             RecetaPresentacion recetaSeleccionada = (RecetaPresentacion)filaSeleccionada.DataBoundItem;
 
             CargarRecetaSeleccionada(recetaSeleccionada);

@@ -73,7 +73,7 @@
             this.cboUnidad.Location = new System.Drawing.Point(809, 57);
             this.cboUnidad.Name = "cboUnidad";
             this.cboUnidad.Size = new System.Drawing.Size(225, 33);
-            this.cboUnidad.TabIndex = 28;
+            this.cboUnidad.TabIndex = 2;
             // 
             // lblUnidad
             // 
@@ -89,7 +89,7 @@
             this.txtCantidad.Location = new System.Drawing.Point(609, 57);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(166, 31);
-            this.txtCantidad.TabIndex = 26;
+            this.txtCantidad.TabIndex = 1;
             // 
             // btnGuardar
             // 
@@ -98,7 +98,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(955, 139);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(148, 50);
-            this.btnGuardar.TabIndex = 23;
+            this.btnGuardar.TabIndex = 3;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             // 
@@ -118,7 +118,7 @@
             this.txtIngrediente.Location = new System.Drawing.Point(30, 57);
             this.txtIngrediente.Name = "txtIngrediente";
             this.txtIngrediente.Size = new System.Drawing.Size(545, 31);
-            this.txtIngrediente.TabIndex = 1;
+            this.txtIngrediente.TabIndex = 0;
             // 
             // grvIngredientes
             // 

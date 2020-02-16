@@ -61,7 +61,7 @@
             this.txtUsuario.Location = new System.Drawing.Point(28, 61);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(306, 31);
-            this.txtUsuario.TabIndex = 1;
+            this.txtUsuario.TabIndex = 0;
             // 
             // lblNombre
             // 
@@ -77,7 +77,7 @@
             this.txtNombre.Location = new System.Drawing.Point(365, 61);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(306, 31);
-            this.txtNombre.TabIndex = 3;
+            this.txtNombre.TabIndex = 1;
             // 
             // cboPerfil
             // 
@@ -102,7 +102,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(306, 31);
-            this.txtPassword.TabIndex = 6;
+            this.txtPassword.TabIndex = 3;
             // 
             // lblPassword
             // 
@@ -127,7 +127,7 @@
             this.txtEmail.Location = new System.Drawing.Point(701, 61);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(306, 31);
-            this.txtEmail.TabIndex = 9;
+            this.txtEmail.TabIndex = 2;
             // 
             // panel1
             // 
@@ -156,7 +156,7 @@
             this.chkResetear.Location = new System.Drawing.Point(701, 160);
             this.chkResetear.Name = "chkResetear";
             this.chkResetear.Size = new System.Drawing.Size(231, 29);
-            this.chkResetear.TabIndex = 24;
+            this.chkResetear.TabIndex = 5;
             this.chkResetear.Text = "Resetear Password";
             this.chkResetear.UseVisualStyleBackColor = true;
             // 
@@ -167,7 +167,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(969, 213);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(148, 50);
-            this.btnGuardar.TabIndex = 23;
+            this.btnGuardar.TabIndex = 6;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             // 

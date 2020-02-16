@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrdenesCompraForm));
             this.grvOrdenesCompra = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.grvIngredientes = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblFechaTitulo = new System.Windows.Forms.Label();
             this.lblProveedorTitulo = new System.Windows.Forms.Label();
@@ -42,13 +43,12 @@
             this.lblEstado = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblEstadoTitulo = new System.Windows.Forms.Label();
-            this.grvIngredientes = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.grvOrdenesCompra)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvIngredientes)).BeginInit();
+            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -78,6 +78,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1459, 384);
             this.panel1.TabIndex = 28;
+            // 
+            // grvIngredientes
+            // 
+            this.grvIngredientes.AllowUserToAddRows = false;
+            this.grvIngredientes.AllowUserToDeleteRows = false;
+            this.grvIngredientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.grvIngredientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grvIngredientes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grvIngredientes.Location = new System.Drawing.Point(0, 0);
+            this.grvIngredientes.MultiSelect = false;
+            this.grvIngredientes.Name = "grvIngredientes";
+            this.grvIngredientes.ReadOnly = true;
+            this.grvIngredientes.RowHeadersWidth = 82;
+            this.grvIngredientes.RowTemplate.Height = 33;
+            this.grvIngredientes.Size = new System.Drawing.Size(1457, 382);
+            this.grvIngredientes.TabIndex = 29;
             // 
             // panel2
             // 
@@ -132,7 +148,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(1229, 187);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(219, 50);
-            this.btnGuardar.TabIndex = 30;
+            this.btnGuardar.TabIndex = 1;
             this.btnGuardar.UseVisualStyleBackColor = true;
             // 
             // lblClienteTitulo
@@ -150,7 +166,7 @@
             this.cboProveedor.Location = new System.Drawing.Point(898, 21);
             this.cboProveedor.Name = "cboProveedor";
             this.cboProveedor.Size = new System.Drawing.Size(219, 33);
-            this.cboProveedor.TabIndex = 40;
+            this.cboProveedor.TabIndex = 0;
             // 
             // lblCliente
             // 
@@ -188,22 +204,6 @@
             this.lblEstadoTitulo.TabIndex = 38;
             this.lblEstadoTitulo.Text = "Estado";
             // 
-            // grvIngredientes
-            // 
-            this.grvIngredientes.AllowUserToAddRows = false;
-            this.grvIngredientes.AllowUserToDeleteRows = false;
-            this.grvIngredientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.grvIngredientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grvIngredientes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grvIngredientes.Location = new System.Drawing.Point(0, 0);
-            this.grvIngredientes.MultiSelect = false;
-            this.grvIngredientes.Name = "grvIngredientes";
-            this.grvIngredientes.ReadOnly = true;
-            this.grvIngredientes.RowHeadersWidth = 82;
-            this.grvIngredientes.RowTemplate.Height = 33;
-            this.grvIngredientes.Size = new System.Drawing.Size(1457, 382);
-            this.grvIngredientes.TabIndex = 29;
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.grvOrdenesCompra);
@@ -237,9 +237,9 @@
             this.Load += new System.EventHandler(this.OrdenesCompra_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grvOrdenesCompra)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grvIngredientes)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grvIngredientes)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);

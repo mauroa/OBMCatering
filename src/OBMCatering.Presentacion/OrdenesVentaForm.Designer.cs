@@ -93,7 +93,7 @@
             this.btnCalcularPrecio.Location = new System.Drawing.Point(1107, 366);
             this.btnCalcularPrecio.Name = "btnCalcularPrecio";
             this.btnCalcularPrecio.Size = new System.Drawing.Size(201, 50);
-            this.btnCalcularPrecio.TabIndex = 28;
+            this.btnCalcularPrecio.TabIndex = 6;
             this.btnCalcularPrecio.Text = "Calcular Precio";
             this.btnCalcularPrecio.UseVisualStyleBackColor = true;
             // 
@@ -122,7 +122,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(1314, 366);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(148, 50);
-            this.btnGuardar.TabIndex = 25;
+            this.btnGuardar.TabIndex = 7;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             // 
@@ -147,7 +147,7 @@
             this.lstRecetas.Name = "lstRecetas";
             this.lstRecetas.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.lstRecetas.Size = new System.Drawing.Size(1438, 204);
-            this.lstRecetas.TabIndex = 23;
+            this.lstRecetas.TabIndex = 5;
             // 
             // chkAprobada
             // 
@@ -156,7 +156,7 @@
             this.chkAprobada.Location = new System.Drawing.Point(1060, 52);
             this.chkAprobada.Name = "chkAprobada";
             this.chkAprobada.Size = new System.Drawing.Size(137, 29);
-            this.chkAprobada.TabIndex = 22;
+            this.chkAprobada.TabIndex = 4;
             this.chkAprobada.Text = "Aprobada";
             this.chkAprobada.UseVisualStyleBackColor = true;
             // 
@@ -165,7 +165,7 @@
             this.txtComensales.Location = new System.Drawing.Point(884, 52);
             this.txtComensales.Name = "txtComensales";
             this.txtComensales.Size = new System.Drawing.Size(143, 31);
-            this.txtComensales.TabIndex = 16;
+            this.txtComensales.TabIndex = 3;
             // 
             // lblComensales
             // 
@@ -191,7 +191,7 @@
             this.dtpFechaFin.Location = new System.Drawing.Point(654, 52);
             this.dtpFechaFin.Name = "dtpFechaFin";
             this.dtpFechaFin.Size = new System.Drawing.Size(211, 31);
-            this.dtpFechaFin.TabIndex = 13;
+            this.dtpFechaFin.TabIndex = 2;
             this.dtpFechaFin.Value = new System.DateTime(2019, 12, 4, 10, 31, 39, 0);
             // 
             // dtpFechaInicio
@@ -200,7 +200,7 @@
             this.dtpFechaInicio.Location = new System.Drawing.Point(423, 52);
             this.dtpFechaInicio.Name = "dtpFechaInicio";
             this.dtpFechaInicio.Size = new System.Drawing.Size(211, 31);
-            this.dtpFechaInicio.TabIndex = 12;
+            this.dtpFechaInicio.TabIndex = 1;
             this.dtpFechaInicio.Value = new System.DateTime(2019, 12, 4, 10, 31, 39, 0);
             // 
             // lblFechaInicio
@@ -218,7 +218,7 @@
             this.cboClientes.Location = new System.Drawing.Point(24, 50);
             this.cboClientes.Name = "cboClientes";
             this.cboClientes.Size = new System.Drawing.Size(381, 33);
-            this.cboClientes.TabIndex = 1;
+            this.cboClientes.TabIndex = 0;
             // 
             // lblCliente
             // 

@@ -27,3 +27,4 @@ NuGet.exe
 /NULL
 /msbuild.log
 *.binlog
+/src/OBMCatering.Documentacion/Help

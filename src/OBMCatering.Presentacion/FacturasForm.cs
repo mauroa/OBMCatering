@@ -102,7 +102,7 @@ namespace OBMCatering.Presentacion
 
             if (filasSeleccionadas == 0 || filasSeleccionadas > 1) return;
 
-            DataGridViewRow filaSeleccionada = grvFacturas.SelectedRows[0];
+            DataGridViewRow filaSeleccionada = grvFacturas.CurrentRow;
             FacturaPresentacion facturaSeleccionada = (FacturaPresentacion)filaSeleccionada.DataBoundItem;
 
             CargarFacturaSeleccionada(facturaSeleccionada);

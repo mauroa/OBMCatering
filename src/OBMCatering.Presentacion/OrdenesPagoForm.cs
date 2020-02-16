@@ -125,7 +125,7 @@ namespace OBMCatering.Presentacion
 
             if (filasSeleccionadas == 0 || filasSeleccionadas > 1) return;
 
-            DataGridViewRow filaSeleccionada = grvOrdenesPago.SelectedRows[0];
+            DataGridViewRow filaSeleccionada = grvOrdenesPago.CurrentRow;
             OrdenPagoPresentacion ordenPagoSeleccionada = (OrdenPagoPresentacion)filaSeleccionada.DataBoundItem;
 
             CargarOrdenPagoSeleccionada(ordenPagoSeleccionada);
@@ -173,6 +173,7 @@ namespace OBMCatering.Presentacion
             lblFecha.Text = ordenPagoPresentacion.Fecha.ToShortDateString();
             lblProveedor.Text = ordenPagoPresentacion.Proveedor;
             chkPagada.Checked = ordenPagoPresentacion.Pagada;
+            chkPagada.Enabled = !ordenPagoPresentacion.Pagada;
             grvItems.DataSource = ordenPagoPresentacion.ObtenerItems();
             grvItems.ReadOnly = ordenPagoPresentacion.Pagada;
             btnGuardar.Visible = !ordenPagoPresentacion.Pagada;
@@ -184,6 +185,7 @@ namespace OBMCatering.Presentacion
             lblFecha.Text = string.Empty;
             lblProveedor.Text = string.Empty;
             chkPagada.Checked = false;
+            chkPagada.Enabled = true;
             grvOrdenesPago.ClearSelection();
             grvItems.DataSource = new List<ItemOrdenPagoPresentacion>();
             btnGuardar.Visible = false;

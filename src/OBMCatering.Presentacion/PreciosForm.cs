@@ -97,7 +97,7 @@ namespace OBMCatering.Presentacion
 
             if (filasSeleccionadas == 0 || filasSeleccionadas > 1) return;
 
-            DataGridViewRow filaSeleccionada = grvPrecios.SelectedRows[0];
+            DataGridViewRow filaSeleccionada = grvPrecios.CurrentRow;
             PrecioIngredientePresentacion precioSeleccionado = (PrecioIngredientePresentacion)filaSeleccionada.DataBoundItem;
 
             CargarPrecioSeleccionado(precioSeleccionado);

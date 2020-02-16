@@ -54,6 +54,7 @@
             this.grvBitacora.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grvBitacora.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grvBitacora.Location = new System.Drawing.Point(0, 0);
+            this.grvBitacora.MultiSelect = false;
             this.grvBitacora.Name = "grvBitacora";
             this.grvBitacora.ReadOnly = true;
             this.grvBitacora.RowHeadersWidth = 82;
@@ -67,7 +68,7 @@
             this.dtpHasta.Location = new System.Drawing.Point(264, 59);
             this.dtpHasta.Name = "dtpHasta";
             this.dtpHasta.Size = new System.Drawing.Size(211, 31);
-            this.dtpHasta.TabIndex = 36;
+            this.dtpHasta.TabIndex = 1;
             this.dtpHasta.Value = new System.DateTime(2019, 12, 4, 10, 31, 39, 0);
             // 
             // dtpDesde
@@ -76,7 +77,7 @@
             this.dtpDesde.Location = new System.Drawing.Point(26, 59);
             this.dtpDesde.Name = "dtpDesde";
             this.dtpDesde.Size = new System.Drawing.Size(211, 31);
-            this.dtpDesde.TabIndex = 35;
+            this.dtpDesde.TabIndex = 0;
             this.dtpDesde.Value = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             // 
             // btnFiltrar
@@ -85,7 +86,7 @@
             this.btnFiltrar.Location = new System.Drawing.Point(1293, 50);
             this.btnFiltrar.Name = "btnFiltrar";
             this.btnFiltrar.Size = new System.Drawing.Size(180, 53);
-            this.btnFiltrar.TabIndex = 34;
+            this.btnFiltrar.TabIndex = 4;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = true;
             // 
@@ -95,7 +96,7 @@
             this.cboTipos.Location = new System.Drawing.Point(503, 57);
             this.cboTipos.Name = "cboTipos";
             this.cboTipos.Size = new System.Drawing.Size(272, 33);
-            this.cboTipos.TabIndex = 33;
+            this.cboTipos.TabIndex = 2;
             // 
             // lblTipo
             // 
@@ -130,7 +131,7 @@
             this.cboUsuarios.Location = new System.Drawing.Point(801, 57);
             this.cboUsuarios.Name = "cboUsuarios";
             this.cboUsuarios.Size = new System.Drawing.Size(272, 33);
-            this.cboUsuarios.TabIndex = 38;
+            this.cboUsuarios.TabIndex = 3;
             // 
             // lblUsuario
             // 

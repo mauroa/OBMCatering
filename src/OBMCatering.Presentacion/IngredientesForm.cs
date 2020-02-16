@@ -118,7 +118,7 @@ namespace OBMCatering.Presentacion
 
             if (filasSeleccionadas == 0 || filasSeleccionadas > 1) return;
 
-            DataGridViewRow filaSeleccionada = grvIngredientes.SelectedRows[0];
+            DataGridViewRow filaSeleccionada = grvIngredientes.CurrentRow;
             IngredientePresentacion ingredienteSeleccionado = (IngredientePresentacion)filaSeleccionada.DataBoundItem;
 
             CargarIngredienteSeleccionado(ingredienteSeleccionado);
