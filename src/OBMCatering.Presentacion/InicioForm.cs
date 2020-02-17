@@ -2,6 +2,7 @@
 using OBMCatering.Presentacion.Properties;
 using System;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace OBMCatering.Presentacion
 {
@@ -293,6 +294,20 @@ namespace OBMCatering.Presentacion
         void TsSalir_Click(object sender, EventArgs e)
         {
             contexto.Negocio.AsignarUsuarioAutenticado(null);
+
+            //Convertir la coleccion de formularios y hacerle un .ToList() evita que al cerrar 
+            //los formularios se tire una exception de que no se puede modificar la coleccion cuando se esta iterando
+            //El .ToList() genera una copia de la coleccion inicial haciendo que el .Close() no la afecte
+            foreach(Form form in Application.OpenForms.Cast<Form>().ToList())
+            {
+                //Cierro todos los formularios abiertos excepto el actual
+                if(form.Name != Name)
+                {
+                    form.Close();
+                }
+            }
+
+
             Hide();
             
             DialogResult resultado;
