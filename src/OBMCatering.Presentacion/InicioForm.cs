@@ -92,22 +92,37 @@ namespace OBMCatering.Presentacion
             {
                 case PerfilUsuario.Admin:
                     tsAdministrar.Visible = true;
+                    tsiProveedores.Visible = true;
+                    tsiClientes.Visible = true;
+                    tsiEmpleados.Visible = true;
+                    tsiUsuarios.Visible = true;
                     tsCocina.Visible = true;
-                    tsCompras.Visible = true;
+                    tsiPedidos.Visible = true;
+                    tsiRecetas.Visible = true;
+                    tsiPrecios.Visible = true;
                     tsVentas.Visible = true;
+                    tsiPedidos.Visible = true;
+                    tsiFacturas.Visible = true;
+                    tsCompras.Visible = true;
+                    tsiOrdenesCompra.Visible = true;
+                    tsiOrdenesPago.Visible = true;
                     tsiBitacora.Visible = true;
+                    tsiLenguaje.Visible = true;
                     tsiDatos.Visible = true;
                     break;
                 case PerfilUsuario.Cocina:
-                    tsCocina.Visible = true;
                     tsAdministrar.Visible = false;
-                    tsCompras.Visible = false;
+                    tsCocina.Visible = true;
+                    tsiPedidos.Visible = true;
+                    tsiRecetas.Visible = true;
+                    tsiPrecios.Visible = true;
                     tsVentas.Visible = false;
+                    tsCompras.Visible = false;
                     tsiBitacora.Visible = false;
+                    tsiLenguaje.Visible = true;
                     tsiDatos.Visible = false;
                     break;
                 case PerfilUsuario.Compras:
-                    tsCompras.Visible = true;
                     tsAdministrar.Visible = true;
                     tsiProveedores.Visible = true;
                     tsiClientes.Visible = false;
@@ -115,19 +130,26 @@ namespace OBMCatering.Presentacion
                     tsiUsuarios.Visible = false;
                     tsCocina.Visible = false;
                     tsVentas.Visible = false;
+                    tsCompras.Visible = true;
+                    tsiOrdenesCompra.Visible = true;
+                    tsiOrdenesPago.Visible = true;
                     tsiBitacora.Visible = false;
+                    tsiLenguaje.Visible = true;
                     tsiDatos.Visible = false;
                     break;
                 case PerfilUsuario.Ventas:
-                    tsVentas.Visible = true;
                     tsAdministrar.Visible = true;
                     tsiProveedores.Visible = false;
                     tsiClientes.Visible = true;
                     tsiEmpleados.Visible = false;
                     tsiUsuarios.Visible = false;
                     tsCocina.Visible = false;
+                    tsVentas.Visible = true;
+                    tsiPedidos.Visible = true;
+                    tsiFacturas.Visible = true;
                     tsCompras.Visible = false;
                     tsiBitacora.Visible = false;
+                    tsiLenguaje.Visible = true;
                     tsiDatos.Visible = false;
                     break;
             }
